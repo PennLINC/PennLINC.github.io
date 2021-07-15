@@ -417,24 +417,58 @@ as a Datalad dataset.
 $ cd exemplars_dir
 $ datalad create -d . --force -D "Exemplars BIDS dataset"
 $ datalad save -m "add input data"
+$ datalad run-procedure cfg_text2git
 $ cd ..
 ```
+**Note:** If you have created the exemplars_dir inside an existing datalad dataset, don't f
+orget to also `datalad save` the superdataset that exemplars_dir belongs to. 
 
-Now you can bootstrap a pipeline run with these as your inputs. Supposing fmriprep
-is the pipeline we want to test:
+Now you can bootstrap a pipeline run with these as your inputs. You want to create this 
+exemplar_test directory somewhere outside of your superdataset (i.e. not inside a folder 
+that is already indexed by Datalad). Supposing fmriprep is the pipeline we want to test:
 
 ```bash
+$ cd </desired/location/of/exemplar_test/directory/>
 $ mkdir exemplar_test && cd exemplar_test
-$ wget https://raw.githubusercontent.com/PennLINC/TheWay/cubic/cubic-bootstrap-fmriprep.sh
-$ bash cubic-bootstrap-fmriprep.sh ../exemplars_dir
-$ bash fmriprep/anaysis/code/qsub_calls.sh
+$ wget https://raw.githubusercontent.com/PennLINC/TheWay/main/scripts/cubic/bootstrap-fmriprep.sh
+$ bash bootstrap-fmriprep.sh <path/to/exemplars_dir>
+$ cd fmriprep/anaysis/
+$ bash code/qsub_calls.sh
 ```
 
 This will link the exemplars BIDS dataset into an fmriprep analysis dataset and
-launch jobs for each exemplar subject. Follow the instructions in
+launch jobs for each exemplar subject. 
+
+**Note:** If your dataset happens to include multiple sessions per subject, you would
+instead use a different script:
+
+```bash
+$ cd </desired/location/of/exemplar_test/directory/>
+$ mkdir exemplar_test && cd exemplar_test
+$ wget https://raw.githubusercontent.com/PennLINC/TheWay/main/scripts/cubic/bootstrap-fmriprep-multises.sh
+$ bash bootstrap-fmriprep-multises.sh <path/to/exemplars_dir>
+$ cd fmriprep/anaysis/
+$ bash code/qsub_calls.sh
+```
+
+You can check how your jobs are doing by looking at individual log files, which are
+stored in `fmriprep/anaysis/logs/`
+
+**Note:** If for some reason you need to edit the `qsub_calls.sh` script, you must
+be sure to register the changes with datalad and push to siblings before rerunning the 
+script. From within `fmriprep/anaysis/`:
+
+```bash
+datalad save
+datalad push --to input
+datalad push --to output
+```
+
+Follow the instructions in
 [here](/docs/TheWay/RunningDataLadPipelines#preparing-the-analysis-dataset)
 for aggregating and checking the results. Note that a nearly identical
 workflow will be used for running the entire BIDS dataset through pipelines.
+
 
 
 ### Checking outputs from your exemplar subjects
