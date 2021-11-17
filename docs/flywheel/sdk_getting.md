@@ -41,9 +41,9 @@ Now we can see which files are attached to this analysis data container:
 
 ```python
 >>> print("\n".join([file_obj.name for file_obj in analysis.files]))
-sub-01_5cf535cb36da2300443b2fb9.html.zip
-fmriprep_work_sub-01_5cf535cb36da2300443b2fb9.zip
-fmriprep_sub-01_5cf535cb36da2300443b2fb9.zip
+sub-X_5cf535cb36da2300443b2fb9.html.zip
+fmriprep_work_sub-X_5cf535cb36da2300443b2fb9.zip
+fmriprep_sub-X_5cf535cb36da2300443b2fb9.zip
 ```
 
 These are the names of each file object attached to the container. These names should be meaningful to us.
@@ -53,11 +53,11 @@ These are the names of each file object attached to the container. These names s
 The most straightforward approach to getting data from Flywheel is to directly download the zip file. Then you can unzip it and access its contents on your local machine. To do that,
 
 ```python
->>> analysis.download_file("fmriprep_sub-01_5cf535cb36da2300443b2fb9.zip",
-...                        "fmriprep_sub-01_5cf535cb36da2300443b2fb9.zip")
+>>> analysis.download_file("fmriprep_sub-X_5cf535cb36da2300443b2fb9.zip",
+...                        "fmriprep_sub-X_5cf535cb36da2300443b2fb9.zip")
 ```
 
-and the file `fmriprep_sub-01_5cf535cb36da2300443b2fb9.zip` will exist in your current working directory.
+and the file `fmriprep_sub-X_5cf535cb36da2300443b2fb9.zip` will exist in your current working directory.
 
 ### Extracting files from zip archive attachments
 
@@ -65,7 +65,7 @@ It is very common for these attachments to be zip files. Often we don't need all
 
 ```python
 >>> zip_info = analysis.get_file_zip_info(
-...     'fmriprep_sub-01_5cf535cb36da2300443b2fb9.zip')
+...     'fmriprep_sub-X_5cf535cb36da2300443b2fb9.zip')
 >>> print('\n'.join([member.path for member in zip_info.members]))
 5cf535cb36da2300443b2fb9/
 5cf535cb36da2300443b2fb9/fmriprep/
@@ -73,43 +73,43 @@ It is very common for these attachments to be zip files. Often we don't need all
 5cf535cb36da2300443b2fb9/fmriprep/logs/CITATION.tex
 5cf535cb36da2300443b2fb9/fmriprep/logs/CITATION.html
 5cf535cb36da2300443b2fb9/fmriprep/logs/CITATION.md
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/figures/
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/figures/sub-01_task-mixedgamblestask_run-02_carpetplot.svg
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/figures/sub-01_task-mixedgamblestask_run-01_carpetplot.svg
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/figures/sub-01_task-mixedgamblestask_run-01_rois.svg
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/figures/sub-01_task-mixedgamblestask_run-01_flirtbbr.svg
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/figures/sub-01_t1_2_mni.svg
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/figures/sub-01_task-mixedgamblestask_run-02_flirtbbr.svg
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/figures/sub-01_task-mixedgamblestask_run-02_rois.svg
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/figures/sub-01_seg_brainmask.svg
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/func/
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/func/sub-01_task-mixedgamblestask_run-01_space-MNI152NLin2009cAsym_boldref.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/func/sub-01_task-mixedgamblestask_run-02_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/func/sub-01_task-mixedgamblestask_run-01_desc-confounds_regressors.tsv
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/func/sub-01_task-mixedgamblestask_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/func/sub-01_task-mixedgamblestask_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/func/sub-01_task-mixedgamblestask_run-01_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/func/sub-01_task-mixedgamblestask_run-02_space-MNI152NLin2009cAsym_boldref.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/func/sub-01_task-mixedgamblestask_run-02_desc-confounds_regressors.tsv
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_desc-brain_mask.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_desc-preproc_T1w.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_label-GM_probseg.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_space-MNI152NLin2009cAsym_dseg.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_space-MNI152NLin2009cAsym_label-WM_probseg.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_label-CSF_probseg.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_label-WM_probseg.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_from-orig_to-T1w_mode-image_xfm.txt
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_dseg.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_space-MNI152NLin2009cAsym_label-GM_probseg.nii.gz
-5cf535cb36da2300443b2fb9/fmriprep/sub-01/anat/sub-01_space-MNI152NLin2009cAsym_label-CSF_probseg.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/figures/
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/figures/sub-X_task-mixedgamblestask_run-02_carpetplot.svg
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/figures/sub-X_task-mixedgamblestask_run-01_carpetplot.svg
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/figures/sub-X_task-mixedgamblestask_run-01_rois.svg
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/figures/sub-X_task-mixedgamblestask_run-01_flirtbbr.svg
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/figures/sub-X_t1_2_mni.svg
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/figures/sub-X_task-mixedgamblestask_run-02_flirtbbr.svg
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/figures/sub-X_task-mixedgamblestask_run-02_rois.svg
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/figures/sub-X_seg_brainmask.svg
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/func/
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/func/sub-X_task-mixedgamblestask_run-01_space-MNI152NLin2009cAsym_boldref.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/func/sub-X_task-mixedgamblestask_run-02_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/func/sub-X_task-mixedgamblestask_run-01_desc-confounds_regressors.tsv
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/func/sub-X_task-mixedgamblestask_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/func/sub-X_task-mixedgamblestask_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/func/sub-X_task-mixedgamblestask_run-01_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/func/sub-X_task-mixedgamblestask_run-02_space-MNI152NLin2009cAsym_boldref.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/func/sub-X_task-mixedgamblestask_run-02_desc-confounds_regressors.tsv
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_desc-brain_mask.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_desc-preproc_T1w.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_label-GM_probseg.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_space-MNI152NLin2009cAsym_dseg.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_space-MNI152NLin2009cAsym_label-WM_probseg.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_label-CSF_probseg.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_label-WM_probseg.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_from-orig_to-T1w_mode-image_xfm.txt
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_dseg.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_space-MNI152NLin2009cAsym_label-GM_probseg.nii.gz
+5cf535cb36da2300443b2fb9/fmriprep/sub-X/anat/sub-X_space-MNI152NLin2009cAsym_label-CSF_probseg.nii.gz
 5cf535cb36da2300443b2fb9/fmriprep/dataset_description.json
-5cf535cb36da2300443b2fb9/fmriprep/sub-01.html
+5cf535cb36da2300443b2fb9/fmriprep/sub-X.html
 ```
 
 That's all the fmriprep output! Suppose we only want to get the confound regressors out of this zip. we can easily do this with a few lines:
@@ -120,17 +120,17 @@ That's all the fmriprep output! Suppose we only want to get the confound regress
 ...                   member.path.endswith('confounds_regressors.tsv')][0]
 >>> confounds_file_name = op.split(confounds_file.path)[1]
 >>> print(confounds_file_name)
->>> analysis.download_file_zip_member('fmriprep_sub-01_5cf535cb36da2300443b2fb9.zip',
+>>> analysis.download_file_zip_member('fmriprep_sub-X_5cf535cb36da2300443b2fb9.zip',
 ...                                   confounds_file.path,
 ...                                   confounds_file_name)
 >>> listdir(".")  # Verify that it was downloaded
-[ 'sub-01_task-mixedgamblestask_run-01_desc-confounds_regressors.tsv' ]
+[ 'sub-X_task-mixedgamblestask_run-01_desc-confounds_regressors.tsv' ]
 ```
 
 Since BIDS requires that subject and session are in each filename, we can iterate over all the analyses and download these files to the current working directory. Alternatively, we can read the data directly into memory:
 
 ```python
->>> mem_tsv = analysis.read_file_zip_member('fmriprep_sub-01_5cf535cb36da2300443b2fb9.zip',
+>>> mem_tsv = analysis.read_file_zip_member('fmriprep_sub-X_5cf535cb36da2300443b2fb9.zip',
 ...                                         confounds_file.path)
 >>> import pandas as pd
 >>> from io import BytesIO
