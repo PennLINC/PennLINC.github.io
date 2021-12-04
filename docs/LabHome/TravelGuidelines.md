@@ -8,7 +8,7 @@ nav_order: 8
 
 # Travel Guidelines
 
-### NOTE: COVID 19 requires fluid evaluation of conference travel and will be subject to ongoing changes to Penn guidelines.
+### NOTE: COVID 19 requires fluid evaluation of conference travel; all travel is subject to current Penn guidelines.
 
 Some general guidelines on conference / travel guidelines for PennLINC team members follow below.   These are general guidelines (not inflexible rules); please contact Ted if further discussion is warranted.   
 
