@@ -530,5 +530,23 @@ Note that the use of `h_vmem` adds 2.5 GBs to the original `mem_gb` specificatio
 
 Note that `s_vmem` adds only 2 GBs to the original `mem_gb` specification. This is because soft memory has more flexibility than hard memory specifications. This is recommended to be used when the exact memory required by each subject is not concretely known so as to diminish the risk of the job being killed by accident.
 
+## Running X11 Sessions
+Sometimes you'll want to run an application on CUBIC that requires a GUI. In order to be able to view and interact with GUIs from remote applications, you can use X11 to provide a display window.
+
+To get started, you'll probably need to download [XQuartz](https://www.xquartz.org/) (if your local machine is a Mac) or [Xming](http://www.straightrunning.com/XmingNotes/) (for Windows). More information on setting up - as well as detailed instructions for configuring/using Xming - can be found [here](https://cets.seas.upenn.edu/answers/x11-forwarding.html). If you're running Linux, congratulations, should already be good to go. 
+
+To start a X session on CUBIC project user:
+1. If you're on a Mac, make sure XQuartz is installed and running. From the terminal, ssh to your account: 
+```bash
+$ ssh -Y yourusername@cubic-login.uphs.upenn.edu
+```
+2. Log into the project user with sudox:
+```bash
+$ sudox -u projectusername -i
+```
+3. Load your application from the command line, and the GUI will open
+
+More information on running sudox as project user on CUBIC is available [here](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects#Graphical_Commands_as_Project_Pseudo-User)
+
 ## Additional information about CUBIC
 [This page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects) has tons of other useful information about using CUBIC. Anyone who plans on using CUBIC regularly should probably browse it. Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others. Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page.
