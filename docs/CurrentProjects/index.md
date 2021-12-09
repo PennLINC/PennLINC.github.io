@@ -21,6 +21,7 @@ Below is a list of the current projects in the lab:
 | A Developmental Reduction of the Excitation:Inhibition Ratio in Association Cortex during Adolescence | Bart Larsen | [https://pennlinc.github.io/Larsen_EI_Development/](https://pennlinc.github.io/Larsen_EI_Development/) |
 | Linking Individual Differences in Personalized Functional Network Topography to Psychopathology in Youth | Zaixu Cui | [https://pennlinc.github.io/pncsinglefuncparcel_psychopathology-1/](https://pennlinc.github.io/pncsinglefuncparcel_psychopathology-1/){:target="_blank"}  |
 | ALE Meta-Analysis of Structural Imaging Studies in Patients with Chronic Pain versus Healthy Controls | Alina Henn | [https://github.com/PennLINC/sMRI_ChronicPain](https://github.com/PennLINC/sMRI_ChronicPain){:target="_blank}|
+| Linking Brain Connectivity to Borderline Personality Disorder | Max Bertolero | [https://github.com/PennLINC/boderline](https://github.com/PennLINC/borderline){:target="_blank}|
 
 
 ---------------------------------------------------------------------------------
