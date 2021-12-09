@@ -24,8 +24,8 @@ Send the lab's access manager (Tinashe) your Pennkey, full name, and Penn email,
 Once you've set up your login credentials for the PMACS LPC, you can SSH into the LPC from anywhere (even without Penn VPN). You can SSH into PMACS in two different ways, depending on what tasks you want to execute:
 
 ```bash
-$ ssh -Y [username]@scisub #SSH only. No sftp. No outbound access. Can submit or check jobs.
-$ ssh -Y [username]@sciget #SSH, but has outbound access to use git, svn, wget, et cetera to download data. Can *not* submit or check jobs.
+$ ssh -Y [username]@scisub.pmacs.upenn.edu #SSH only. No sftp. No outbound access. Can submit or check jobs.
+$ ssh -Y [username]@sciget.pmacs.upenn.edu #SSH, but has outbound access to use git, svn, wget, et cetera to download data. Can *not* submit or check jobs.
 ```
 
 Enter PMACS password when prompted.
