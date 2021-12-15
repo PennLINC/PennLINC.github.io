@@ -538,7 +538,7 @@ To get started, you'll probably need to download [XQuartz](https://www.xquartz.o
 To start a X session on CUBIC project user:
 1. If you're on a Mac, make sure XQuartz is installed and running. From the terminal, ssh to your account: 
 ```bash
-$ ssh -Y yourusername@cubic-login.uphs.upenn.edu
+$ ssh -Y yourusername@cubic-login
 ```
 2. Log into the project user with sudox:
 ```bash
