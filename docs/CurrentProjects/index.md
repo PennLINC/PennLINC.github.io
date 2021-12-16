@@ -22,6 +22,7 @@ Below is a list of the current projects in the lab:
 | Linking Individual Differences in Personalized Functional Network Topography to Psychopathology in Youth | Zaixu Cui | [https://pennlinc.github.io/pncsinglefuncparcel_psychopathology-1/](https://pennlinc.github.io/pncsinglefuncparcel_psychopathology-1/){:target="_blank"}  |
 | ALE Meta-Analysis of Structural Imaging Studies in Patients with Chronic Pain versus Healthy Controls | Alina Henn | [https://github.com/PennLINC/sMRI_ChronicPain](https://github.com/PennLINC/sMRI_ChronicPain){:target="_blank}|
 | Linking Brain Connectivity to Borderline Personality Disorder | Max Bertolero | [https://github.com/PennLINC/boderline](https://github.com/PennLINC/borderline){:target="_blank}|
+| Diverse Club Development | Max Bertolero | [https://github.com/PennLINC/bertolero_diverse_development](https://github.com/PennLINC/bertolero_diverse_development){:target="_blank}|
 
 
 ---------------------------------------------------------------------------------
