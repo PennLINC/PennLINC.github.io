@@ -23,6 +23,7 @@ Below is a list of the current projects in the lab:
 | ALE Meta-Analysis of Structural Imaging Studies in Patients with Chronic Pain versus Healthy Controls | Alina Henn | [https://github.com/PennLINC/sMRI_ChronicPain](https://github.com/PennLINC/sMRI_ChronicPain){:target="_blank}|
 | Linking Brain Connectivity to Borderline Personality Disorder | Max Bertolero | [pennlinc.github.io/borderline/](https://pennlinc.github.io/borderline/){:target="_blank}|
 | Diverse Club Development | Max Bertolero | [pennlinc.github.io/bertolero_diverse_development/](https://pennlinc.github.io/bertolero_diverse_development/){:target="_blank}|
+| Whole-brain molecular axes encoding relative spatial location in the human brain | Jacob Vogel | [https://pennlinc.github.io/Vogel_PLS_Tx-Space/](https://pennlinc.github.io/Vogel_PLS_Tx-Space/){:target="_blank}|
 
 
 ---------------------------------------------------------------------------------
