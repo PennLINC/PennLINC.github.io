@@ -548,5 +548,15 @@ $ sudox -u projectusername -i
 
 More information on running sudox as project user on CUBIC is available [here](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects#Graphical_Commands_as_Project_Pseudo-User)
 
+## GUIs
+
+On the Satterthwaite Lab node, you can access graphical user interfaces for apps like Afni by launching your session like:
+
+```shell
+ssh -X -Y
+```
+
+This has been tested only on Mac using the XQuartz utility -- see [here](https://www.cyberciti.biz/faq/apple-osx-mountain-lion-mavericks-install-xquartz-server/) for more on XQuartz.
+
 ## Additional information about CUBIC
 [This page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects) has tons of other useful information about using CUBIC. Anyone who plans on using CUBIC regularly should probably browse it. Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others. Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page.
