@@ -16,7 +16,7 @@ There are a number of places you may have to fetch data from to get them onto a 
 
 The best option for moving a large amount of data between clusters is to use the `scp` command. Remember that this process must remain open and running in your terminal, so it might be useful to do this in a fresh terminal window or use `&` at the end of your command. You could also use [`screen`](https://www.geeksforgeeks.org/screen-command-in-linux-with-examples/) to set up a non-terminating terminal.
 
-As mentioned in our general [PMACS documentation](/docs/pmacs), you should scp *into* a node called `transfer`. That would look like this:
+As mentioned in our general [PMACS documentation](/docs/pmacs), you should scp *into* a node called `transfer`, for PMACS projects. That would look like this:
 
 ```
 ## my username is <username>
