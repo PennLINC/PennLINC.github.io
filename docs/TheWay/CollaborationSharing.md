@@ -49,6 +49,11 @@ datalad clone --reckless ephemeral ria+file:///PATH_TO_FMRIPREP_DATASET/output_r
 rsync -avzhL --progress fmriprep_outputs FINAL_DESTINATION
 ```
 
+---
+NOTE FOR EXPERTS: This is part of the `datalad` workflow on _aliasing_; visit [http://handbook.datalad.org/en/latest/beyond_basics/101-147-riastores.html](this resource) to learn more about how you can use aliasing to share data flexibly.
+
+---
+
 ## Zipped or Unzipped?
 
 A lot of outputs from our pipelines can be very large. We typically keep these zipped after running, but for collaboration you can choose to unzip all or part of the outputs into an _unzipped outputs_ `datalad` dataset. We have an example script [here](https://github.com/PennLINC/TheWay/blob/main/scripts/cubic/bootstrap-unzip-fmriprep.sh) that unzips fMRIPrep outputs -- you could, for example, modify the `datalad` runscript section in lines 150-160 to include/exclude what you need:
