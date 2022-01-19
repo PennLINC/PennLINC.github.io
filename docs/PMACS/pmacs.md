@@ -172,7 +172,7 @@ $ chmod 700 /Users/<username>/ImageData/PMACS_remote
 ```
 3. Mount the desired PMACS directory to your newly created, local mount directory using sshfs and sciget
 ```bash
-$ sshfs [username]@sciget:<my-folder-on-PMACS> <my-local-mount-folder> -o defer_permissions,volname=project
+$ sshfs [username]@sciget.pmacs.upenn.edu:<my-folder-on-PMACS> <my-local-mount-folder> -o defer_permissions,volname=project
 ```
 4. Unmount when done! You should run this unmount command from outside of the mount point.
 ```bash
