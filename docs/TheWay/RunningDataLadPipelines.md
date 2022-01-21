@@ -472,6 +472,54 @@ fmriprep-audit
 └── output_ria
 ```
 
+## Something Went Wrong in BIDS
+
+Let's say you've audited your bootstrap and notice something went wrong — e.g. two or
+three subjects have unusable BOLD data — and now you have to
+adjust your BIDS data to fix it. You go back to your BIDS and make some adjustments, saving
+them in datalad as before, but how does your bootstrap know to re-run the data with
+the newly updated BIDS?
+
+*The easiest way to solve this problem is to burn down your `testing` directory and start again from
+the top of this page* — this is especially recommended if you're new to this process and only have
+a handful of bootstraps to run. But if you're _not_ interested and want to keep
+your work, there is a way to re-run
+only the _adjusted_ BIDS participants that adheres to the bootstrap workflow:
+
+1. Adjust your BIDS data and `datalad save` it; you should be familiar with this.
+
+2. Now, head to the `analysis` directory of your bootstrap:
+
+```shell
+.
+├── bootstrap-fmriprep.sh
+├── fmriprep                         
+│   ├── analysis                # go here
+│   ├── input_ria
+│   ├── merge_ds
+│   ├── output_ria
+│   └── pennlinc-containers
+└── fmriprep-container
+```
+
+3. Now, tell datalad to uninstall the input directory (inputs being your BIDS)
+
+```shell
+datalad remove -d . inputs/data
+```
+
+This will make sure your data is cleanly removed.
+
+4. Re-clone the data and push this update:
+
+```shell
+datalad clone -d . ${BIDSINPUT} inputs/data
+datalad push --to input
+```
+
+Now, if you run the handful of subjects (by finding that subject's line in `analysis/code/qsub_calls.sh`
+and simply copy-pasting it into the terminal), their BIDS inputs remote should be updated with your changes.
+
 # Running a bootstrap on the outputs of another bootstrap
 
 Suppose you want to extract a specific file from each subject's output
@@ -485,8 +533,6 @@ design, such as [XCP](https://github.com/PennLINC/TheWay/blob/main/scripts/cubic
 and the various Audit scripts.
 
 # Run single subject testing on interactive node using bootstraps
-
-
 
 Before you read on, please ensure that you have already bootstrapped your BIDS application. You can find an example bootstrap for fMRIPrep [here](https://github.com/PennLINC/TheWay/blob/main/scripts/cubic/bootstrap-fmriprep.sh).
 
