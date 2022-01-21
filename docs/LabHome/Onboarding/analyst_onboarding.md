@@ -236,7 +236,7 @@ Additionally, check out the [Nature Methods paper](https://www.nature.com/articl
 
 ### Diffusion Data
 
-For diffusion imaging, we recommend `QSIPrep`, developed primarily by Dr. Matt Cieslak (manuscript in preparation). Learn about `QSIPrep` at its official [readthedocs site](https://qsiprep.readthedocs.io/en/latest/).
+For diffusion imaging, we recommend `QSIPrep`, developed primarily by Dr. Matt Cieslak (manuscript [here](https://www.nature.com/articles/s41592-021-01185-5)). Learn about `QSIPrep` at its official [readthedocs site](https://qsiprep.readthedocs.io/en/latest/).
 
 ### ASL Data
 
