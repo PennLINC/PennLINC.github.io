@@ -17,6 +17,7 @@ Below is a list of the current studies in the lab:
 | cros-map | Jacob Vogel | [https://pennlinc.github.io/cros-map/](https://pennlinc.github.io/cros-map/){:target="_blank"} |
 | EF | Kristin Murtha, Sophia Linguiti | [https://pennlinc.github.io/executivefunction/](https://pennlinc.github.io/executivefunction/){:target="_blank"} |
 | Mobile Phenomics | Kahini Mehta, Kristin Murtha | [https://pennlinc.github.io/mobilephenomics/](https://pennlinc.github.io/mobilephenomics/){:target="_blank"} |
+| ABCD Resources | Arielle Keller, Adam Pines | [https://pennlinc.github.io/ABCDresources/](https://pennlinc.github.io/ABCDresources/){:target="_blank"} |
 
 ---------------------------------------------------------------------------------
 
