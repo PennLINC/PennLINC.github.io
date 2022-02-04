@@ -2,7 +2,7 @@
 layout: default
 title: Regional Quantification
 parent: Tutorials
-nav_order: 1
+nav_order: 2
 ---
 
 
