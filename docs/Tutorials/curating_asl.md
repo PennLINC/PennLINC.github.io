@@ -48,15 +48,15 @@ Therefore, the post labeling delay in this case was 1.2 seconds.
 
 #### `BackgroundSuppression`
 
-For most studies at Penn, we set `BackgroundSuppression` to `True`.
+Background suppression is important; generally, if you *do not* have an M0 image (see below), set `BackgroundSuppression` to `True`. But check with your MR physicist on what's the best setting here.
 
 #### `M0Type`
 
-The M0 scan is similar to a fieldmap; it's used for correcting the image quality. It's optional, and if included can be taken as a separate image or can be the first image in the ASL time series. If you don't know, view the DICOM in Flywheel or your image viewer of choice -- the M0 image has higher intensity and contrast compared to the rest of the time series.
+An M0 image is used as a reference image and to estimate the equilibrium magnetization (M0) of blood. If an M0 scan is not provided, the average of the control images is used as the reference (while checking for background suppression). 
+
+The field is therefore dependent on your scan sequence; if M0 is included it can be taken as a separate image or can be the first image in the ASL time series. If you don't know, view the DICOM in Flywheel or your image viewer of choice -- the M0 image has higher intensity and contrast compared to the rest of the time series.
 
 Once you know, simply use one of the following in the JSON sidecar: `Separate`, meaning you have a separate M0 nifti; `Included`, meaning it's one of the volumes in the ASL time series; or `Absent`, if you have no M0 scan.
-
-If you *do* have an M0 scan, then you also need to provide a field called `M0Estimate`. It's a plain integer, whose location is ToBeDetermined.
 
 #### `TotalAcquiredPairs`
 
@@ -68,7 +68,7 @@ This is a count of the volumes in the time series, divided by two. If your time 
 
 PCASL will also require the `LabelingDuration`. It's a calculated value for the series, so open up VSCode again and open one of the DICOMS.
 
-In this case, we'll be looking for a value called RF blocks, denoted by `WIPMEMBLOCK_DVAL_03`. Similar to the above example, you can find this using a partial word search; in this example we got `sWiPMemBlock.adFree[3] = 82`. To calculate labeling duration, multiply this value by 18.4 as done in [this script](https://github.com/PennBBL/pncReproc2015Scripts/blob/master/pcasl/scripts/pcasl_quant_v7_afgr.sh#L90), which will give you a value in milliseconds. The BIDS valid entry is in seconds, so simply convert and insert your result as a float.
+Generally, check with your MR physicist on how to calculate the `LabelingDuration`. It can vary by sequence and by scanner type, and the sequences change as the technology develops, so there's a need for flexibility here. For example, for recent 3D sequences at Penn, the labeling time is directly included in the sequence header. The field does not always match, and it's better to have a look at the text file to make sure you are picking the right number. There will be two numbers with values close to each other next to 1.8, the first one is the labeling time and the next one is the PLD. 
 
 #### `RepetitionTimePreparation`
 
@@ -79,6 +79,8 @@ This is required, but it's unlikely to ever be different from the regular TR. So
 ASL data curation is tricky and not always straight forward like other data curation. You should try and get a hold of the MR physicist or technician who ran the scan and ask them to share the sequence parameters. Better yet, once you've completed curation, be sure to ask them to look it over.
 
 Additional resources:
+
+[ASL Prep](https://aslprep.readthedocs.io/en/latest/)
 
 [ASL BIDS spec flowchart](https://bids-specification.readthedocs.io/en/stable/99-appendices/12-arterial-spin-labeling.html#flowchart-based-on-dependency-table)
 
