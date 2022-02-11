@@ -25,7 +25,7 @@ To get login credentials for CUBIC, you must have already a Penn Medicine accoun
 Once inside the Penn network, the login to CUBIC looks like this:
 
 ```python
-$ ssh -Y username@cubic-login
+$ ssh -Y username@cubic-sattertt
 ```
 You use your UPHS password to login. On success you will be greeted with their message and any news:
 
@@ -131,8 +131,7 @@ drwxr-s---.   3 xcpdev xcpdev      4096 Oct  9 16:52 .local/
 drwxr-s---.   2 xcpdev xcpdev      4096 Oct  9 16:52 perl5/
 drwxr-s---.   2 xnat   sbia_admins 4096 Jan  6 23:47 RAW/
 drwxr-s---.   2 xcpdev xcpdev      4096 Jul  9  2018 .subversion/
--rw-r-----.   1 xcpdev xcpdev         0 Oct  9 16:52 .tmpcheck-cubic-login1
--rw-rw-r--.   1 xcpdev xcpdev         0 Feb 12 19:44 .tmpcheck-cubic-login4
+-rw-r-----.   1 xcpdev xcpdev         0 Oct  9 16:52 .tmpcheck-cubic-sattertt
 -rw-r-x---.   1 root   root        2360 Jul  9  2018 xcpDev_Project_Data_use.txt*
 ```
 
@@ -375,14 +374,14 @@ $ sudo chown -R my_username /cbica
 1. Mac users need to download FUSE and SSHFS: https://osxfuse.github.io/ .
 2. Mount ussing `sshfs`
 ```bash
-$ sshfs -o defer_permissions username@cubic-login:<my-folder-on-CUBIC> <my-local-folder>
+$ sshfs -o defer_permissions username@cubic-sattertt:<my-folder-on-CUBIC> <my-local-folder>
 ```
 For example, if you have set up your mount point according to the above guide, your command will be:
 ```bash
-$ sshfs -o defer_permissions username@cubic-login:/cbica/projects/my_project /cbica/projects/my_project/
+$ sshfs -o defer_permissions username@cubic-sattertt:/cbica/projects/my_project /cbica/projects/my_project/
 ```
 I recommend putting this command into a script or alias if you need to mount often. E.g. in your `.profile` put:
-`alias mc="sshfs -o defer_permissions username@cubic-login:/cbica/projects/my_project /cbica/projects/my_project/"`
+`alias mc="sshfs -o defer_permissions username@cubic-sattertt:/cbica/projects/my_project /cbica/projects/my_project/"`
 Now you can simply type `mc` to mount cubic.
 Pro-tip: Follow these instructions to no longer need to type your password: http://www.linuxproblem.org/art_9.html
 
@@ -411,7 +410,7 @@ All project directories will include a folder called `dropbox/` in the project h
 
 `scp` is the recommended command-line transfer software for moving files onto and off of CUBIC. One need only specify the file(s) to move and the CUBIC destination. See the example below, where `<...>` indicates user input:
 
-`scp </path/to/files*.nii.gz> <username>@cubic-login:/cbica/projects/<project_dir>/dropbox/`
+`scp </path/to/files*.nii.gz> <username>@cubic-sattertt:/cbica/projects/<project_dir>/dropbox/`
 
 This command would copy all `nii.gz` files from `/path/to/` into the `dropbox/` folder of your project directory. Note that you are entering your CUBIC username in the destination, not your project username (confusing, I know).
 
@@ -420,7 +419,7 @@ Moving files directly to a non `dropbox/` folder on CUBIC with scp or your mount
 ### Moving files from CUBIC
 This is much simpler. One can simply use scp (or rsync, or whatever) to copy files from a source on cubic to their local destination. E.g.
 
-`scp <username>@cubic-login:/cbica/projects/<project_dir/path/files.csv> </local/path/to/put/files/>`
+`scp <username>@cubic-sattertt:/cbica/projects/<project_dir/path/files.csv> </local/path/to/put/files/>`
 
 It is also possible to copy files through the mount point, but this would be quite slow and is not really the purpose of the mount point.
 
@@ -476,7 +475,7 @@ singularity pull docker://pennsive/rstudio:4.1
 # command follows format:
 # [command]                                                     [image]           [name of instance]
 singularity instance start -e -B $TMPDIR:/var -B $HOME:/root    rstudio_4.1.sif   my-running-rstudio
-# $PORT must be the number you used to create the ssh tunnel, e.g. ssh -q -L${PORT}:127.0.0.1:${PORT} user@cubic-login
+# $PORT must be the number you used to create the ssh tunnel, e.g. ssh -q -L${PORT}:127.0.0.1:${PORT} user@cubic-sattertt
 SINGULARITYENV_PORT=$PORT singularity run instance://my-running-rstudio
 # other singularity service commands:
 singularity instance list
@@ -538,7 +537,7 @@ To get started, you'll probably need to download [XQuartz](https://www.xquartz.o
 To start a X session on CUBIC project user:
 1. If you're on a Mac, make sure XQuartz is installed and running. From the terminal, ssh to your account: 
 ```bash
-$ ssh -Y yourusername@cubic-login
+$ ssh -Y yourusername@cubic-sattertt
 ```
 2. Log into the project user with sudox:
 ```bash
