@@ -655,7 +655,7 @@ $ bash code/concat_outputs.sh
 $ bash code/concat_outputs.sh task-rest_acq-singleband_space-MNI152NLin6Asym_desc-qc_res-2_bold.csv task-rest_acq-singleband_space-fsLR_desc-qc_bold.csv
 ```
 ---
-Once you see `SUCCESS`, the output will be available in the root of the audit directory:
+Once you see `SUCCESS`, the output will be available in the root of the QC directory:
 
 ```
 ASLPREP_QC
