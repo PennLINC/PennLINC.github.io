@@ -653,7 +653,7 @@ $ bash code/concat_outputs.sh
 **NOTE:**   For XCP, you will need to supply arguments in the form of all the .csvs you want to concatenate, removing subject and session, and adding * after "band" in the following format:
 ``shell
 $ bash code/concat_outputs.sh task-rest_acq-singleband*_space-MNI152NLin6Asym_desc-qc_res-2_bold.csv task-rest_acq-singleband*_space-fsLR_desc-qc_bold.csv
-```
+
 ---
 Once you see `SUCCESS`, the output will be available in the root of the QC directory:
 
