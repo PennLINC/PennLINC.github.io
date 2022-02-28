@@ -532,6 +532,150 @@ design, such as [XCP](https://github.com/PennLINC/TheWay/blob/main/scripts/cubic
 [QSIRecon](https://github.com/PennLINC/TheWay/blob/main/scripts/cubic/bootstrap-qsirecon.sh),
 and the various Audit scripts.
 
+# Generating QCs
+
+First, download the script in the same place that you started your pipeline. We currently have QCscripts for ASLPrep and XCP. 
+For fMRIPrep, QCs are analyzed from XCP. 
+Note that for XCP, the unzip script is different https://raw.githubusercontent.com/PennLINC/TheWay/main/scripts/cubic/bootstrap-xcp-qc.sh due to the presence of different tasks. 
+
+The example shown below uses ASLPrep outputs. 
+```
+wget https://raw.githubusercontent.com/PennLINC/TheWay/main/scripts/cubic/bootstrap-aslprep-qc.sh
+```
+
+Then, bash the script, providing the full path to the `aslprep` directory:
+
+```shell
+$ tree -L 2 .
+.
+├── bootstrap-aslprep-qc.sh      # run this
+├── bootstrap-aslprep.sh
+├── aslprep                         # with this as input
+│   ├── analysis
+│   ├── input_ria
+│   ├── merge_ds
+│   ├── output_ria
+│   └── pennlinc-containers
+└── aslprep-container
+```
+
+Like so:
+
+```shell
+$ bash bootstrap-aslprep-qc.sh /path/to/exemplar_test/aslprep
+```
+
+The contents of the resulting `ASLPREP_QC` directory are analogous to the 
+`ASLPrep` directory. Hence, you should make sure to edit `analysis/code/participant_job.sh`
+to suit your needs — particularly, you should set the correct conda environment:
+
+```
+#participant_job.sh
+
+#!/bin/bash
+#$ -S /bin/bash
+#$ -l h_vmem=5G
+#$ -l s_vmem=3.5G
+# Set up the correct conda environment
+source ${CONDA_PREFIX}/bin/activate base         ## you will need to edit this
+echo I\'m in $PWD using `which python`
+
+# fail whenever something is fishy, use -x to get verbose logfiles
+set -e -u -x
+```
+
+As always, don't forget to `datalad save`!
+
+```
+$ datalad save -m "edited participant_job.sh" code/participant_job.sh
+$ datalad push --to input
+$ datalad push --to output
+```
+
+Now, you're ready to run the script (from the `analysis` directory):
+
+```bash
+$ bash code/qsub_calls.sh
+```
+
+This is a very quick program — once it's complete, you can check if a branch was 
+created successfully as before:
+
+```bash
+$ cd ../output_ria/9c4/d63ba-c4d7-4066-a385-cbc895fb9dbe/
+$ git branch -a
+  git-annex
+  job-9654895-sub-X1
+  job-9654896-sub-X2
+  job-9654897-sub-X3
+  job-9654898-sub-X4
+  job-9654899-sub-X5
+  job-9654900-sub-X6
+  job-9654901-sub-X7
+  job-9654902-sub-X8
+  job-9654903-sub-X9
+  job-9654904-sub-X10
+  job-9654905-sub-X11
+  job-9654906-sub-X12
+* master
+```
+
+Next, run `merge_outputs.sh` (again from the `analysis` directory):
+
+```bash
+$ bash code/merge_outputs.sh
+```
+
+The difference is that you'll have CSV files in the merge_ds/csvs directory:
+
+```
+ASLPREP_QC/
+├── analysis
+├── input_ria
+├── merge_ds
+│   ├── CHANGELOG.md
+│   ├── code
+│   ├── csvs
+│   │   ├── sub-X1_aslprep_qc.csv -> ../.git/annex/objects/Fq/KK/MD5E-s438--a54abe84d4358d32e9890f31159e1856.csv/MD5E-s438--a54abe84d4358d32e9890f31159e1856.csv
+│   │   |   3ba3bf880ed13d29b9af868dbd6133.csv/MD5E-s438--cc3ba3bf880ed13d29b9af868dbd6133.csv
+│   ├── inputs
+│   └── README.md
+└── output_ria
+```
+
+These are the per-subject QC results, tracked in datalad. Again, don't tamper with these.
+Instead, concatenate these single row CSVs into a table, which will contain one row per subject, by running the following command, also from the analysis directory:
+
+```shell
+$ bash code/concat_outputs.sh
+```
+---
+**NOTE:**   For XCP, you will need to supply arguments in the form of all the .csvs you want to concatenate, removing subject and session, and adding * after "band" in the following format:
+``shell
+$ bash code/concat_outputs.sh task-rest_acq-singleband*_space-MNI152NLin6Asym_desc-qc_res-2_bold.csv task-rest_acq-singleband*_space-fsLR_desc-qc_bold.csv
+```
+---
+Once you see `SUCCESS`, the output will be available in the root of the QC directory:
+
+```
+ASLPREP_QC
+├── analysis
+├── ASLPREP_QC.csv     #HERE IT IS!
+├── input_ria
+├── merge_ds
+└── output_ria
+```
+
+```
+XCP_QC
+├── analysis
+├── QCtask-rest_acq-singleband_space-fsLR_desc-qc_bold.csv   #HERE IT IS!
+├── QCtask-rest_acq-singleband_space-MNI152NLin6Asym_desc-qc_res-2_bold.csv #HERE IT IS!
+├── input_ria
+├── merge_ds
+└── output_ria
+```
+
 # Run single subject testing on interactive node using bootstraps
 
 Before you read on, please ensure that you have already bootstrapped your BIDS application. You can find an example bootstrap for fMRIPrep [here](https://github.com/PennLINC/TheWay/blob/main/scripts/cubic/bootstrap-fmriprep.sh).
