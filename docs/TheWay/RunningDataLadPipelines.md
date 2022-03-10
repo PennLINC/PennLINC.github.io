@@ -650,10 +650,10 @@ Instead, concatenate these single row CSVs into a table, which will contain one 
 $ bash code/concat_outputs.sh
 ```
 ---
-**NOTE:**   For XCP, you will need to supply arguments in the form of all the .csvs you want to concatenate, removing subject and session, and adding * after "band" in the following format:
+**NOTE:**   For XCP, you will need to supply arguments in the form of all the tasks/spaces/bands you want:
 
 ```
-$ bash code/concat_outputs.sh task-rest_acq-singleband*_space-MNI152NLin6Asym_desc-qc_res-2_bold.csv task-rest_acq-singleband*_space-fsLR_desc-qc_bold.csv
+$ bash code/concat_outputs.sh rest fsLR multi OR comma-separated for multiple arguments, eg: bash code/concat_outputs.sh rest,fracback,face MNI152NLin6Asym,fsLR multi,single
 ```
 
 ---
@@ -671,8 +671,7 @@ ASLPREP_QC
 ```
 XCP_QC
 ├── analysis
-├── QCtask-rest_acq-singleband_space-fsLR_desc-qc_bold.csv   #HERE IT IS!
-├── QCtask-rest_acq-singleband_space-MNI152NLin6Asym_desc-qc_res-2_bold.csv #HERE IT IS!
+├── group_level_task-rest_acq-singleband_space-fsLR_desc-qc_bold.csv   #HERE IT IS!
 ├── input_ria
 ├── merge_ds
 └── output_ria
