@@ -650,10 +650,10 @@ Instead, concatenate these single row CSVs into a table, which will contain one 
 $ bash code/concat_outputs.sh
 ```
 ---
-**NOTE:**   For XCP, you will need to supply arguments in the form of all the tasks/spaces/bands you want:
+**NOTE:**   For XCP, you will need to supply arguments in the form of all the tasks/spaces/bands/res you want:
 
 ```
-$ bash code/concat_outputs.sh rest fsLR multi OR comma-separated for multiple arguments, eg: bash code/concat_outputs.sh rest,fracback,face MNI152NLin6Asym,fsLR multi,single
+$ bash code/concat_outputs.sh rest fsLR multi 1 OR comma-separated for multiple arguments, eg: bash code/concat_outputs.sh rest,fracback,face MNI152NLin6Asym,fsLR multi,single 1,2
 ```
 
 ---
