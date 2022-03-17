@@ -181,7 +181,7 @@ You will want a python installation that you have full control over. After loggi
 ```bash
 $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 $ chmod +x Miniconda3-latest-Linux-x86_64.sh
-$ ./Miniconda3-latest-Linux-x86_64.
+$ ./Miniconda3-latest-Linux-x86_64.sh
 ```
 
 You will need to hit Enter to continue and type `yes` to accept the license terms. The default installation location is fine (it will be `$HOME/miniconda3`). Sometimes you will run into a memory error at this step. If this happens, just log out and log back in and the issue should be remediated. This can be avoided in the first place by, when sshing into cubic, logging into `*login4`.
