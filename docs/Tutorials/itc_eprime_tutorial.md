@@ -34,7 +34,7 @@ This is one EPrime file from a scan session for one subject:
 ``` r
 ff$X....Header.Start....[1:50]
 ```
-
+```
  [1] "VersionPersist: 1"                "LevelName: Session"              
  [3] "LevelName: Block"                 "LevelName: Trial"                
  [5] "LevelName: SubTrial"              "LevelName: LogLevel5"            
@@ -60,7 +60,7 @@ ff$X....Header.Start....[1:50]
 [45] "LeftRight: 0"                     ""                                
 [47] ""                                 "FeedbackDur: 0"                  
 [49] ""                                 ""
-
+```
 This is not a very useful representation of data. Fortunately, the
 `rprime` package exists for parsing this file.
 
@@ -72,6 +72,7 @@ library(rprime)
 library(tidyverse) # it pairs well with the tidyverse
 ```
 
+```
 ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
 
 ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
@@ -86,6 +87,7 @@ Warning: package 'dplyr' was built under R version 4.1.2
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 x dplyr::filter() masks stats::filter()
 x dplyr::lag()    masks stats::lag()
+```
 
 It’s straightforward to read in an EPrime file, using the following:
 
@@ -97,7 +99,7 @@ dat <- dat %>%
 preview_frames(dat)
 ```
 
-
+```
  Eprime.Level Running Procedure
             1  Header    Header
 List of 17
@@ -275,6 +277,8 @@ List of 65
  $ Clock.StartTimeOfDay    : chr "4/26/2011 2:30:53 PM"
  - attr(*, "class")= chr [1:2] "EprimeFrame" "list"
 
+```
+
 This creates a more workable data structure. The section with the
 expriment is called the `trial` frame.`rprime` allows you to filter
 these with built-ins:
@@ -292,7 +296,6 @@ trial_df <- to_data_frame(trial) %>%
 head(trial_df)
 ```
 
-<div class="kable-table">
 
 | Eprime.Level | Eprime.LevelName | Eprime.Basename               | Eprime.FrameNumber | Procedure | Running   | Offer | delay | NullDuration | LeftRight | FeedbackDur | Cycle | Sample | nullscreen.OnsetDelay | nullscreen.OnsetTime | nullscreen.DurationError | nullscreen.StartTime | nullscreen.OffsetTime | nullscreen.FinishTime | nullscreen.ActionDelay | nullscreen.ActionTime | nullscreen.OffsetDelay | Choice1.OnsetDelay | Choice1.OnsetTime | Choice1.DurationError | Choice1.Duration | Choice1.StartTime | Choice1.OffsetTime | Choice1.FinishTime | Choice1.OffsetDelay | Choice1.RTTime | Choice1.RT | Choice1.RESP | Choice1.CRESP | FeedbackDisplay6.OnsetDelay | FeedbackDisplay6.OnsetTime | FeedbackDisplay6.DurationError | FeedbackDisplay6.Duration | FeedbackDisplay6.StartTime | FeedbackDisplay6.OffsetTime | FeedbackDisplay6.FinishTime | FeedbackDisplay6.OffsetDelay | Choice.OnsetDelay | Choice.OnsetTime | Choice.DurationError | Choice.Duration | Choice.StartTime | Choice.OffsetTime | Choice.FinishTime | Choice.TargetOffsetTime | Choice.TargetOnsetTime | Choice.OffsetDelay | Choice.RTTime | Choice.RT | Choice.RESP | Choice.CRESP | FeedbackDisplay3.OnsetDelay | FeedbackDisplay3.OnsetTime | FeedbackDisplay3.DurationError | FeedbackDisplay3.Duration | FeedbackDisplay3.StartTime | FeedbackDisplay3.OffsetTime | FeedbackDisplay3.FinishTime | FeedbackDisplay3.TargetOffsetTime | FeedbackDisplay3.TargetOnsetTime | FeedbackDisplay3.OffsetDelay |
 |-------------:|:-----------------|:------------------------------|-------------------:|:----------|:----------|------:|------:|-------------:|----------:|------------:|------:|-------:|----------------------:|---------------------:|-------------------------:|---------------------:|----------------------:|----------------------:|-----------------------:|----------------------:|-----------------------:|-------------------:|------------------:|----------------------:|-----------------:|------------------:|-------------------:|-------------------:|--------------------:|---------------:|-----------:|:-------------|:--------------|----------------------------:|---------------------------:|-------------------------------:|--------------------------:|---------------------------:|----------------------------:|----------------------------:|-----------------------------:|------------------:|-----------------:|---------------------:|----------------:|-----------------:|------------------:|------------------:|------------------------:|-----------------------:|-------------------:|--------------:|----------:|:------------|:-------------|----------------------------:|---------------------------:|-------------------------------:|--------------------------:|---------------------------:|----------------------------:|----------------------------:|----------------------------------:|---------------------------------:|-----------------------------:|
@@ -303,7 +306,6 @@ head(trial_df)
 |            3 | TrialList\_5     | RTG1\_1ITCscanner1LLA-04888-1 |                  6 | TrialProc | TrialList |  25.0 |     7 |         8000 |         0 |         993 |     1 |      5 |                     9 |               150202 |                       -9 |               150201 |                157993 |                157993 |                      0 |                150202 |                      0 |                  0 |            158193 |               -999999 |             4000 |            157994 |             161200 |             161200 |             -999999 |         161200 |       3007 | r            | r             |                           3 |                     161203 |                             -3 |                       993 |                     161202 |                      161993 |                      161993 |                            0 |                 0 |           146193 |                    0 |            4000 |           145994 |            149993 |            149993 |                  149993 |                 146193 |                  0 |             0 |         0 | NA          | r            |                           0 |                     150193 |                            200 |                         0 |                     149995 |                      150193 |                      150193 |                            149993 |                           150193 |                          200 |
 |            3 | TrialList\_6     | RTG1\_1ITCscanner1LLA-04888-1 |                  7 | TrialProc | TrialList |  22.5 |    45 |         2000 |         1 |        1329 |     1 |      6 |                     0 |               162193 |                        0 |               162000 |                163993 |                163993 |                      0 |                162193 |                      0 |                  0 |            158193 |               -999999 |             4000 |            157994 |             161200 |             161200 |             -999999 |         161200 |       3007 | r            | r             |                           3 |                     161203 |                             -3 |                       993 |                     161202 |                      161993 |                      161993 |                            0 |                 0 |           164193 |              -999999 |            4000 |           163994 |            166864 |            166864 |                  167993 |                 164193 |            -999999 |        166864 |      2671 | r           | r            |                           3 |                     166867 |                             -3 |                      1329 |                     166866 |                      167993 |                      167993 |                            167993 |                           166864 |                            0 |
 
-</div>
 
 This is far more useful, as we can see some of the encoded experimental
 variables like `offer`, `delay`, and `choice`.
@@ -482,8 +484,6 @@ trial_df_sv %>%
   head()
 ```
 
-<div class="kable-table">
-
 | onset | duration | response\_time | offer | delay | choice | button\_press | delay\_position |  IA |
 |------:|---------:|---------------:|------:|------:|-------:|--------------:|----------------:|----:|
 |     0 |     4000 |           3880 |  23.0 |    21 |      0 |             0 |               1 |  20 |
@@ -492,8 +492,6 @@ trial_df_sv %>%
 | 43881 |     4000 |           3880 |  39.0 |    34 |     NA |            NA |               0 |  20 |
 | 55881 |     4000 |           3007 |  25.0 |     7 |      1 |             1 |               1 |  20 |
 | 61881 |     4000 |           2671 |  22.5 |    45 |      0 |             1 |               0 |  20 |
-
-</div>
 
 # K Parameter Estimation
 
@@ -530,7 +528,6 @@ final_df %>%
   head(10)
 ```
 
-<div class="kable-table">
 
 |  onset | duration | response\_time | offer | delay | choice | button\_press | delay\_position | subjective\_value |
 |-------:|---------:|---------------:|------:|------:|:-------|:--------------|:----------------|------------------:|
@@ -545,7 +542,6 @@ final_df %>%
 |  94840 |     4000 |           2896 |  31.5 |    68 | 0      | 0             | 1               |          5.401031 |
 | 100840 |     4000 |           3000 |  46.5 |    48 | 1      | 0             | 0               |         10.541879 |
 
-</div>
 
 This procedure is reproduced for the full dataset in
 `/cbica/projects/wolf_satterthwaite_reward/Curation/code/itc_eprime/parse_eprime.Rmd`.

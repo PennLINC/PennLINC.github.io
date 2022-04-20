@@ -28,6 +28,14 @@ have already developed and released the application for _just the backend server
 on their machine and send the pretty graphics to a browser themselves. That's what we're going to do here using singularity
 and SSH port forwarding.
 
+##### Why not just use VSCode Remote?
+
+[VSCode-Remote](https://code.visualstudio.com/docs/remote/remote-overview) is VSCode's built-in shipped method for 
+working on remote servers. It's well documented, and works just fine as is, but our setup on CUBIC makes it challenging
+to use VSCode remote. The main issue is that the remote server it runs can only have access to the first user who logs in,
+which is not how CUBIC's project user setup works. You end up with a VSCode running from your personal user trying to modify and write files or submit jobs for a project user. We've tried setting up [jump hosts](https://www.doc.ic.ac.uk/~nuric/coding/how-to-setup-vs-code-remote-ssh-with-a-jump-host.html),
+[proxy commands](https://stackoverflow.com/questions/57289351/is-it-possible-to-create-a-proxy-in-remote-ssh-visual-studio-code), and brute forcing a user change with [RemoteCommand](https://github.com/microsoft/vscode-remote-release/issues/690) -- none of the methods worked on CUBIC. Code Server is our next best bet.
+
 ### Installation
 
 First, we're going to install the necessary requirements for running the app. So go ahead and log in to CUBIC/PMACS and head to
@@ -37,6 +45,10 @@ First, you'll want to install Node using NVM (Node Version Manager). I'd suggest
 all of this, and download the installation of NVM:
 
 ```shell
+# make sure bashrc is writable
+cd ~
+chmod +w .bashrc
+
 mkdir ~/software && wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
 
