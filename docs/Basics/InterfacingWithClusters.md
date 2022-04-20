@@ -9,172 +9,225 @@ has_toc: true
 # Interfacing with the clusters
 
 ## Prerequisite
-You will need ssh keys set up, a PMACS or CUBIC account (with VPN).
-
-[sshKeys](https://pennlinc.github.io/docs/Basics/sshKeys/)
+You will need [ssh Keys](https://pennlinc.github.io/docs/Basics/sshKeys/) set up, a PMACS or CUBIC account (with VPN).
 
 ## General Principles & Motivation
 
 1. We want to code interactively with zero lag in a format that encourages documenting your code
 2. We want the software and data we are using to be on the cluster, preventing version issues or having to download a test set to your local machine
+3. We want it to cooperate with all of CUBIC's nuances
 3. We want it to be easy!
 
 This means we are going to not use X11 at all. Why? Because running graphics on the cluster, and then having them sent to your local screen, is very laggy and not dependable.
 
-## Remote Development using SSH
+## Code Server
 
-The Visual Studio Code Remote - SSH extension allows you to open a remote folder on any remote machine, virtual machine, or container with a running SSH server and take full advantage of VS Code's feature set. Once connected to a server, you can interact with files and folders anywhere on the remote filesystem.
+There are many viable IDEs for interactive coding, and a very popular/accessible one is [VSCode](https://code.visualstudio.com/). It's packed with features, plugins, and themes that make writing code fun and easy. Internally, it's a nodejs app
+written in React and runs on Chrome, which technically means it's a server. Indeed, a group called [Coder](https://coder.com/)
+have already developed and released the application for _just the backend server_, that users can easily run as an app
+on their machine and send the pretty graphics to a browser themselves. That's what we're going to do here using singularity
+and SSH port forwarding.
 
-No source code needs to be on your local machine to gain these benefits since the extension runs commands and other extensions directly on the remote machine.
+### Installation
 
-![SSH Architecture](https://code.visualstudio.com/assets/docs/remote/ssh/architecture-ssh.png)
+First, we're going to install the necessary requirements for running the app. So go ahead and log in to CUBIC/PMACS and head to
+an appropriate project directory (yes, this works for multiple CUBIC project users) or your user directory.
 
-This lets VS Code provide a local-quality development experience --- including full IntelliSense (completions), code navigation, and debugging --- regardless of where your code is hosted.
+First, you'll want to install Node using NVM (Node Version Manager). I'd suggest creating a `software` directory to manage
+all of this, and download the installation of NVM:
 
-## Download/Install Visual Code Studio
+```shell
+mkdir ~/software && wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
 
-To get started, you need to:
+This post script ensures it's available; copy-paste and run:
+```shell
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
 
-1.  Install [Visual Studio Code](https://code.visualstudio.com/)
+Lastly, exit and re-login to the terminal, and check everything went well with:
 
-2.  Install the [Remote Development extension pack](https://aka.ms/vscode-remote/download/extension).
+```shell
+nvm -v
+```
 
-## Connect to a remote host (CUBIC/PMACS)
+Next, install Node version 14 (the version is important):
 
-To connect to a remote host, CUBICS or PMACS for the first time, follow these steps:
+```shell
+nvm install --lts # install node
+nvm install 14
 
-1.  Verify you can connect to the SSH host by running the following command from a terminal window replacing `user@hostname` as appropriate.
+node -v           # check the version
+```
 
-    ```
-    ssh user@hostname
-    ```
+From here, you can install the underlying `code-server` application:
 
-2.  In VS Code, select Remote-SSH: Connect to Host... from the Command Palette (F1) and use the same `user@hostname` as in step 1.
+```shell
+npm install -g code-server --unsafe-perm # unsafe is necessary on cubic for permissions reasons
+```
 
-    ![Illustration of user@host input box](https://code.visualstudio.com/assets/docs/remote/ssh/ssh-user@box.png)
+At this point, you're ready to run `code-server`, but you can only do it as a
+_service_, and for that we use singularity. Let's set up the necessary singularity image.
 
-3.  If VS Code cannot automatically detect the type of server you are connecting to, you will be asked to select the type manually.
+```shell
+mkdir -p ~/software/singularity_images && cd ~/software/singularity_images
+singularity pull docker://codercom/code-server
+```
 
-    ![Illustration of platform selection](https://code.visualstudio.com/assets/docs/remote/ssh/ssh-select-platform.png)
+That's it! You're ready to code with `code-server`.
 
-    Once you select a platform, it will be stored in [VS Code settings](https://code.visualstudio.com/docs/getstarted/settings) under the `remote.SSH.remotePlatform` property so you can change it at any time.
+### Basic Use of Code Server
 
-4.  After a moment, VS Code will connect to the SSH server and set itself up. VS Code will keep you up-to-date using a progress notification and you can see a detailed log in the `Remote - SSH` output channel.
+You can take a look at the options available for `code-server` really quickly with `singularity exec`:
 
-    > Tip: Connection hanging or failing? See [troubleshooting tips](https://code.visualstudio.com/docs/remote/troubleshooting#_troubleshooting-hanging-or-failing-connections) for information on resolving common problems.
-    >
-    > If you see errors about SSH file permissions, see the section on [Fixing SSH file permission errors](https://code.visualstudio.com/docs/remote/troubleshooting#_fixing-ssh-file-permission-errors).
+```shell
+singularity exec ~/software/singularity_images/code-server_latest.sif code-server -h
+```
 
-5.  After you are connected, you'll be in an empty window. You can always refer to the Status bar to see which host you are connected to.
+What we want to do is start a singularity instance to run the service, and then execute the app
+in that instance. You also want to make sure `code-server` has access to things like CUBIC's tempdir:
 
-    ![SSH Status bar item](https://code.visualstudio.com/assets/docs/remote/ssh/ssh-statusbar.png)
+```shell
+singularity instance start \
+    --bind $PWD,$TMPDIR \
+    ~/software/singularity_images/code-server_latest.sif \
+    my-vscode # You can name the instance anything you want
+```
 
-    Clicking on the Status bar item will provide a list of remote commands while you are connected.
+You can name the instance anything you want; if you're working in a CUBIC project directory
+with multiple users, you can log in to the project user and name your instance with your own
+name to differentiate it from other users. You can always check what singularity instances
+are running with `singularity instance list`.
 
-6.  You can then open any folder or workspace on the remote machine using File > Open... or File > Open Workspace... just as you would locally!
+Now, in that instance, start running code-server:
 
-    ![File Open on a remote SSH host](https://code.visualstudio.com/assets/docs/remote/ssh/ssh-open-folder.png)
+```
+PORT=8767
 
-From here, [install any extensions](https://code.visualstudio.com/docs/remote/ssh#_managing-extensions) you want to use when connected to the host and start editing!
+singularity exec \
+    --bind $PWD,$TMPDIR \
+    instance://my-vscode \
+    code-server \
+    --port $PORT &         # use & so you can run in the background and continue using the shell
 
-> Note: On ARMv7l / ARMv8l `glibc` SSH hosts, some extensions may not work due to x86 compiled native code inside the extension.
+# expect a printout with node runtime
+```
 
-## Disconnect from a remote host
+The `PORT` argument is important; it must be a number of 4-5 digits that is unique to you. The reason
+being that this is the "channel" that your local machine will use to send inputs and outputs back and forth
+to the running singularity instance. So pick one number, and stick with it.
 
-To close the connection when you finish editing files on the remote host, choose File > Close Remote Connection to disconnect from the host. The default configuration does not include a keyboard shortcut for this command. You can also simply exit VS Code to close the remote connection.
+Lastly, open a new terminal window to manage the `PORT` and link it with the same number:
 
-## Opening a terminal on a remote host
+```
+ssh -L localhost:8767:localhost:8767 username@cubic-sattertt # this process must remain 
+                                                             # running so don't `ctrl`+`c` it 
+                                                             # until you're done working
+```
 
-Opening a terminal on the remote host from VS Code is simple. Once connected, any terminal windowyou open in VS Code (Terminal > New Terminal) will automatically run on the remote host rather than locally.
+Now, in your web browser locally, visit `localhost:YOURPORT` (in this example, `localhost:8767`).
+If you see this screen, you're in business:
 
-You can also use the `code` command line from this same terminal window to perform a number of operations such as opening a new file or folder on the remote host. Type `code --help` to see all the options available from the command line.
+<img src="/assets/images/vscode_login.png" alt="login">
 
-![Using the code CLI](https://code.visualstudio.com/assets/docs/remote/ssh/code-command-in-terminal.png)
+To login, go back to your terminal and find the password in the config file and input:
 
+```shell
+cat ~/.config/code-server/config.yaml
+```
+
+Here we are, editing code on CUBIC with the beautiful VSCode IDE:
+
+<img src="/assets/images/vscode_running.png" alt="login">
+
+`code-server` is almost exactly VSCode, so if you want to make the most of this powerful IDE,
+visit [their intro guide](https://code.visualstudio.com/docs/getstarted/tips-and-tricks).
+
+## Caveats & Limitations
+
+1. VSCode has a great interface for git, but will struggle to manage a very large directory that's tracked by
+git; be prepared for it to notify you if you, for example, open a BIDS directory tracked with datalad
+
+2. The integrated terminal is a shell opened by Singularity, so it does not source your `bashrc`/`bash_profile`.
+This means some of your installed command line programs may not be accessible. Keep your normal terminal open alongside
+your `code-server` GUI for best practices. 
+
+3. All users in a project share the same `~/.config/code-server/config.yaml`, so the password is not unique by default. 
+It is possible to deactivate authentication when you start the server with `--auth none`, and it's also possible
+to point to a specific config file with `--config` that you could use to keep your own password (untested).
+
+4. Similarly, with VSCode extensions, it's recommended to store your extensions in a specific directory
+if you expect to share the project directory. You can then point to it with `--user-data-dir` and `--extensions-dir`.
+This is arguably less seamless than [VSCode-Remote](https://code.visualstudio.com/docs/remote/remote-overview) functionality, but we believe this is a better workaround because
+VSCode-Remote is not fully functional in our case.
+
+Speaking of extensions...
 
 ## Basic extensions
 
-To install all the ones we use, run the following command in the Visual Code Studio terminal:
-```sh
-which code && for extension in $(curl -s https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/master/docs/Basics/vs-code-extension-list_mb.txt); do
-code --install-extension $extension
-done || echo "in the vscode command pallet (command + shift + p) search for \"Install code command in 'PATH'\""
+Max put together a great list of extensions [here](https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/master/docs/Basics/vs-code-extension-list_mb.txt); check them out and install them with the Extensions Tab.
+
+For example, with VSPapaya, you can open NIfTIs and DICOMs:
+
+<img src="/assets/images/vspapaya.png" alt="vspapaya">
+
+You get great integration with Git using the Git Extension pack
+
+<img src="/assets/images/vscode_git_tree.png" alt="git">
+
+The most important extension though is how to enable interactive, REPL style programming for active debugging and data
+analysis. We do this with `conda`.
+## REPL (Interactive Programming)
+
+You can code in Jupyter Notebooks right in `code-server`. First, ensure that you have a [conda environment setup](http://pennlinc.github.io/docs/cubic#installing-miniconda-in-your-project-the-hard-way).
+Once you're ready, start up your `code-server` and make sure the [Jupyter extension](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) is installed. Use the command palette (`cmd`+`shift`+`p`) to search for Jupyter interpreters.
+
+<img src="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/OpenCommandPalatte.gif" alt="cmdpalette">
+
+In the command palette, simply type `interpreter`, and select "Jupyter: Select interpreter to start Jupyter server".
+
+If you have `conda` set up correctly, your `code-server` should begin listing what conda environments you have
+and the different versions of Python that are available. Once you've picked one, you can then run/debug a Python file
+in a Jupyter kernel, debug files with the built-in debugger, develop Jupyter notebooks, etc.
+
+<img src="/assets/images/vscode_features.png" alt="all features!">
+
+## Closing the Server
+
+If you disconnect from CUBIC unexpectedly, the process running `code-server` (the `singularity exec`) will be killed, so
+actively running Jupyter kernels will be lost. Generally, though, if the `singularity instance` service is still running,
+unsaved files can still be recovered (always save your work though, of course). To stop the server, find the process _within_ the singularity instance, and kill it:
+
+```shell
+singularity exec instance://my-vscode ps -x
+
+##   PID TTY      STAT   TIME COMMAND
+##     1 ?        Sl     0:00 sinit
+##    16 pts/112  Sl+    0:01 /usr/lib/code-server/lib/node /usr/lib/code-server --port 8767
+##    40 pts/112  Sl+    0:38 /usr/lib/code-server/lib/node /usr/lib/code-server --port 8767
+##    52 pts/112  Sl+    0:00 /usr/lib/code-server/lib/node /usr/lib/code-server/lib/vscode/out/bootstrap-fork --type=ptyHost
+##   700 pts/112  Sl+    0:11 /usr/lib/code-server/lib/node /usr/lib/code-server/lib/vscode/out/bootstrap-fork --type=extensionHost --uriTrans
+##   711 pts/112  Sl+    0:00 /usr/lib/code-server/lib/node /usr/lib/code-server/lib/vscode/out/bootstrap-fork --type=fileWatcher
+##   874 pts/112  Sl+    0:00 /cbica/home/taperat/miniconda3/envs/flywheel/bin/python /cbica/home/taperat/.local/share/code-server/extensions/
+##   886 pts/112  S+     0:00 /cbica/home/taperat/miniconda3/bin/python /cbica/home/taperat/.local/share/code-server/extensions/ms-python.pyth
+##   914 pts/117  Ss     0:00 /bin/bash
+##  1063 pts/117  S+     0:00 /cbica/home/taperat/miniconda3/envs/flywheel/bin/python
+##  1151 pts/112  R+     0:00 /bin/ps -x
+
+singularity exec instance://my-vscode kill 16 # kill the node code-server process
 ```
 
-## Managing other extensions
+If you are happy with your work and your project, and don't plan to come back to it for a while, make sure
+to kill the singularity instance to free up compute resources
 
-VS Code runs extensions in one of two places: locally on the UI / client side, or remotely on the SSH host. While extensions that affect the VS Code UI, like themes and snippets, are installed locally, most extensions will reside on the SSH host. This ensures you have smooth experience and allows you to install any needed extensions for a given workspace on an SSH host from your local machine. This way, you can pick up exactly where you left off, from a different machine complete with your extensions.
-
-If you install an extension from the Extensions view, it will automatically be installed in the correct location. Once installed, you can tell where an extension is installed based on the category grouping.
-
-There will be a category for your remote SSH host:
-
-![Workspace Extension Category](https://code.visualstudio.com/assets/docs/remote/ssh/ssh-installed-remote-indicator.png)
-
-And also a Local - Installed category:
-
-![Local Extension Category](https://code.visualstudio.com/assets/docs/remote/common/local-installed-extensions.png)
-
-
-## "Always installed" extensions
-
-If there are extensions that you would like to always have installed on any SSH host, you can specify which ones using the `remote.SSH.defaultExtensions` property in `settings.json`. For example, if you wanted to install the [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) and [Resource Monitor](https://marketplace.visualstudio.com/items?itemName=mutantdino.resourcemonitor) extensions, specify their extension IDs as follows:
-
+```shell
+singularity instance stop my-vscode
 ```
-"remote.SSH.defaultExtensions": [
-    "eamodio.gitlens",
-    "mutantdino.resourcemonitor"
-]
-```
+## Conclusion
 
-## Debugging on the SSH host
-
-Once you are connected to a remote host, you can use VS Code's debugger in the same way you would when running the application locally. For example, if you select a launch configuration in `launch.json`and start debugging (F5), the application will start on remote host and attach the debugger to it.
-
-See the [debugging](https://code.visualstudio.com/docs/editor/debugging) documentation for details on configuring VS Code's debugging features in `.vscode/launch.json`.
-
-## SSH host-specific settings
-
-VS Code's local User settings are also reused when you are connected to an SSH host. While this keeps your user experience consistent, you may want to vary some of these settings between your local machine and each host. Fortunately, once you have connected to a host, you can also set host-specific settings by running the Preferences: Open Remote Settings command from the Command Palette (F1) or by selecting on the Remote tab in the Settings editor. These will override any User settings you have in place whenever you connect to the host. And Workspace settings will override Remote and User settings.
-
-![Host-specific settings tab](https://code.visualstudio.com/assets/docs/remote/ssh/ssh-settings.png)
-
-## Remember hosts and advanced settings
-
-If you have a set of hosts you use frequently or you need to connect to a host using some additional options, you can add them to a local file that follows the [SSH config file format](https://man7.org/linux/man-pages/man5/ssh_config.5.html).
-
-To make setup easy, the extension can guide you through adding a host without having to hand edit this file.
-
-Start by selecting Remote-SSH: Add New SSH Host... from the Command Palette (F1) or clicking on the Add New icon in the SSH Remote Explorer in the Activity Bar.
-
-![Remote Explorer Add New item](https://code.visualstudio.com/assets/docs/remote/ssh/ssh-explorer-add-new.png)
-
-You'll then be asked to enter the SSH connection information. You can either enter a host name:
-
-![Remote Explorer SSH host input](https://code.visualstudio.com/assets/docs/remote/ssh/ssh-host-input.png)
-
-Or the full `ssh` command you would use to connect to the host from the command line:
-
-![Remote Explorer SSH command input](https://code.visualstudio.com/assets/docs/remote/ssh/ssh-command-input.png)
-
-Finally, you'll be asked to pick a config file to use. You can also set the `"remote.SSH.configFile"`property in your User `settings.json` file if you want to use a different config file than those listed. The extension takes care of the rest!
-
-For example, entering `ssh -i ~/.ssh/id_rsa-remote-ssh yourname@remotehost.yourcompany.com` in the input box would generate this entry:
-
-```
-Host remotehost.yourcompany.com
-    User yourname
-    HostName another-host-fqdn-or-ip-goes-here
-    IdentityFile ~/.ssh/id_rsa-remote-ssh
-
-```
-
-See [Tips and Tricks](https://code.visualstudio.com/docs/remote/troubleshooting#_improving-your-security-with-a-dedicated-key) for details on generating the key shown here. You can manually edit this file with anything the [SSH config file format](https://man7.org/linux/man-pages/man5/ssh_config.5.html) supports, so this is just one example.
-
-From this point forward, the host will appear in the list of hosts when you select Remote-SSH: Connect to Host... from the Command Palette (F1) or in the SSH Targets section of the Remote Explorer.
-
-![SSH targets in the Remote Explorer](https://code.visualstudio.com/assets/docs/remote/ssh/ssh-explorer-connect.png)
-
-The Remote Explorer allows you to both open a new empty window on the remote host or directly open a folder you previously opened. Expand the host and click on the Open Folder icon next to the folder you want to open on the host.
-
-![Remote Explorer open folder](https://code.visualstudio.com/assets/docs/remote/ssh/ssh-explorer-open-folder.png)
+We encourage you to try out interactive programming with `code-server`. It's a great tool for data science that we
+hope you'll take advantage of and customize for your work. If you have any trouble running it, improvements to suggest, or want to share a cool
+workflow or extension, please do so on the slack informatics channel or in our [issues page](https://github.com/PennLINC/PennLINC.github.io/issues). Many thanks to [this blog](https://isaiahtaylor.medium.com/use-vs-code-on-a-supercomputer-15e4cbbb1bc2) for demonstrating
+this first.
