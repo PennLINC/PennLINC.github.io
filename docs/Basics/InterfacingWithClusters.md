@@ -186,6 +186,8 @@ Once you're ready, start up your `code-server` and make sure the [Jupyter extens
 
 <img src="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/OpenCommandPalatte.gif" alt="cmdpalette">
 
+In the command palette, simply type `interpreter`, and select "Jupyter: Select interpreter to start Jupyter server".
+
 If you have `conda` set up correctly, your `code-server` should begin listing what conda environments you have
 and the different versions of Python that are available. Once you've picked one, you can then run/debug a Python file
 in a Jupyter kernel, debug files with the built-in debugger, develop Jupyter notebooks, etc.
