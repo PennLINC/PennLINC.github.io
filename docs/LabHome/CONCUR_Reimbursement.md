@@ -8,16 +8,22 @@ nav_order: 15
 # CONCUR Reimbursement SOP
 For all lab-related expenses that you wish to have reimbursed via the CONCUR system follow the documentation outlined below. If you have a PennKey then you are able to submit reimbursements. NOTE: You have 182 days to submit for reimbursement after a purchase is made.
 
-## Table of contents
-{: .no_toc .text-delta }
+## Steps to Reimbursement: 
+Explanation on how to complete each step is listed below
 
-1. TOC
-{:toc}
+1. Prepare expenditure justification form
+2. Send receipts and expenditure justification to John Hyon for Approval
+3. Once approved submit receipts and expenditure justification via CONCUR
+4. You will receive notice if it has been approved
 
-## Prepping the Expenditure Justification reports
-For each expenditure you must first prepare the standardized Expenditure Justification report and previously approved justification report examples can be found XXXXX. You can copy and paste exact wording from previously approved documents.
 
-### Fill out Expenditure Form
+
+
+## Prepping the Expenditure Justification Reports
+For each expenditure you must first prepare the standardized Expenditure Justification report and previously approved justification report examples can be found on PennBox (you can ask Ted to be shared on the CONCUR folder). You can copy and paste exact wording from previously approved documents. A blank copy of the expenditure justification form can be found [here](https://www.med.upenn.edu/ggeb/assets/user-content/Financial%20Forms/penn-a21-form.pdf).
+
+
+### Fill Out Expenditure Form
 _Project Title_: Fill in the name of the study the expense will be billed to
 
 _Principle Investigator_: Dr. Theodore Satterthwaite
@@ -42,6 +48,7 @@ _Explanation or Cost Allocation and Justification of Expense_: Fill out why the 
 
 _Signature_: Obtain Ted's signature and other necessary approvals (if not being reimbursed back to Ted)
 
+
 ### Approval from Business Administrator, John Hyon
 Send the prepared Expenditure Justification in word document form to John Hyon (Hyon1@pennmedicine.upenn.edu) for approval.
 
@@ -50,15 +57,19 @@ Make sure to also send the receipt for all expenses. The receipt _must include_ 
 John may give you edits, but once the form has been approved you can convert the document to PDF to be uploaded to CONCUR.
 
 
+
+
 ## Submitting report via CONCUR
 Navigate to the [CONCUR website](https://cms.business-services.upenn.edu/penntravel/expense-report.html), click on the "CONCUR" icon, and sign in with your PennKey
+
 
 ### Start Your Report
 - Click _"Start a Report"_ on the top right, which will take you to the _Report Header_ page
 <img src="/assets/images/startareport.png" alt="startareport">
 
+
 ### Complete Report Header
-- _Type of Travel/Reimbursement_: if expense involves travel, you will select either domestic, international, local (<50mi.); any other expense, you will select Non-Travel Expense
+- _Type of Travel/Reimbursement_: if expense involves travel, you will select either domestic, international, local (<50mi.); any other expense, you will select Non-Travel Expense -- (for expenses that include overnight travel -- see "CONCUR Troubleshooting" for more helpful links & per diem)
 - _Country Code_: Whatever country the expenses are from
 - _Report Name_: Create an informative report name
 - _Business Justification_: 1-2 sentences describing the report e.g., “Dr. Satterthwaite traveled to [city] to present data findings at [conference name]. See the expenditure justification report attached for all expenses.”
@@ -66,6 +77,7 @@ Navigate to the [CONCUR website](https://cms.business-services.upenn.edu/penntra
 - _LEAVE EVERYTHING ELSE AS IS_
 - Click _NEXT_ to continue
 <img src="/assets/images/CONCUR_reportheader.png" alt="reportheader">
+
 
 ### CONCUR Report Main Page
 - Select "New Expense" and select the category that best matches your expense
@@ -80,21 +92,35 @@ Navigate to the [CONCUR website](https://cms.business-services.upenn.edu/penntra
 <img src="/assets/images/example concur report.png" alt="examplereport">
 
 
+
+
 ## CONCUR troubleshooting
--  If a concur report is returned, you can find the business administrator's feedback by you can click into the report where you see the listed expenses --> click “details” --> “comments” – this is where approvers will comment if they need additional information or documentation
+-  If a concur report is returned, you can find the business administrator's feedback by clicking into the report where you see the listed expenses --> click “details” --> “comments” – this is where approvers will comment if they need additional information or documentation
     - <img src="/assets/images/Comments.png" alt="comments">
+  
+- Helpful websites for filing overnight travel expenses on CONCUR: (for per diem)
+
+    - **Step 1** set up an itinerary: [https://cms.business-services.upenn.edu/penntravel/images/stories/NUI-TEM_Training/cncrtr%20-%20create%20itinerary%20for%20per%20diem%20-%20nui.pdf](https://cms.business-services.upenn.edu/penntravel/images/stories/NUI-TEM_Training/cncrtr%20-%20create%20itinerary%20for%20per%20diem%20-%20nui.pdf)
+    - **Step 2** enter per diem for meals: [https://cms.business-services.upenn.edu/penntravel/images/stories/NUI-TEM_Training/cncrtr%20-%20enter%20per%20diem%20for%20meals%20-nui.pdf](https://cms.business-services.upenn.edu/penntravel/images/stories/NUI-TEM_Training/cncrtr%20-%20enter%20per%20diem%20for%20meals%20-nui.pdf)
+
 - Helpful websites for filing for reimbursements at UPenn:
     - [http://cms.business-services.upenn.edu/penntravel/about/faqs-and-helpful-information/expense-faqs.html](http://cms.business-services.upenn.edu/penntravel/about/faqs-and-helpful-information/expense-faqs.html)
     - [https://www.concursolutions.com/home.asp](https://www.concursolutions.com/home.asp)
+
 - For further help contact:
     - Sophia Linguiti - sophia.linguiti@pennmedicine.upenn.edu
     - John Hyon (expenditure justification related) - hyon1@pennmedicine.upenn.edu
     - Sharon Lui (concur related) - xgliu@pennmedicine.upenn.edu
+  
 - If you need help and would like another person to be able to view your concur, you can add them as a delegate following the instructions below
+
+
 
 
 ## Assign a delegate
 - Click “Profile” on top right corner --> “Profile Settings” --> “Expense Delegates” --> “add” --> Search by email/name --> make sure to check all the boxes next to the new name (Can prepare, can view receipts, receives emails) --> Click “Save”
+
+
 
 
 ## Purchase Orders (PO)
