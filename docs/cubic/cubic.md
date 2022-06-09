@@ -16,7 +16,7 @@ has_toc: false
 1. TOC
 {:toc}
 
-The cubic cluster is a very powerful set of servers that we can use for computing. Although they are running Linux, familiarity with Linux does not mean that you will be able to effectively use CUBIC. This section details how to get up and running on the CUBIC cluster. In general we now reccomend using [PMACS](https:https://pennlinc.github.io/docs/pmacs) for specific analysis projects, and reserve CUBIC for use as a high-performance compute engine for large batches of containerized jobs that are launched from Flywheel.  However, for specific projects (esp collaborations with CBICA), it may make sense to have your project live on CUBIC.
+The cubic cluster is a very powerful set of servers that we can use for computing. Although they are running Linux, familiarity with Linux does not mean that you will be able to effectively use CUBIC. This section details how to get up and running on the CUBIC cluster. In general we now recommend using [PMACS](https:https://pennlinc.github.io/docs/pmacs) for specific analysis projects, and reserve CUBIC for use as a high-performance compute engine for large batches of containerized jobs that are launched from Flywheel.  However, for specific projects (esp collaborations with CBICA), it may make sense to have your project live on CUBIC.
 
 ## Setting up your account
 
@@ -163,8 +163,7 @@ Additionally, you will want to add the following line to the end of `.bashrc`:
 unset PYTHONPATH
 ```
 
-In order to ensure that the compute nodes source your `.bashrc`, you can use the
-`-V` flag with `qsub`. We also recommend that when you launch a script requiring
+We recommend that when you launch a script requiring
 your `conda` environment and packages, you add `source activate <env>` to the top
 of your script. To change the default installation for a given software
 package, prepend the path to your `$PATH` and source your `.bashrc`:
@@ -174,6 +173,9 @@ echo PATH=/directory/where/your/installation/lives:${PATH} >> ~/.bashrc
 source ~/.bashrc
 ```
 
+## Installing miniconda in your project (The easy way)
+
+For simple use of a Python interpreter managed by `conda`, you can use the installed module(s) like `module load python/anaconda/3`. To install your own version with more customization, follow below.
 ## Installing miniconda in your project (The hard way)
 
 You will want a python installation that you have full control over. After logging in as your project user and changing permission on your `.bashrc` file, you can install miniconda using
@@ -344,63 +346,22 @@ unset PYTHONPATH
 ```
 
 ## Mounting CUBIC on your local machine
-A guide for those who want to mount their cbica project folder on their local machine. This guide uses SSHFS. The first part discusses creating a mountpoint on your machine that matches the directory structure of CUBIC. This is useful because all of you scripts that contain filepaths will work on locally and on the server (very convenient!). If you already have a mountpoint, or prefer to mount somewhere else, you can ignore the first part and skip to the section on mounting using `sshfs`.
 
-### Creating a sensible mount point
+One way to interact with CUBIC files is to _mount_ the server on to your filesystem. This can be useful for quickly moving a small number of files back and forth
+(for example with NIfTIs you want't to view). It's _not_ meant for large file management or version control purposes (see the next section for solutions for those).
 
-1. Create a mount point on your local machine that matches the file path to your project dir on CUBIC (Catalina users, see the note below). Since you are making a dir on root, you need to use `sudo` . You will need to enter your computer password after entering the command.
-Replace `my_project` below with you actual project folder name).
-```bash
-$ sudo mkdir -p /cbica/projects/my_project
+To mount a directory, (on Mac), use the `samba` server along with Mac's built in server connector. Follow this [short link](https://support.apple.com/en-gb/guide/mac-help/mchlp1140/mac#:~:text=Connect%20to%20a%20computer%20or%20server%20by%20entering%20its%20address,Click%20Connect.) to see how; when prompted to
+select a server address, use:
+
 ```
-2. Change the owner of your folder to your local user rather than `root` so that you don't need to use `sudo` to do things with it.
-```bash
-$ sudo chown -R my_username /cbica
+smb://cubic-share.uphs.upenn.edu
 ```
 
-> Note: For Catalina users, with the update to Catalina, you can longer make directories in `/`. Instead, there is a strange tecnique that was introduced to make symbolic links. Here are the steps:
-1. Make a directory in you home dir (or elsewhere if you prefer) that will eventually be symbolically linked to `/`.
-  ```bash
-  $ cd
-  $ mkdir -p cbica/projects/my_project
-  ```
-2. Using a text editor, create a file called `synthetic.conf` and save it in `/etc`. You will need to use `sudo` to make a file in `/etc`; e.g. `sudo vim /etc/synthetic.conf`.
-3. Put the following text in the file. You must use a `tab` rather than space.
-  `cbica	/Users/my_home_folder/cbica`
-4. Restart the computer.
-5. You should now see a dir in the root dir, `/cbica`.
+Along with your CUBIC credentials. This is the most seamless method and will likely have better long term support, but again is mostly useful for opening
+your home directory, and moving a handful of files about. For more demanding file transfers, including moving files to projects, see the next section.
 
-### Mounting CUBIC
-1. Mac users need to download FUSE and SSHFS: https://osxfuse.github.io/ .
-2. Mount ussing `sshfs`
-```bash
-$ sshfs -o defer_permissions username@cubic-sattertt:<my-folder-on-CUBIC> <my-local-folder>
-```
-For example, if you have set up your mount point according to the above guide, your command will be:
-```bash
-$ sshfs -o defer_permissions username@cubic-sattertt:/cbica/projects/my_project /cbica/projects/my_project/
-```
-I recommend putting this command into a script or alias if you need to mount often. E.g. in your `.profile` put:
-`alias mc="sshfs -o defer_permissions username@cubic-sattertt:/cbica/projects/my_project /cbica/projects/my_project/"`
-Now you can simply type `mc` to mount cubic.
-Pro-tip: Follow these instructions to no longer need to type your password: http://www.linuxproblem.org/art_9.html
-
-3. When you are done, unmount. This should ideally be done BEFORE you disconnect from the network to avoid confusing your computer for a few minutes and making the mountpoint temporarily unresponsive.
-
-```bash
-$ cd   # just to make sure we are not inside the mount dir
-$ umount /cbica/projects/my_project
-```
-voilà
-
-If you forget to do this and are on a Mac, you may encounter an issue where you cannot mount or unmount and are prompted with the `Input/output error`. In this case you will need to identify and kill the sshfs process that is stuck. Then you should me able to unmount and remount.
-
-```bash
-$ pgrep -lf sshfs
-$ kill -9 <pid_of_sshfs_process>
-$ sudo umount -f <mounted_dir>
-```
 ## Moving data to and from CUBIC
+
 Because of CUBIC's unique "project user" design, the protocol for moving files to CUBIC is a bit different than on a normal cluster. It is possible to move files to CUBIC by conventional means, or through your mount point, but this can cause annoying permissions issues and is not recommended.
 
 Note that you will need to be within the UPenn infrastructure (i.e. on VPN or on campus) to move files to and from CUBIC.
@@ -492,8 +453,7 @@ CUBIC has:
 
 - 58 TB of RAM
 
-It is suggested to use 20 CPUs per core, with the RAM depending on the size of the jobs. 20 CPUs is suggested as a safe estimate because there are approximately 20 CPUs per node.
-
+Each node has 2CPUs with 16-24 cores.
 ### Specifying CPUs on a node
 
 In order to prevent your jobs from dying without the cluster giving errors or warnings, there are several steps that can be taken:
