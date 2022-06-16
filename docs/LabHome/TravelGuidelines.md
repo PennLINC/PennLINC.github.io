@@ -12,7 +12,7 @@ nav_order: 8
 
 Some general guidelines on conference / travel guidelines for PennLINC team members follow below.   These are general guidelines (not inflexible rules); please contact Ted if further discussion is warranted.   
 
-1.  Trainees/staff have a varying base rate of conference funds available based on their primary funding mechanism.  I will provide travel/conf funds (under certain circumstances) to allow each trainee $2k per year in total domestic travel expenses.  Thus, if you receive $500/year in travel support from your program (e.g., NGG), you would be eligible for up to $1500 in additional annual support from me.
+1.  Trainees/staff have a varying base rate of conference funds available based on their primary funding mechanism.  I will provide travel/conf funds  to allow each trainee $2k per year in total domestic travel expenses. 
 
 2.  To receive travel support, one must have an accepted first-author poster or talk that has _not previously been presented_.  Re-presentation of a project is usually not contrary to conference rules, but is (usually) not eligible for travel funds. 
 
