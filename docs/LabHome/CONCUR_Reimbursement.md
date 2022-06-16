@@ -6,21 +6,26 @@ nav_order: 15
 ---
 
 # CONCUR Reimbursement SOP
-For all lab-related expenses that you wish to have reimbursed via the CONCUR system follow the documentation outlined below. If you have a PennKey then you are able to submit reimbursements. NOTE: You have 182 days to submit for reimbursement after a purchase is made.
+Reimbursement for expenses (typically: conference travel) is one of the most administratively demanding tasks in the lab. The goal of this wiki (created by Sophia Linguiti and now maintained by Lia Brodrick) is to make this processess as efficient as possible and reduce headaches. Nonetheless, there are many compliance requirements and as such it is strongly reccomended that this instructions are closely adhered to.  If there are aspects that need clarification please contact Lia Brodrick (cc Ted) so we can keep this wiki up to date.
 
-## Steps to Reimbursement: 
+For all lab-related expenses that you wish to have reimbursed via the CONCUR system follow the documentation outlined below. If you have a PennKey then you are able to submit reimbursements.  It is _essential_ that this be done in a timely manner; Penn policy prohibits reimbursements after 6 months.  Please submit expenses immediately after they are incurred and allow for a lengthy administrative review process.
+
+Note that questions regarding reimbursement can be posted to the #concur slack channel to preserve knowledge over time.
+
+For allowable expenses and funding for travel, please see the [travel guidelines wiki](https://pennlinc.github.io/docs/LabHome/TravelGuidelines/).
+
+
+## Overview of Steps to Reimbursement: 
 Explanation on how to complete each step is listed below
 
 1. Prepare expenditure justification form
-2. Send receipts and expenditure justification to John Hyon for Approval
-3. Once approved submit receipts and expenditure justification via CONCUR
-4. You will receive notice if it has been approved
-
-
+2. Send receipts and expenditure justification to Sharon Liu and John Hyon for pre-review
+3. Incorporate feedback and submit receipts and expenditure justification via CONCUR
+4. You will receive notice if it has been approved via email
 
 
 ## Prepping the Expenditure Justification Reports
-For each expenditure you must first prepare the standardized Expenditure Justification report and previously approved justification report examples can be found on PennBox (you can ask Ted to be shared on the CONCUR folder). You can copy and paste exact wording from previously approved documents. A blank copy of the expenditure justification form can be found [here](https://www.med.upenn.edu/ggeb/assets/user-content/Financial%20Forms/penn-a21-form.pdf).
+For each expenditure you must first prepare the standardized Expenditure Justification report.   It is STRONGLY encouraged to use a previously approved justification report examples to avoid multiple rounds of rejection and revision.   Prior examples can be found on PennBox (you can ask Lia to be shared on the CONCUR folder). It is encouraged to retain as much wording from previously approved documents as possible while maintaining accuracy. A blank copy of the expenditure justification form can be found [here](https://www.med.upenn.edu/ggeb/assets/user-content/Financial%20Forms/penn-a21-form.pdf).
 
 
 ### Fill Out Expenditure Form
@@ -28,7 +33,7 @@ _Project Title_: Fill in the name of the study the expense will be billed to
 
 _Principle Investigator_: Dr. Theodore Satterthwaite
 
-_Project/Grant Number_: Nickname for project/Sponsor
+_Project/Grant Number_: Nickname for project/Sponsor.  Please ask Ted what fund to use; Lia (and John/Sharon) will have the exact grant numbers to specify.
 
 _Funding Source_: See the above funding sources listed above in brackets for Ted's current projects. You can always ask John Hyon if you are unsure of the funding source number.
 
@@ -38,18 +43,17 @@ _Amount of Expense_: Total amount requesting reimbursement, itemize if necessary
 
 _Date of Expense_: Date that the transaction occurred
 
-_Explanation or Cost Allocation and Justification of Expense_: Fill out why the expense was necessary. See examples.
+_Explanation or Cost Allocation and Justification of Expense_: Fill out why the expense was necessary. See examples and modify as needed.
 
-_Signature_: Obtain Ted's signature and other necessary approvals (if not being reimbursed back to Ted)
+_Signature_: Obtain Ted's signature (or PI of grant if not Ted)
 
 
 ### Approval from Business Administrator, John Hyon
-Send the prepared Expenditure Justification in word document form to John Hyon (Hyon1@pennmedicine.upenn.edu) for approval.
+Send the prepared Expenditure Justification in word document form to both Sharon Liu (xgliu@pennmedicine.upenn.edu) and John Hyon (Hyon1@pennmedicine.upenn.edu) for pre-review BEFORE submitting via concur.  Please cc Ted and Lia on all emails regareding reimbursement. 
 
-Make sure to also send the receipt for all expenses. The receipt _must include_ the confirmation of payment (not just the invoice), how the payment was made (typically last 4 digits of the card listed on receipt), each expense itemized, the total amount paid, and the date the payment was completed.
+Make sure to also send the receipt for all expenses. The receipt _must include_ the confirmation of payment (not just the invoice), how the payment was made (typically last 4 digits of the card listed on receipt), each expense itemized, the total amount paid, and the date the payment was completed.  Alcohol is never an allowable expense.
 
-John may give you edits, but once the form has been approved you can convert the document to PDF to be uploaded to CONCUR.
-
+Sharon and John may give you edits, but once the form has been approved you can convert the document to PDF to be uploaded to CONCUR.
 
 
 
@@ -111,7 +115,7 @@ Navigate to the [CONCUR website](https://cms.business-services.upenn.edu/penntra
 
 
 
-## Assign a delegate
+## How to Assign a delegate
 - Click “Profile” on top right corner --> “Profile Settings” --> “Expense Delegates” --> “add” --> Search by email/name --> make sure to check all the boxes next to the new name (Can prepare, can view receipts, receives emails) --> Click “Save”
 
 
