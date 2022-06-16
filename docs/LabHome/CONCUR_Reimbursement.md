@@ -30,12 +30,6 @@ _Principle Investigator_: Dr. Theodore Satterthwaite
 
 _Project/Grant Number_: Nickname for project/Sponsor
 
-- ACTTION Grant [400-4425-4-573869-xxxx-2810-3435]
-- BigDev (Reproducible Brain Chart) = 1R01 MH120482 [400-4425-4-573811-xxxx-2810-3435]
-- BPD Gift fund [400-4425-1-604076-xxxx-2000-3435]
-- Executive Function = NIMH - R01MH113550 [400-4425-4-574248-xxxx-2810-3435]
-- Ted's SOM Account [400-4425-2-014001-xxxx-2000-3435]
-
 _Funding Source_: See the above funding sources listed above in brackets for Ted's current projects. You can always ask John Hyon if you are unsure of the funding source number.
 
 _Description of Expense_: Brief description including how the expense was paid for and to which vendor. (ex. To reimburse Dr. Satterthwaite for monthly subscription to CircleCI vendor for data management)
