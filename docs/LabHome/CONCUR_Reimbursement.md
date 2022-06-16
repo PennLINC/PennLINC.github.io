@@ -33,9 +33,9 @@ _Project Title_: Fill in the name of the study the expense will be billed to
 
 _Principle Investigator_: Dr. Theodore Satterthwaite
 
-_Project/Grant Number_: Nickname for project/Sponsor.  Please ask Ted what fund to use; Lia (and John/Sharon) will have the exact grant numbers to specify.
+_Project/Grant Number_: This is the funding nickname for project/Sponsor. Please ask Ted what fund to use.
 
-_Funding Source_: See the above funding sources listed above in brackets for Ted's current projects. You can always ask John Hyon if you are unsure of the funding source number.
+_Funding Source_: This is a 26 digit budget code.  Lia has these.   You can always ask John Hyon if you are unsure of the funding source number.
 
 _Description of Expense_: Brief description including how the expense was paid for and to which vendor. (ex. To reimburse Dr. Satterthwaite for monthly subscription to CircleCI vendor for data management)
 
