@@ -5,9 +5,14 @@ parent: Lab Basics
 nav_order: 7
 ---
 
-# A Note on Communication and Collaboration
+# Lab Noise, Communication, and Collaboration
 
-All of our work is highly collaborative, and collaboration is oftentimes what makes science fun.  Several basic notes follow below, which of course cannot even scratch the surface of what can both right and wrong in a scientific collaboration.     In general, we strive for clear and constructive communication that helps us all do better science and enjoy our work.  While the lab is a relatively  informal environment, mutual respect, professionalism, and supporting each other (broadly, as humans) is essential. Please reach out to Ted anytime and suggest updates to this pages as other important situations arise.
+All of our work is highly collaborative, and collaboration is oftentimes what makes science fun.  Several basic notes follow below, which of course cannot even scratch the surface of what can both right and wrong in a scientific collaboration.     In general, we strive for clear and constructive communication that helps us all do better science and enjoy our work.  While the lab is a relatively  informal environment, mutual respect, professionalism, and supporting each other (broadly, as humans) is essential. Because of the open floorplan, being quite attuned to noise and volume is important for everyone's work environment.  Please reach out to Ted anytime and suggest updates to this pages as other important situations arise.
+
+### Lab Noise
+
+We try to maintain an environment conducive to focused work (coding/writing) in the open space in the pod.  In the open space, conversations should always use quiet voices.  For anything beyond a brief exchange (inc zoom calls), an office or the common area should be used. Ted's office can always be used for meetings or conversations when it is not already in use.   It is encouraged that we nicely remind each others of this-- regardless of relative seniority/position-- and strive for a practice of thanking the person who is providing the necessary reminder. Note that the soundproofing in the office spaces are not superb either and some volume control is needed even behind a closed door.  
+
 
 ### Modes of correspondence
 
