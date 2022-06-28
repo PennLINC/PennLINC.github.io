@@ -25,7 +25,7 @@ Explanation on how to complete each step is listed below
 
 
 ## Prepping the Expenditure Justification Reports
-For each expenditure you must first prepare the standardized Expenditure Justification report.   It is STRONGLY encouraged to use a previously approved justification report examples to avoid multiple rounds of rejection and revision.   Prior examples can be found on PennBox (you can ask Lia to be shared on the CONCUR folder). It is encouraged to retain as much wording from previously approved documents as possible while maintaining accuracy. A blank copy of the expenditure justification form can be found [here](https://www.med.upenn.edu/ggeb/assets/user-content/Financial%20Forms/penn-a21-form.pdf).
+For each expenditure you must first prepare the standardized Expenditure Justification report.   It is STRONGLY encouraged to use a previously approved justification report examples to avoid multiple rounds of rejection and revision.   Prior examples can be found on PennBox (you can ask Lia to be shared on the CONCUR folder). It is encouraged to retain as much wording from previously approved documents as possible while maintaining accuracy. A blank copy of the expenditure justification form can be found [here](https://www.med.upenn.edu/ggeb/assets/user-content/Financial%20Forms/penn-a21-form.pdf), but again editing apreviously-approved example is far preferred to starting from a blank copy.  
 
 
 ### Fill Out Expenditure Form
@@ -43,13 +43,14 @@ _Amount of Expense_: Total amount requesting reimbursement, itemize if necessary
 
 _Date of Expense_: Date that the transaction occurred
 
-_Explanation or Cost Allocation and Justification of Expense_: Fill out why the expense was necessary. See examples and modify as needed.
+_Explanation or Cost Allocation and Justification of Expense_: Fill out why the expense was necessary. See examples and modify as needed.  For travel it is essential to include the phrase "present research data" in the justification.
 
 _Signature_: Obtain Ted's signature (or PI of grant if not Ted)
 
+NOTE:  If you are unsure about this step definately feel free to review this form with Ted and Lia before sending this to Sharon and John (see below)
 
-### Approval from Business Administrator, John Hyon
-Send the prepared Expenditure Justification in word document form to both Sharon Liu (xgliu@pennmedicine.upenn.edu) and John Hyon (Hyon1@pennmedicine.upenn.edu) for pre-review BEFORE submitting via concur.  Please cc Ted and Lia on all emails regareding reimbursement. 
+### Approval from Business Administrators
+Send the prepared Expenditure Justification in word document form to both Sharon Liu (xgliu@pennmedicine.upenn.edu) and John Hyon (Hyon1@pennmedicine.upenn.edu) for pre-review BEFORE submitting via concur. Please cc Ted and Lia on all emails regareding reimbursement. Note that Sharon and John are EXTREMELY busy and we try to limit asking them lots of q's if possible-- please ask q's on the #concur slack channel first. 
 
 Make sure to also send the receipt for all expenses. The receipt _must include_ the confirmation of payment (not just the invoice), how the payment was made (typically last 4 digits of the card listed on receipt), each expense itemized, the total amount paid, and the date the payment was completed.  Alcohol is never an allowable expense.
 
