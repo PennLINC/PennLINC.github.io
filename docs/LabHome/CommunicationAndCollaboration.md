@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Communication and Collaboration
+title: Lab Noise, Communication, and Collaboration
 parent: Lab Basics
 nav_order: 7
 ---
