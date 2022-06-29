@@ -130,7 +130,7 @@ We are excited to share with you and get your feedback on `Manuscript Title`. Ma
  
 We ask that you submit your feedback in the next 14 days. Once we have integrated your feedback, we will submit this a preprint (to BioRxiv) and then to `Journal X`.  If more time is needed, please just reach out and let us know.
 
-Here is the link to the manuscript {insert link}; again, please switch to "Suggesting" mode to track changes. ```
+Here is the link to the manuscript {insert link}; again, please switch to "Suggesting" mode to track changes.```
 
 
 We usually allow ~1-2 weeks for co-authors to provide feedback on a paper.  For those who do not reply in the specified window, usually the faculty lead will send a reminder email.  For papers with many authors, consider distributing the paper as a google doc; this will make the process of integrating co-author changes much less painful.  When sending co-authors the paper as a google doc, just be explicit that they are to track changes using the "suggesting" mode (screenshots are helpful to include).
