@@ -100,7 +100,7 @@ In general, the workflow ted prefers is below.  While a given step is "on Ted's 
 5) Introduction
 6) Discussion
 
-In general our papers tend to have a lot of co-authors so writing the paper in either a google doc OR microsoft word online is suggested.
+In general our papers tend to have a lot of co-authors so writing the paper in either a google doc OR microsoft word online is suggested. This will make the process of integrating co-author changes much less painful.  
 
 
 ### 16)	Polish text with faculty mentor
@@ -109,9 +109,11 @@ Experience suggests that the number of draft iterations is one of the dominant f
 
 ### 17)	Send to co-authors and integrate feedback
 
-Once you and Ted sign off on a draft, it is time to send it to co-authors. Here is an example email-- there are several key elements including target journal, timeline, funding acknolwedgments, conflict of interest / disclosures, and written approval:
+Once you and Ted sign off on a draft, it is time to send it to co-authors. Here is an example email-- there are several key elements including target journal, timeline, funding acknolwedgments, conflict of interest / disclosures, and written approval.  When sending co-authors the paper as a google doc, just be explicit that they are to track changes using the "suggesting" mode (screenshots are helpful to include!).
 
-```Hi everyone!
+```
+
+Hi everyone!
 
  
 We are excited to share with you and get your feedback on `Manuscript Title`. Many thanks to everyone for the huge collaborative effort here.   Given the many contributors, we are distributing this manuscript as a google doc to help with version control. We kindly ask for your effort on several things:
@@ -130,10 +132,10 @@ We are excited to share with you and get your feedback on `Manuscript Title`. Ma
  
 We ask that you submit your feedback in the next 14 days. Once we have integrated your feedback, we will submit this a preprint (to BioRxiv) and then to `Journal X`.  If more time is needed, please just reach out and let us know.
 
-Here is the link to the manuscript {insert link}; again, please switch to "Suggesting" mode to track changes.```
+Here is the link to the manuscript {insert link}; again, please switch to "Suggesting" mode to track changes.
+```
 
-
-We usually allow ~1-2 weeks for co-authors to provide feedback on a paper.  For those who do not reply in the specified window, usually the faculty lead will send a reminder email.  For papers with many authors, consider distributing the paper as a google doc; this will make the process of integrating co-author changes much less painful.  When sending co-authors the paper as a google doc, just be explicit that they are to track changes using the "suggesting" mode (screenshots are helpful to include).
+We usually allow ~1-2 weeks for co-authors to provide feedback on a paper.  For those who do not reply in the specified window, usually the faculty lead will send a reminder email.  
 
 
 ### 18)	Submit paper, code, & post on a preprint server
