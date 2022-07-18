@@ -32,7 +32,7 @@ For most of our use, you want to clone the _output_ of a specific pipeline -- th
 
 ```shell
 #cloning from an output ria of an fmriprep run
-datalad clone --reckless ephemeral ria+file:///PATH_TO_FMRIPREP_DATASET/output_ria#~data fmriprep_outputs
+datalad clone ria+file:///PATH_TO_FMRIPREP_DATASET/output_ria#~data fmriprep_outputs
 ```
 
 If the person is happy with this format and working with `datalad`, they can use this command to get the cloned data. 
@@ -43,7 +43,8 @@ If they want regular files with no `datalad` tracking involved, they can then us
 
 ```shell
 # YOU clone from an output ria of an fmriprep run
-datalad clone --reckless ephemeral ria+file:///PATH_TO_FMRIPREP_DATASET/output_ria#~data fmriprep_outputs
+datalad clone ria+file:///PATH_TO_FMRIPREP_DATASET/output_ria#~data fmriprep_outputs
+datalad get .
 
 # THEY extract the data from this output RIA as regular files
 rsync -avzhL --progress fmriprep_outputs FINAL_DESTINATION
