@@ -410,10 +410,20 @@ To install R in your desired directory, follow the following steps.
    ```bash
     $ module load gcc/version-number
    ```
+   
+   To run R:
+   ```bash
+   $ module load R
+   $ R
+   ```
+   
 
-2. You can install any R-packages of your choice. It require adding library path in `.Rprofile` . For example.
+2. You can install any R-packages of your choice. It requires adding library path in `.Rprofile` . You also need to specify the base URL(s) of the repositories to use, e.g., the URL of a CRAN mirror. 
+
     ```R
-       .libPaths('/cbica/home/username/R`)
+       .libPaths('/cbica/home/username/Rlibs`)
+       install.packages("package_name", repos='http://cran.us.r-project.org', lib='/cbica/home/username/Rlibs') 
+       library(package_name, lib.loc="/cbica/home/username/Rlibs")
     ```
     You can have more than one R-packages directory.
 3. You can also use r-studio on CUBIC  by simply load rstudio using `module`.
@@ -429,7 +439,7 @@ the neuroR container on [docker hub](https://hub.docker.com/r/pennsive/neuror) h
 ```sh
 module load neuroR/0.2.0 # will load R 4.1
 ```
-2. R Studio (with the same neuroimaging packages as neuroR) is also available on docker hub, but not as an environment module, so you need to pull it yourself before running it:
+1. R Studio (with the same neuroimaging packages as neuroR) is also available on docker hub, but not as an environment module, so you need to pull it yourself before running it:
 ```sh
 singularity pull docker://pennsive/rstudio:4.1
 # see https://sylabs.io/guides/3.0/user-guide/running_services.html for more on running services in singularity
@@ -442,6 +452,18 @@ SINGULARITYENV_PORT=$PORT singularity run instance://my-running-rstudio
 singularity instance list
 singularity instance stop --all
 ```
+
+If you are working with large amounts of data, you may want to submit a job in R. Make sure the packages you need in you Rscript are installed properly and remember to specify 'lib.loc' when loading libraries in your .R file. Write your bash script:
+```sh
+#!/bin/bash
+Rscript --save /cbica/projects/project_name/script_name.R 
+```
+And submit your job, for example: 
+
+```sh
+qsub -l h_vmem=25G,s_vmem=24G bash_script.sh
+```
+ 
 
 ## CPUs, Nodes, & Memory
 
