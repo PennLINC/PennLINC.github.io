@@ -405,43 +405,102 @@ To install R in your desired directory, follow the following steps.
    ```bash
     echo export PATH="$HOME/R/bin:$PATH" >> .bash_profile or .bashrc # add R to bash
    ```
+   To run R:
+   ```bash
+   $ module load R
+   $ R
+   ```
 
     >You can load higher version of `gcc` compiler if required for some R version.
    ```bash
     $ module load gcc/version-number
    ```
 
-2. You can install any R-packages of your choice. It require adding library path in `.Rprofile` . For example.
+2. You can install any R-packages of your choice. It require adding library path in `.Rprofile` . You also may need to specify the base URL(s) of the repositories to use. Furthermore, you should specific lib.loc when loading packages.
     ```R
-       .libPaths('/cbica/home/username/R`)
+       .libPaths('/cbica/home/username/Rlibs`)
+       install.packages("package_name", repos='http://cran.us.r-project.org', lib='/cbica/home/username/Rlibs') 
+       library(package_name, lib.loc="/cbica/home/username/Rlibs")
+
     ```
     You can have more than one R-packages directory.
+    
 3. You can also use r-studio on CUBIC  by simply load rstudio using `module`.
 
      ```bash
       $ module load R-studio/1.1.456
       $ rstudio & # enjoy the R and Rstudio, it works
      ```
+4. If you are working with large amounts of data, you may want to submit a job in R. Make sure the packages you need in you Rscript are installed properly and remember to specify 'lib.loc' when loading libraries in your .R file. Write your bash script:
+      ```sh
+      #!/bin/bash
+      Rscript --save /cbica/projects/project_name/script_name.R 
+      ```
 
+And submit your job, for example: 
+      ```sh
+      qsub -l h_vmem=25G,s_vmem=24G bash_script.sh
+      ```
+ 
 Alternatively, you can use containers:
 
 the neuroR container on [docker hub](https://hub.docker.com/r/pennsive/neuror) has R and many neuroimaging packages installed, which is also available as an environment module on CUBIC:
 ```sh
 module load neuroR/0.2.0 # will load R 4.1
 ```
-2. R Studio (with the same neuroimaging packages as neuroR) is also available on docker hub, but not as an environment module, so you need to pull it yourself before running it:
-```sh
-singularity pull docker://pennsive/rstudio:4.1
-# see https://sylabs.io/guides/3.0/user-guide/running_services.html for more on running services in singularity
-# command follows format:
-# [command]                                                     [image]           [name of instance]
-singularity instance start -e -B $TMPDIR:/var -B $HOME:/root    rstudio_4.1.sif   my-running-rstudio
-# $PORT must be the number you used to create the ssh tunnel, e.g. ssh -q -L${PORT}:127.0.0.1:${PORT} user@cubic-sattertt
-SINGULARITYENV_PORT=$PORT singularity run instance://my-running-rstudio
-# other singularity service commands:
-singularity instance list
-singularity instance stop --all
+ 
+### Set up and run RStudio instance  
+
+Use this script to set up and run a simple RStudio instance on the cluster. This method of using RStudio with cubic is highly recommended. 
+
+Usage:
+
+0. Log in to the cluster with a port forwarding number. This number must be unique and not shared with anyone (especially important if there are multiple users on a project user). Note that you pick this port forwarding number (i.e. 1337).
+
+```shell
+ssh -L localhost:<PORTNUMBER>:localhost:<PORTNUMBER> username@clusterip
 ```
+
+If you're on PMACS, please make sure to log in *twice*; once onto `sciget` (as above), and then once more onto the singularity enabled node:
+
+```shell
+ssh -L localhost:<PORTNUMBER>:localhost:<PORTNUMBER> singularity01
+```
+
+1. Get a compatible singularity image with `rserver` installed
+
+```shell
+singularity pull --name singularity-rstudio.simg shub://nickjer/singularity-rstudio
+```
+
+2. Clone this repository in an appropriate location in your project
+
+```shell
+git clone https://github.com/PennLINC/pennlinc_rstudio.git
+```
+
+3. Go to the directory and run the script with your image and port number as input
+
+```shell
+cd pennlinc_rstudio
+./startup_rstudio.sh <PATH/TO/SINGULARITY/IMAGE.simg> <PORTNUMBER> 
+```
+
+4. Visit this address in a web browser:
+
+```
+localhost:<PORTNUMBER>
+```
+
+By default, it uses the `rocker:tidyverse` base image (we will install neuroimaging packages in future).
+
+Side effects:
+
+- The script will create an authorisation key with `uuid` in the user's `$HOME/tmp` directory if it does not exist; this also applies to the project user on CUBIC
+- The Singularity instance will remain running unless explicitly stopped with `singularity instance stop`
+- R package installations are made to the user's local R location unless explicitly changed.
+- Be aware of login nodes on CUBIC -- if you start an RStudio instance with port X on login node 1, and are unexpectedly disconnected from the cluster, that port may be blocked until you can stop the instance on login node 1
+
 
 ## CPUs, Nodes, & Memory
 
