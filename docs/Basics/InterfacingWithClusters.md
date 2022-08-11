@@ -80,6 +80,14 @@ From here, you can install the underlying `code-server` application:
 npm install -g code-server --unsafe-perm # unsafe is necessary on cubic for permissions reasons
 ```
 
+If there is error message from above command, try these instead:
+
+```shell
+npm install -g yarn
+yarn add code-server
+```
+
+
 At this point, you're ready to run `code-server`, but you can only do it as a
 _service_, and for that we use singularity. Let's set up the necessary singularity image.
 
