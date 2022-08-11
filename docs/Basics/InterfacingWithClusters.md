@@ -38,6 +38,11 @@ which is not how CUBIC's project user setup works. You end up with a VSCode runn
 
 ### Installation
 
+Before doing any installation or running any singularity image, please make sure you are using as a project user:
+```shell
+sudo -u <project_username> sudosh
+```
+
 First, we're going to install the necessary requirements for running the app. So go ahead and log in to CUBIC/PMACS and head to
 an appropriate project directory (yes, this works for multiple CUBIC project users) or your user directory.
 
@@ -79,6 +84,14 @@ From here, you can install the underlying `code-server` application:
 ```shell
 npm install -g code-server --unsafe-perm # unsafe is necessary on cubic for permissions reasons
 ```
+
+If there is error message from above command, try these instead:
+
+```shell
+npm install -g yarn
+yarn add code-server
+```
+
 
 At this point, you're ready to run `code-server`, but you can only do it as a
 _service_, and for that we use singularity. Let's set up the necessary singularity image.
@@ -134,9 +147,9 @@ to the running singularity instance. So pick one number, and stick with it.
 Lastly, open a new terminal window to manage the `PORT` and link it with the same number:
 
 ```
-ssh -L localhost:8767:localhost:8767 username@cubic-sattertt # this process must remain 
-                                                             # running so don't `ctrl`+`c` it 
-                                                             # until you're done working
+ssh -L localhost:8767:localhost:8767 <username>@cubic-sattertt    # change <username> to your cubic username
+
+# this process must remain running so don't `ctrl`+`c` it until you're done working
 ```
 
 Now, in your web browser locally, visit `localhost:YOURPORT` (in this example, `localhost:8767`).
@@ -147,12 +160,17 @@ If you see this screen, you're in business:
 To login, go back to your terminal and find the password in the config file and input:
 
 ```shell
+# please first make sure you have logged in as cubic project user, instead of personal user (as the config.yaml is saved in project user folder):
+# sudo -u <project_username> sudosh
+
 cat ~/.config/code-server/config.yaml
 ```
 
 Here we are, editing code on CUBIC with the beautiful VSCode IDE:
 
 <img src="/assets/images/vscode_running.png" alt="login">
+
+Let's confirm that you are a project user (instead of using your personal account): Open a terminal (click icon at the corner of top left -> Terminal --> New Terminal), type `whoami`. You should see the project user name, instead of your personal username. This is very important - otherwise, you're editing the files using your personal account, and creating potential permission issues.
 
 `code-server` is almost exactly VSCode, so if you want to make the most of this powerful IDE,
 visit [their intro guide](https://code.visualstudio.com/docs/getstarted/tips-and-tricks).
