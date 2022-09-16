@@ -3,7 +3,7 @@ layout: default
 title: Current Projects
 has_children: false
 has_toc: false
-nav_order: 10
+nav_order: 11
 ---
 
 # Current Projects in the Lab

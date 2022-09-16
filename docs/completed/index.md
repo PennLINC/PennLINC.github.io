@@ -3,7 +3,7 @@ layout: default
 title: Completed Projects & Studies
 has_children: false
 has_toc: false
-nav_order: 12
+nav_order: 14
 ---
 
 # Completed Projects & Studies
