@@ -17,7 +17,8 @@ PennLINC sits within the [Neurodevelopment and Psychosis Section](https://www.me
 
 ## PennLINC welcome coffees
 
-Simply put: If we don't know each other we miss out.  We miss out on opportunities for collaaboration, inter-personal connection, fun, and a richer community. While this usually happens organically -- lab meetings, happy hours, unscheduled intreactions -- basic practices also help. Whenever a new team member joins PennLINC, it is expected that within the first few months of their time in the lab that *every* existing team member reach out to them to scheudle a "welcome coffee". This doesn't have to actually invovle cofffee, but should allow for at least 30 min to get to know each other.  There are many things we can't control in the world, but we *can* create a friendly, welcoming, and collaborative environment here.
+Simply put: If we don't know each other we miss out.  We miss out on opportunities for collaboration, inter-personal connection, fun, and a richer community. While this usually happens organically -- lab meetings, happy hours, unscheduled interactions -- basic practices also help. Whenever a new team member joins PennLINC, it is expected that within the first few months of their time in the lab that *every* existing team member reach out to them to schedule a "welcome coffee". This doesn't have to actually involve coffee, but should allow for at least 30+ min to get to know each other.  There are many things we can't control in the world, but we *can* create a friendly, welcoming, and collaborative environment here.
+
 
 ## PennLINC systems onboarding
 
