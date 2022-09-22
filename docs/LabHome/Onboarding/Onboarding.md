@@ -15,9 +15,13 @@ This page is geared for new lab members soon after they arrive. Below is a check
 
 PennLINC sits within the [Neurodevelopment and Psychosis Section](https://www.med.upenn.edu/bbl/) of the [Department of Psychiatry](https://www.med.upenn.edu/psychiatry/). As such, there is are several section-level onboarding steps that are detailed [here](https://wiki.pmacs.upenn.edu/neuropsych/index.php/Administrative). Note that this page requires PennKey access; getting a PennKey and other initial tasks are coordinated by Stace Moore (stacem@pennmedicine.upenn.edu) as the primary personnel liaison  for the section.
 
-## PennLINC onboarding
+## PennLINC welcome coffees
 
-Once general section-level onboarding is complete (especially  CITI/HIPPA training), several systems are needed to function effectively.  Tinashe Tapera, our senior data analyst, can provide access to some of these systems, including:
+Simply put: If we don't know each other we miss out.  We miss out on opportunities for collaaboration, inter-personal connection, fun, and a richer community. While this usually happens organically -- lab meetings, happy hours, unscheduled intreactions -- basic practices also help. Whenever a new team member joins PennLINC, it is expected that within the first few months of their time in the lab that *every* existing team member reach out to them to scheudle a "welcome coffee". This doesn't have to actually invovle cofffee, but should allow for at least 30 min to get to know each other.  There are many things we can't control in the world, but we *can* create a friendly, welcoming, and collaborative environment here.
+
+## PennLINC systems onboarding
+
+Once general section-level onboarding is complete (especially  CITI/HIPPA training), several systems are needed to function effectively.  These include:
 
 [Slack](pennbbl.slack.com): Our primary means of communication as a team.  However, also read the page on [communication and collaboration](https://pennlinc.github.io/docs/LabHome/CommunicationAndCollaboration/).
 
