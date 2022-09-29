@@ -49,10 +49,15 @@ In general, the biggest constraint we all face is _time_.  As such, one thing th
 A couple general tips follow below.  In general, the rule of thumb is "talk to your faculty supervisor early and often." Specific cases where you should talk to Ted ahead of time include:
 
 1) Starting new collaborations outside the lab.
-2) Asking a member of our lab to do something that is likely to be fairly time consuming.
-3) Any effort that requires repeated rounds of input / questions to a member of another lab.
 
-Finally, in general it is a good idea to cc Ted on any emails to other faculty outside our section.
+2) Asking a member of our lab to do something that is likely to be fairly time consuming.
+
+3) Any effort that requires repeated rounds of input / questions to a member of another lab. 
+
+4) Meeting with other faculty members outside our immediate group/section.  In general, Ted tends to prefer to be present for collab mtgs with other faculty. In general it is a also good idea to keep Ted (via cc) in the loop on correspondence with collaborating faculty outside our section.
+
+
+
 
 
 ### Troubleshooting
