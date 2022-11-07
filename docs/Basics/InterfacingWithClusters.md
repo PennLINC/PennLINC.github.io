@@ -30,7 +30,7 @@ and SSH port forwarding.
 
 ##### Why not just use VSCode Remote?
 
-[VSCode-Remote](https://code.visualstudio.com/docs/remote/remote-overview) is VSCode's built-in shipped method for 
+[VSCode-Remote](https://code.visualstudio.com/docs/remote/remote-overview) is VSCode's built-in shipped method for
 working on remote servers. It's well documented, and works just fine as is, but our setup on CUBIC makes it challenging
 to use VSCode remote. The main issue is that the remote server it runs can only have access to the first user who logs in,
 which is not how CUBIC's project user setup works. You end up with a VSCode running from your personal user trying to modify and write files or submit jobs for a project user. We've tried setting up [jump hosts](https://www.doc.ic.ac.uk/~nuric/coding/how-to-setup-vs-code-remote-ssh-with-a-jump-host.html),
@@ -70,11 +70,11 @@ Lastly, exit and re-login to the terminal, and check everything went well with:
 nvm -v
 ```
 
-Next, install Node version 14 (the version is important):
+Next, install Node version 16 (the version is important):
 
 ```shell
 nvm install --lts # install node
-nvm install 14
+nvm install 16    # version number updated on 11/7/22
 
 node -v           # check the version
 ```
@@ -182,9 +182,9 @@ git; be prepared for it to notify you if you, for example, open a BIDS directory
 
 2. The integrated terminal is a shell opened by Singularity, so it does not source your `bashrc`/`bash_profile`.
 This means some of your installed command line programs may not be accessible. Keep your normal terminal open alongside
-your `code-server` GUI for best practices. 
+your `code-server` GUI for best practices.
 
-3. All users in a project share the same `~/.config/code-server/config.yaml`, so the password is not unique by default. 
+3. All users in a project share the same `~/.config/code-server/config.yaml`, so the password is not unique by default.
 It is possible to deactivate authentication when you start the server with `--auth none`, and it's also possible
 to point to a specific config file with `--config` that you could use to keep your own password (untested).
 
