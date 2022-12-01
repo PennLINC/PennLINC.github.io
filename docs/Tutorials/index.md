@@ -10,6 +10,4 @@ nav_order: 8
 
 Here, you will find selected and hopefully useful tutorials for data analysis and visualization at PennLINC. 
 
-Additionally, view all files, including those about surfaces/ciftis, [here](https://github.com/PennLINC/PennLINC.github.io/tree/main/docs/Tutorials).
-
 
