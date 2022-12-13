@@ -66,7 +66,7 @@ NOTE:  If you are unsure about this step definately feel free to review this for
 
 ## Update the Travel Reimbursement Tracker
 
-Equity and transparency in use of support of travel is important, and will be openly tracked moving forward [here](https://docs.google.com/spreadsheets/d/1fAKrIlrCRXMc8PNQwpw-Adb3GG91zLkvc1RoutVXzK0/edit#gid=0).  If you are not on this sheet already, make yourself a row. If the conference you are attending is not listed, create it as a column.  Then fill in the amount you are requesting support for in the cell that correpsonds to your row and that conf's col.  Only record the amount you are asking for support _from the lab_. Do NOT include any expenses that were covered by travel awards or other individual-specific funds.  
+Equity and transparency in use of support of travel is important, and will be openly tracked moving forward [here](https://docs.google.com/spreadsheets/d/1fAKrIlrCRXMc8PNQwpw-Adb3GG91zLkvc1RoutVXzK0/edit?usp=sharing).  If you are not on this sheet already, make yourself a row. If the conference you are attending is not listed, create it as a column.  Then fill in the amount you are requesting support for in the cell that correpsonds to your row and that conf's col.  Only record the amount you are asking for support _from the lab_. Do NOT include any expenses that were covered by travel awards or other individual-specific funds.  
 
 
 ### Approval from Business Administrators
