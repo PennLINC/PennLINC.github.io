@@ -14,4 +14,4 @@ nav_order: 5
 View all files about surfaces/ciftis [here](https://github.com/PennLINC/PennLINC.github.io/tree/main/docs/Tutorials/surface_tools_R.html.zip) and [here](https://github.com/PennLINC/PennLINC.github.io/tree/main/docs/Tutorials/Surfaces.pptx).
 
 ### Projecting to the surface
-Find .gii files for transforming to fsaverage5 [here](https://github.com/PennLINC/PennLINC.github.io/tree/main/docs/Tutorials/fsaverage5) and instructions [here](https://github.com/PennLINC/PennLINC.github.io/tree/main/docs/Tutorials/vol2surf_mapping.Rmd)
+Find .gii files for transforming to fsaverage5 [here](https://github.com/PennLINC/PennLINC.github.io/tree/main/docs/Tutorials/fsaverage5) and instructions for transforming from volume to surface [here](https://github.com/PennLINC/PennLINC.github.io/tree/main/docs/Tutorials/vol2surf_mapping.Rmd)
