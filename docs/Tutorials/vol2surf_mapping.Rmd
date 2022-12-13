@@ -1,0 +1,57 @@
+---
+title: "Project an MNI volume to the fslr surface for visualization"
+author: "Valerie Jill Sydnor"
+date: "9/16/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(ciftiTools)
+ciftiTools.setOption('wb_path', '/Users/valeriesydnor/Software/workbench/')
+#set the path to your installation of connectome workbench as 'wb_path'
+library(rgl) #to use ciftiTools graphics
+library(rmarkdown)
+library(gifti) #to read in your surface giftis 
+```
+
+Map volume data to left and right cortical surfaces
+```{r}
+#left hemisphere
+command=sprintf("-volume-to-surface-mapping /Users/valeriesydnor/Documents/ResearchProjects/GluCEST_BASRewardResponsivity_Project/ImageData/Structural/MNI_Templates/Reward_Atlas/RewardAtlas-TotalNetwork-pos_or_neg-mask-MNI.nii.gz /Users/valeriesydnor/Software/workbench/workbench_files/Q1-Q6_R440.L.midthickness.32k_fs_LR.surf.gii /Users/valeriesydnor/Desktop/testvol2surf_l.shape.gii -trilinear")
+ciftiTools::run_wb_cmd(command, intern = FALSE, ignore.stdout = NULL, ignore.stderr = NULL)
+
+#right hemisphere
+command=sprintf("-volume-to-surface-mapping /Users/valeriesydnor/Documents/ResearchProjects/GluCEST_BASRewardResponsivity_Project/ImageData/Structural/MNI_Templates/Reward_Atlas/RewardAtlas-TotalNetwork-pos_or_neg-mask-MNI.nii.gz /Users/valeriesydnor/Software/workbench/workbench_files/Q1-Q6_R440.R.midthickness.32k_fs_LR.surf.gii /Users/valeriesydnor/Desktop/testvol2surf_r.shape.gii -trilinear")
+ciftiTools::run_wb_cmd(command, intern = FALSE, ignore.stdout = NULL, ignore.stderr = NULL)
+```
+
+Read in your surface giftis
+```{r}
+test_l <- read_gifti("/Users/valeriesydnor/Desktop/testvol2surf_l.shape.gii")
+test_r <- read_gifti("/Users/valeriesydnor/Desktop/testvol2surf_r.shape.gii")
+```
+
+Combine your giftis into one cifti surface (for visualization with ciftiTools)
+```{r}
+test.ciftimap <- as_cifti(cortexL = test_l$data$normal, cortexR = test_r$data$normal) #the datas are stored in file$data$normal
+```
+
+You can also save out this cifti for viewing in connectome workbench
+```{r}
+write_cifti(test.ciftimap, "/Users/valeriesydnor/Desktop/testvol2surf.dscalar.nii")
+```
+
+Choose what surface you want to visualize your data on (midthickness, inflated, sphere, etc.)
+```{r}
+#lets use midthickness
+surfL_name <- read_surf("/Users/valeriesydnor/Software/workbench/workbench_files/Q1-Q6_R440.L.midthickness.32k_fs_LR.surf.gii")
+surfR_name <- read_surf("/Users/valeriesydnor/Software/workbench/workbench_files/Q1-Q6_R440.R.midthickness.32k_fs_LR.surf.gii")
+
+#gotta add these surfs to your cifti from the step above
+test.ciftimap <- add_surf(test.ciftimap, surfL=surfL_name, surfR=surfR_name)
+```
+
+Visualize!
+```{r, rgl=TRUE, format="png"} 
+view_cifti(test.ciftimap, colors=c("magma"), widget=TRUE)
+```
