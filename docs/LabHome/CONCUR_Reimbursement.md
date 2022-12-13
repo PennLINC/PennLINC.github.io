@@ -6,11 +6,12 @@ nav_order: 15
 ---
 
 # CONCUR Reimbursement SOP
-Reimbursement for expenses (typically: conference travel) is one of the most administratively demanding tasks in the lab. The goal of this wiki (created by Sophia Linguiti and now maintained by Lia Brodrick) is to make this processess as efficient as possible and reduce headaches. Nonetheless, there are many compliance requirements and as such it is strongly reccomended that this instructions are closely adhered to.  If there are aspects that need clarification please contact Lia Brodrick (cc Ted) so we can keep this wiki up to date.
+Reimbursement for expenses (typically: conference travel) is one of the most administratively demanding tasks in the lab. The goal of this wiki (now maintained by Lia Brodrick) is to make this processess as efficient as possible and reduce headaches. Nonetheless, there are MANY compliance requirements and as such it is *REQUIRED* that this instructions are closely adhered to. 
 
-For all lab-related expenses that you wish to have reimbursed via the CONCUR system follow the documentation outlined below. If you have a PennKey then you are able to submit reimbursements.  It is _essential_ that this be done in a timely manner; Penn policy prohibits reimbursements after 6 months.  Please submit expenses immediately after they are incurred and allow for a lengthy administrative review process.
+From the outset, please be preapred that this is a very time-intensive process that each lab member must manage for their own expenses.  While Lia is here to assist she is not an admin who will do this for you. As such, it is necessary to read *all* the documentation below *before* proceeding.   Note that questions regarding reimbursement (or suggested updates to this documnetation) should be posted to the #concur slack channel to preserve knowledge over time -- not addressed via DMs to Lia or Ted.  
 
-Note that questions regarding reimbursement can be posted to the #concur slack channel to preserve knowledge over time.
+For all lab-related expenses that you wish to have reimbursed via the CONCUR system follow the documentation outlined below. If you have a PennKey then you are able to submit reimbursements.  It is _essential_ that this be done in a timely manner; Penn policy prohibits reimbursements after 6 months.  Please submit expenses immediately after they are incurred and *expect a lengthy review process*. Due to high demands for compliance, reimbursements are often rejected by compliance officers multiple times after they have been approved by Ted.  As such, requests not submitted immediately after they are incurred risk being unpaid, leaving the lab member with the bill. There is no remedy for this if it occurs.
+
 
 For allowable expenses and funding for travel, please see the [travel guidelines wiki](https://pennlinc.github.io/docs/LabHome/TravelGuidelines/).
 
@@ -34,9 +35,9 @@ _Project Title_: Fill in the name of the study the expense will be billed to
 
 _Principle Investigator_: Dr. Theodore Satterthwaite
 
-_Project/Grant Number_: This is the funding nickname for project/Sponsor. Please ask Ted what fund to use.
+_Project/Grant Number_: This is the funding nickname for project/Sponsor. Please ask Ted what fund to use on the #concur channel.
 
-_Funding Source_: This is a 26 digit budget code.  Lia has these.
+_Funding Source_: This is a 26 digit budget code.  Lia has these, ask on the #concur channel.
 
 _Description of Expense_: Brief description including how the expense was paid for and to which vendor. (ex. To reimburse Dr. Satterthwaite for monthly subscription to CircleCI vendor for data management)
 
@@ -44,7 +45,7 @@ _Amount of Expense_: Total amount requesting reimbursement, itemize if necessary
 
 _Date of Expense_: Date that the transaction occurred
 
-_Explanation or Cost Allocation and Justification of Expense_: Fill out why the expense was necessary. See examples and modify as needed.  For travel it is essential to include the phrase "present research data" in the justification.
+_Explanation or Cost Allocation and Justification of Expense_: Fill out why the expense was necessary. See examples and modify as needed.  For travel it is **essential** to include the phrase "present research data" in the justification.
 
 _Signature_: Obtain Ted's signature (or PI of grant if not Ted)
 
@@ -52,14 +53,15 @@ If you need to get the fund number to complete your expenditure justification fo
 1. What the expense you are trying to get reimbursed is
 2. The name of the fund Ted told you to request reimbursement fro
 3. How this expense relates to that fund
+
 For step three, think of why the expense is relevant to the fund. It might be beneficial to think about how the expense:
-1. Will help address the aims of the protocol
-2. Will benefit the lab and its members
-3. Will help promote future collaboration/research/publications, etc.
+A. Will help address the aims of the protocol
+B. Will benefit the lab and its members
+C. Will help promote future collaboration/research/publications, etc.
 
-If you have any questions for Lia about concur, please send them in the `#concur` slack channel and specify what the problem you are having is.  Please do NOT send direct messages but place on the open #concur channel.
+If you have any questions for Lia about concur, please send them in the `#concur` slack channel and specify what the problem you are having is.  Please do NOT send direct messages -- post them  on the open #concur channel.
 
-NOTE:  If you are unsure about this step definately feel free to review this form with Ted and Lia before sending this to Sharon (see below). Do not emaili John Hyon with concur q's.
+NOTE:  If you are unsure about this step definately feel free to review this form with Lia on the #concur channel before sending this to Sharon (see below). Do not emaili John Hyon with concur q's.
 
 
 ## Update the Travel Reimbursement Tracker
