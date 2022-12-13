@@ -19,7 +19,7 @@ For allowable expenses and funding for travel, please see the [travel guidelines
 Explanation on how to complete each step is listed below
 
 1. Prepare expenditure justification form
-2. Send receipts and expenditure justification to Sharon Liu and John Hyon for pre-review
+2. Send receipts and expenditure justification to Sharon Liu for pre-review
 3. Incorporate feedback and submit receipts and expenditure justification via CONCUR
 4. You will receive notice if it has been approved via email
 
@@ -35,7 +35,7 @@ _Principle Investigator_: Dr. Theodore Satterthwaite
 
 _Project/Grant Number_: This is the funding nickname for project/Sponsor. Please ask Ted what fund to use.
 
-_Funding Source_: This is a 26 digit budget code.  Lia has these.   You can always ask John Hyon if you are unsure of the funding source number.
+_Funding Source_: This is a 26 digit budget code.  Lia has these.
 
 _Description of Expense_: Brief description including how the expense was paid for and to which vendor. (ex. To reimburse Dr. Satterthwaite for monthly subscription to CircleCI vendor for data management)
 
@@ -47,14 +47,25 @@ _Explanation or Cost Allocation and Justification of Expense_: Fill out why the 
 
 _Signature_: Obtain Ted's signature (or PI of grant if not Ted)
 
-NOTE:  If you are unsure about this step definately feel free to review this form with Ted and Lia before sending this to Sharon and John (see below)
+If you need to get the fund number to complete your expenditure justification form, message in the `#concur` slack channel and state
+1. What the expense you are trying to get reimbursed is
+2. The name of the fund Ted told you to request reimbursement fro
+3. How this expense relates to that fund
+For step three, think of why the expense is relevant to the fund. It might be beneficial to think about how the expense:
+1. Will help address the aims of the protocol
+2. Will benefit the lab and its members
+3. Will help promote future collaboration/research/publications, etc.
+
+If you have any questions for Lia about concur, please send them in the `#concur` slack channel and specify what the problem you are having is.
+
+NOTE:  If you are unsure about this step definately feel free to review this form with Ted and Lia before sending this to Sharon (see below)
 
 ### Approval from Business Administrators
-Send the prepared Expenditure Justification in word document form to both Sharon Liu (xgliu@pennmedicine.upenn.edu) and John Hyon (Hyon1@pennmedicine.upenn.edu) for pre-review BEFORE submitting via concur. Please cc Ted and Lia on all emails regareding reimbursement. Note that Sharon and John are EXTREMELY busy and we try to limit asking them lots of q's if possible-- please ask q's on the #concur slack channel first. 
+Send the prepared Expenditure Justification in word document form to Sharon Liu (xgliu@pennmedicine.upenn.edu) for pre-review BEFORE submitting via concur. Please cc Ted and Lia on all emails regareding reimbursement. Note that Sharon is EXTREMELY busy and we try to limit asking them lots of q's if possible-- please ask q's on the `#concur` slack channel first. 
 
 Make sure to also send the receipt for all expenses. The receipt _must include_ the confirmation of payment (not just the invoice), how the payment was made (typically last 4 digits of the card listed on receipt), each expense itemized, the total amount paid, and the date the payment was completed.  Alcohol is never an allowable expense.
 
-Sharon and John may give you edits, but once the form has been approved you can convert the document to PDF to be uploaded to CONCUR.
+Sharon may give you edits, but once the form has been approved you can convert the document to PDF to be uploaded to CONCUR.
 
 
 
@@ -107,13 +118,10 @@ Navigate to the [CONCUR website](https://cms.business-services.upenn.edu/penntra
     - [https://www.concursolutions.com/home.asp](https://www.concursolutions.com/home.asp)
 
 - For further help contact:
-    - Sophia Linguiti - sophia.linguiti@pennmedicine.upenn.edu
-    - John Hyon (expenditure justification related) - hyon1@pennmedicine.upenn.edu
+    - Lia Brodrick - lia.brodrick@pennmedicine.upenn.edu
     - Sharon Lui (concur related) - xgliu@pennmedicine.upenn.edu
   
 - If you need help and would like another person to be able to view your concur, you can add them as a delegate following the instructions below
-
-
 
 
 ## How to Assign a delegate
