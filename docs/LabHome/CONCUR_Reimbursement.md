@@ -8,7 +8,7 @@ nav_order: 15
 # CONCUR Reimbursement SOP
 Reimbursement for expenses (typically: conference travel) is one of the most administratively demanding tasks in the lab. The goal of this wiki (now maintained by Lia Brodrick) is to make this processess as efficient as possible and reduce headaches. Nonetheless, there are MANY compliance requirements and as such it is *REQUIRED* that this instructions are closely adhered to. 
 
-From the outset, please be preapred that this is a very time-intensive process that each lab member must manage for their own expenses.  While Lia is here to assist she is not an admin who will do this for you. As such, it is necessary to read *all* the documentation below *before* proceeding.   Note that questions regarding reimbursement (or suggested updates to this documnetation) should be posted to the #concur slack channel to preserve knowledge over time -- not addressed via DMs to Lia or Ted.  
+From the outset, please be prepared that this is a very time-intensive process that each lab member must manage for their own expenses.  While Lia is here to assist she is not an admin who will do this for you. As such, it is necessary to read *all* the documentation below *before* proceeding.   Note that questions regarding reimbursement (or suggested updates to this document) should be posted to the #concur slack channel to preserve knowledge over time -- not addressed via DMs to Lia or Ted.  
 
 For all lab-related expenses that you wish to have reimbursed via the CONCUR system follow the documentation outlined below. If you have a PennKey then you are able to submit reimbursements.  It is _essential_ that this be done in a timely manner; Penn policy prohibits reimbursements after 6 months.  Please submit expenses immediately after they are incurred and *expect a lengthy review process*. Due to high demands for compliance, reimbursements are often rejected by compliance officers multiple times after they have been approved by Ted.  As such, requests not submitted immediately after they are incurred risk being unpaid, leaving the lab member with the bill. There is no remedy for this if it occurs.
 
@@ -20,14 +20,14 @@ For allowable expenses and funding for travel, please see the [travel guidelines
 Explanation on how to complete each step is listed below
 
 1. Prepare expenditure justification form
-2. Update the lab travle expense tracker
+2. Update the lab travel expense tracker
 3. Send receipts and expenditure justification to Sharon Liu for pre-review
 4. Incorporate feedback and submit receipts and expenditure justification via CONCUR
 5. You will receive notice if it has been approved via email
 
 
 ## Prepping the Expenditure Justification Reports
-For each expenditure you must first prepare the standardized Expenditure Justification report.   It is STRONGLY encouraged to use a previously approved justification report examples to avoid multiple rounds of rejection and revision.   Prior examples can be found on PennBox (you can ask Lia to be shared on the CONCUR folder). It is encouraged to retain as much wording from previously approved documents as possible while maintaining accuracy. A blank copy of the expenditure justification form can be found [here](https://www.med.upenn.edu/ggeb/assets/user-content/Financial%20Forms/penn-a21-form.pdf), but again editing apreviously-approved example is far preferred to starting from a blank copy.  
+For each expenditure you must first prepare the standardized Expenditure Justification report.   It is STRONGLY encouraged to use a previously approved justification report examples to avoid multiple rounds of rejection and revision.   Prior examples can be found on PennBox (you can ask Lia to be shared on the CONCUR folder). It is encouraged to retain as much wording from previously approved documents as possible while maintaining accuracy. A blank copy of the expenditure justification form can be found [here](https://www.med.upenn.edu/ggeb/assets/user-content/Financial%20Forms/penn-a21-form.pdf), but again editing a previously-approved example is far preferred to starting from a blank copy.  
 
 
 ### Fill Out Expenditure Form
@@ -61,7 +61,7 @@ C. Will help promote future collaboration/research/publications, etc.
 
 If you have any questions for Lia about concur, please send them in the `#concur` slack channel and specify what the problem you are having is.  Please do NOT send direct messages -- post them  on the open #concur channel.
 
-NOTE:  If you are unsure about this step definately feel free to review this form with Lia on the #concur channel before sending this to Sharon (see below). Do not emaili John Hyon with concur q's.
+NOTE:  If you are unsure about this step please feel free to review this form with Lia on the #concur channel before sending this to Sharon (see below). Do not email John Hyon with concur q's.
 
 
 ## Update the Travel Reimbursement Tracker
