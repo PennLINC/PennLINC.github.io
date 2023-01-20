@@ -25,7 +25,7 @@ Below is a list of the current projects in the lab:
 | Diverse Club Development | Max Bertolero | [pennlinc.github.io/bertolero_diverse_development/](https://pennlinc.github.io/bertolero_diverse_development/){:target="_blank}|
 | Whole-brain molecular axes encoding relative spatial location in the human brain | Jacob Vogel | [https://pennlinc.github.io/Vogel_PLS_Tx-Space/](https://pennlinc.github.io/Vogel_PLS_Tx-Space/){:target="_blank}|
 | Spontaneous Activity Develops Along the Hierarchical Sensorimotor-Association Axis | Valerie Jill Sydnor | [https://pennlinc.github.io/spatiotemp_dev_plasticity/](https://pennlinc.github.io/spatiotemp_dev_plasticity/){:target= "blank"}|
-| Individual Differences in Delay Discounting are Associated with Dorsal Prefrontal Cortex Connectivity in Youth  | Kahini Mehtaa | [https://pennlinc.github.io/pncitc/](https://pennlinc.github.io/pncitc/){:target= "blank"}|
+| Individual Differences in Delay Discounting are Associated with Dorsal Prefrontal Cortex Connectivity in Youth  | Kahini Mehta | [https://pennlinc.github.io/pncitc/](https://pennlinc.github.io/pncitc/){:target= "blank"}|
 
 
 ---------------------------------------------------------------------------------
