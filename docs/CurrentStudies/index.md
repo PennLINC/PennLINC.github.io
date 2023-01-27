@@ -3,7 +3,7 @@ layout: default
 title: Current Studies
 has_children: false
 has_toc: false
-nav_order: 11
+nav_order: 12
 ---
 
 # Current Studies in the Lab
