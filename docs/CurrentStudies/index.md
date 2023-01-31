@@ -13,10 +13,10 @@ Below is a list of the current studies in the lab:
 | Study Title |    Lead Name(s)    |               Link                |
 | ------------- | --------------- | --------------------------------- |
 | Reward    | Tinashe Tapera, Margaret Gardner | [https://pennlinc.github.io/Reward/index](https://pennlinc.github.io/Reward/index){:target="_blank"} |
-| GRMPY | Kristin Murtha, Diego Davila | [https://pennlinc.github.io/grmpyproject/](https://pennlinc.github.io/grmpyproject/){:target="_blank"} |
+| GRMPY | Kristin Murtha, Diego Davila | [https://pennlinc.github.io/grmpy2022/](https://pennlinc.github.io/grmpy2022/){:target="_blank"} |
 | cros-map | Jacob Vogel | [https://pennlinc.github.io/cros-map/](https://pennlinc.github.io/cros-map/){:target="_blank"} |
-| EF | Kristin Murtha, Sophia Linguiti | [https://pennlinc.github.io/executivefunction/](https://pennlinc.github.io/executivefunction/){:target="_blank"} |
-| Mobile Phenomics | Kahini Mehta, Kristin Murtha | [https://pennlinc.github.io/mobilephenomics/](https://pennlinc.github.io/mobilephenomics/){:target="_blank"} |
+| EF | Lia Brodrick, Madeleine Seitz, Kristin Murtha, Sophia Linguiti| [https://pennlinc.github.io/executivefunction/](https://pennlinc.github.io/executivefunction/){:target="_blank"} |
+| Mobile Phenomics | Lia Brodrick, Madeleine Seitz, Kahini Mehta, Kristin Murtha| [https://pennlinc.github.io/mobilephenomics/](https://pennlinc.github.io/mobilephenomics/){:target="_blank"} |
 | ABCD Resources | Arielle Keller, Adam Pines | [https://pennlinc.github.io/ABCDresources/](https://pennlinc.github.io/ABCDresources/){:target="_blank"} |
 
 ---------------------------------------------------------------------------------
