@@ -11,7 +11,7 @@ has_toc: false
 
 | Study | Content               | Clone URL                     | Format | Dataset ID                           |
 | ----- | --------------------- | ----------------------------- | ------ | ------------------------------------ |
-| PNC   | BIDS                  | LINC_PNC#~BIDS                | Files  | Not Transferred                      |
+| PNC   | BIDS                  | LINC_PNC#~BIDS                | Files  | Not yet transferred                  |
 | PNC   | GQI+hsvs segmentation | LINC_PNC#~GQIHSVS             | Files  | f20c2eb1-c839-4404-8dad-63f0a20a4fff |
 | PNC   | QSIRecon sifthsvs     | LINC_PNC#~SIFTHSVS            | Zips   | 2642a99d-de75-437a-b63f-7da4ed36f330 |
 | PNC   | QSIPrep               | LINC_PNC#~QSIPREP             | Zips   | 6af87a20-bfe5-458b-8773-cfe51e6200c6 |
@@ -21,5 +21,6 @@ has_toc: false
 | HBN   | BIDS                  | LINC_HBN#~BIDS                | Files  | Not Transferred                      |
 | HBN   | GQI+hsvs segmentation | LINC_HBN#~GQIHSVS             | Files  | 1da37bc2-7f6d-40c0-80d8-b07cbcdc7f15 |
 | HBN   | QSIPrep               | LINC_HBN#~QSIPREP             | Zips   | Transfer in progress                 |
-| HBN   | dMRI Scalarfast       | LINC_HBN#~QSIRECON_SCALARFEST | Files  | Not transfered                       |
-| PACCT | XCP                   | LINC_PACCT#~XCP_unzipped      | Files  | c70a1420-3c64-4585-8d42-bf972576e5cc |
+| HBN   | dMRI Scalarfast       | LINC_HBN#~QSIRECON_SCALARFEST | Files  | Not yet transfered                   |
+| PACCT | XCP (v0.X)            | LINC_PACCT#~XCP_unzipped      | Files  | c70a1420-3c64-4585-8d42-bf972576e5cc |
+| PACCT | XCP (v0.X)            | LINC_PACCT#~XCP_zipped        | Zips   | Transfer in progress                 |
