@@ -18,7 +18,7 @@ has_toc: false
 | CCNP  | fMRIPrep              | LINC_CCNP#~FMRIPREP_zipped    | Zips   | eee0d711-f800-4725-8097-4c7b79c7d87f |
 | CCNP  | XCP (v0.X)            | LINC_CCNP#~XCP_unzipped       | Files  | b464c213-ca15-4628-907e-f8c31a3d695e |
 | CCNP  | XCP (v0.X)            | LINC_CCNP#~XCP_zipped         | Zips   | 0b9140e7-cbeb-463b-88a9-7cddf3a22dfb |
-| HBN   | BIDS                  | LINC_HBN#~BIDS                | Files  | Not Transferred                      |
+| HBN   | BIDS                  | LINC_HBN#~BIDS                | Files  | Not yet transferred                  |
 | HBN   | GQI+hsvs segmentation | LINC_HBN#~GQIHSVS             | Files  | 1da37bc2-7f6d-40c0-80d8-b07cbcdc7f15 |
 | HBN   | QSIPrep               | LINC_HBN#~QSIPREP             | Zips   | Transfer in progress                 |
 | HBN   | dMRI Scalarfast       | LINC_HBN#~QSIRECON_SCALARFEST | Files  | Not yet transfered                   |
