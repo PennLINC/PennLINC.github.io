@@ -33,3 +33,5 @@ has_toc: false
 | PNC   | GQI+hsvs segmentation | LINC_PNC#~GQIHSVS               | Files  | f20c2eb1-c839-4404-8dad-63f0a20a4fff |
 | PNC   | QSIRecon sifthsvs     | LINC_PNC#~SIFTHSVS              | Zips   | 2642a99d-de75-437a-b63f-7da4ed36f330 |
 | PNC   | QSIPrep               | LINC_PNC#~QSIPREP               | Zips   | 6af87a20-bfe5-458b-8773-cfe51e6200c6 |
+| PNC   | XCP (v0.X)            | LINC_PNC#~XCP_unzipped          | Files  | 4669d449-89fd-48ca-94a3-d8326f8ac98b |
+| PNC   | XCP (v0.X)            | LINC_PNC#~XCP_unzipped          | Zips   | e75816f8-bc8f-479f-90db-a86dc35f4676 |
