@@ -21,6 +21,9 @@ has_toc: false
 | HBN   | BIDS                   | LINC_HBN#~BIDS                | Files  | Not yet transferred                  |
 | HBN   | GQI+hsvs segmentation  | LINC_HBN#~GQIHSVS             | Files  | 1da37bc2-7f6d-40c0-80d8-b07cbcdc7f15 |
 | HBN   | QSIPrep                | LINC_HBN#~QSIPREP             | Zips   | Transfer in progress                 |
+| HBN   | XCP (v0.X)             | LINC_HBN#~XCP_zipped          | Zips   | 83e5caef-474d-43cf-a3ba-c01cf3e99d5f |
+| HBN   | XCP (v0.X)             | LINC_HBN#~XCP_unzipped        | Files  | 054aaebe-af3d-476c-aaff-1f8d361fb854 |
+| HBN   | dMRI Scalarfast        | LINC_HBN#~QSIRECON_SCALARFEST | Zips   | Not yet transfered                   |
 | HBN   | dMRI Scalarfast        | LINC_HBN#~QSIRECON_SCALARFEST | Files  | Not yet transfered                   |
 | PACCT | XCP (v0.X)             | LINC_PACCT#~XCP_unzipped      | Files  | c70a1420-3c64-4585-8d42-bf972576e5cc |
 | PACCT | XCP (v0.X)             | LINC_PACCT#~XCP_zipped        | Zips   | Transfer in progress                 |
