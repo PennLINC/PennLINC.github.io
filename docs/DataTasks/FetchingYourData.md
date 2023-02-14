@@ -44,14 +44,42 @@ Please add my PMACS account to the LINC_PNC and LINC_HBN groups.
 This ticket should also be submitted by your PI.
 
 ---
-<!-- omit in toc -->
-### ⚠️ ⚠️ WARNING ⚠️ ⚠️
+*⚠️ ⚠️ WARNING ⚠️ ⚠️*
 Datasets are subject to data use agreements and terms of use. Before access is
 granted to any static dataset, you must prove that you are qualified to access
 it *when you ask your PI to create the PMACS helpdesk ticket*. This can be an
 email showing your connectomedb access (for HCP-YA) or similar.
 
 ---
+
+## Checking your PMACS account
+
+You should check your PMACS account before you try to clone any static data.
+First ensure that you can log into pmacs with a normal SSH session. This
+verifies that you have the correct username and password. Below, use the complete
+url to bblsub:
+
+```
+$ ssh myusername@bblsub.address.edu
+```
+
+Once you have verified that you can access bblsub, check that you have access to
+the group for the static data you want to access by running the `groups` command.
+
+```
+$ groups
+... LINC_NKI LINC_HBN LINC_CCNP LINC_HRC LINC_HCPD LINC_PNC LINC_PACCT...
+```
+
+The `LINC_` groups provide read-only access to that dataset's static data.
+
+Finally, use this command to force a recent version of git to be used for all
+sessions:
+
+```
+$ echo 'module load git' >> ~/.bashrc
+```
+
 
 
 # Clone the static data
@@ -62,6 +90,7 @@ In order to get the data to your computer, you need to ensure 3 things:
   2. Your computer is on the [UPHS VPN](/docs/cubic/cubic.md#setting-up-your-account) or the
      [PMACS VPN](/docs/PMACS/pmacs.md#logging-in-to-pmacs-lpc)
   3. You have datalad, git and git-annex installed on your computer
+  4. You have verified that you have your PMACS accound set up (see above section)
 
 If these conditions are met, you're ready to access some data! Suppose I'd like
 to see the regional time series data for CCNP. Checking the
