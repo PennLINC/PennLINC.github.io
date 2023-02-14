@@ -44,7 +44,8 @@ Please add my PMACS account to the LINC_PNC and LINC_HBN groups.
 This ticket should also be submitted by your PI.
 
 ---
-*⚠️ ⚠️ WARNING ⚠️ ⚠️*
+**⚠️ ⚠️ WARNING ⚠️ ⚠️**
+
 Datasets are subject to data use agreements and terms of use. Before access is
 granted to any static dataset, you must prove that you are qualified to access
 it *when you ask your PI to create the PMACS helpdesk ticket*. This can be an
