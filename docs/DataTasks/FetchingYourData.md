@@ -247,7 +247,7 @@ analysis will be fetched if you need to
 [access the data again](#clone-the-static-data).
 
 
-## SSH Keys from cubic project uses to pmacs personal users: NOT ALLOWEDß
+## SSH Keys from cubic project uses to pmacs personal users: NOT ALLOWED!
 
 This is not allowed! SSH keys would give all those access to the cubic project user
 access to the key owner's pmacs account. This is too dangerous and therefore ssh key
