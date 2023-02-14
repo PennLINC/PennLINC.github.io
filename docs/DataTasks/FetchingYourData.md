@@ -217,14 +217,13 @@ analysis will be fetched if you need to
 [access the data again](#clone-the-static-data).
 
 
-## Setting up an ssh key on PMACS
+## SSH Keys from cubic project uses to pmacs personal users: NOT ALLOWEDß
 
-If you don't want to enter your password each time you clone or `datalad get`
-data from PMACS, you can set up SSH keys on `bblsub`.
+This is not allowed! SSH keys would give all those access to the cubic project user
+access to the key owner's pmacs account. This is too dangerous and therefore ssh key
+use is not allowed from a cubic project user to a pmacs personal user account.
 
-**NOTE** On CUBIC, the
-[project user](/docs/cubic/cubic.md#project-directory-access-request) accounts
-may have multiple users who can access their data. If you set up an SSH key
-with your PMACS account, others who can become the project user will have
-access to that key. This is not allowed!
+This unfortunately means you will need to enter your password to copy over the data.
+To minimize password entry, try to `datalad get` files using file glob patterns
+and using the `-J` flag to download content in parallel.
 
