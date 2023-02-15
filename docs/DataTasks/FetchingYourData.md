@@ -61,7 +61,7 @@ verifies that you have the correct username and password. Below, use the complet
 url to bblsub:
 
 ```
-$ ssh myusername@bblsub.address.edu
+$ ssh [username]@[login node name].pmacs.upenn.edu
 ```
 
 Once you have verified that you can access bblsub, check that you have access to
@@ -100,20 +100,20 @@ see the `Clone URL` column lists `LINC_CCNP#~XCP_unzipped` for this resource.
 
 Items in the `Clone URL` are used to get a clonable address for the data. The
 value gets appended to
-`ria+ssh://[mypmacsusername]@[bblsub.address.edu]:/static/`, where
-`[mypmacsusername]` is replaced with your PMACS username (without brackets) and
-`[bblsub.address.edu]` is replaced with the actual address for the `bblsub`
-server (also without brackets). Consult with the Informatics Team or your PI to
-get the real address for `bblsub`. I can then clone this data with the command
+`ria+ssh://[username]@[login node name].pmacs.upenn.edu:/static/`, where
+`[username]` is replaced with your PMACS username (without brackets) and
+`[login node name]` is replaced with the name of the PMACS login node you will be accessing. 
+`Consult with the Informatics Team or your PI to obtain the login node name you should use. 
+`I can then clone this data with the command
 
 ```
-$ datalad clone ria+ssh://username@bblsub.address.edu:/static/LINC_CCNP#~XCP_unzipped CCNP_xcpd
+$ datalad clone ria+ssh://[username]@[login node name].pmacs.upenn.edu:/static/LINC_CCNP#~XCP_unzipped CCNP_xcpd
 ```
 
 You will be asked for your PMACS account password:
 
 ```
-username@bblsub.address.edu's password:
+[username]@[login node name].pmacs.upenn.edu's password:
 ```
 
 after which, you will see some `[INFO   ]` messages that look scary, but are harmless and expected.
@@ -122,7 +122,7 @@ They will look something like:
 ```
 [INFO   ] scanning for annexed files (this may take some time)
 [INFO   ] RIA store unavailable. -caused by- file:///some/file/path/ria-layout-version not found, self.ria_store_url: ria+file:///some/file/path/output_ria, self.store_base_pass: /some/file/path/output_ria, self.store_base_pass_push: None, path: <class 'pathlib.PosixPath'> /some/file/path/output_ria/ria-layout-version -caused by- [Errno 2] No such file or directory: '/some/file/path/ria-layout-version'
-[INFO   ] Reconfigured output-storage for ria+ssh://username@bblsub.address.edu:/static/LINC_CCNP
+[INFO   ] Reconfigured output-storage for ria+ssh://[username]@[login node name].pmacs.upenn.edu:/static/LINC_CCNP
 [INFO   ] Configure additional publication dependency on "output-storage"
 configure-sibling(ok): . (sibling)
 install(ok): /my/current/workingdir/CCNP_xcpd (dataset)
