@@ -33,7 +33,7 @@ PI to open a ticket in the [PMACS helpdesk](https://helpdesk.pmacs.upenn.edu/).
 
 Once you have a PMACS account you will need to open a ticket to request access
 to the specific datasets you want.  You can see a [list of available
-data](/docs/DataTasks/AvailableStaticData.md#available-static-datasets).
+data](https://pennlinc.github.io/docs/DataTasks/AvailableStaticData/).
 Suppose you want access to the HBN and PNC data (the dataset is listed in the
 leftmost column), include in the ticket
 
