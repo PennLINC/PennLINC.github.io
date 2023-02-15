@@ -10,7 +10,7 @@ has_toc: true
 {: .no_toc}
 
 When we've finalized a data resource, we share it with authorized lab members from
-the `/static` mount on the `bblsub` server. If you're thinking "I'd like to get the
+the `/static` mount. If you're thinking "I'd like to get the
 region time series from dataset X", or "I need the entire results from qsiprep for
 dataset Y," this is the best way to do it!
 
@@ -57,14 +57,14 @@ email showing your connectomedb access (for HCP-YA) or similar.
 
 You should check your PMACS account before you try to clone any static data.
 First ensure that you can log into pmacs with a normal SSH session. This
-verifies that you have the correct username and password. Below, use the complete
-url to bblsub:
+verifies that you have the correct username and password. Consult with the 
+Informatics Team or your PI to obtain the name of the login node you should use.
 
 ```
 $ ssh [username]@[login node name].pmacs.upenn.edu
 ```
 
-Once you have verified that you can access bblsub, check that you have access to
+Once you have verified that you can access the login node, check that you have access to
 the group for the static data you want to access by running the `groups` command.
 
 ```
@@ -180,7 +180,7 @@ will see a message like:
 
 You may be asked for your password if you haven't [set up an ssh key](#set
 ```
-mciesl@bblsub.pmacs.upenn.edu's password:
+[username]@[login node name].pmacs.upenn.edu's password:
 get(ok): sub-colornest112/ses-1/func/sub-colornest112_ses-1_task-rest_run-2_space-MNI152NLin6Asym_atlas-Gordon_desc-timeseries_res-2_bold.tsv (file) [from output-storage...]
 get(ok): sub-colornest042/ses-1/func/sub-colornest042_ses-1_task-rest_run-1_space-MNI152NLin6Asym_atlas-Gordon_desc-timeseries_res-2_bold.tsv (file) [from output-storage...]
 get(ok): sub-colornest083/ses-1/func/sub-colornest083_ses-1_task-rest_run-2_space-MNI152NLin6Asym_atlas-Gordon_desc-timeseries_res-2_bold.tsv (file) [from output-storage...]
