@@ -7,6 +7,8 @@ nav_order: 16
 
 In this tutorial, you’ll learn how to schedule spaces for meetings. 
 
+⚠️ ⚠️ WARNING ⚠️ ⚠️ Students are not able to request space in the scheduling system per SPO policy. If students need PSOM space, they will need to go through a full time faculty/staff member (PSOM or HUP) within their department to request space via the EMS site (as below).
+
 # Step 1: Login to Scheduling & Event Services
 
 [Log in](https://upennmed.emscloudservice.com/web/Default.aspx) using your PennKey and click on `CREATE A RESERVATION`
