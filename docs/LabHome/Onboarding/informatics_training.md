@@ -9,7 +9,7 @@ has_toc: true
 # Informatics Training
 {: .no_toc}
 
-The Informatics team plays a significant role in PennLINC's scientific engine. This page outlines the onboarding process for informatics work, including data curation, analysis, and software development, and is particularly geared towards new data analysts. The goal of this section is to provide the resources necessary to develop the **core competencies** for informatics at PennLINC. Note that there is no expectation that you master *all* of the competencies below in one sitting - just that you are familiar with how to go about accomplishing these tasks (or at least google your way through it).
+Probably all team members in the lab will get involve in research that includes informatics work. This page outlines the onboarding process for informatics work, including data curation, analysis, and software development, and is particularly geared towards new data analysts. The goal of this section is to provide the resources necessary to develop the **core competencies** for informatics at PennLINC. Note that there is no expectation that you master *all* of the competencies below in one sitting - just that you are familiar with how to go about accomplishing these tasks (or at least google your way through it).
 
 
 ## Table of contents
@@ -21,23 +21,33 @@ The Informatics team plays a significant role in PennLINC's scientific engine. T
 # Core Competencies
 {: .no_toc}
 
-The core competencies of informatics are split into 4 major units:
+The core competencies of informatics are split into 5 major units:
 
-1. [Programming & Software Tools](#unit-1-programming--software-tools)
+1. [PennLINC code style guide](#unit-1-pennlinc-code-style-guide)
 
-2. [Data Management, Curation](#unit-2-data-management-curation)
+2. [Programming & Software Tools](#unit-2-programming--software-tools)
 
-3. [Processing pipelines](#unit-3-processing-pipelines)
+3. [Data Management, Curation](#unit-3-data-management-curation)
 
-4. [Hypothesis Testing & Analysis]() (Coming Soon!)
+4. [Processing pipelines](#unit-4-processing-pipelines)
 
-The units are designed around the day-to-day tasks of Informatics team members, with different tasks utilizing a number of competencies from each of these units. In a perfect world, Informatics team members are experts in all 3 units, but in practice, your eventual expertise will depend on your assigned projects within the lab, along with past experience, interests, and desire to learn. All team members should be quite familiar with the skills described in units 1 & 2, and because of the large knowledge base, team members tend to specialize in specific analytic pipelines (unit 3) and analytic techniques (unit 4).
+5. [Hypothesis Testing & Analysis]() (Coming Soon!)
 
-In the sections below, we outline each major competency by asking simple, task-based questions, and provide our best recommended resource for learning each of the competencies, as well as a glossary of (optional) secondary resources. There is an estimated time to complete these, but don't feel locked into these time-frames. If you have previously developed one of these skills before, and can confidently answer a question already, feel free to briefly skim the resource.
+**Objectives for lab members (but not in Informatics team)**: You should be at least familiar with unit 1. _________ Matt please add more ____________
+
+**Objectives for Informatics team members**: The units are designed around the day-to-day tasks of Informatics team members, with different tasks utilizing a number of competencies from each of these units. In a perfect world, Informatics team members are experts in all 3 units, but in practice, your eventual expertise will depend on your assigned projects within the lab, along with past experience, interests, and desire to learn. All team members should be quite familiar with the skills described in units 1, 2 & 3, and because of the large knowledge base, team members tend to specialize in specific analytic pipelines (unit 4) and analytic techniques (unit 5).
+
+In the sections below, we first list the [general code style guide](#unit-1-pennlinc-code-style-guide). For the rest of the sections, we outline each major competency by asking simple, task-based questions, and provide our best recommended resource for learning each of the competencies, as well as a glossary of (optional) secondary resources. There is an estimated time to complete these, but don't feel locked into these time-frames. If you have previously developed one of these skills before, and can confidently answer a question already, feel free to briefly skim the resource.
 
 ---
 
-## Unit 1: Programming & Software Tools
+## Unit 1: PennLINC code style guide
+
+TODO: add a link to that page!!
+
+
+
+## Unit 2: Programming & Software Tools
 
 Being a competent programmer is fundamental to computational neuroscience. While we outline our most frequently used programming languages below, it's important to remember that languages come and go — understanding the principles of programming is more important than spending hours memorizing one language's idiosyncrasies.
 
@@ -139,7 +149,7 @@ We rely on several tools that are essential for reproducible science.
 
 ---
 
-## Unit 2: Data Management & Curation
+## Unit 3: Data Management & Curation
 
 This section introduces the basic data types in neuroimaging, how they are stored, and what software pipelines are frequently used for preprocessing. These competencies are particularly important for Informatics team members.
 
@@ -224,7 +234,7 @@ As mentioned, a major task for the Informatics team is the curation of data into
 
 ---
 
-## Unit 3: Processing Pipelines
+## Unit 4: Processing Pipelines
 
 Before hypotheses can be tested, neuroimaging data needs to be preprocessed. There are a number of tools for preprocessing — each is appropriate for a particular modality or scan type, and each has its own set of features and limitations. You'll get to work very closely with one (or many) of these pipelines once assigned a project, so basic familiarity with the tools suffices for now.
 
