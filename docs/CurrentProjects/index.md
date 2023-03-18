@@ -28,8 +28,8 @@ Below is a list of the current projects in the lab:
 | Spontaneous Activity Develops Along the Hierarchical Sensorimotor-Association Axis | Valerie Jill Sydnor | [https://pennlinc.github.io/spatiotemp_dev_plasticity/](https://pennlinc.github.io/spatiotemp_dev_plasticity/){:target= "blank"}|
 | Individual Differences in Delay Discounting are Associated with Dorsal Prefrontal Cortex Connectivity in Youth  | Kahini Mehta | [https://pennlinc.github.io/pncitc/](https://pennlinc.github.io/pncitc/){:target= "blank"}|
 | Mapping the relationship of white matter lesions to depression in multiple sclerosis  | Erica Baller | [https://pennlinc.github.io/msdepression/](https://pennlinc.github.io/msdepression/){:target= "blank"}|
-| ModelArray: an R package for statistical analysis of fixel-wise data (and beyond) | Chenying Zhao | [source code for ModelArray](https://github.com/PennLINC/ModelArray); <br /> [source code for ConFixel](https://github.com/PennLINC/ConFixel); <br /> [code used in paper](https://github.com/PennLINC/ModelArray_paper); <br /> [other supporting code for ModelArray/ConFixel](https://github.com/PennLINC/ModelArray_tests) |
-| Establishing the Validity of Compressed Sensing Diffusion Spectrum Imaging (CS-DS) | Hamsi Radhakrishnan | [code used in paper](https://github.com/PennLINC/cs_dsi) |
+| ModelArray: an R package for statistical analysis of fixel-wise data (and beyond) | Chenying Zhao | [ModelArray documentation website](https://pennlinc.github.io/ModelArray/); <br /> [source code for ModelArray](https://github.com/PennLINC/ModelArray); <br /> [source code for ConFixel](https://github.com/PennLINC/ConFixel); <br /> [code used in the paper](https://github.com/PennLINC/ModelArray_paper); <br /> [other supporting code for ModelArray/ConFixel](https://github.com/PennLINC/ModelArray_tests) |
+| Establishing the Validity of Compressed Sensing Diffusion Spectrum Imaging (CS-DS) | Hamsi Radhakrishnan | [code used in the paper](https://github.com/PennLINC/cs_dsi) |
 
 ---------------------------------------------------------------------------------
 
