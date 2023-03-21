@@ -14,6 +14,7 @@ Below is a list of the current projects in the lab:
 | ------------- | ---------- | --------------------------------- |
 | Sex Differences in the Functional Topography of Association Networks in Youth    | Sheila Shanmugan | [https://pennlinc.github.io/funcParcelSexDiff1/](https://pennlinc.github.io/funcParcelSexDiff1/){:target="_blank"} |
 | Neurocognitive Maturation in Multi-scale Functional Brain Networks     | Adam Pines   | [https://pennlinc.github.io/multiscale/](https://pennlinc.github.io/multiscale/){:target="_blank"} |
+| Personalized Functional Brain Network Topography Predicts Youth Cognition     | Arielle Keller   | [https://github.com/PennLINC/keller-networks](https://github.com/PennLINC/keller-networks){:target="_blank"} |
 | N-back Adversity: Association between Neighborhood Socioeconomic Status and Executive System Activation in Youth | Kristin Murtha | [https://pennlinc.github.io/Murtha_Nback_Adversity/](https://pennlinc.github.io/Murtha_Nback_Adversity/){:target="_blank"} |
 | Mobile Footprinting: Linking Individual Distinctiveness in Mobility Patterns to Mood, Sleep, and Brain Functional Connectivity | Cedric Huchuan Xia | [https://pennlinc.github.io/footprinting/](https://pennlinc.github.io/footprinting/){:target="_blank"} |
 | Developmental coupling of cerebral blood flow and fMRI fluctuations in youth |  Erica Baller | [https://pennlinc.github.io/IntermodalCoupling/]( https://pennlinc.github.io/IntermodalCoupling/){:target= "blank"} |
@@ -26,7 +27,9 @@ Below is a list of the current projects in the lab:
 | Whole-brain molecular axes encoding relative spatial location in the human brain | Jacob Vogel | [https://pennlinc.github.io/Vogel_PLS_Tx-Space/](https://pennlinc.github.io/Vogel_PLS_Tx-Space/){:target="_blank}|
 | Spontaneous Activity Develops Along the Hierarchical Sensorimotor-Association Axis | Valerie Jill Sydnor | [https://pennlinc.github.io/spatiotemp_dev_plasticity/](https://pennlinc.github.io/spatiotemp_dev_plasticity/){:target= "blank"}|
 | Individual Differences in Delay Discounting are Associated with Dorsal Prefrontal Cortex Connectivity in Youth  | Kahini Mehta | [https://pennlinc.github.io/pncitc/](https://pennlinc.github.io/pncitc/){:target= "blank"}|
-
+| Mapping the relationship of white matter lesions to depression in multiple sclerosis  | Erica Baller | [https://pennlinc.github.io/msdepression/](https://pennlinc.github.io/msdepression/){:target= "blank"}|
+| ModelArray: an R package for statistical analysis of fixel-wise data (and beyond) | Chenying Zhao | [ModelArray documentation website](https://pennlinc.github.io/ModelArray/); <br /> [source code for ModelArray](https://github.com/PennLINC/ModelArray); <br /> [source code for ConFixel](https://github.com/PennLINC/ConFixel); <br /> [code used in the paper](https://github.com/PennLINC/ModelArray_paper); <br /> [other supporting code for ModelArray/ConFixel](https://github.com/PennLINC/ModelArray_tests) |
+| Establishing the Validity of Compressed Sensing Diffusion Spectrum Imaging (CS-DS) | Hamsi Radhakrishnan | [code used in the paper](https://github.com/PennLINC/cs_dsi) |
 
 ---------------------------------------------------------------------------------
 

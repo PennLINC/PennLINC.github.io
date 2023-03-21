@@ -10,7 +10,7 @@ has_toc: true
 {: .no_toc}
 
 When we've finalized a data resource, we share it with authorized lab members from
-the `/static` mount on the `bblsub` server. If you're thinking "I'd like to get the
+the `/static` mount. If you're thinking "I'd like to get the
 region time series from dataset X", or "I need the entire results from qsiprep for
 dataset Y," this is the best way to do it!
 
@@ -33,7 +33,7 @@ PI to open a ticket in the [PMACS helpdesk](https://helpdesk.pmacs.upenn.edu/).
 
 Once you have a PMACS account you will need to open a ticket to request access
 to the specific datasets you want.  You can see a [list of available
-data](/docs/DataTasks/AvailableStaticData.md#available-static-datasets).
+data](https://pennlinc.github.io/docs/DataTasks/AvailableStaticData/).
 Suppose you want access to the HBN and PNC data (the dataset is listed in the
 leftmost column), include in the ticket
 
@@ -44,14 +44,43 @@ Please add my PMACS account to the LINC_PNC and LINC_HBN groups.
 This ticket should also be submitted by your PI.
 
 ---
-<!-- omit in toc -->
-### ⚠️ ⚠️ WARNING ⚠️ ⚠️
+**⚠️ ⚠️ WARNING ⚠️ ⚠️**
+
 Datasets are subject to data use agreements and terms of use. Before access is
 granted to any static dataset, you must prove that you are qualified to access
 it *when you ask your PI to create the PMACS helpdesk ticket*. This can be an
 email showing your connectomedb access (for HCP-YA) or similar.
 
 ---
+
+## Checking your PMACS account
+
+You should check your PMACS account before you try to clone any static data.
+First ensure that you can log into pmacs with a normal SSH session. This
+verifies that you have the correct username and password. Consult with the 
+Informatics Team or your PI to obtain the name of the login node you should use.
+
+```
+$ ssh [username]@[login node name].pmacs.upenn.edu
+```
+
+Once you have verified that you can access the login node, check that you have access to
+the group for the static data you want to access by running the `groups` command.
+
+```
+$ groups
+... LINC_NKI LINC_HBN LINC_CCNP LINC_HRC LINC_HCPD LINC_PNC LINC_PACCT...
+```
+
+The `LINC_` groups provide read-only access to that dataset's static data.
+
+Finally, use this command to force a recent version of git to be used for all
+sessions:
+
+```
+$ echo 'module load git' >> ~/.bashrc
+```
+
 
 
 # Clone the static data
@@ -62,6 +91,7 @@ In order to get the data to your computer, you need to ensure 3 things:
   2. Your computer is on the [UPHS VPN](/docs/cubic/cubic.md#setting-up-your-account) or the
      [PMACS VPN](/docs/PMACS/pmacs.md#logging-in-to-pmacs-lpc)
   3. You have datalad, git and git-annex installed on your computer
+  4. You have verified that you have your PMACS accound set up (see above section)
 
 If these conditions are met, you're ready to access some data! Suppose I'd like
 to see the regional time series data for CCNP. Checking the
@@ -70,20 +100,20 @@ see the `Clone URL` column lists `LINC_CCNP#~XCP_unzipped` for this resource.
 
 Items in the `Clone URL` are used to get a clonable address for the data. The
 value gets appended to
-`ria+ssh://[mypmacsusername]@[bblsub.address.edu]:/static/`, where
-`[mypmacsusername]` is replaced with your PMACS username (without brackets) and
-`[bblsub.address.edu]` is replaced with the actual address for the `bblsub`
-server (also without brackets). Consult with the Informatics Team or your PI to
-get the real address for `bblsub`. I can then clone this data with the command
+`ria+ssh://[username]@[login node name].pmacs.upenn.edu:/static/`, where
+`[username]` is replaced with your PMACS username (without brackets) and
+`[login node name]` is replaced with the name of the PMACS login node you will be accessing. 
+`Consult with the Informatics Team or your PI to obtain the login node name you should use. 
+`I can then clone this data with the command
 
 ```
-$ datalad clone ria+ssh://username@bblsub.address.edu:/static/LINC_CCNP#~XCP_unzipped CCNP_xcpd
+$ datalad clone ria+ssh://[username]@[login node name].pmacs.upenn.edu:/static/LINC_CCNP#~XCP_unzipped CCNP_xcpd
 ```
 
 You will be asked for your PMACS account password:
 
 ```
-username@bblsub.address.edu's password:
+[username]@[login node name].pmacs.upenn.edu's password:
 ```
 
 after which, you will see some `[INFO   ]` messages that look scary, but are harmless and expected.
@@ -92,7 +122,7 @@ They will look something like:
 ```
 [INFO   ] scanning for annexed files (this may take some time)
 [INFO   ] RIA store unavailable. -caused by- file:///some/file/path/ria-layout-version not found, self.ria_store_url: ria+file:///some/file/path/output_ria, self.store_base_pass: /some/file/path/output_ria, self.store_base_pass_push: None, path: <class 'pathlib.PosixPath'> /some/file/path/output_ria/ria-layout-version -caused by- [Errno 2] No such file or directory: '/some/file/path/ria-layout-version'
-[INFO   ] Reconfigured output-storage for ria+ssh://username@bblsub.address.edu:/static/LINC_CCNP
+[INFO   ] Reconfigured output-storage for ria+ssh://[username]@[login node name].pmacs.upenn.edu:/static/LINC_CCNP
 [INFO   ] Configure additional publication dependency on "output-storage"
 configure-sibling(ok): . (sibling)
 install(ok): /my/current/workingdir/CCNP_xcpd (dataset)
@@ -150,7 +180,7 @@ will see a message like:
 
 You may be asked for your password if you haven't [set up an ssh key](#set
 ```
-mciesl@bblsub.pmacs.upenn.edu's password:
+[username]@[login node name].pmacs.upenn.edu's password:
 get(ok): sub-colornest112/ses-1/func/sub-colornest112_ses-1_task-rest_run-2_space-MNI152NLin6Asym_atlas-Gordon_desc-timeseries_res-2_bold.tsv (file) [from output-storage...]
 get(ok): sub-colornest042/ses-1/func/sub-colornest042_ses-1_task-rest_run-1_space-MNI152NLin6Asym_atlas-Gordon_desc-timeseries_res-2_bold.tsv (file) [from output-storage...]
 get(ok): sub-colornest083/ses-1/func/sub-colornest083_ses-1_task-rest_run-2_space-MNI152NLin6Asym_atlas-Gordon_desc-timeseries_res-2_bold.tsv (file) [from output-storage...]
@@ -217,14 +247,13 @@ analysis will be fetched if you need to
 [access the data again](#clone-the-static-data).
 
 
-## Setting up an ssh key on PMACS
+## SSH Keys from cubic project uses to pmacs personal users: NOT ALLOWED!
 
-If you don't want to enter your password each time you clone or `datalad get`
-data from PMACS, you can set up SSH keys on `bblsub`.
+This is not allowed! SSH keys would give all those access to the cubic project user
+access to the key owner's pmacs account. This is too dangerous and therefore ssh key
+use is not allowed from a cubic project user to a pmacs personal user account.
 
-**NOTE** On CUBIC, the
-[project user](/docs/cubic/cubic.md#project-directory-access-request) accounts
-may have multiple users who can access their data. If you set up an SSH key
-with your PMACS account, others who can become the project user will have
-access to that key. This is not allowed!
+This unfortunately means you will need to enter your password to copy over the data.
+To minimize password entry, try to `datalad get` files using file glob patterns
+and using the `-J` flag to download content in parallel.
 

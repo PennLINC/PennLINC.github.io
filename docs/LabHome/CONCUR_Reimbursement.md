@@ -17,6 +17,7 @@ For allowable expenses and funding for travel, please see the [travel guidelines
 
 
 ## Overview of Steps to Reimbursement: 
+
 Explanation on how to complete each step is listed below
 
 1. Prepare expenditure justification form
@@ -66,8 +67,17 @@ NOTE:  If you are unsure about this step please feel free to review this form wi
 
 ## Update the Travel Reimbursement Tracker
 
-Equity and transparency in use of support of travel is important, and will be openly tracked moving forward [here](https://docs.google.com/spreadsheets/d/1fAKrIlrCRXMc8PNQwpw-Adb3GG91zLkvc1RoutVXzK0/edit?usp=sharing).  If you are not on this sheet already, make yourself a row. If the conference you are attending is not listed, create it as a column.  Then fill in the amount you are requesting support for in the cell that correpsonds to your row and that conf's col.  Only record the amount you are asking for support _from the lab_. Do NOT include any expenses that were covered by travel awards or other individual-specific funds.  
+Equity and transparency in use of support of travel is important, and will be openly tracked moving forward.  If you are not on this sheet already, make yourself a row. If the conference you are attending is not listed, create it as a column.  Then fill in the amount you are requesting support for in the cell that correpsonds to your row and that conf's col.  Only record the amount you are asking for support _from the lab_. Do NOT include any expenses that were covered by travel awards or other individual-specific funds.  
 
+## Booking flights via Concur 
+1. Prepare an expenditure justification form as in the instructions (DM Ted for which funding source, then ask Lia on this channel for the corresponding code and she’ll DM the code)
+2. Select flights directly through Concur (login via Pennkey, select destination and dates under Trip Search)
+3. After selecting the flights, payment option = billing goes directly to the UPENN DIRECT BILL ACCOUNT* (...9836)
+4. Next page is trip booking information:
+- trip name is filled automatically
+- add business justification and optionally a trip description, e.g. something like Poster presentation at the OHBM 2023 conference for Dr. Ted Satterthwaite
+- if known, add funding code under Notes to Approver 
+- Confirm and wait for an email from Sharon Liu asking for the expenditure justification form; send that -- et voilà!
 
 ### Approval from Business Administrators
 Send the prepared Expenditure Justification in word document form to Sharon Liu (xgliu@pennmedicine.upenn.edu) for pre-review BEFORE submitting via concur. Please cc Ted and Lia on all emails regareding reimbursement. Note that Sharon is EXTREMELY busy and we try to limit asking them lots of q's if possible-- please ask q's on the `#concur` slack channel first. 
@@ -146,3 +156,4 @@ Navigate to the [CONCUR website](https://cms.business-services.upenn.edu/penntra
     - Penn Marketplace Non-PO Payment Request for Preparers Curriculum
     - Penn Marketplace Non-PO Payment Request - Application Training for Approvers
     - Penn Marketplace Non-PO Payment Request - Application Training for Preparers
+
