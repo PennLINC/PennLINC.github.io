@@ -11,10 +11,12 @@ has_toc: false
 
 | Study | Content                | Clone URL                       | Format | Dataset ID                           |
 | ----- | ---------------------- | ------------------------------- | ------ | ------------------------------------ |
-| PNC   | BIDS                   | LINC_PNC#~BIDS                  | Files  | Not yet transferred                  |
+| PNC   | BIDS                   | LINC_PNC#~BIDS                  | Files  | f2cb6108-521b-4653-b492-003321e5f5e3 |
 | PNC   | GQI+hsvs segmentation  | LINC_PNC#~GQIHSVS               | Files  | f20c2eb1-c839-4404-8dad-63f0a20a4fff |
 | PNC   | QSIRecon msmt sifthsvs | LINC_PNC#~SIFTHSVS              | Zips   | 2642a99d-de75-437a-b63f-7da4ed36f330 |
 | PNC   | QSIPrep                | LINC_PNC#~QSIPREP               | Zips   | 6af87a20-bfe5-458b-8773-cfe51e6200c6 |
+| PNC   | XCP (v0.X)             | LINC_PNC#~XCP_unzipped          | Files  | 4669d449-89fd-48ca-94a3-d8326f8ac98b |
+| PNC   | XCP (v0.X)             | LINC_PNC#~XCP_zipped            | Zips   | e75816f8-bc8f-479f-90db-a86dc35f4676 |
 | CCNP  | BIDS                   | LINC_CCNP#~BIDS                 | Files  | 30c9ce5c-b43e-45d5-8a82-4fb7561b51a6 |
 | CCNP  | fMRIPrep               | LINC_CCNP#~FMRIPREP_zipped      | Zips   | eee0d711-f800-4725-8097-4c7b79c7d87f |
 | CCNP  | XCP (v0.X)             | LINC_CCNP#~XCP_unzipped         | Files  | b464c213-ca15-4628-907e-f8c31a3d695e |
