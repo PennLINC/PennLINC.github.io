@@ -9,7 +9,7 @@ has_toc: true
 
 ### Introduction
 
-The Secure Shell Protocol (or SSH) is a cryptographic network protocol that allows users to securely access a remote computer over an unsecured network.
+The Secure Shell Protocol (or SSH) is a cryptographic network protocol that allows users to securely access a remote computer over unsecured networks.
 
 Though SSH supports password-based authentication, it is generally recommended that you use *SSH keys* instead. SSH keys are a more secure method of logging into an SSH server, because they are not vulnerable to common brute-force password hacking attacks.
 
