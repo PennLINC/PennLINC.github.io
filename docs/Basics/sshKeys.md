@@ -23,14 +23,14 @@ Step 1 --- Creating the Key Pair
 The first step is to create a key pair on the client machine. This will likely be your local computer. Type the following command into your local command line:
 
 ```bash
-ssh-keygen -t ed25519
+ssh-keygen -t rsa -b 4096 -C "PROJECTUSER@cubic"
 ```
 
 You should see
 
 ```
-Generating public/private ed25519 key pair.
-Enter file in which to save the key (/Users/max/.ssh/id_ed25519):
+Generating public/private id_rsa key pair.
+Enter file in which to save the key (/Users/YOURUSER/.ssh/id_rsa):
 ```
 
 You will see a confirmation that the key generation process has begun, and you will be prompted for some information, which we will discuss in the next step.
@@ -41,7 +41,7 @@ Step 2 --- Specifying Where to Save the Keys
 The first prompt from the `ssh-keygen` command will ask you where to save the keys:
 
 ```
-Enter file in which to save the key (/Users/<username>/.ssh/id_ed25519):
+Enter file in which to save the key (/Users/<username>/.ssh/id_rsa):
 ```
 
 Press `ENTER` here to save the files to the default location in the `.ssh` directory of your home directory.
@@ -56,7 +56,7 @@ The second and final prompt from `ssh-keygen` will ask you to enter a passphra
 ```
 Enter passphrase (empty for no passphrase): 
 Enter same passphrase again: 
-Your identification has been saved in /Users/<username>/.ssh/id_ed25519.
+Your identification has been saved in /Users/<username>/.ssh/id_rsa.
 ```
 
 Finally, it will give you some pretty art under this:
@@ -64,7 +64,7 @@ Finally, it will give you some pretty art under this:
 The key fingerprint is:
 ```
 
-The public key is now located in `/Users/<username>/.ssh/id_ed25519.pub`. The private key is now located in `/Users/<username>/.ssh/id_ed25519`.
+The public key is now located in `/Users/<username>/.ssh/id_rsa.pub`. The private key is now located in `/Users/<username>/.ssh/id_rsa`.
 
 Step 4 --- Copying the Public Key to Your Server
 ----------------------------------------------
@@ -80,7 +80,7 @@ ssh-copy-id USER@SERVER
 You will be prompted for your password, type it in:
 
 ```
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/<username>/.ssh/id_ed25519.pub"
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/<username>/.ssh/id_rsa.pub"
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
 /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
 USER@SERVER's password: 
@@ -95,6 +95,16 @@ For me, this hangs upon login, so you don't really get confirmation it works. Af
 Important limitations!!! 
 ----------
 Never run `chmod -R` type commands on your home directory, as the key will no longer work.
+
+Notes
+----------
+Confirm you have a config file in your .ssh which reads like this: 
+
+```
+Host HOSTNAME
+  Hostname      HOSTNAME
+  User          YOUR HOST USERNAME 
+```
 
 Conclusion
 ----------
