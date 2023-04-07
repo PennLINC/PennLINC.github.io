@@ -43,7 +43,6 @@ has_toc: false
 | HCPD  | BIDS                              | LINC_HCPD#~BIDS                 | Files  | participant level subdatasets        |
 | HCPD  | fMRIPrep v20.2.3                  | LINC_HCPD#~FMRIPREP-ANAT_zipped | Zips   | 4bae19b9-865b-4336-8452-6ea76ef0e720 |
 | HCPD  | fMRIPrep v22.0.0                  | LINC_HCPD#~FMRIPREP-FUNC_zipped | Zips   | 580b2ea3-258f-4c28-a400-c053820453d7 |
-| HCPD  | XCP v0.3.0                        | LINC_HCPD#~XCP_unzipped         | Files  | b464c213-ca15-4628-907e-f8c31a3d695e |
 | HCPD  | XCP v0.3.0                        | LINC_HCPD#~XCP_zipped           | Zips   | a7c428ec-b19a-44ef-9312-77e89bb19b0c | 
 | HCPD  | QSIPrep v0.16.1                   | LINC_HCPD#~QSIPREP              | Zips   | 1dd9ad0a-e0df-4aa0-9ef5-657381292560 |
-| HCPD  | GQI+hsvs segmentation v0.16.0RC3  | LINC_HCPD#~GQIHSVS              | Files  | c5e26695-e519-48bd-83ec-98568d541a09 |
+| HCPD  | GQI+hsvs segmentation v0.16.0RC3  | LINC_HCPD#~GQIHSVS_unzipped     | Files  | c5e26695-e519-48bd-83ec-98568d541a09 |
