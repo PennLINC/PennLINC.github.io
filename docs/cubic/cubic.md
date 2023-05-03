@@ -449,6 +449,8 @@ the neuroR container on [docker hub](https://hub.docker.com/r/pennsive/neuror) h
 module load neuroR/0.2.0 # will load R 4.1
 ```
  
+ 5. Another important resource to download R packages via Docker image can be found [here](https://github.com/PennLINC/docker_R)
+
 ### Set up and run RStudio instance  
 
 Use this script to set up and run a simple RStudio instance on the cluster. This method of using RStudio with cubic is highly recommended. 
@@ -578,3 +580,4 @@ This has been tested only on Mac using the XQuartz utility -- see [here](https:/
 
 ## Additional information about CUBIC
 [This page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects) has tons of other useful information about using CUBIC. Anyone who plans on using CUBIC regularly should probably browse it. Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others. Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page.
+
