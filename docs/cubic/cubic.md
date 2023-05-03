@@ -346,7 +346,7 @@ unset PYTHONPATH
 ```
 
 ## Mounting CUBIC on your local machine
-
+ 
 One way to interact with CUBIC files is to _mount_ the server on to your filesystem. This can be useful for quickly moving a small number of files back and forth
 (for example with NIfTIs you want't to view). It's _not_ meant for large file management or version control purposes (see the next section for solutions for those).
 
@@ -387,73 +387,9 @@ It is also possible to copy files through the mount point, but this would be qui
 
 ##  Using R/R-studio and Installation of R packages
 
-1. Currently  R-3.6 is installed on CUBIC. If you are satisfy with R-3.6, go to step 2 below. However, you can install another R version in any directory of your choice, usually home directory `/cbica/home/username`.
-To install R in your desired directory, follow the following steps.
-
-   ```bash
-   $ module load curl/7.56.0 # load the libcurl library
-   $ wget http://cran.rstudio.com/src/base/R-3/R-3.4.1.tar.gz #e.g R-3.4.1
-   $ tar xvf R-3.4.1.tar.gz
-   $ cd R-3.4.1
-   $ ./configure --prefix=$HOME/R  --enable-R-shlib #$HOME/R is where R will be installed
-   $ make && make install
-
-   ```
-
-     Then, installation of R is complete.
-    To run R, add `$HOME/R/bin` to your PATH. Then, shell commands like R and Rscript will work.
-   ```bash
-    echo export PATH="$HOME/R/bin:$PATH" >> .bash_profile or .bashrc # add R to bash
-   ```
-   To run R:
-   ```bash
-   $ module load R
-   $ R
-   ```
-
-    >You can load higher version of `gcc` compiler if required for some R version.
-   ```bash
-    $ module load gcc/version-number
-   ```
-
-2. You can install any R-packages of your choice. It require adding library path in `.Rprofile` . You also may need to specify the base URL(s) of the repositories to use. Furthermore, you should specific lib.loc when loading packages.
-    ```R
-       .libPaths('/cbica/home/username/Rlibs`)
-       install.packages("package_name", repos='http://cran.us.r-project.org', lib='/cbica/home/username/Rlibs') 
-       library(package_name, lib.loc="/cbica/home/username/Rlibs")
-
-    ```
-    You can have more than one R-packages directory.
-    
-3. You can also use r-studio on CUBIC  by simply load rstudio using `module`.
-
-     ```bash
-      $ module load R-studio/1.1.456
-      $ rstudio & # enjoy the R and Rstudio, it works
-     ```
-4. If you are working with large amounts of data, you may want to submit a job in R. Make sure the packages you need in you Rscript are installed properly and remember to specify 'lib.loc' when loading libraries in your .R file. Write your bash script:
-      ```sh
-      #!/bin/bash
-      Rscript --save /cbica/projects/project_name/script_name.R 
-      ```
-
-And submit your job, for example: 
-      ```sh
-      qsub -l h_vmem=25G,s_vmem=24G bash_script.sh
-      ```
- 
-Alternatively, you can use containers:
-
-the neuroR container on [docker hub](https://hub.docker.com/r/pennsive/neuror) has R and many neuroimaging packages installed, which is also available as an environment module on CUBIC:
-```sh
-module load neuroR/0.2.0 # will load R 4.1
-```
- 
- 5. Another important resource to download R packages via Docker image can be found [here](https://github.com/PennLINC/docker_R)
-
 ### Set up and run RStudio instance  
 
-Use this script to set up and run a simple RStudio instance on the cluster. This method of using RStudio with cubic is highly recommended. 
+Use the following tutorial to set up and run a simple RStudio instance on the cluster. This method of using RStudio with cubic is highly recommended for most purposes. 
 
 Usage:
 
@@ -502,6 +438,81 @@ Side effects:
 - The Singularity instance will remain running unless explicitly stopped with `singularity instance stop`
 - R package installations are made to the user's local R location unless explicitly changed.
 - Be aware of login nodes on CUBIC -- if you start an RStudio instance with port X on login node 1, and are unexpectedly disconnected from the cluster, that port may be blocked until you can stop the instance on login node 1
+
+
+### Use RStudio after mounting your project directory 
+Though this way of using R/RStudio less ideal than using singlarity (described in the section above), this is another option. After [mounting cubic on your local machine](#Mounting-CUBIC-on-your-local-machine), you can open Rscripts or Rmd files in RStudio. Note that when you mount your project directory, you will be in your personal user, NOT your project user. Thus, all files created and edited will be under personal user (which is why mounting is not ideal). 
+ 
+### Use R and RStudio on Cubic directly 
+1. Currently  R-4.2.2 is installed on CUBIC. If you are satisfied with R-4.2.2, go to step 2 below. However, you can install another R version in any directory of your choice, usually home directory `/cbica/home/username`.
+To install R in your desired directory, follow the following steps.
+
+   ```bash
+   $ module load curl/7.56.0  # load the libcurl library
+   $ wget http://cran.rstudio.com/src/base/R-4/R-4.2.2.tar.gz #e.g R-4.2.2
+   $ tar xvf R-4.2.2.tar.gz
+   $ cd R-4.2.2
+   $ ./configure --prefix=$HOME/R  --enable-R-shlib #$HOME/R is where R will be installed
+   $ make && make install
+
+   ```
+
+     Then, installation of R is complete.
+    To run R, add `$HOME/R/bin` to your PATH. Then, shell commands like R and Rscript will work.
+   ```bash
+    echo export PATH="$HOME/R/bin:$PATH" >> .bash_profile or .bashrc # add R to bash
+   ```
+   To run R:
+   ```bash
+   $ module load R
+   $ R
+   ```
+
+    >You can load higher version of `gcc` compiler if required for some R version.
+   ```bash
+    $ module load gcc/version-number
+   ```
+
+2. You can install R-packages of your choice. It require adding library path in `.Rprofile` . You also may need to specify the base URL(s) of the repositories to use. Furthermore, you should specific lib.loc when loading packages. Note that some packages, such as "tidyverse", have run into a lot of issues when trying to install directly onto cubic.
+    ```R
+       .libPaths('/cbica/home/username/Rlibs`)
+       install.packages("package_name", repos='http://cran.us.r-project.org', lib='/cbica/home/username/Rlibs') 
+       library(package_name, lib.loc="/cbica/home/username/Rlibs")
+
+    ```
+    You can have more than one R-packages directory.
+    
+3. You can also use r-studio on CUBIC  by simply load rstudio using `module`.
+
+     ```bash
+      $ module load R-studio/1.1.456
+      $ rstudio & # enjoy the R and Rstudio, it works
+     ```
+4. If you are working with large amounts of data, you may want to submit a job in R. Make sure the packages you need in you Rscript are installed properly and remember to specify 'lib.loc' when loading libraries in your .R file. Write your bash script:
+      ```sh
+      #!/bin/bash
+      Rscript --save /cbica/projects/project_name/script_name.R 
+      ```
+
+And submit your job, for example: 
+      ```sh
+      qsub -l h_vmem=25G,s_vmem=24G bash_script.sh
+      ```
+ 
+### Use a Docker Image containing R packages on CUBIC
+If you run into issues installing your needed R packages on cubic, you can use a Docker image that contains a number of R packages already. For example, if you have a huge analysis in R that requires you to submit a job on CUBIC, but you can't successfully install your R packages of interests onto CUBIC, this method is a great workaround. 
+
+This [docker-R github repo](https://github.com/PennLINC/docker_R) contains documentation on how you can either 1) directly use a publicly available Docker image that contains a bunch of R packages already, or 2) build your own Docker image with the specific packages you need. After setting up your Docker image, you can submit a job on CUBIC to run all the Rscripts you want! 
+
+
+Alternatively, you can use containers:
+
+the neuroR container on [docker hub](https://hub.docker.com/r/pennsive/neuror) has R and many neuroimaging packages installed, which is also available as an environment module on CUBIC:
+```sh
+module load neuroR/0.2.0 # will load R 4.1
+```
+ 
+
 
 
 ## CPUs, Nodes, & Memory
