@@ -441,9 +441,9 @@ Side effects:
 
 
 ### Use RStudio after mounting your project directory 
-Though this way of using R/RStudio less ideal than using singlarity (described in the section above), this is another option. After [mounting cubic on your local machine](#Mounting-CUBIC-on-your-local-machine), you can open Rscripts or Rmd files in RStudio. Note that when you mount your project directory, you will be in your personal user, NOT your project user. Thus, all files created and edited will be under personal user (which is why mounting is not ideal). 
+Though this way of using R/RStudio less ideal than using singlarity (described in the section above), this is another option. After [mounting cubic on your local machine](#Mounting-CUBIC-on-your-local-machine), you can open Rscripts or Rmd files in RStudio locally. Note that when you mount your project directory, you will be in your personal user, NOT your project user. Thus, all files created and edited will be under personal user (which is why mounting is not ideal). 
  
-### Use R and RStudio on Cubic directly 
+### Use R and RStudio on CUBIC directly 
 1. Currently  R-4.2.2 is installed on CUBIC. If you are satisfied with R-4.2.2, go to step 2 below. However, you can install another R version in any directory of your choice, usually home directory `/cbica/home/username`.
 To install R in your desired directory, follow the following steps.
 
