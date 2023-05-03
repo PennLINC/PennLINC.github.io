@@ -473,7 +473,8 @@ To install R in your desired directory, follow the following steps.
     $ module load gcc/version-number
    ```
 
-2. You can install R-packages of your choice. It require adding library path in `.Rprofile` . You also may need to specify the base URL(s) of the repositories to use. Furthermore, you should specific lib.loc when loading packages. Note that some packages, such as "tidyverse", have run into a lot of issues when trying to install directly onto cubic.
+2. You can install R-packages of your choice. It require adding library path in `.Rprofile` . You also may need to specify the base URL(s) of the repositories to use. Furthermore, you should specific lib.loc when loading packages. Note that some packages, such as "tidyverse", have run into a lot of issues when trying to install directly onto cubic. See [next section](#use-a-docker-image-containing-r-packages-on-cubic) for a workaround.
+
     ```R
        .libPaths('/cbica/home/username/Rlibs`)
        install.packages("package_name", repos='http://cran.us.r-project.org', lib='/cbica/home/username/Rlibs') 
