@@ -70,6 +70,8 @@ NOTE:  If you are unsure about this step please feel free to review this form wi
 Equity and transparency in use of support of travel is important, and will be openly tracked moving forward.  If you are not on this sheet already, make yourself a row. If the conference you are attending is not listed, create it as a column.  Then fill in the amount you are requesting support for in the cell that correpsonds to your row and that conf's col.  Only record the amount you are asking for support _from the lab_. Do NOT include any expenses that were covered by travel awards or other individual-specific funds.  
 
 ## Booking flights via Concur 
+Note: Sharon Liu is no longer our travel approver, John Hyon is. Before you book anything on Concur, make sure your profile is updated to reflect this so that requests are routed to the right person. (Profile > Company Information > Travel Approver on Concur should say John and not Sharon).
+
 1. Prepare an expenditure justification form as in the instructions (DM Ted for which funding source, then ask Lia on this channel for the corresponding code and she’ll DM the code)
 2. Select flights directly through Concur (login via Pennkey, select destination and dates under Trip Search)
 3. After selecting the flights, payment option = billing goes directly to the UPENN DIRECT BILL ACCOUNT* (...9836)
