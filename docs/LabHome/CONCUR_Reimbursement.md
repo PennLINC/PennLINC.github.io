@@ -64,7 +64,13 @@ If you have any questions for Lia about concur, please send them in the `#concur
 
 NOTE:  If you are unsure about this step please feel free to review this form with Lia on the #concur channel before sending this to Sharon (see below). Do not email John Hyon with concur q's.
 
+## Adding delegates 
+Please give Concur delegate access to:
+1. Stace Moore
+2. Patrick Doyle
+3. Lucinda Bertsinger
 
+Instructions for this can be found [here](../../assets/concur_delegate.pdf)
 ## Update the Travel Reimbursement Tracker
 
 Equity and transparency in use of support of travel is important, and will be openly tracked moving forward.  If you are not on this sheet already, make yourself a row. If the conference you are attending is not listed, create it as a column.  Then fill in the amount you are requesting support for in the cell that correpsonds to your row and that conf's col.  Only record the amount you are asking for support _from the lab_. Do NOT include any expenses that were covered by travel awards or other individual-specific funds.  
@@ -80,7 +86,7 @@ Equity and transparency in use of support of travel is important, and will be op
 - Confirm and wait for an email from Sharon Liu asking for the expenditure justification form; send that -- et voilà!
 
 ### Approval from Business Administrators
-Send the prepared Expenditure Justification in word document form to Sharon Liu (xgliu@pennmedicine.upenn.edu) for pre-review BEFORE submitting via concur. Please cc Ted and Lia on all emails regareding reimbursement. Note that Sharon is EXTREMELY busy and we try to limit asking them lots of q's if possible-- please ask q's on the `#concur` slack channel first. 
+Send the prepared Expenditure Justification in word document form to Sharon Liu (xgliu@pennmedicine.upenn.edu) for pre-review BEFORE submitting via concur AND PI signature on the form. Please cc Ted and Lia on all emails regareding reimbursement. Note that Sharon is EXTREMELY busy and we try to limit asking them lots of q's if possible-- please ask q's on the `#concur` slack channel first. 
 
 Make sure to also send the receipt for all expenses. The receipt _must include_ the confirmation of payment (not just the invoice), how the payment was made (typically last 4 digits of the card listed on receipt), each expense itemized, the total amount paid, and the date the payment was completed.  Alcohol is never an allowable expense.
 
