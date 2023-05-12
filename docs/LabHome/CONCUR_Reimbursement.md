@@ -150,13 +150,6 @@ Navigate to the [CONCUR website](https://cms.business-services.upenn.edu/penntra
   
 - If you need help and would like another person to be able to view your concur, you can add them as a delegate following the instructions below
 
-
-## How to Assign a delegate
-- Click “Profile” on top right corner --> “Profile Settings” --> “Expense Delegates” --> “add” --> Search by email/name --> make sure to check all the boxes next to the new name (Can prepare, can view receipts, receives emails) --> Click “Save”
-
-
-
-
 ## Purchase Orders (PO)
 - To order supplies that are within our Penn system, you need to complete a series of trainings. This will be for when Ted needs to order certain supplies that can be found in the Penn marketplace. You will be responsible for preparing the purchase order and putting into place for the next step of approvals.
 - You will need to complete the following trainings in KnowledgeLink:
