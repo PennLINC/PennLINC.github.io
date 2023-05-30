@@ -38,7 +38,7 @@ _Principle Investigator_: Dr. Theodore Satterthwaite
 
 _Project/Grant Number_: This is the funding nickname for project/Sponsor. Please ask Ted what fund to use on the #concur channel.
 
-_Funding Source_: This is a 26 digit budget code.  Lia has these, ask on the #concur channel.
+_Funding Source_: This is a 26 digit budget code.  Ted has these, ask on the #concur channel.
 
 _Description of Expense_: Brief description including how the expense was paid for and to which vendor. (ex. To reimburse Dr. Satterthwaite for monthly subscription to CircleCI vendor for data management)
 
