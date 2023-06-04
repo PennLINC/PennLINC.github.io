@@ -439,12 +439,9 @@ Side effects:
 - R package installations are made to the user's local R location unless explicitly changed.
 - Be aware of login nodes on CUBIC -- if you start an RStudio instance with port X on login node 1, and are unexpectedly disconnected from the cluster, that port may be blocked until you can stop the instance on login node 1
 
-
-### Use RStudio after mounting your project directory 
-Though this way of using R/RStudio less ideal than using singlarity (described in the section above), this is another option. After [mounting cubic on your local machine](#Mounting-CUBIC-on-your-local-machine), you can open Rscripts or Rmd files in RStudio locally. Note that when you mount your project directory, you will be in your personal user, NOT your project user. Thus, all files created and edited will be under personal user (which is why mounting is not ideal). 
  
 ### Use R and RStudio on CUBIC directly 
-1. Currently  R-4.2.2 is installed on CUBIC. If you are satisfied with R-4.2.2, go to step 2 below. However, you can install another R version in any directory of your choice, usually home directory `/cbica/home/username`.
+1. Currently  R-4.2.2 is installed on CUBIC. If you are satisfied with R-4.2.2, simply load it with `module load R/4.2.2`, and directly go to step 2 below. However, you can install another R version in any directory of your choice, usually home directory `/cbica/home/username`.
 To install R in your desired directory, follow the following steps.
 
    ```bash
@@ -473,7 +470,8 @@ To install R in your desired directory, follow the following steps.
     $ module load gcc/version-number
    ```
 
-2. You can install R-packages of your choice. It require adding library path in `.Rprofile` . You also may need to specify the base URL(s) of the repositories to use. Furthermore, you should specific lib.loc when loading packages. Note that some packages, such as "tidyverse", have run into a lot of issues when trying to install directly onto cubic.
+2. You can install R-packages of your choice. It require adding library path in `.Rprofile` . You also may need to specify the base URL(s) of the repositories to use. Furthermore, you should specific lib.loc when loading packages. Note that some packages, such as "tidyverse", have run into a lot of issues when trying to install directly onto cubic. See [next section](#use-a-docker-image-containing-r-packages-on-cubic) for a workaround.
+
     ```R
        .libPaths('/cbica/home/username/Rlibs`)
        install.packages("package_name", repos='http://cran.us.r-project.org', lib='/cbica/home/username/Rlibs') 
@@ -502,10 +500,10 @@ And submit your job, for example:
 ### Use a Docker Image containing R packages on CUBIC
 If you run into issues installing your needed R packages on cubic, you can use a Docker image that contains a number of R packages already. For example, if you have a huge analysis in R that requires you to submit a job on CUBIC, but you can't successfully install your R packages of interests onto CUBIC, this method is a great workaround. 
 
-This [docker-R github repo](https://github.com/PennLINC/docker_R) contains documentation on how you can either 1) directly use a publicly available Docker image that contains a bunch of R packages already, or 2) build your own Docker image with the specific packages you need. After setting up your Docker image, you can submit a job on CUBIC to run all the Rscripts you want! 
+This [docker-R github repo](https://github.com/PennLINC/docker_R) contains documentation on how you can either 1) directly use [a publicly available Docker image](https://hub.docker.com/r/pennlinc/docker_r) that contains a bunch of R packages already, or 2) build your own Docker image with the specific packages you need. After setting up your Docker image, you can submit a job on CUBIC to run all the Rscripts you want! For details, please see instructions [here](https://github.com/PennLINC/docker_R).
 
 
-Alternatively, you can use containers:
+Alternatively, you can use other containers:
 
 the neuroR container on [docker hub](https://hub.docker.com/r/pennsive/neuror) has R and many neuroimaging packages installed, which is also available as an environment module on CUBIC:
 ```sh
