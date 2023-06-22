@@ -47,3 +47,4 @@ has_toc: false
 | HCPD  | XCP v0.3.0                        | LINC_HCPD#~XCP_zipped           | Zips   | a7c428ec-b19a-44ef-9312-77e89bb19b0c | 
 | HCPD  | QSIPrep v0.16.1                   | LINC_HCPD#~QSIPREP              | Zips   | 1dd9ad0a-e0df-4aa0-9ef5-657381292560 |
 | HCPD  | GQI+hsvs segmentation v0.16.0RC3  | LINC_HCPD#~GQIHSVS_unzipped     | Files  | c5e26695-e519-48bd-83ec-98568d541a09 |
+| HCPD  | sift+hsvs v0.16.0RC3              | LINC_HCPD#~SIFTHSVS_zipped      | Zips   | 83ae6014-561c-4767-a571-21348011888c |
