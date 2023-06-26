@@ -30,4 +30,4 @@ Some general guidelines on conference / travel guidelines for PennLINC team memb
 
 10. Conference travel is a privilege, and is dependent upon both funding and being a positive force for the community. This includes supporting colleagues in collaborative projects, testing software, writing documentation, and regular attendance at lab meetings & the seminar series.   
 
-11. If you are presenting a poster, please use our lab template in [Illustrator](https://github.com/PennLINC/PennLINC.github.io/raw/master/docs/LabHome/poster.ai) or any open source [editor](https://github.com/PennLINC/PennLINC.github.io/raw/master/docs/LabHome/poster.svg)
+11. If you are presenting a poster, please use our lab template in Illustrator - either horizontal(https://github.com/PennLINC/PennLINC.github.io/raw/main/docs/LabHome/poster.ai)or vertical(https://github.com/PennLINC/PennLINC.github.io/raw/main/docs/LabHome/poster_vertical.ai) or any open source [editor](https://github.com/PennLINC/PennLINC.github.io/raw/main/docs/LabHome/poster.svg)
