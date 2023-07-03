@@ -31,7 +31,7 @@ has_toc: false
 | HBN   | XCP v0.3.2                        | LINC_HBN#~XCP_unzipped          | Files  | 054aaebe-af3d-476c-aaff-1f8d361fb854 |
 | HBN   | dMRI Scalarfast                   | LINC_HBN#~QSIRECON_SCALARFEST   | Zips   | Not yet transfered                   |
 | PACCT | BIDS                              | LINC_PACCT#~BIDS                | Files  | dfb00c6e-8790-4308-8f6d-8835b9071575 |
-| PACCT | fMRIPrep v20.2.3                  | LINC_NACCT#~FMRIPREP_zipped     | Zips   | 3564e335-4ab2-4873-bf87-1319edc45d82 |
+| PACCT | fMRIPrep v20.2.3                  | LINC_PACCT#~FMRIPREP_zipped     | Zips   | 3564e335-4ab2-4873-bf87-1319edc45d82 |
 | PACCT | XCP v0.0.8                        | LINC_PACCT#~XCP_unzipped        | Files  | c70a1420-3c64-4585-8d42-bf972576e5cc |
 | PACCT | XCP v0.0.8                        | LINC_PACCT#~XCP_zipped          | Zips   | cfb0ef23-75d3-4f45-bd5f-307806e55b37 |
 | NKI   | BIDS                              | LINC_NKI#~BIDS                  | Files  | abffebbd-c098-4d36-85da-b751dded7d07 |
