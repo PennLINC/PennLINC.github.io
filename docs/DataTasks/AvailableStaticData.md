@@ -18,6 +18,7 @@ has_toc: false
 | PNC   | QSIPrep v0.14.2                   | LINC_PNC#~QSIPREP               | Zips   | 6af87a20-bfe5-458b-8773-cfe51e6200c6 |
 | PNC   | XCP v0.3.2                        | LINC_PNC#~XCP_unzipped          | Files  | 4669d449-89fd-48ca-94a3-d8326f8ac98b |
 | PNC   | XCP v0.3.2                        | LINC_PNC#~XCP_zipped            | Zips   | e75816f8-bc8f-479f-90db-a86dc35f4676 |
+| PNC   | XCP v0.3.2                        | LINC_PNC#~XCP_QC                | Files  | 8ae2a9ed-e3ab-45d3-9072-e87f43511d0a |
 | CCNP  | BIDS                              | LINC_CCNP#~BIDS                 | Files  | 30c9ce5c-b43e-45d5-8a82-4fb7561b51a6 |
 | CCNP  | fMRIPrep v20.2.3                  | LINC_CCNP#~FMRIPREP_zipped      | Zips   | eee0d711-f800-4725-8097-4c7b79c7d87f |
 | CCNP  | XCP v0.0.8                        | LINC_CCNP#~XCP_unzipped         | Files  | b464c213-ca15-4628-907e-f8c31a3d695e |
@@ -29,7 +30,8 @@ has_toc: false
 | HBN   | QSIRecon - GQI+hsvs v0.16.0RC3    | LINC_HBN#~GQIHSVS               | Files  | 1da37bc2-7f6d-40c0-80d8-b07cbcdc7f15 |
 | HBN   | QSIPrep 0.14.2                    | LINC_HBN#~QSIPREP               | Zips   | 4f42ad2d-4a25-470c-b8ca-c6ce71faf080 |
 | HBN   | XCP v0.3.2                        | LINC_HBN#~XCP_zipped            | Zips   | 83e5caef-474d-43cf-a3ba-c01cf3e99d5f |
-| HBN   | XCP v0.3.2                        | LINC_HBN#~XCP_unzipped          | Files  | 054aaebe-af3d-476c-aaff-1f8d361fb854 |
+| HBN   | XCP v0.3.2                        | LINC_HBN#~XCP_zipped            | Zips   | 83e5caef-474d-43cf-a3ba-c01cf3e99d5f |
+| HBN   | XCP v0.3.2                        | LINC_HBN#~XCP_QC                | Files  | 72669171-26b8-4f27-b6e6-db4ea33761d4 |
 | HBN   | QSIRecon - dMRI Scalarfast        | LINC_HBN#~QSIRECON_SCALARFEST   | Zips   | Not yet transfered                   |
 | PACCT | BIDS                              | LINC_PACCT#~BIDS                | Files  | dfb00c6e-8790-4308-8f6d-8835b9071575 |
 | PACCT | fMRIPrep v20.2.3                  | LINC_PACCT#~FMRIPREP_zipped     | Zips   | 3564e335-4ab2-4873-bf87-1319edc45d82 |
