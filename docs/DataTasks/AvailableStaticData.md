@@ -23,9 +23,10 @@ has_toc: false
 | CCNP  | XCP v0.0.8                        | LINC_CCNP#~XCP_unzipped         | Files  | b464c213-ca15-4628-907e-f8c31a3d695e |
 | CCNP  | XCP v0.0.8                        | LINC_CCNP#~XCP_zipped           | Zips   | 0b9140e7-cbeb-463b-88a9-7cddf3a22dfb |
 | HBN   | BIDS                              | LINC_HBN#~BIDS                  | Files  | f78d4b0a-50ba-4a59-9b84-4f90962eaba2 |
+| HBN   | QSIRecon - SiftHSVS v0.16.0RC3    | LINC_HBN#~SIFTHSVS              | Zips   | d11e4667-98ad-4164-9f98-8f73a7be24cc |
 | HBN   | fMRIPrep 20.2.3                   | LINC_HBN#~FMRIPREP-ANAT_zipped  | Zips   | c70d3696-54cf-425c-88c4-34abca40fc88 |
 | HBN   | fMRIPrep v22.0.2                  | LINC_HBN#~FMRIPREP-FUNC_zipped  | Zips   | 6fc7c93a-9d31-4296-9c39-66f2ee6e12da |
-| HBN   | QSIReon - GQI+hsvs v0.16.0RC3     | LINC_HBN#~GQIHSVS               | Files  | 1da37bc2-7f6d-40c0-80d8-b07cbcdc7f15 |
+| HBN   | QSIRecon - GQI+hsvs v0.16.0RC3    | LINC_HBN#~GQIHSVS               | Files  | 1da37bc2-7f6d-40c0-80d8-b07cbcdc7f15 |
 | HBN   | QSIPrep 0.14.2                    | LINC_HBN#~QSIPREP               | Zips   | 4f42ad2d-4a25-470c-b8ca-c6ce71faf080 |
 | HBN   | XCP v0.3.2                        | LINC_HBN#~XCP_zipped            | Zips   | 83e5caef-474d-43cf-a3ba-c01cf3e99d5f |
 | HBN   | XCP v0.3.2                        | LINC_HBN#~XCP_unzipped          | Files  | 054aaebe-af3d-476c-aaff-1f8d361fb854 |
