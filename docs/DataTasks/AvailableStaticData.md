@@ -23,6 +23,7 @@ has_toc: false
 | CCNP  | fMRIPrep v20.2.3                  | LINC_CCNP#~FMRIPREP_zipped      | Zips   | eee0d711-f800-4725-8097-4c7b79c7d87f |
 | CCNP  | XCP v0.0.8                        | LINC_CCNP#~XCP_unzipped         | Files  | b464c213-ca15-4628-907e-f8c31a3d695e |
 | CCNP  | XCP v0.0.8                        | LINC_CCNP#~XCP_zipped           | Zips   | 0b9140e7-cbeb-463b-88a9-7cddf3a22dfb |
+| PACCT | XCP v0.0.8                        | LINC_CCNP#~XCP_QC               | Files  | 5bc52558-f00c-4855-b28e-a1eaff8474eb |
 | HBN   | BIDS                              | LINC_HBN#~BIDS                  | Files  | f78d4b0a-50ba-4a59-9b84-4f90962eaba2 |
 | HBN   | QSIRecon - SiftHSVS v0.16.0RC3    | LINC_HBN#~SIFTHSVS              | Zips+QC| d11e4667-98ad-4164-9f98-8f73a7be24cc |
 | HBN   | fMRIPrep 20.2.3                   | LINC_HBN#~FMRIPREP-ANAT_zipped  | Zips   | c70d3696-54cf-425c-88c4-34abca40fc88 |
@@ -37,6 +38,7 @@ has_toc: false
 | PACCT | fMRIPrep v20.2.3                  | LINC_PACCT#~FMRIPREP_zipped     | Zips   | 3564e335-4ab2-4873-bf87-1319edc45d82 |
 | PACCT | XCP v0.0.8                        | LINC_PACCT#~XCP_unzipped        | Files  | c70a1420-3c64-4585-8d42-bf972576e5cc |
 | PACCT | XCP v0.0.8                        | LINC_PACCT#~XCP_zipped          | Zips   | cfb0ef23-75d3-4f45-bd5f-307806e55b37 |
+| PACCT | XCP v0.0.8                        | LINC_PACCT#~XCP_QC              | Files  | c7fa68cf-6dd5-4ed2-a0b3-f7d42abc11fb |
 | NKI   | BIDS                              | LINC_NKI#~BIDS                  | Files  | abffebbd-c098-4d36-85da-b751dded7d07 |
 | NKI   | fMRIPrep v20.2.3                  | LINC_NKI#~FMRIPREP_zipped       | Zips   | 3bfaa182-69ed-41ff-a29d-f5f4818fdfb6 |
 | NKI   | XCP v0.0.8                        | LINC_NKI#~XCP_unzipped          | Files  | c15663d5-f5b0-4ff4-a2e3-6501917a8ac4 |
