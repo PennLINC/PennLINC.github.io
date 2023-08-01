@@ -17,6 +17,7 @@ For allowable expenses and funding for travel, please see the [travel guidelines
 
 
 ## Overview of Steps to Reimbursement: 
+For a quick overview, you can check out Lia's video [here](../../assets/Concur_howtovideo_tripreimbursement.mp4).
 
 Explanation on how to complete each step is listed below
 
