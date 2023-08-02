@@ -65,7 +65,7 @@ C. Will help promote future collaboration/research/publications, etc.
 
 If you have any questions for Lia about concur, please send them in the `#concur` slack channel and specify what the problem you are having is.  Please do NOT send direct messages -- post them  on the open #concur channel.
 
-NOTE:  If you are unsure about this step please feel free to review this form with Lia on the #concur channel before sending this to John Hyon - try to avoid emailing him with concur q's.
+NOTE:  If you are unsure about this step please feel free to review this form with Lia on the #concur channel before sending this to John Hyon (hyon1@pennmedicine.upenn.edu) or the business team (10Admin-Fin@PennMedicine.upenn.edu) - try to avoid emailing him with concur q's.
 
 ## Adding delegates 
 Please give Concur delegate access to:
@@ -80,7 +80,7 @@ Instructions for this can be found [here](../../assets/concur_delegate.pdf)
 Equity and transparency in use of support of travel is important, and will be openly tracked moving forward.  If you are not on this sheet already, make yourself a row. If the conference you are attending is not listed, create it as a column.  Then fill in the amount you are requesting support for in the cell that correpsonds to your row and that conf's col.  Only record the amount you are asking for support _from the lab_. Do NOT include any expenses that were covered by travel awards or other individual-specific funds.  
 
 ## Booking flights via Concur 
-Note: Sharon Liu is no longer our travel approver, John Hyon is. Before you book anything on Concur, make sure your profile is updated to reflect this so that requests are routed to the right person. (Profile > Company Information > Travel Approver on Concur should say John and not Sharon).
+Note: Sharon Liu is no longer our travel approver, John Hyon(hyon1@pennmedicine.upenn.edu) is. Before you book anything on Concur, make sure your profile is updated to reflect this so that requests are routed to the right person. (Profile > Company Information > Travel Approver on Concur should say John and not Sharon).
 
 1. Prepare an expenditure justification form as in the instructions (DM Ted for which funding source, then ask Lia on this channel for the corresponding code and she’ll DM the code). Send this to John and get it signed by Ted. 
 2. Simultaneously, select flights directly through Concur (login via Pennkey, select destination and dates under Trip Search)
@@ -92,7 +92,7 @@ Note: Sharon Liu is no longer our travel approver, John Hyon is. Before you book
 
 
 ### Approval from Business Administrators
-Send the prepared Expenditure Justification in word document form to John Hyon for pre-review BEFORE submitting via concur AND PI signature on the form. Please cc Ted and Lia on all emails regarding reimbursement. Note that John is EXTREMELY busy and we try to limit asking them lots of q's if possible-- please ask q's on the `#concur` slack channel first. 
+Send the prepared Expenditure Justification in word document form to  (hyon1@pennmedicine.upenn.edu)/ the finance team (10Admin-Fin@PennMedicine.upenn.edu) for pre-review BEFORE submitting via concur AND PI signature on the form. Please cc Ted and Lia on all emails regarding reimbursement. Note that John is EXTREMELY busy and we try to limit asking them lots of q's if possible-- please ask q's on the `#concur` slack channel first. 
 
 Make sure to also send the receipt for all expenses. The receipt _must include_ the confirmation of payment (not just the invoice), how the payment was made (typically last 4 digits of the card listed on receipt), each expense itemized, the total amount paid, and the date the payment was completed.  Note that alcohol is never an allowable expense.
 
@@ -151,7 +151,8 @@ Navigate to the [CONCUR website](https://cms.business-services.upenn.edu/penntra
     - [https://www.concursolutions.com/home.asp](https://www.concursolutions.com/home.asp)
 
 - For further help contact:
-    - Lia Brodrick - lia.brodrick@pennmedicine.upenn.eduu
+    - Lia Brodrick - lia.brodrick@pennmedicine.upenn.edu
+
   
 - If you need help and would like another person to be able to view your concur, you can add them as a delegate following the instructions linked above. 
 
