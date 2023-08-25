@@ -43,6 +43,7 @@ has_toc: false
 | NKI   | fMRIPrep v20.2.3                  | LINC_NKI#~FMRIPREP_zipped       | Zips   | 3bfaa182-69ed-41ff-a29d-f5f4818fdfb6 |
 | NKI   | XCP v0.0.8                        | LINC_NKI#~XCP_unzipped          | Files  | c15663d5-f5b0-4ff4-a2e3-6501917a8ac4 |
 | NKI   | XCP v0.0.8                        | LINC_NKI#~XCP_zipped            | Zips   | 93da30fa-62b6-4434-80d3-bdc628a857cb |
+| NKI   | XCP v0.0.8                        | LINC_NKI#~XCP_QC                | Files  | cf276b34-ae80-4826-b3f7-778df8097912 |
 | HRC   | BIDS                              | LINC_HRC#~BIDS                  | Files  | 92a30924-4e29-48c6-a8f5-bbbe98c35297 |
 | HRC   | fMRIPrep v20.2.3                  | LINC_HRC#~FMRIPREP_zipped       | Zips   | f0f2c3c1-0701-4a10-8975-7f70778adf5d |
 | HRC   | XCP v0.0.8                        | LINC_HRC#~XCP_zipped            | Files  | a330511a-f40b-4206-8f9d-a72f18571746 |
