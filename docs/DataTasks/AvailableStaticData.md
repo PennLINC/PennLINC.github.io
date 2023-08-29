@@ -47,6 +47,7 @@ has_toc: false
 | HRC   | BIDS                              | LINC_HRC#~BIDS                  | Files  | 92a30924-4e29-48c6-a8f5-bbbe98c35297 |
 | HRC   | fMRIPrep v20.2.3                  | LINC_HRC#~FMRIPREP_zipped       | Zips   | f0f2c3c1-0701-4a10-8975-7f70778adf5d |
 | HRC   | XCP v0.0.8                        | LINC_HRC#~XCP_zipped            | Files  | a330511a-f40b-4206-8f9d-a72f18571746 |
+| HRC   | XCP v0.0.8                        | LINC_HRC#~XCP_QC                | Files  | b497f7d6-1a80-43f1-a27b-2407f23577d8 |
 | HCPD  | BIDS                              | LINC_HCPD#~BIDS                 | Files  | participant level subdatasets        |
 | HCPD  | fMRIPrep v20.2.3                  | LINC_HCPD#~FMRIPREP-ANAT_zipped | Zips   | 4bae19b9-865b-4336-8452-6ea76ef0e720 |
 | HCPD  | fMRIPrep v22.0.0                  | LINC_HCPD#~FMRIPREP-FUNC_zipped | Zips   | 580b2ea3-258f-4c28-a400-c053820453d7 |
