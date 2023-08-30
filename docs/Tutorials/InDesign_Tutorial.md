@@ -1,4 +1,4 @@
-# <img src="./images_indesign/InDesignLogo.svg" alt="InDesignLogo" width="35"/> InDesign for Efficient and Beautiful Figure-making  
+# <img src="/assets/images_indesign/InDesignLogo.svg" alt="InDesignLogo" width="35"/> InDesign for Efficient and Beautiful Figure-making  
 
 
 ### What is InDesign?  
@@ -16,6 +16,7 @@ InDesign is NOT good for creating or editting details of a graphic - leave graph
 3. Brief Overview of Relevant InDesign Tools 
 4. Example of a Simple InDesign Workflow
 
+*Note*: Github only supports embedded videos up to 10MB, thus some of the videos in this tutorial may require you to click and navigate to Youtube due to large video sizes!
 
 ## 1. Install InDesign
 You can download InDesign via Adobe Creative Cloud, which I believe you should have access to through Penn. You may already have Creative Cloud if you have Illustrator on your computers. If you don't have Creative Cloud, you can download InDesign [here](https://helpx.adobe.com/indesign/get-started.html)
@@ -24,14 +25,14 @@ You can download InDesign via Adobe Creative Cloud, which I believe you should h
 I typically make one InDesign document for each multi-panel figure. After opening up InDesign, click "New File". You can choose your document size, which will depend on how big you want to figure to be. Nature, for example, suggests preparing figures to fit PDF page size: 210 x 276 mm. We will work with this figure size in this tutorial.
 
 Toggle your units to "mm", and enter your figure width and height. <br> 
-<img src="./images_indesign/DocSetup.jpg" height="500"/>
+<img src="/assets/images_indesign/DocSetup.jpg" height="500"/>
 
 Click "Create", and voilà! You now have a brand new document where you can build your figure.
 
 I typically work under the "Normal" view that shows all the guides and bounding boxes (View > Screen Mode > Normal). You can switch to View > Screen Mode > Preview when you want to view without guides/boxes.
 
 ## 3. Brief Overview of Relevant InDesign Tools
-<img src="./images_indesign/InDesignWorkspace.png" height="500"/>
+<img src="/assets/images_indesign/InDesignWorkspace.png" height="500"/>
 
 A. Tabbed Document windows (you can have multiple documents open at the same time) \
 B. Workspace switcher (I like to work in "Essentials" - a minimalist setup that's easy to navigate) \
@@ -43,7 +44,7 @@ Diagram adapted from [Adobe](https://helpx.adobe.com/indesign/using/workspace-ba
 
 Let's zoom into the **Toolbar** to introduce these bad boys: 
 
-<img align="left" style="margin:10px;" src="./images_indesign/Toolbar.png" height="500"/>   
+<img align="left" style="margin:10px;" src="/assets/images_indesign/Toolbar.png" height="500"/>   
 
 A. **Selection Tool**: Allows you to select text and graphics frames work. You can work with an object using its bounding box. Notice that when you click an object using the Selection Tool, additional options will show up in the Control Panel on the right (under the Properties tab).  
 
@@ -65,7 +66,7 @@ E. **Rectangle Frame Tool**: Arguably the most important tool in InDesign for ou
 <br>  
 
 Last but not least, let's get you familiar with a few entities on the **Control Panel** (usually on the right of the workspace)
-<img align="left" style="margin:16px;" src="./images_indesign/ControlPanel.png" height="500"/>  
+<img align="left" style="margin:16px;" src="/assets/images_indesign/ControlPanel.png" height="500"/>  
 If you use the **Selection Tool** and click an object you want to  manipulate, you will see some additional options appear on the Control Panel as below. 
 
 A. **Align**: These buttons help you easily align objects with just one click! You can hover over the icons to see what kind of alignment each does. \
@@ -87,12 +88,12 @@ OKAY! We are now ready to jump into an example of a simple InDesign workflow for
 
 ### Our goal is to make this figure: 
 <p align="center" width="100%">
-    <img width="400" src="./images_indesign/Figure.png">
+    <img width="400" src="/assets/images_indesign/Figure.png">
 </p> 
 
 
 ### First, make sure your output folder is set up. 
-<img align="left" style="margin:16px;" src="./images_indesign/Folders.png" height="150"/>  
+<img align="left" style="margin:16px;" src="/assets/images_indesign/Folders.png" height="150"/>  
 
 
 I like having 3 sub-folders, one for outputting my figures from RStudio (PDFs), one for my InDesign files (.indd), and one for my final figures (PDFs or PNGs). If you need to adjust anything in Illustrator before loading things into InDesign, I usually just edit the RStudio PDFs directly in Illustrator and write over the original file. In my PDFs directory, I will have individual sub-folders for each figure (Fig1, Fig2, etc.) that contain all the panels I need for a given figure, including separate files for legends.
@@ -101,14 +102,14 @@ I like having 3 sub-folders, one for outputting my figures from RStudio (PDFs), 
 
 ### Plot figures in RStudio (or Python or Matlab!) + save out as PDFs
 
-<img align="left" style="margin:16px;" src="./images_indesign/Output.png" height="250"/>  <br>
+<img align="left" style="margin:16px;" src="/assets/images_indesign/Output.png" height="250"/>  <br>
 Save each panel as a PDF in the appropriate folder (e.g. `/dataclub/PDFs/Fig1/Fig1_<dataset>.pdf`). See InDesign_Tutorial_Figures.Rmd for code. **Note**: I've excluded the x and y axis labels from these panels because I don't want them in the final figure; my plotting function also excludes a legend. My saved-out panels look something like this:
 
-<img align="center" style="margin:16px;" src="./images_indesign/Panel.png" height="200"/> 
+<img align="center" style="margin:16px;" src="/assets/images_indesign/Panel.png" height="200"/> 
 
 You will also need the legend. To do this, you can simply plot a version WITH the legend and save out. I won't go over how to crop out the plot and edit the legend in **Illustrator**, since I'm assuming many of you already have familiarity with that app. I saved out my Illustrator file as `SA_Axis_Legend.ai`. The legend looks like this: 
 
-<img align="center" style="margin:16px;" src="./images_indesign/Legend.png" height="100"/> 
+<img align="center" style="margin:16px;" src="/assets/images_indesign/Legend.png" height="100"/> 
 
 ### Now it's time to jump into InDesign!
 
@@ -117,11 +118,8 @@ Set up your document (210 x 276 mm, since we're making a figure for an imaginary
 Using the **Frame Tool**, click and drag to create a large rectangle where your work will go. While holding the click, press the **right/left** button to add/remove columns and press **up/down** to add/remove rows. Add additional boxes for the legend and axis titles. You can align your boxes by selecting the boxes (**Select Too**) then choosing an **Align option** in the **Control Panel**. 
 
 *Note*: no need to be perfect in the sizing of your frames. Definitely helps to be more accurate with aspect ratio, but we can tweak frames later! 
-
-<video width="800" controls>
-  <source src="./images_indesign/FramesSetUp.mov" type="video/mp4">
-</video> 
- 
+Click the image below to watch the video (will take you to Youtube).
+[<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/FramesSetUp.png" width="70%">](https://youtu.be/NtcYZ6EZWIg "FramesSetUp")
 
 *Note* you can also [create guides](https://helpx.adobe.com/indesign/using/ruler-guides.html) that help you line up images by clicking and dragging the X or Y axis ruler. (Not shown in video.) 
 #### 2. Next, place the plots into each frame.
@@ -132,12 +130,12 @@ After placing all your plots, you can select all of them (**shift + Select Tool*
 Now, you have a gorgeous initial layout of your figure in < 2 minutes. No resizing each plot, no shifting plots up and down to make them line up, etc!!
 
 <video width="800" controls>
-  <source src="./images_indesign/Place.mov" type="video/mp4">
+  <source src="/assets/images_indesign/Place.mov" type="video/mp4">
 </video> 
  
 
 <br>
-<img align="center" style="margin:16px;" src="./images_indesign/Initial.png" height="500"/> 
+<img align="center" style="margin:16px;" src="/assets/images_indesign/Initial.png" height="500"/> 
 <p>
     <em>Product of exactly 1 min 52 seconds of work in InDesign! YAYYY!!</em>
 </p>
@@ -152,14 +150,14 @@ Notice that one of the text boxes has a little red "X" next to it and the text h
 Once you have all the text boxes selected, you can also center align the text in the **Control Pane**. Be careful not to scroll your mouse or InDesign might scroll you through a bunch of fonts (2:01 in the video below - oops!). Instead, click and drag the scroll bar in the **Control Pane**. To center your text in the vertical direction, scroll down to **Text Frame** in the **Control Panel** while your text boxes are still selected > Options > Align: Center (under Vertical Justification) > OK. 
 
 <video width="800" controls>
-  <source src="./images_indesign/Text.mov" type="video/mp4">
+  <source src="/assets/images_indesign/Text.mov" type="video/mp4">
 </video> 
 
 
 Let's add a delta symbol and superscript to our y-axis. Symbols can be added via Type (ribbon) > Glyphs. Super- and sub-scripts can be added using the **Control Pane** while utilizing the **Type Tool**.
 
 <video width="800" controls>
-  <source src="./images_indesign/SubscriptsSymbols.mov" type="video/mp4">
+  <source src="/assets/images_indesign/SubscriptsSymbols.mov" type="video/mp4">
 </video> 
 
 
@@ -170,7 +168,7 @@ Using the **Type Tool**, draw a text box in the plot and type the correlation an
 You can copy/paste this textbox to each plot, edit the text, and align as needed. Notice that when moving the boxes around, green guide lines sometimes automatically appear, telling you whether or not you are aligned with other elements or centered. These are super helpful!! 
 
 <video width="800" controls>
-  <source src="./images_indesign/Correlation.mov" type="video/mp4">
+  <source src="/assets/images_indesign/Correlation.mov" type="video/mp4">
 </video> 
 
 
@@ -178,7 +176,7 @@ You can copy/paste this textbox to each plot, edit the text, and align as needed
 To view your piece without guides, go to **View** (ribbon) > Screen Mode > Preview. Make final edits as needed (i.e. changing up the font and sizes, fixing alignment and spacing, etc.)
 
 <video width="800" controls>
-  <source src="./images_indesign/FinishingTouches.mov" type="video/mp4">
+  <source src="/assets/images_indesign/FinishingTouches.mov" type="video/mp4">
 </video> 
 
 
@@ -191,12 +189,12 @@ Say I want to update my figures to be a totally different color scheme - purple 
 
 After saving out the new plots, make sure InDesign is closed. Reopen the InDesign document, and you should get this error message: 
 
-<img align="center" style="margin:16px;" src="./images_indesign/Error.png" height="200"/> 
+<img align="center" style="margin:16px;" src="/assets/images_indesign/Error.png" height="200"/> 
 
 Click "Update Modified Links", and let InDesign do its magic!!!!!
 
 <video width="800" controls>
-  <source src="./images_indesign/Magic.mov" type="video/mp4">
+  <source src="/assets/images_indesign/Magic.mov" type="video/mp4">
 </video> 
 
 <br>
@@ -204,14 +202,14 @@ Note that you still need to update the legend in Illustrator. I would rename the
 <br>
 
 <video width="800" controls>
-  <source src="./images_indesign/UpdateLegend.mov" type="video/mp4">
+  <source src="/assets/images_indesign/UpdateLegend.mov" type="video/mp4">
 </video> 
 
 <br>
 View the document using "Normal" (View > Screen Mode > Normal) and click the little caution icon by the legend to update the link. And you're done!!
 <br>
 
-<img align="center" style="margin:16px;" src="./images_indesign/PY_Figure.png" height="400"/> 
+<img align="center" style="margin:16px;" src="/assets/images_indesign/PY_Figure.png" height="400"/> 
 <p>
     <em>The fastest outfit change that ever was</em>
 </p>
