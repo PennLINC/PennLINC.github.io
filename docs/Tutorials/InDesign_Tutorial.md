@@ -110,7 +110,7 @@ I like having 3 sub-folders, one for outputting my figures from RStudio (PDFs), 
 ### Plot figures in RStudio (or Python or Matlab!) + save out as PDFs
 
 <img align="left" style="margin:16px;" src="/assets/images_indesign/Output.png" height="150"/>  <br>
-Save each panel as a PDF in the appropriate folder (e.g. `/dataclub/PDFs/Fig1/Fig1_<dataset>.pdf`). See InDesign_Tutorial_Figures.Rmd for code. **Note**: I've excluded the x and y axis labels from these panels because I don't want them in the final figure; my plotting function also excludes a legend. My saved-out panels look something like this:
+Save each panel as a PDF in the appropriate folder (e.g. `/dataclub/PDFs/Fig1/Fig1_<dataset>.pdf`). See [InDesign_Tutorial_Figures.Rmd](https://github.com/PennLINC/PennLINC.github.io/tree/main/docs/Tutorials/InDesign_Tutorial_Files) for code. **Note**: I've excluded the x and y axis labels from these panels because I don't want them in the final figure; my plotting function also excludes a legend. My saved-out panels look something like this:
 
 <img align="center" style="margin:16px;" src="/assets/images_indesign/Panel.png" height="100"/> 
 
