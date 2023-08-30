@@ -51,7 +51,7 @@ Diagram adapted from [Adobe](https://helpx.adobe.com/indesign/using/workspace-ba
 
 Let's zoom into the **Toolbar** to introduce these bad boys: 
 
-<img align="left" style="margin:10px;" src="/assets/images_indesign/Toolbar.png" height="500"/>   
+<img align="left" style="margin:10px;" src="/assets/images_indesign/Toolbar.png" height="300"/>   
 
 A. **Selection Tool**: Allows you to select text and graphics frames work. You can work with an object using its bounding box. Notice that when you click an object using the Selection Tool, additional options will show up in the Control Panel on the right (under the Properties tab).  
 
@@ -73,7 +73,7 @@ E. **Rectangle Frame Tool**: Arguably the most important tool in InDesign for ou
 <br>  
 
 Last but not least, let's get you familiar with a few entities on the **Control Panel** (usually on the right of the workspace)
-<img align="left" style="margin:16px;" src="/assets/images_indesign/ControlPanel.png" height="500"/>  
+<img align="left" style="margin:16px;" src="/assets/images_indesign/ControlPanel.png" height="300"/>  
 If you use the **Selection Tool** and click an object you want to  manipulate, you will see some additional options appear on the Control Panel as below. 
 
 A. **Align**: These buttons help you easily align objects with just one click! You can hover over the icons to see what kind of alignment each does. \
@@ -81,7 +81,7 @@ B. **Frame Fitting**: Helps manipulate placed images and text. \
     - *Auto-Fit*: I strongly suggest always having Auto-Fit selected; this allows the image to be resized as you resize the frame. If you have Auto-Fit deselected, you essentially are working with a crop tool, where you can resize the frame while the image inside is static. \
     - *Fill frame proportionally* and *Fit content proportionally*: the first two little squares in this row. I tend to use one of these to make sure my placed image fits the frame just right and to reduce white space.  
 
-<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> 
 
 ## 4. Example of a Simple InDesign Workflow  
 A few principles to keep in mind as we start figure-making in InDesign:
@@ -109,14 +109,14 @@ I like having 3 sub-folders, one for outputting my figures from RStudio (PDFs), 
 
 ### Plot figures in RStudio (or Python or Matlab!) + save out as PDFs
 
-<img align="left" style="margin:16px;" src="/assets/images_indesign/Output.png" height="250"/>  <br>
+<img align="left" style="margin:16px;" src="/assets/images_indesign/Output.png" height="150"/>  <br>
 Save each panel as a PDF in the appropriate folder (e.g. `/dataclub/PDFs/Fig1/Fig1_<dataset>.pdf`). See InDesign_Tutorial_Figures.Rmd for code. **Note**: I've excluded the x and y axis labels from these panels because I don't want them in the final figure; my plotting function also excludes a legend. My saved-out panels look something like this:
 
-<img align="center" style="margin:16px;" src="/assets/images_indesign/Panel.png" height="200"/> 
+<img align="center" style="margin:16px;" src="/assets/images_indesign/Panel.png" height="100"/> 
 
 You will also need the legend. To do this, you can simply plot a version WITH the legend and save out. I won't go over how to crop out the plot and edit the legend in **Illustrator**, since I'm assuming many of you already have familiarity with that app. I saved out my Illustrator file as `SA_Axis_Legend.ai`. The legend looks like this: 
 
-<img align="center" style="margin:16px;" src="/assets/images_indesign/Legend.png" height="100"/> 
+<img align="center" style="margin:16px;" src="/assets/images_indesign/Legend.png" height="70"/> 
 
 ### Now it's time to jump into InDesign!
 
@@ -140,7 +140,7 @@ Now, you have a gorgeous initial layout of your figure in < 2 minutes. No resizi
 
 
 <br>
-<img align="center" style="margin:16px;" src="/assets/images_indesign/Initial.png" height="500"/> 
+<img align="center" style="margin:16px;" src="/assets/images_indesign/Initial.png" height="300"/> 
 <p>
     <em>Product of exactly 1 min 52 seconds of work in InDesign! YAYYY!!</em>
 </p>
@@ -190,7 +190,7 @@ Say I want to update my figures to be a totally different color scheme - purple 
 
 After saving out the new plots, make sure InDesign is closed. Reopen the InDesign document, and you should get this error message: 
 
-<img align="center" style="margin:16px;" src="/assets/images_indesign/Error.png" height="200"/> 
+<img align="center" style="margin:16px;" src="/assets/images_indesign/Error.png" height="100"/> 
 
 Click "Update Modified Links", and let InDesign do its magic!!!!!
 
@@ -211,7 +211,7 @@ https://github.com/PennLINC/PennLINC.github.io/assets/67298158/31c3d33c-4294-4d9
 View the document using "Normal" (View > Screen Mode > Normal) and click the little caution icon by the legend to update the link. And you're done!!
 <br>
 
-<img align="center" style="margin:16px;" src="/assets/images_indesign/PY_Figure.png" height="400"/> 
+<img align="center" style="margin:16px;" src="/assets/images_indesign/PY_Figure.png" height="300"/> 
 <p>
     <em>The fastest outfit change that ever was</em>
 </p>
