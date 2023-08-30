@@ -16,7 +16,7 @@ InDesign is NOT good for creating or editting details of a graphic - leave graph
 3. Brief Overview of Relevant InDesign Tools 
 4. Example of a Simple InDesign Workflow
 
-*Note*: Github only supports embedded videos up to 10MB, thus some of the videos in this tutorial may require you to click and navigate to Youtube due to large video sizes!
+*Note*: Github only supports embedded videos up to 10MB, thus some of the videos in this tutorial require you to click and navigate to Youtube due to large video sizes! Once on Youtube, you can choose the video quality to be 1080p60 or higher for best viewing.
 
 ## 1. Install InDesign
 You can download InDesign via Adobe Creative Cloud, which I believe you should have access to through Penn. You may already have Creative Cloud if you have Illustrator on your computers. If you don't have Creative Cloud, you can download InDesign [here](https://helpx.adobe.com/indesign/get-started.html)
@@ -117,8 +117,8 @@ Set up your document (210 x 276 mm, since we're making a figure for an imaginary
 #### 1. First, set up the frames where you will place each object.
 Using the **Frame Tool**, click and drag to create a large rectangle where your work will go. While holding the click, press the **right/left** button to add/remove columns and press **up/down** to add/remove rows. Add additional boxes for the legend and axis titles. You can align your boxes by selecting the boxes (**Select Too**) then choosing an **Align option** in the **Control Panel**. 
 
-*Note*: no need to be perfect in the sizing of your frames. Definitely helps to be more accurate with aspect ratio, but we can tweak frames later! 
-Click the image below to watch the video (will take you to Youtube).
+*Note*: no need to be perfect in the sizing of your frames. Definitely helps to be more accurate with aspect ratio, but we can tweak frames later! <br>
+**Click the following image to watch the video (it will take you to Youtube).**
 [<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/FramesSetUp.png" width="70%">](https://youtu.be/NtcYZ6EZWIg "FramesSetUp")
 
 *Note* you can also [create guides](https://helpx.adobe.com/indesign/using/ruler-guides.html) that help you line up images by clicking and dragging the X or Y axis ruler. (Not shown in video.) 
@@ -127,12 +127,10 @@ This can be done by **dragging and dropping** (see video), or **select each fram
 
 After placing all your plots, you can select all of them (**shift + Select Tool**; make sure the boxes are blue not yellow! Yellow = direct selection tool). Scroll to the **Control Panel's frame fitting section**, and click the **appropriate fit**. I chose "Fit Content Proportionally" because that looks best. <br>
 
-Now, you have a gorgeous initial layout of your figure in < 2 minutes. No resizing each plot, no shifting plots up and down to make them line up, etc!!
+Now, you have a gorgeous initial layout of your figure in < 2 minutes. No resizing each plot, no shifting plots up and down to make them line up, etc!! <br>
+**Click the following image to watch the video (it will take you to Youtube).**  
+ [<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/Place.png" width="70%">](https://youtu.be/uqCMDIj_vP0 "Place")
 
-<video width="800" controls>
-  <source src="/assets/images_indesign/Place.mov" type="video/mp4">
-</video> 
- 
 
 <br>
 <img align="center" style="margin:16px;" src="/assets/images_indesign/Initial.png" height="500"/> 
@@ -140,6 +138,7 @@ Now, you have a gorgeous initial layout of your figure in < 2 minutes. No resizi
     <em>Product of exactly 1 min 52 seconds of work in InDesign! YAYYY!!</em>
 </p>
 <br>
+
 #### 3. Now, we can add panel labels and text. 
 Using the **Frame Tool**, we can make placeholders for panel labels (a, b, c, d) and titles (dataset names). We can copy and paste each pair of frames (label + title) for each panel so they're all the same size. We can also make sure that the frames are all aligned by selecting pairs of frames and clicking the appropriate alignment in the **Control Panel**. 
 
@@ -148,37 +147,32 @@ Next, type in the text for each frame using the **Type Tool**. After typing, use
 Notice that one of the text boxes has a little red "X" next to it and the text has disappeared. This is because the text box isn't big enough to display the entire text string. In this case, simply use the **Selection Tool** to resize. 
 
 Once you have all the text boxes selected, you can also center align the text in the **Control Pane**. Be careful not to scroll your mouse or InDesign might scroll you through a bunch of fonts (2:01 in the video below - oops!). Instead, click and drag the scroll bar in the **Control Pane**. To center your text in the vertical direction, scroll down to **Text Frame** in the **Control Panel** while your text boxes are still selected > Options > Align: Center (under Vertical Justification) > OK. 
-
-<video width="800" controls>
-  <source src="/assets/images_indesign/Text.mov" type="video/mp4">
-</video> 
+<br>
+**Click the following image to watch the video (it will take you to Youtube).**  
+ [<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/Text.png" width="70%">](https://youtu.be/tOKJjiQ12Ws "Text")
 
 
 Let's add a delta symbol and superscript to our y-axis. Symbols can be added via Type (ribbon) > Glyphs. Super- and sub-scripts can be added using the **Control Pane** while utilizing the **Type Tool**.
-
-<video width="800" controls>
-  <source src="/assets/images_indesign/SubscriptsSymbols.mov" type="video/mp4">
-</video> 
-
+<br>
+**Click the following image to watch the video (it will take you to Youtube).**  
+ [<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/SubscriptsSymbols.png" width="70%">](https://youtu.be/3pJ970TokNs "SubscriptsSymbols")
 
 We can also add correlations and p-values to each plot. I like to add them manually in InDesign because I can't format *p*<sub>spin</sub> properly in R. 
 
 Using the **Type Tool**, draw a text box in the plot and type the correlation and p-value. To make the textbox opaque, select the text box and in the **Control Panel** under **Appearance**, click Fill > Paper. Then, select the correct font and left alignment (**Control Panel** > Paragraph). Using the **Type Tool**, highlight the "r" and "p" and italicize as appropriate. 
 
 You can copy/paste this textbox to each plot, edit the text, and align as needed. Notice that when moving the boxes around, green guide lines sometimes automatically appear, telling you whether or not you are aligned with other elements or centered. These are super helpful!! 
-
-<video width="800" controls>
-  <source src="/assets/images_indesign/Correlation.mov" type="video/mp4">
-</video> 
+<br>
+**Click the following image to watch the video (it will take you to Youtube).**  
+ [<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/Correlation.png" width="70%">](https://youtu.be/_yi22Jo5Ux4 "Correlation")
 
 
 #### 4. Add your finishing touches
 To view your piece without guides, go to **View** (ribbon) > Screen Mode > Preview. Make final edits as needed (i.e. changing up the font and sizes, fixing alignment and spacing, etc.)
+<br>
 
-<video width="800" controls>
-  <source src="/assets/images_indesign/FinishingTouches.mov" type="video/mp4">
-</video> 
-
+**Click the following image to watch the video (it will take you to Youtube).**  
+[<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/FinishingTouches.png" width="70%">](https://youtu.be/-6nOPVGXAsw "FinishingTouches")
 
 ### What if you have to remake all your panels?!?
 We often have to remake figures after incorporating co-author's comments or during paper revisions. This can lead to a frustrating amount of work recapitulating multi-panel figures that we meticulously laid out in Illustrator or another program. Sad times.
@@ -193,17 +187,18 @@ After saving out the new plots, make sure InDesign is closed. Reopen the InDesig
 
 Click "Update Modified Links", and let InDesign do its magic!!!!!
 
-<video width="800" controls>
-  <source src="/assets/images_indesign/Magic.mov" type="video/mp4">
-</video> 
 
+https://github.com/PennLINC/PennLINC.github.io/assets/67298158/eec58018-91fd-4874-81d5-4312b683e3bd
+ 
 <br>
 Note that you still need to update the legend in Illustrator. I would rename the original Illustrator file for the legend with an "_old" tag, and save the purple-yellow legend with the original filename. Then update InDesign: 
 <br>
 
-<video width="800" controls>
-  <source src="/assets/images_indesign/UpdateLegend.mov" type="video/mp4">
-</video> 
+
+
+https://github.com/PennLINC/PennLINC.github.io/assets/67298158/31c3d33c-4294-4d96-8516-1bbef04d7fa0
+
+
 
 <br>
 View the document using "Normal" (View > Screen Mode > Normal) and click the little caution icon by the legend to update the link. And you're done!!
