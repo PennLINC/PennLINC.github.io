@@ -1,3 +1,10 @@
+---
+layout: default
+title: InDesign Tutorial
+parent: Tutorials
+nav_order: 6
+---
+
 # <img src="/assets/images_indesign/InDesignLogo.svg" alt="InDesignLogo" width="35"/> InDesign for Efficient and Beautiful Figure-making  
 
 
