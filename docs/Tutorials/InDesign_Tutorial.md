@@ -51,7 +51,7 @@ Diagram adapted from [Adobe](https://helpx.adobe.com/indesign/using/workspace-ba
 
 Let's zoom into the **Toolbar** to introduce these bad boys: 
 
-<img align="left" style="margin:10px;" src="/assets/images_indesign/Toolbar.png" height="300"/>   
+<img align="left" src="/assets/images_indesign/Toolbar.png" width=20% height=20%/>   
 
 A. **Selection Tool**: Allows you to select text and graphics frames work. You can work with an object using its bounding box. Notice that when you click an object using the Selection Tool, additional options will show up in the Control Panel on the right (under the Properties tab).  
 
@@ -73,7 +73,7 @@ E. **Rectangle Frame Tool**: Arguably the most important tool in InDesign for ou
 <br>  
 
 Last but not least, let's get you familiar with a few entities on the **Control Panel** (usually on the right of the workspace)
-<img align="left" style="margin:16px;" src="/assets/images_indesign/ControlPanel.png" height="300"/>  
+<img align="left" style="margin:16px;" src="/assets/images_indesign/ControlPanel.png" width=30% height=30%/>  
 If you use the **Selection Tool** and click an object you want to  manipulate, you will see some additional options appear on the Control Panel as below. 
 
 A. **Align**: These buttons help you easily align objects with just one click! You can hover over the icons to see what kind of alignment each does. \
@@ -81,7 +81,7 @@ B. **Frame Fitting**: Helps manipulate placed images and text. \
     - *Auto-Fit*: I strongly suggest always having Auto-Fit selected; this allows the image to be resized as you resize the frame. If you have Auto-Fit deselected, you essentially are working with a crop tool, where you can resize the frame while the image inside is static. \
     - *Fill frame proportionally* and *Fit content proportionally*: the first two little squares in this row. I tend to use one of these to make sure my placed image fits the frame just right and to reduce white space.  
 
-<br> <br> <br> <br> <br> <br> <br> <br> 
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
 
 ## 4. Example of a Simple InDesign Workflow  
 A few principles to keep in mind as we start figure-making in InDesign:
@@ -100,7 +100,7 @@ OKAY! We are now ready to jump into an example of a simple InDesign workflow for
 
 
 ### First, make sure your output folder is set up. 
-<img align="left" style="margin:16px;" src="/assets/images_indesign/Folders.png" height="150"/>  
+<img align="left" style="margin:16px;" src="/assets/images_indesign/Folders.png" width=30% height=30%/>  
 
 
 I like having 3 sub-folders, one for outputting my figures from RStudio (PDFs), one for my InDesign files (.indd), and one for my final figures (PDFs or PNGs). If you need to adjust anything in Illustrator before loading things into InDesign, I usually just edit the RStudio PDFs directly in Illustrator and write over the original file. In my PDFs directory, I will have individual sub-folders for each figure (Fig1, Fig2, etc.) that contain all the panels I need for a given figure, including separate files for legends.
@@ -109,10 +109,10 @@ I like having 3 sub-folders, one for outputting my figures from RStudio (PDFs), 
 
 ### Plot figures in RStudio (or Python or Matlab!) + save out as PDFs
 
-<img align="left" style="margin:16px;" src="/assets/images_indesign/Output.png" height="150"/>  <br>
+<img align="left" style="margin:16px;" src="/assets/images_indesign/Output.png" width=20% height=20%/>  <br>
 Save each panel as a PDF in the appropriate folder (e.g. `/dataclub/PDFs/Fig1/Fig1_<dataset>.pdf`). See [InDesign_Tutorial_Figures.Rmd](https://github.com/PennLINC/PennLINC.github.io/tree/main/docs/Tutorials/InDesign_Tutorial_Files) for code. **Note**: I've excluded the x and y axis labels from these panels because I don't want them in the final figure; my plotting function also excludes a legend. My saved-out panels look something like this:
 
-<img align="center" style="margin:16px;" src="/assets/images_indesign/Panel.png" height="100"/> 
+<img align="center" style="margin:16px;" src="/assets/images_indesign/Panel.png" width=30% height=30%/> 
 
 You will also need the legend. To do this, you can simply plot a version WITH the legend and save out. I won't go over how to crop out the plot and edit the legend in **Illustrator**, since I'm assuming many of you already have familiarity with that app. I saved out my Illustrator file as `SA_Axis_Legend.ai`. The legend looks like this: 
 
@@ -122,7 +122,7 @@ You will also need the legend. To do this, you can simply plot a version WITH th
 
 Set up your document (210 x 276 mm, since we're making a figure for an imaginary Nature submission). Make sure you know what color format your journal requires. Nature recommends RGB but can also take CMYK. To edit these settings, go to Edit > Transparency Blend Space > Document RGB or Document CMYK. 
 #### 1. First, set up the frames where you will place each object.
-Using the **Frame Tool**, click and drag to create a large rectangle where your work will go. While holding the click, press the **right/left** button to add/remove columns and press **up/down** to add/remove rows. Add additional boxes for the legend and axis titles. You can align your boxes by selecting the boxes (**Select Too**) then choosing an **Align option** in the **Control Panel**. 
+Using the **Frame Tool**, click and drag to create a large rectangle where your work will go. While holding the click, press the **right/left** button to add/remove columns and press **up/down** to add/remove rows. Add additional boxes for the legend and axis titles. You can align your boxes by selecting the boxes (**Select Tool**) then choosing an **Align option** in the **Control Panel**. 
 
 *Note*: no need to be perfect in the sizing of your frames. Definitely helps to be more accurate with aspect ratio, but we can tweak frames later! <br>
 **Click the following image to watch the video (it will take you to Youtube).**
@@ -179,7 +179,7 @@ To view your piece without guides, go to **View** (ribbon) > Screen Mode > Previ
 <br>
 
 **Click the following image to watch the video (it will take you to Youtube).**  
-[<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/FinishingTouches.png" width="70%">](https://youtu.be/-6nOPVGXAsw "FinishingTouches")
+[<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/FinishingTouches.png">](https://youtu.be/-6nOPVGXAsw "FinishingTouches")
 
 ### What if you have to remake all your panels?!?
 We often have to remake figures after incorporating co-author's comments or during paper revisions. This can lead to a frustrating amount of work recapitulating multi-panel figures that we meticulously laid out in Illustrator or another program. Sad times.
@@ -190,7 +190,7 @@ Say I want to update my figures to be a totally different color scheme - purple 
 
 After saving out the new plots, make sure InDesign is closed. Reopen the InDesign document, and you should get this error message: 
 
-<img align="center" style="margin:16px;" src="/assets/images_indesign/Error.png" height="100"/> 
+<img align="center" style="margin:16px;" src="/assets/images_indesign/Error.png" width=30% height=30%/> 
 
 Click "Update Modified Links", and let InDesign do its magic!!!!!
 
