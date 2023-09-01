@@ -139,7 +139,7 @@ Now, you have a gorgeous initial layout of your figure in < 2 minutes. No resizi
 
 
 <br>
-<img align="center" height="100" src="/assets/images_indesign/Initial.png"> 
+<img align="center" height="50" src="/assets/images_indesign/Initial.png"> 
 <p>
     <em>Product of exactly 1 min 52 seconds of work in InDesign! YAYYY!!</em>
 </p>
@@ -193,20 +193,20 @@ After saving out the new plots, make sure InDesign is closed. Reopen the InDesig
 
 Click "Update Modified Links", and let InDesign do its magic!!!!! 
 <br>
-**Click the following image to watch the video.** 
+**Click the following image to watch the video.** <br>
 [<img width="300" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Magic.png">](https://youtu.be/HzBJCJo6X7c?si=bSNQSyz5SyYzlo6i "Magic")
 
 
 Note that you still need to update the legend in Illustrator. I would rename the original Illustrator file for the legend with an "_old" tag, and save the purple-yellow legend with the original filename. Then update InDesign: 
 <br>
-**Click the following image to watch the video.** 
+**Click the following image to watch the video.** <br>
 [<img width="300" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/UpdateLegend.png">](https://youtu.be/Oc6YIdTn3GQ?si=zXc7WBaJVp0Y4VMV "UpdateLegend")
 
 
 View the document using "Normal" (View > Screen Mode > Normal) and click the little caution icon by the legend to update the link. And you're done!!
 <br>
 
-<img align="center" height="100" src="/assets/images_indesign/PY_Figure.png"> 
+<img align="center" height="50" src="/assets/images_indesign/PY_Figure.png"> 
 <p>
     <em>The fastest outfit change that ever was</em>
 </p>
