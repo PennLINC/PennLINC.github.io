@@ -191,16 +191,16 @@ After saving out the new plots, make sure InDesign is closed. Reopen the InDesig
 
 <img align="center" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Error.png" width="300"> 
 
-Click "Update Modified Links", and let InDesign do its magic!!!!!
-
+Click "Update Modified Links", and let InDesign do its magic!!!!! <br>
+**Click the following image to watch the video.** 
 [<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Magic.png" width="300">](https://youtu.be/HzBJCJo6X7c?si=bSNQSyz5SyYzlo6i "Magic")
  
 <br>
 Note that you still need to update the legend in Illustrator. I would rename the original Illustrator file for the legend with an "_old" tag, and save the purple-yellow legend with the original filename. Then update InDesign: 
 <br>
 
-
-[<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/UpdateLegend.pn" width="300">](https://youtu.be/Oc6YIdTn3GQ?si=zXc7WBaJVp0Y4VMV "UpdateLegend")
+**Click the following image to watch the video.** 
+[<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/UpdateLegend.png" width="300">](https://youtu.be/Oc6YIdTn3GQ?si=zXc7WBaJVp0Y4VMV "UpdateLegend")
 
 
 <br>
