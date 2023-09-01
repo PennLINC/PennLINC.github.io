@@ -65,7 +65,7 @@ C. **Gap Tool**: Measures and adjusts the gap between objects (can be helpful in
 
 D. **Type Tool**: Click and drag to add a new text frame to the document. Note that if you can't just click and start typing, you have to click and drag to create a 'text frame'. Or click in an existing text frame to add text. If you edit a text frame using the **Type Tool**, additional options will pop up in the **Control Panel** on the right. If you select a text frame using the **Selection Tool**, DIFFERENT options will pop up in the Control Panel. 
  
-E. **Rectangle Frame Tool**: Arguably the most important tool in InDesign for our purposes! This tool creates placeholders for the images_indesign/objects/text that you will put in your final figure. You use this tool to essentially create a skeleton or layout of what your panels will look like. After creating that skeleton, you can place images into those placeholders. \
+E. **Rectangle Frame Tool**: Arguably the most important tool in InDesign for our purposes!!! This tool creates placeholders for the images_indesign/objects/text that you will put in your final figure. You use this tool to essentially create a skeleton or layout of what your panels will look like. After creating that skeleton, you can place images into those placeholders. \
     - Hold **Shift** while clicking/dragging with the Rectangle Frame Tool to create a square frame. \
     - To place image, first select the frame, then do File > Place. If you're lazy, you can also click and drag. Once you place an object, that frame is now linked to that file. So if you change that file (i.e. edit it in Illustrator or completely make a new version of it in R or Python), InDesign will prompt you to update that frame. Updating the frame literally takes ONE click!!\
     - You need to know how big your figures are so you can draw an appropriately sized frame. Or you can draw an approximate frame, place the image, then tweak the placed image to get it to fit right. See Workflow below for details. 
@@ -73,7 +73,7 @@ E. **Rectangle Frame Tool**: Arguably the most important tool in InDesign for ou
 <br>  
 
 Last but not least, let's get you familiar with a few entities on the **Control Panel** (usually on the right of the workspace)
-<img align="left" width="250" style="margin:10px;" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/ControlPanel.png">
+<img align="left" width="300" style="margin:10px;" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/ControlPanel.png">
 If you use the **Selection Tool** and click an object you want to  manipulate, you will see some additional options appear on the Control Panel as below. 
 
 A. **Align**: These buttons help you easily align objects with just one click! You can hover over the icons to see what kind of alignment each does. \
@@ -81,7 +81,7 @@ B. **Frame Fitting**: Helps manipulate placed images and text. \
     - *Auto-Fit*: I strongly suggest always having Auto-Fit selected; this allows the image to be resized as you resize the frame. If you have Auto-Fit deselected, you essentially are working with a crop tool, where you can resize the frame while the image inside is static. \
     - *Fill frame proportionally* and *Fit content proportionally*: the first two little squares in this row. I tend to use one of these to make sure my placed image fits the frame just right and to reduce white space.  
 
-<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+<br> <br> <br> <br> <br> <br> <br> <br> 
 
 ## 4. Example of a Simple InDesign Workflow  
 A few principles to keep in mind as we start figure-making in InDesign:
@@ -101,21 +101,21 @@ OKAY! We are now ready to jump into an example of a simple InDesign workflow for
 
 ### First, make sure your output folder is set up. 
 <img align="left" width="250" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Folders.png">
-I like having 3 sub-folders, one for outputting my figures from RStudio (PDFs), one for my InDesign files (.indd), and one for my final figures (PDFs or PNGs). If you need to adjust anything in Illustrator before loading things into InDesign, I usually just edit the RStudio PDFs directly in Illustrator and write over the original file. In my PDFs directory, I will have individual sub-folders for each figure (Fig1, Fig2, etc.) that contain all the panels I need for a given figure, including separate files for legends.
+I like having 3 sub-folders, one for outputting my figures from RStudio (PDFs), one for my InDesign files (.indd), and one for my final figures (PDFs or PNGs). If you need to adjust anything in Illustrator before loading things into InDesign, I usually just edit the RStudio PDFs directly in Illustrator and write over the original file. In my PDFs directory, I have individual sub-folders for each figure (Fig1, Fig2, etc.) that contain all the panels I need for a given figure, including separate files for legends.
 
 <br><br> <br> <br>
 
 ### Plot figures in RStudio (or Python or Matlab!) + save out as PDFs
 
 <img align="left" width="250" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Output.png">  <br>
-Save each panel as a PDF in the appropriate folder (e.g. `/dataclub/PDFs/Fig1/Fig1_<dataset>.pdf`). See [InDesign_Tutorial_Figures.Rmd](https://github.com/PennLINC/PennLINC.github.io/tree/main/docs/Tutorials/InDesign_Tutorial_Files) for code. **Note**: I've excluded the x and y axis labels from these panels because I don't want them in the final figure; my plotting function also excludes a legend. My saved-out panels look something like this:
+Save each panel as a PDF in the appropriate folder (e.g. `/dataclub/PDFs/Fig1/Fig1_<dataset>.pdf`). See [InDesign_Tutorial_Figures.Rmd](https://github.com/PennLINC/PennLINC.github.io/tree/main/docs/Tutorials/InDesign_Tutorial_Files) for my figure-making code. **Note**: I've excluded the x and y axis labels from these panels because I don't want them in the final figure; my plotting function also excludes a legend. My saved-out panels look something like this:
 
 <img align="center" width="250" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Panel.png">
 
 
-You will also need the legend. To do this, you can simply plot a version WITH the legend and save out. I won't go over how to crop out the plot and edit the legend in **Illustrator**, since I'm assuming many of you already have familiarity with that app. I saved out my Illustrator file as `SA_Axis_Legend.ai`. The legend looks like this: 
+I also need the legend. To do this, I simply plotted a version WITH the legend and save out. I won't go over how to crop out the plot and edit the legend in **Illustrator**, since I'm assuming many of you already have familiarity with that app. I saved out my Illustrator file as `SA_Axis_Legend.ai`. The legend looks like this: 
 
-<img align="center" src="/assets/images_indesign/Legend.png" height="30"/> 
+<img align="center" src="/assets/images_indesign/Legend.png" height="15"/> 
 
 ### Now it's time to jump into InDesign!
 
@@ -125,28 +125,28 @@ Using the **Frame Tool**, click and drag to create a large rectangle where your 
 
 *Note*: no need to be perfect in the sizing of your frames. Definitely helps to be more accurate with aspect ratio, but we can tweak frames later! <br>
 **Click the following image to watch the video (it will take you to Youtube).**
-[<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/FramesSetUp.png" width="200">](https://youtu.be/NtcYZ6EZWIg "FramesSetUp")
+[<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/FramesSetUp.png" width="300">](https://youtu.be/NtcYZ6EZWIg "FramesSetUp")
 
 *Note* you can also [create guides](https://helpx.adobe.com/indesign/using/ruler-guides.html) that help you line up images by clicking and dragging the X or Y axis ruler. (Not shown in video.) 
 #### 2. Next, place the plots into each frame.
-This can be done by **dragging and dropping** (see video), or **select each frame, then File > Place > image.pdf.** Notice that the placed images are UGLLYY, like they do not fit right. That is ok!! <br>
+This can be done by **dragging and dropping** (see Youtube video below), or **select each frame, then File > Place > image.pdf.** Notice that the placed images are UGLLYY, like they do not fit right. That is ok!! <br>
 
 After placing all your plots, you can select all of them (**shift + Select Tool**; make sure the boxes are blue not yellow! Yellow = direct selection tool). Scroll to the **Control Panel's frame fitting section**, and click the **appropriate fit**. I chose "Fit Content Proportionally" because that looks best. <br>
 
 Now, you have a gorgeous initial layout of your figure in < 2 minutes. No resizing each plot, no shifting plots up and down to make them line up, etc!! <br>
 **Click the following image to watch the video (it will take you to Youtube).**  
- [<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Place.png" width="200">](https://youtu.be/uqCMDIj_vP0 "Place")
+ [<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Place.png" width="300">](https://youtu.be/uqCMDIj_vP0 "Place")
 
 
 <br>
-<img align="center" src="/assets/images_indesign/Initial.png" height="150"/> 
+<img align="center" src="/assets/images_indesign/Initial.png" height="75"/> 
 <p>
     <em>Product of exactly 1 min 52 seconds of work in InDesign! YAYYY!!</em>
 </p>
 <br>
 
 #### 3. Now, we can add panel labels and text. 
-Using the **Frame Tool**, we can make placeholders for panel labels (a, b, c, d) and titles (dataset names). We can copy and paste each pair of frames (label + title) for each panel so they're all the same size. We can also make sure that the frames are all aligned by selecting pairs of frames and clicking the appropriate alignment in the **Control Panel**. 
+Using the **Frame Tool**, you can make placeholders for panel labels (a, b, c, d) and titles (dataset names). You can copy and paste each pair of frames (label + title) for each panel so they're all the same size. Make sure that the frames are all aligned by selecting pairs of frames and clicking the appropriate alignment in the **Control Panel**. 
 
 Next, type in the text for each frame using the **Type Tool**. After typing, use the **Selection Tool** to highlight all the boxes you want to format and choose a desired font and size. 
 
@@ -155,22 +155,22 @@ Notice that one of the text boxes has a little red "X" next to it and the text h
 Once you have all the text boxes selected, you can also center align the text in the **Control Pane**. Be careful not to scroll your mouse or InDesign might scroll you through a bunch of fonts (2:01 in the video below - oops!). Instead, click and drag the scroll bar in the **Control Pane**. To center your text in the vertical direction, scroll down to **Text Frame** in the **Control Panel** while your text boxes are still selected > Options > Align: Center (under Vertical Justification) > OK. 
 <br>
 **Click the following image to watch the video (it will take you to Youtube).**  
- [<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Text.png" width="200">](https://youtu.be/tOKJjiQ12Ws "Text")
+ [<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Text.png" width="300">](https://youtu.be/tOKJjiQ12Ws "Text")
 
 
 Let's add a delta symbol and superscript to our y-axis. Symbols can be added via Type (ribbon) > Glyphs. Super- and sub-scripts can be added using the **Control Pane** while utilizing the **Type Tool**.
 <br>
 **Click the following image to watch the video (it will take you to Youtube).**  
- [<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/SubscriptsSymbols.png" width="200">](https://youtu.be/3pJ970TokNs "SubscriptsSymbols")
+ [<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/SubscriptsSymbols.png" width="300">](https://youtu.be/3pJ970TokNs "SubscriptsSymbols")
 
-We can also add correlations and p-values to each plot. I like to add them manually in InDesign because I can't format *p*<sub>spin</sub> properly in R. 
+You can also add correlations and p-values to each plot (or whatever other text you'd like). I like to add them manually in InDesign because I can't format *p*<sub>spin</sub> properly in R. 
 
 Using the **Type Tool**, draw a text box in the plot and type the correlation and p-value. To make the textbox opaque, select the text box and in the **Control Panel** under **Appearance**, click Fill > Paper. Then, select the correct font and left alignment (**Control Panel** > Paragraph). Using the **Type Tool**, highlight the "r" and "p" and italicize as appropriate. 
 
 You can copy/paste this textbox to each plot, edit the text, and align as needed. Notice that when moving the boxes around, green guide lines sometimes automatically appear, telling you whether or not you are aligned with other elements or centered. These are super helpful!! 
 <br>
 **Click the following image to watch the video (it will take you to Youtube).**  
- [<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Correlation.png" width="200">](https://youtu.be/_yi22Jo5Ux4 "Correlation")
+ [<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Correlation.png" width="300">](https://youtu.be/_yi22Jo5Ux4 "Correlation")
 
 
 #### 4. Add your finishing touches
@@ -178,7 +178,7 @@ To view your piece without guides, go to **View** (ribbon) > Screen Mode > Previ
 <br>
 
 **Click the following image to watch the video (it will take you to Youtube).**  
-[<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/FinishingTouches.png" width="200">](https://youtu.be/-6nOPVGXAsw "FinishingTouches")
+[<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/FinishingTouches.png" width="300">](https://youtu.be/-6nOPVGXAsw "FinishingTouches")
 
 ### What if you have to remake all your panels?!?
 We often have to remake figures after incorporating co-author's comments or during paper revisions. This can lead to a frustrating amount of work recapitulating multi-panel figures that we meticulously laid out in Illustrator or another program. Sad times.
@@ -189,28 +189,25 @@ Say I want to update my figures to be a totally different color scheme - purple 
 
 After saving out the new plots, make sure InDesign is closed. Reopen the InDesign document, and you should get this error message: 
 
-<img align="center" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Error.png" width="150"> 
+<img align="center" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Error.png" width="300"> 
 
 Click "Update Modified Links", and let InDesign do its magic!!!!!
 
-
-https://github.com/PennLINC/PennLINC.github.io/assets/67298158/eec58018-91fd-4874-81d5-4312b683e3bd
+[<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Magic.png" width="300">](https://youtu.be/HzBJCJo6X7c?si=bSNQSyz5SyYzlo6i "Magic")
  
 <br>
 Note that you still need to update the legend in Illustrator. I would rename the original Illustrator file for the legend with an "_old" tag, and save the purple-yellow legend with the original filename. Then update InDesign: 
 <br>
 
 
-
-https://github.com/PennLINC/PennLINC.github.io/assets/67298158/31c3d33c-4294-4d96-8516-1bbef04d7fa0
-
+[<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/UpdateLegend.pn" width="300">](https://youtu.be/Oc6YIdTn3GQ?si=zXc7WBaJVp0Y4VMV "UpdateLegend")
 
 
 <br>
 View the document using "Normal" (View > Screen Mode > Normal) and click the little caution icon by the legend to update the link. And you're done!!
 <br>
 
-<img align="center" src="/assets/images_indesign/PY_Figure.png" height="100"/> 
+<img align="center" src="/assets/images_indesign/PY_Figure.png" height="50"/> 
 <p>
     <em>The fastest outfit change that ever was</em>
 </p>
