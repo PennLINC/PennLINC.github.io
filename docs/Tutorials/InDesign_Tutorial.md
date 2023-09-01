@@ -51,7 +51,7 @@ Diagram adapted from [Adobe](https://helpx.adobe.com/indesign/using/workspace-ba
 
 Let's zoom into the **Toolbar** to introduce these bad boys: 
 
-<img align="left" src="/assets/images_indesign/Toolbar.png" width=20% height=20%/>   
+<img align="left" width="250" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Toolbar.png">
 
 A. **Selection Tool**: Allows you to select text and graphics frames work. You can work with an object using its bounding box. Notice that when you click an object using the Selection Tool, additional options will show up in the Control Panel on the right (under the Properties tab).  
 
@@ -73,7 +73,7 @@ E. **Rectangle Frame Tool**: Arguably the most important tool in InDesign for ou
 <br>  
 
 Last but not least, let's get you familiar with a few entities on the **Control Panel** (usually on the right of the workspace)
-<img align="left" style="margin:16px;" src="/assets/images_indesign/ControlPanel.png" width=30% height=30%/>  
+<img align="left" width="250" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/ControlPanel.png">
 If you use the **Selection Tool** and click an object you want to  manipulate, you will see some additional options appear on the Control Panel as below. 
 
 A. **Align**: These buttons help you easily align objects with just one click! You can hover over the icons to see what kind of alignment each does. \
@@ -100,23 +100,22 @@ OKAY! We are now ready to jump into an example of a simple InDesign workflow for
 
 
 ### First, make sure your output folder is set up. 
-<img align="left" style="margin:16px;" src="/assets/images_indesign/Folders.png" width=30% height=30%/>  
-
-
+<img align="left" width="250" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Folders.png">
 I like having 3 sub-folders, one for outputting my figures from RStudio (PDFs), one for my InDesign files (.indd), and one for my final figures (PDFs or PNGs). If you need to adjust anything in Illustrator before loading things into InDesign, I usually just edit the RStudio PDFs directly in Illustrator and write over the original file. In my PDFs directory, I will have individual sub-folders for each figure (Fig1, Fig2, etc.) that contain all the panels I need for a given figure, including separate files for legends.
 
 <br><br> <br> <br>
 
 ### Plot figures in RStudio (or Python or Matlab!) + save out as PDFs
 
-<img align="left" style="margin:16px;" src="/assets/images_indesign/Output.png" width=20% height=20%/>  <br>
+<img align="left" width="250" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Output.png">  <br>
 Save each panel as a PDF in the appropriate folder (e.g. `/dataclub/PDFs/Fig1/Fig1_<dataset>.pdf`). See [InDesign_Tutorial_Figures.Rmd](https://github.com/PennLINC/PennLINC.github.io/tree/main/docs/Tutorials/InDesign_Tutorial_Files) for code. **Note**: I've excluded the x and y axis labels from these panels because I don't want them in the final figure; my plotting function also excludes a legend. My saved-out panels look something like this:
 
-<img align="center" style="margin:16px;" src="/assets/images_indesign/Panel.png" width=30% height=30%/> 
+<img align="center" width="250" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Panel.png">
+
 
 You will also need the legend. To do this, you can simply plot a version WITH the legend and save out. I won't go over how to crop out the plot and edit the legend in **Illustrator**, since I'm assuming many of you already have familiarity with that app. I saved out my Illustrator file as `SA_Axis_Legend.ai`. The legend looks like this: 
 
-<img align="center" style="margin:16px;" src="/assets/images_indesign/Legend.png" height="70"/> 
+<img align="center" src="/assets/images_indesign/Legend.png" height="30"/> 
 
 ### Now it's time to jump into InDesign!
 
@@ -140,7 +139,7 @@ Now, you have a gorgeous initial layout of your figure in < 2 minutes. No resizi
 
 
 <br>
-<img align="center" style="margin:16px;" src="/assets/images_indesign/Initial.png" height="300"/> 
+<img align="center" src="/assets/images_indesign/Initial.png" height="200"/> 
 <p>
     <em>Product of exactly 1 min 52 seconds of work in InDesign! YAYYY!!</em>
 </p>
@@ -211,7 +210,7 @@ https://github.com/PennLINC/PennLINC.github.io/assets/67298158/31c3d33c-4294-4d9
 View the document using "Normal" (View > Screen Mode > Normal) and click the little caution icon by the legend to update the link. And you're done!!
 <br>
 
-<img align="center" style="margin:16px;" src="/assets/images_indesign/PY_Figure.png" height="300"/> 
+<img align="center" src="/assets/images_indesign/PY_Figure.png" height="200"/> 
 <p>
     <em>The fastest outfit change that ever was</em>
 </p>
