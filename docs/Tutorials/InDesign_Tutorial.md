@@ -73,7 +73,7 @@ E. **Rectangle Frame Tool**: Arguably the most important tool in InDesign for ou
 <br>  
 
 Last but not least, let's get you familiar with a few entities on the **Control Panel** (usually on the right of the workspace)
-<img align="left" width="250" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/ControlPanel.png">
+<img align="left" width="250" style="margin:10px;" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/ControlPanel.png">
 If you use the **Selection Tool** and click an object you want to  manipulate, you will see some additional options appear on the Control Panel as below. 
 
 A. **Align**: These buttons help you easily align objects with just one click! You can hover over the icons to see what kind of alignment each does. \
@@ -125,7 +125,7 @@ Using the **Frame Tool**, click and drag to create a large rectangle where your 
 
 *Note*: no need to be perfect in the sizing of your frames. Definitely helps to be more accurate with aspect ratio, but we can tweak frames later! <br>
 **Click the following image to watch the video (it will take you to Youtube).**
-[<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/FramesSetUp.png" width="70%">](https://youtu.be/NtcYZ6EZWIg "FramesSetUp")
+[<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/FramesSetUp.png" width="200">](https://youtu.be/NtcYZ6EZWIg "FramesSetUp")
 
 *Note* you can also [create guides](https://helpx.adobe.com/indesign/using/ruler-guides.html) that help you line up images by clicking and dragging the X or Y axis ruler. (Not shown in video.) 
 #### 2. Next, place the plots into each frame.
@@ -135,11 +135,11 @@ After placing all your plots, you can select all of them (**shift + Select Tool*
 
 Now, you have a gorgeous initial layout of your figure in < 2 minutes. No resizing each plot, no shifting plots up and down to make them line up, etc!! <br>
 **Click the following image to watch the video (it will take you to Youtube).**  
- [<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/Place.png" width="70%">](https://youtu.be/uqCMDIj_vP0 "Place")
+ [<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Place.png" width="200">](https://youtu.be/uqCMDIj_vP0 "Place")
 
 
 <br>
-<img align="center" src="/assets/images_indesign/Initial.png" height="200"/> 
+<img align="center" src="/assets/images_indesign/Initial.png" height="150"/> 
 <p>
     <em>Product of exactly 1 min 52 seconds of work in InDesign! YAYYY!!</em>
 </p>
@@ -155,13 +155,13 @@ Notice that one of the text boxes has a little red "X" next to it and the text h
 Once you have all the text boxes selected, you can also center align the text in the **Control Pane**. Be careful not to scroll your mouse or InDesign might scroll you through a bunch of fonts (2:01 in the video below - oops!). Instead, click and drag the scroll bar in the **Control Pane**. To center your text in the vertical direction, scroll down to **Text Frame** in the **Control Panel** while your text boxes are still selected > Options > Align: Center (under Vertical Justification) > OK. 
 <br>
 **Click the following image to watch the video (it will take you to Youtube).**  
- [<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/Text.png" width="70%">](https://youtu.be/tOKJjiQ12Ws "Text")
+ [<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Text.png" width="200">](https://youtu.be/tOKJjiQ12Ws "Text")
 
 
 Let's add a delta symbol and superscript to our y-axis. Symbols can be added via Type (ribbon) > Glyphs. Super- and sub-scripts can be added using the **Control Pane** while utilizing the **Type Tool**.
 <br>
 **Click the following image to watch the video (it will take you to Youtube).**  
- [<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/SubscriptsSymbols.png" width="70%">](https://youtu.be/3pJ970TokNs "SubscriptsSymbols")
+ [<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/SubscriptsSymbols.png" width="200">](https://youtu.be/3pJ970TokNs "SubscriptsSymbols")
 
 We can also add correlations and p-values to each plot. I like to add them manually in InDesign because I can't format *p*<sub>spin</sub> properly in R. 
 
@@ -170,7 +170,7 @@ Using the **Type Tool**, draw a text box in the plot and type the correlation an
 You can copy/paste this textbox to each plot, edit the text, and align as needed. Notice that when moving the boxes around, green guide lines sometimes automatically appear, telling you whether or not you are aligned with other elements or centered. These are super helpful!! 
 <br>
 **Click the following image to watch the video (it will take you to Youtube).**  
- [<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/Correlation.png" width="70%">](https://youtu.be/_yi22Jo5Ux4 "Correlation")
+ [<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Correlation.png" width="200">](https://youtu.be/_yi22Jo5Ux4 "Correlation")
 
 
 #### 4. Add your finishing touches
@@ -178,7 +178,7 @@ To view your piece without guides, go to **View** (ribbon) > Screen Mode > Previ
 <br>
 
 **Click the following image to watch the video (it will take you to Youtube).**  
-[<img src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images_indesign/FinishingTouches.png">](https://youtu.be/-6nOPVGXAsw "FinishingTouches")
+[<img src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/FinishingTouches.png" width="200">](https://youtu.be/-6nOPVGXAsw "FinishingTouches")
 
 ### What if you have to remake all your panels?!?
 We often have to remake figures after incorporating co-author's comments or during paper revisions. This can lead to a frustrating amount of work recapitulating multi-panel figures that we meticulously laid out in Illustrator or another program. Sad times.
@@ -189,7 +189,7 @@ Say I want to update my figures to be a totally different color scheme - purple 
 
 After saving out the new plots, make sure InDesign is closed. Reopen the InDesign document, and you should get this error message: 
 
-<img align="center" style="margin:16px;" src="/assets/images_indesign/Error.png" width=30% height=30%/> 
+<img align="center" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Error.png" width="150"> 
 
 Click "Update Modified Links", and let InDesign do its magic!!!!!
 
@@ -210,7 +210,7 @@ https://github.com/PennLINC/PennLINC.github.io/assets/67298158/31c3d33c-4294-4d9
 View the document using "Normal" (View > Screen Mode > Normal) and click the little caution icon by the legend to update the link. And you're done!!
 <br>
 
-<img align="center" src="/assets/images_indesign/PY_Figure.png" height="200"/> 
+<img align="center" src="/assets/images_indesign/PY_Figure.png" height="100"/> 
 <p>
     <em>The fastest outfit change that ever was</em>
 </p>
