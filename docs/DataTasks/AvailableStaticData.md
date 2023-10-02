@@ -57,3 +57,4 @@ has_toc: false
 | HCPD  | QSIRecon - GQI+hsvs v0.16.0RC3    | LINC_HCPD#~GQIHSVS_unzipped     | Files  | c5e26695-e519-48bd-83ec-98568d541a09 |
 | HCPD  | QSIRecon - sift+hsvs v0.16.0RC3   | LINC_HCPD#~SIFTHSVS_zipped      | Zips   | 83ae6014-561c-4767-a571-21348011888c |
 | HCPD  | QSIRecon - autotrack v0.18.0      | LINC_HCPD#~AUTOTRACK_zipped     | Zips   | 3de13c00-7ea0-462e-8387-60444d7880e3 |
+| HCPD  | fstabulate                        | LINC_HCPD#~fstabulate           | Files  | c70a6b74-7c11-4c85-9451-d6751836adea |
