@@ -19,6 +19,7 @@ has_toc: false
 | PNC   | XCP v0.3.2                        | LINC_PNC#~XCP_unzipped          | Files  | 4669d449-89fd-48ca-94a3-d8326f8ac98b |
 | PNC   | XCP v0.3.2                        | LINC_PNC#~XCP_zipped            | Zips   | e75816f8-bc8f-479f-90db-a86dc35f4676 |
 | PNC   | XCP v0.3.2                        | LINC_PNC#~XCP_QC                | Files  | 8ae2a9ed-e3ab-45d3-9072-e87f43511d0a |
+| PNC   | fstabulate                        | LINC_PNC#~fstabulate            | Files  | da925640-e6e2-4c4b-ba6a-60af03fb9014 |
 | CCNP  | BIDS                              | LINC_CCNP#~BIDS                 | Files  | 30c9ce5c-b43e-45d5-8a82-4fb7561b51a6 |
 | CCNP  | fMRIPrep v20.2.3                  | LINC_CCNP#~FMRIPREP_zipped      | Zips   | eee0d711-f800-4725-8097-4c7b79c7d87f |
 | CCNP  | XCP v0.0.8                        | LINC_CCNP#~XCP_unzipped         | Files  | b464c213-ca15-4628-907e-f8c31a3d695e |
