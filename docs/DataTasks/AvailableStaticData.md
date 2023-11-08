@@ -33,7 +33,6 @@ has_toc: false
 | HBN   | QSIRecon - GQI+hsvs v0.16.0RC3    | LINC_HBN#~GQIHSVS               | Files+QC | 1da37bc2-7f6d-40c0-80d8-b07cbcdc7f15 |
 | HBN   | QSIPrep 0.14.2                    | LINC_HBN#~QSIPREP               | Zips+QC| 4f42ad2d-4a25-470c-b8ca-c6ce71faf080 |
 | HBN   | XCP v0.3.2                        | LINC_HBN#~XCP_zipped            | Zips   | 83e5caef-474d-43cf-a3ba-c01cf3e99d5f |
-| HBN   | XCP v0.3.2                        | LINC_HBN#~XCP_zipped            | Zips   | 83e5caef-474d-43cf-a3ba-c01cf3e99d5f |
 | HBN   | XCP v0.3.2                        | LINC_HBN#~XCP_QC                | Files  | 72669171-26b8-4f27-b6e6-db4ea33761d4 |
 | HBN   | QSIRecon - dMRI Scalarfast        | LINC_HBN#~QSIRECON_SCALARFEST   | Zips   | Not yet transfered                   |
 | PACCT | BIDS                              | LINC_PACCT#~BIDS                | Files  | dfb00c6e-8790-4308-8f6d-8835b9071575 |
