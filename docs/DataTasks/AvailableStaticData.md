@@ -13,7 +13,7 @@ has_toc: false
 | ----- | --------------------------------- | ------------------------------- | ------ | ------------------------------------ |
 | PNC   | BIDS                              | LINC_PNC#~BIDS                  | Files  | f2cb6108-521b-4653-b492-003321e5f5e3 |
 | PNC   | fMRIPrep v20.2.3                  | LINC_PNC#~FMRIPREP_zipped       | Zips   | 0e69e695-5219-4e32-9987-f4d795445c33 |
-| PNC   | fMRIPrep v20.2.3                  | LINC_PNC#~FMRIPREP_ANAT_zipped  | Zips   | TBF |
+| PNC (select subjects)   | fMRIPrep v20.2.3                  | LINC_PNC#~FMRIPREP_ANAT_zipped  | Zips   | f9ef59de-be16-4987-a930-49f15bdee0b4 |
 | PNC   | QSRecon - GQI+hsvs v0.16.0RC3     | LINC_PNC#~GQIHSVS               | Files  | f20c2eb1-c839-4404-8dad-63f0a20a4fff |
 | PNC   | QSIRecon msmt sifthsvs v0.16.0RC3 | LINC_PNC#~SIFTHSVS              | Zips   | 2642a99d-de75-437a-b63f-7da4ed36f330 |
 | PNC   | QSIPrep v0.14.2                   | LINC_PNC#~QSIPREP               | Zips   | 6af87a20-bfe5-458b-8773-cfe51e6200c6 |
