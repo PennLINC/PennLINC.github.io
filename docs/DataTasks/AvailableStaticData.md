@@ -20,6 +20,7 @@ has_toc: false
 | PNC   | XCP v0.3.2                        | LINC_PNC#~XCP_unzipped          | Files  | 4669d449-89fd-48ca-94a3-d8326f8ac98b |
 | PNC   | XCP v0.3.2                        | LINC_PNC#~XCP_zipped            | Zips   | e75816f8-bc8f-479f-90db-a86dc35f4676 |
 | PNC   | XCP v0.3.2                        | LINC_PNC#~XCP_QC                | Files  | 8ae2a9ed-e3ab-45d3-9072-e87f43511d0a |
+| PNC   | XCP v0.6.rc6                      | LINC_PNC#~XCP_zipped_latest               | Zips  |  |
 | PNC   | fstabulate                        | LINC_PNC#~fstabulate            | Files  | da925640-e6e2-4c4b-ba6a-60af03fb9014 |
 | CCNP  | BIDS                              | LINC_CCNP#~BIDS                 | Files  | 30c9ce5c-b43e-45d5-8a82-4fb7561b51a6 |
 | CCNP  | fMRIPrep v20.2.3                  | LINC_CCNP#~FMRIPREP_zipped      | Zips   | eee0d711-f800-4725-8097-4c7b79c7d87f |
@@ -55,6 +56,7 @@ has_toc: false
 | HCPD  | fMRIPrep v22.0.0                  | LINC_HCPD#~FMRIPREP-FUNC_zipped | Zips   | 580b2ea3-258f-4c28-a400-c053820453d7 |
 | HCPD  | XCP v0.3.0                        | LINC_HCPD#~XCP_zipped           | Zips   | a7c428ec-b19a-44ef-9312-77e89bb19b0c | 
 | HCPD  | XCP v0.3.0                        | LINC_HCPD#~XCP_QC               | Files  | 29dc283f-1075-4b7f-8ec1-0267ea729651 |
+| HCPD   | XCP v0.6.rc6                      | LINC_HCPD#~XCP_zipped_latest               | Zips  |  |
 | HCPD  | QSIPrep v0.16.1                   | LINC_HCPD#~QSIPREP              | Zips   | 1dd9ad0a-e0df-4aa0-9ef5-657381292560 |
 | HCPD  | QSIRecon - GQI+hsvs v0.16.0RC3    | LINC_HCPD#~GQIHSVS_unzipped     | Files  | c5e26695-e519-48bd-83ec-98568d541a09 |
 | HCPD  | QSIRecon - sift+hsvs v0.16.0RC3   | LINC_HCPD#~SIFTHSVS_zipped      | Zips   | 83ae6014-561c-4767-a571-21348011888c |
