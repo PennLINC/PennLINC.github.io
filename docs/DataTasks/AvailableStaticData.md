@@ -56,7 +56,7 @@ has_toc: false
 | HCPD  | fMRIPrep v22.0.0                  | LINC_HCPD#~FMRIPREP-FUNC_zipped | Zips   | 580b2ea3-258f-4c28-a400-c053820453d7 |
 | HCPD  | XCP v0.3.0                        | LINC_HCPD#~XCP_zipped           | Zips   | a7c428ec-b19a-44ef-9312-77e89bb19b0c | 
 | HCPD  | XCP v0.3.0                        | LINC_HCPD#~XCP_QC               | Files  | 29dc283f-1075-4b7f-8ec1-0267ea729651 |
-| HCPD   | XCP v0.6.rc6                      | LINC_HCPD#~XCP_zipped_latest               | Zips  |  |
+| HCPD   | XCP v0.6.rc6                      | LINC_HCPD#~XCP_zipped_latest   | Zips   | 9d62730e-46db-456c-a4e2-521e8a637f2b |
 | HCPD  | QSIPrep v0.16.1                   | LINC_HCPD#~QSIPREP              | Zips   | 1dd9ad0a-e0df-4aa0-9ef5-657381292560 |
 | HCPD  | QSIRecon - GQI+hsvs v0.16.0RC3    | LINC_HCPD#~GQIHSVS_unzipped     | Files  | c5e26695-e519-48bd-83ec-98568d541a09 |
 | HCPD  | QSIRecon - sift+hsvs v0.16.0RC3   | LINC_HCPD#~SIFTHSVS_zipped      | Zips   | 83ae6014-561c-4767-a571-21348011888c |
