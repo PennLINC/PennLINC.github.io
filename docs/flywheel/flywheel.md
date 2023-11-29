@@ -40,7 +40,7 @@ $ pip install flywheel-sdk
 
 ## Connecting with the SDK
 
-The flywheel CLI allows you to communicate with Flywheel’s database. Follow their instructions [here](https://docs.flywheel.io/hc/en-us/articles/360008162214). Once installed and logged in, you should see your username when you do:
+The flywheel CLI allows you to communicate with Flywheel's database. Follow their instructions [here](https://docs.flywheel.io/hc/en-us/articles/360008162214). Once installed and logged in, you should see your username when you do:
 ```
 $ fw status
 $ You are currently logged in as Tinashe Tapera to https://upenn.flywheel.io

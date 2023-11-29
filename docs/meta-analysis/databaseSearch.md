@@ -40,7 +40,7 @@ This will filter out availability of text, sample subjects to be human, and lang
 Note that there are two versions of PubMed now -- an old one accessible via incognito mode in Chrome or a new version that will replace it in May 2020. Here is how to save in both versions:
 
 ###### Old Version
-* Click the **Save** button that’s right under the search bar.
+* Click the **Save** button that's right under the search bar.
 * Change Selection to **All results** and Format to **PubMed**.
 
 ###### New Version
@@ -56,7 +56,7 @@ This is a workaround using [Zotero](https://zotero.org).
 
 #### [SCOPUS (proxy from UPenn library)](https://www-scopus-com.proxy.library.upenn.edu/)
 
-Once you’re on the page, go to **Advanced** (it’s on the same line as Documents, Authors, Affiliations right above the search bar).
+Once you're on the page, go to **Advanced** (it's on the same line as Documents, Authors, Affiliations right above the search bar).
 Filter using a variant of this string query:
 
 ```
@@ -74,7 +74,7 @@ This filters results to be from a peer-reviewed journal article, language to be 
 
 Saving on this requires multiple steps because you can only export ~2000 records at a time.
 
-1. To make sure you save all records, on the left hand bar, filter Year to the first half of the years of publication you’re searching for (e.g., 1990-2000).
+1. To make sure you save all records, on the left hand bar, filter Year to the first half of the years of publication you're searching for (e.g., 1990-2000).
 2. Click the checkbox for All Results. Click **Export** and select **RIS Format**.
 3. Now, filter for the rest of the years and repeat the steps. In Covidence, you will just upload both **.ris** files.
 
@@ -93,7 +93,7 @@ This is the version used in pain:
 ```
 ('mri'/exp OR 'mri' OR 'magnetic resonance imaging'/exp OR 'magnetic resonance imaging') AND ('vbm' OR 'voxel based morphometry'/exp OR 'voxel based morphometry' OR 'cortical thickness'/exp OR 'cortical thickness' OR 'cortical volume'/exp OR 'cortical volume' OR 'cortical surface area'/exp OR 'cortical surface area' OR 'grey matter density' OR 'gray matter density'/exp OR 'gray matter density') AND ('pain'/exp OR 'pain' OR 'neuropathy'/exp OR 'neuropathy' OR 'neuropathic' OR 'hyperalgesia'/exp OR 'hyperalgesia' OR 'allodynia'/exp OR 'allodynia') AND ('brain'/exp OR 'brain') AND [1990-2020]/py AND [embase]/lim AND ('article'/it OR 'article in press'/it OR 'chapter'/it OR 'editorial'/it OR 'letter'/it OR 'note'/it OR 'review'/it OR 'short survey'/it) AND [embase]/lim AND [english]/lim
 ```
-This will make sure you’re only searching for the years 1990 onwards, within the EMBASE database, and with articles that are only published.
+This will make sure you're only searching for the years 1990 onwards, within the EMBASE database, and with articles that are only published.
 
 ##### Exporting from EMBASE
 
@@ -126,4 +126,4 @@ To search through Cochrane, do the following steps:
 3. Go back to the top and click on the checkbox next to **Select 1-100** and then click on the **…** circle. Select **RIS** as your preferred format. Click **continue** and then you will have downloaded the first 100 abstracts. Go to the next page and repeat.
 
 ### 2.3. Upload onto Covidence
-After you’re done with these steps, upload each **.ris** or **PubMed XML** file onto Covidence. Once you’re done, you can begin screening abstract records in Covidence.
+After you're done with these steps, upload each **.ris** or **PubMed XML** file onto Covidence. Once you're done, you can begin screening abstract records in Covidence.

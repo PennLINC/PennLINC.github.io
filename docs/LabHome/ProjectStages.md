@@ -30,7 +30,7 @@ The ultimate impact of any project is largely determined by the question being a
 
 ### 3)	Conduct a literature review
 
-This step is skipped at one’s peril.   Nothing is worse than sitting down to write a paper and then realizing only at that late stage that the question was largely answered by a study you were not aware of.   A literature review also is critically important in sharpening hypotheses in order to maximize the potential impact of the question being asked. As the first author, it is important to internalize that you need to rapidly become the expert on the topic of the project—do not trust your faculty mentor to be aware of all relevant literature.  Often the whole reason for a new project is that it is a new area that the faculty member is not an expert in.  Try to be comprehensive at this stage, and use a reference manager to stay organized.  Reading abstracts and examining figures is a way to rapidly get the sense of a new field.  This broad overview is usually followed by an extremely detailed examination of the most relevant half-dozen articles. All literature reviews should be conducted using a reference management system.  Many in the lab prefer Zotero.
+This step is skipped at one's peril.   Nothing is worse than sitting down to write a paper and then realizing only at that late stage that the question was largely answered by a study you were not aware of.   A literature review also is critically important in sharpening hypotheses in order to maximize the potential impact of the question being asked. As the first author, it is important to internalize that you need to rapidly become the expert on the topic of the project—do not trust your faculty mentor to be aware of all relevant literature.  Often the whole reason for a new project is that it is a new area that the faculty member is not an expert in.  Try to be comprehensive at this stage, and use a reference manager to stay organized.  Reading abstracts and examining figures is a way to rapidly get the sense of a new field.  This broad overview is usually followed by an extremely detailed examination of the most relevant half-dozen articles. All literature reviews should be conducted using a reference management system.  Many in the lab prefer Zotero.
 
 
 ### 4)	Sharpen hypotheses and outline testable predictions in an analysis plan
@@ -50,12 +50,12 @@ The lab standard is now to release all analysis code.   To ensure reproducibilit
 
 ### 7)	Assess data availability & ensure data access
 
-Before one spends too much time on a project, one should ensure that the necessary data is available.  This step arguably should come earlier.  Much of the impact of a paper is determined by the sample size; small samples reduce statistical power and preclude many methods being used.    In particular, pay attention to key subject level variables such as demographics, symptom scores, diagnoses.  If the imaging data has already been processed and QA’d, it is a good to check how big your sample will be after QA (see also “inclusion criteria and sample construction” below).   Finally, note that all projects should receive explicit written approval from the study PI who collected the data prior to beginning.  For the PNC, this includes approval of the data access committee, which meets once per month; please account for this process with regards to timeline / deadlines.  
+Before one spends too much time on a project, one should ensure that the necessary data is available.  This step arguably should come earlier.  Much of the impact of a paper is determined by the sample size; small samples reduce statistical power and preclude many methods being used.    In particular, pay attention to key subject level variables such as demographics, symptom scores, diagnoses.  If the imaging data has already been processed and QA'd, it is a good to check how big your sample will be after QA (see also “inclusion criteria and sample construction” below).   Finally, note that all projects should receive explicit written approval from the study PI who collected the data prior to beginning.  For the PNC, this includes approval of the data access committee, which meets once per month; please account for this process with regards to timeline / deadlines.
 
 
 ### 8)	Process & QA imaging data
 
-If data has not already been processed, this is an important and sometimes time-consuming step.  We prefer a highly-structured process for image processing to ensure reproducibility using XCP-based modules whenever possible.  See XCP documentation for further information (this is a bit of a work in progress at the moment). Note that a sub-sample (usually n~10) of subject level data should replicated, and the main subject-level derivatives produced by the pipeline should be placed in a read-only data freeze for the dataset.   For most projects, analyses should only use replicated data that is pulled directly from this data freeze folder. See the [Project Reproducibility Guide](https://github.com/PennBBL/labhome/wiki/Project-Reproducibility-Guide) for more information.  
+If data has not already been processed, this is an important and sometimes time-consuming step.  We prefer a highly-structured process for image processing to ensure reproducibility using XCP-based modules whenever possible.  See XCP documentation for further information (this is a bit of a work in progress at the moment). Note that a sub-sample (usually n~10) of subject level data should replicated, and the main subject-level derivatives produced by the pipeline should be placed in a read-only data freeze for the dataset.   For most projects, analyses should only use replicated data that is pulled directly from this data freeze folder. See the [Project Reproducibility Guide](https://github.com/PennBBL/labhome/wiki/Project-Reproducibility-Guide) for more information.
 
 
 ### 9)	Clearly define inclusion criteria and construct sample in a reproducible manner
@@ -65,7 +65,7 @@ It cannot be over-emphasized how critical this step is, as changes in the inclus
 
 ### 10)	Data analysis and documentation
 
-This stage is usually the longest, and varies considerably by project.  Regardless, organization pays off: keeping code clean + well commented, keeping all code in github.  Updating your project repo daily guards against both lost work or the risk of nasty code excavation job at the replication stage (next).  In general all analytics should use reproducile, well commented notebooks.  
+This stage is usually the longest, and varies considerably by project.  Regardless, organization pays off: keeping code clean + well commented, keeping all code in github.  Updating your project repo daily guards against both lost work or the risk of nasty code excavation job at the replication stage (next).  In general all analytics should use reproducile, well commented notebooks.
 
 
 ### 11)	 Replicate interim results
@@ -75,12 +75,12 @@ As detailed in the [Project Reproducibility Guide](https://github.com/PennBBL/la
 
 ### 12)	 Paper first steps: abstract & figure outline
 
-The scientific narrative of a paper should be readily apparent from the abstract and figures.  Before deciding that analyses are “done” it is good to write the abstract and make an outline (in text) of what the figures will show.  Often times this step reveals that something is missing, and one or two more analyses need to be done.  
+The scientific narrative of a paper should be readily apparent from the abstract and figures.  Before deciding that analyses are “done” it is good to write the abstract and make an outline (in text) of what the figures will show.  Often times this step reveals that something is missing, and one or two more analyses need to be done.
 
 
 ### 13)	 Create draft figures
 
-It is often good to create draft figure panels for the entire paper before polishing them to high gloss for publication.  These figures should be made reproducibly so they can be replicated (in the next step).  Making beautiful final figures before replication is not efficient. Bottom line?: Initial draft figures should be reproducible rather than gorgeous.  
+It is often good to create draft figure panels for the entire paper before polishing them to high gloss for publication.  These figures should be made reproducibly so they can be replicated (in the next step).  Making beautiful final figures before replication is not efficient. Bottom line?: Initial draft figures should be reproducible rather than gorgeous.
 
 
 ### 14)	 Final reproducibility check: Clean code, make GitHub repo, companion wiki, and replicate final results
@@ -90,22 +90,22 @@ At this step, one has all the code and results in hand.  Before writing (or as i
 
 ### 15)	Make final figures & write text
 
-It is strongly suggest reading this article by Konrad Cording prior to starting your paper: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619.  
+It is strongly suggest reading this article by Konrad Cording prior to starting your paper: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619.
 
 In general, the workflow ted prefers is below.  While a given step is "on Ted's Desk", it makes sense to work on the next step. In general, it is strongly preferred to jointly review an outline for each section before the text is written.
 
-1) Review abstract + figures + figure legends.  
-3) Methods section 
+1) Review abstract + figures + figure legends.
+3) Methods section
 4) Results section
 5) Introduction
 6) Discussion
 
-In general our papers tend to have a lot of co-authors so writing the paper in either a google doc OR microsoft word online is suggested. This will make the process of integrating co-author changes much less painful.  
+In general our papers tend to have a lot of co-authors so writing the paper in either a google doc OR microsoft word online is suggested. This will make the process of integrating co-author changes much less painful.
 
 
 ### 16)	Polish text with faculty mentor
 
-Experience suggests that the number of draft iterations is one of the dominant factors in how good the final text of a paper is.  Expect 3-5 rounds of revision of the text with your faculty mentor prior to sending the paper to co-authors.  Typically, Ted will send ~2 rounds of "bubble comments" before  text edits are tracked.   Tracking changes and careful version control at this phase is of course key.  Saving paper versions with a date suffix (in format YYYYMMDD) and co-author comment suffix (in format `_tsComments`) tends to help.  
+Experience suggests that the number of draft iterations is one of the dominant factors in how good the final text of a paper is.  Expect 3-5 rounds of revision of the text with your faculty mentor prior to sending the paper to co-authors.  Typically, Ted will send ~2 rounds of "bubble comments" before  text edits are tracked.   Tracking changes and careful version control at this phase is of course key.  Saving paper versions with a date suffix (in format YYYYMMDD) and co-author comment suffix (in format `_tsComments`) tends to help.
 
 ### 17)	Send to co-authors and integrate feedback
 
@@ -115,11 +115,11 @@ Once you and Ted sign off on a draft, it is time to send it to co-authors. Here 
 
 Hi everyone!
 
- 
+
 We are excited to share with you and get your feedback on `Manuscript Title`. Many thanks to everyone for the huge collaborative effort here.   Given the many contributors, we are distributing this manuscript as a google doc to help with version control. We kindly ask for your effort on several things:
 
 
-* Please track changes: please ensure that you are in “suggesting” (not “editing”) mode (see box in upper right of toolbar as well as screenshot below). 
+* Please track changes: please ensure that you are in “suggesting” (not “editing”) mode (see box in upper right of toolbar as well as screenshot below).
 
 * Please check if your name and affiliations are correct on the title page
 
@@ -129,19 +129,19 @@ We are excited to share with you and get your feedback on `Manuscript Title`. Ma
 
 * Even if you don't have any comments, we nonetheless request ask you to reply to this email with your written approval.
 
- 
+
 We ask that you submit your feedback in the next 14 days. Once we have integrated your feedback, we will submit this a preprint (to BioRxiv) and then to `Journal X`.  If more time is needed, please just reach out and let us know.
 
 Here is the link to the manuscript {insert link}; again, please switch to "Suggesting" mode to track changes.
 
 ```
 
-We usually allow ~1-2 weeks for co-authors to provide feedback on a paper.  For those who do not reply in the specified window, usually the faculty lead will send a reminder email.  
+We usually allow ~1-2 weeks for co-authors to provide feedback on a paper.  For those who do not reply in the specified window, usually the faculty lead will send a reminder email.
 
 
 ### 18)	Submit paper, code, & post on a preprint server
 
-After (typically) years of work, you are now ready to submit the paper.   One reminder is that the final built PDF should be proof-read many times. Egregious formatting errors or typos are often caught at this stage.   Furthermore, pay careful attention to the quality of the figures in the built PDF.  Note that if figures are large, the journal will downsample these considerably when making the PDF.  Note that many reviewers will not click on the “high resolution figure” link available to them—they will just use what is in the built PDF.  It is a bummer when we work hard to make gorgeous figures, and then what the reviewers see are poorly rendered due to downsampling.  While this depends in part on the figure type that the journal accepts, one way around this is to submit figures as compressed PDFs—there is free software available for this.  Once the paper is submitted to the journal, it is a good idea to put it on a preprint server as well (arxiv, biorxiv, etc; NB: biorxiv does NOT allow you to remove preprints—only update them).  Use of preprints will help generate enthusiasm for the work even while it is stuck in peer review, prevent others from “scooping” you (esp w/ public datasets), and also increases transparency.   Feel free to tweet the link when it is up.   
+After (typically) years of work, you are now ready to submit the paper.   One reminder is that the final built PDF should be proof-read many times. Egregious formatting errors or typos are often caught at this stage.   Furthermore, pay careful attention to the quality of the figures in the built PDF.  Note that if figures are large, the journal will downsample these considerably when making the PDF.  Note that many reviewers will not click on the “high resolution figure” link available to them—they will just use what is in the built PDF.  It is a bummer when we work hard to make gorgeous figures, and then what the reviewers see are poorly rendered due to downsampling.  While this depends in part on the figure type that the journal accepts, one way around this is to submit figures as compressed PDFs—there is free software available for this.  Once the paper is submitted to the journal, it is a good idea to put it on a preprint server as well (arxiv, biorxiv, etc; NB: biorxiv does NOT allow you to remove preprints—only update them).  Use of preprints will help generate enthusiasm for the work even while it is stuck in peer review, prevent others from “scooping” you (esp w/ public datasets), and also increases transparency.   Feel free to tweet the link when it is up.
 
 As noted above, it is the lab standard to submit all analysis code (in the form of a GitHub repo) along with the paper.   Please make sure the repo submitted with the paper is *clean*, and does not include old code for parts of the project that did not pan out / were not included in the final manuscript. Including old code is a good way to confuse reviewers and others interested in reproducing your work. One way to do this is to make a new public repo that only uses a subset of code from the original working repo.
 
@@ -150,9 +150,9 @@ Please advertise new preprints on Twitter, and post them on the main pennlinc.io
 
 ### 19)	Revise & resubmit / Repeat as needed
 
-Peer review is a slog: there is no way to spin it otherwise.  To use a football analogy, the first submission is like being on the 20-yard line—certainly not the 1-yard line.   Dogged persistence and a thick skin is critical for navigating peer review.   In general, it is almost always better to “show them with data” and perform any additional analyses requested.   Even if rejected, it is generally useful to try to address the reviewers’ comments in the subsequent (new) submission, as it is quite possible you will get the same reviewer at the next journal.   This stage is often the part of the project that requires the most intense work in order to meet revision deadlines.  Quick turn-around for revision and resubmissions is very important to prevent the project from stalling.
+Peer review is a slog: there is no way to spin it otherwise.  To use a football analogy, the first submission is like being on the 20-yard line—certainly not the 1-yard line.   Dogged persistence and a thick skin is critical for navigating peer review.   In general, it is almost always better to “show them with data” and perform any additional analyses requested.   Even if rejected, it is generally useful to try to address the reviewers' comments in the subsequent (new) submission, as it is quite possible you will get the same reviewer at the next journal.   This stage is often the part of the project that requires the most intense work in order to meet revision deadlines.  Quick turn-around for revision and resubmissions is very important to prevent the project from stalling.
 
 
 ### 20)	Celebrate and disseminate
 
-Congrats! Your paper was accepted.  Next, make sure it reaches as many eyes as possible, through mechanisms especially twitter; updating the thread from when the preprint went up is usually a good idea.   Make sure the final version of the paper is posted on the pennlinc.io "publications" page (see the #pennlinc_website slack channel).  
+Congrats! Your paper was accepted.  Next, make sure it reaches as many eyes as possible, through mechanisms especially twitter; updating the thread from when the preprint went up is usually a good idea.   Make sure the final version of the paper is posted on the pennlinc.io "publications" page (see the #pennlinc_website slack channel).

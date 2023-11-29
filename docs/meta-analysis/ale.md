@@ -29,9 +29,9 @@ Prior to analyses, do the following:
 
 *NOTE*: Preserving this directory structure will better ensure scripts work properly and results are in the expected locations.
 
-After you’re done, create a folder in the **EickhoffALE** folder titled **DataMatlab** and another one named **DataRaw**. Leave these empty for now.
+After you're done, create a folder in the **EickhoffALE** folder titled **DataMatlab** and another one named **DataRaw**. Leave these empty for now.
 
-Now that you’re done with setup, download your coordinate data spreadsheets made from section 5 (Data Extraction) as a **.xls** file and move them to the **EickhoffALE** folder. You will next proceed to make a contrasts **.xlsx** file to define your analyses.
+Now that you're done with setup, download your coordinate data spreadsheets made from section 5 (Data Extraction) as a **.xls** file and move them to the **EickhoffALE** folder. You will next proceed to make a contrasts **.xlsx** file to define your analyses.
 
 *Please note that EickhoffALE is named [ale]() in the [fMRI Chronic Pain meta-analysis GitHub repo](https://github.com/PennLINC/Xu_fMRIChronicPain) -- they are essentially the same scripts, just named differently!*
 
@@ -43,7 +43,7 @@ The contrasts spreadsheet should model the [one from the fMRI Chronic Pain GitHu
 * The next column will be the coordinate spreadsheet you are referring to. Note: You are ending it with **.mat** rather than **.xls** (e.g., **coordinateData.mat**). This is because when you input your spreadsheet, a **.mat** file will be made for MATLAB to easily read information about your coordinate data spreadsheet.
 * The third column specifics what type of analyses you are conducting. Write `M` for main effects or `C` for contrasts (in this case, contrast means you want to look at the difference between two main effects maps).
 * If you are doing `C`, then have the next row of the entry be the other effect you are contrasting the first one from (see example in spreadsheet).
-* Put `+` for the fourth column. It just means you want the output to pop up as it runs. You can put `-` if you don’t want that.
+* Put `+` for the fourth column. It just means you want the output to pop up as it runs. You can put `-` if you don't want that.
 Put the name of a tag for the fifth column. For example, if you are analyzing all pain studies, put “allPain” -- this refers to how you name this tag in the coordinate dataset.
 * If you are conducting ROI-based analyses, put `$nameOfMask.nii` on this column (changing **nameOfMask.nii** to the actual name of the binary mask -- see section on **ROI-Based analyses** below). If you want to do both ROI-based analyses and main effects analyses, you can still put this in that column -- both analyses will be outputted.
 
@@ -63,14 +63,14 @@ mex 'tfceMex_pthread.c'
 You are now all set for running the ALE scripts! One other caveat with Windows is you will need a way to unzip **.gz** files. We recommend the program WinRAR for this.
 
 ## 6.2. Running ALE
-To run ALE, open MATLAB and follow the [runALE.m](https://github.com/PennLINC/Xu_fMRIChronicPain/blob/master/runALE.m) script found from the GitHub repo. Essentially, for each analysis, you will have one line that reads in the coordinate data input and another that actually analyzes what you’ve specified in the spreadsheet. Here is a break down of the code:
+To run ALE, open MATLAB and follow the [runALE.m](https://github.com/PennLINC/Xu_fMRIChronicPain/blob/master/runALE.m) script found from the GitHub repo. Essentially, for each analysis, you will have one line that reads in the coordinate data input and another that actually analyzes what you've specified in the spreadsheet. Here is a break down of the code:
 
 These few lines make sure all the proper directories are in your pathway.
 ```
 myPath=genpath(pwd);
 setup(myPath);
 ```
-This line reads the coordinate data.  
+This line reads the coordinate data.
 ```
 ale_inputCoords(‘coordinateData.xls`);
 ```
@@ -167,7 +167,7 @@ Foci can be found in the **Foci** output folder. You can display them in BrainNe
 4. After you're done editing the spreadsheet, copy and paste the MNI coordinates under the columns **mni_x**, **mni_y**, and **mni_z** into a text editor **as well as the three new columns generated**.
   * If you use TextEditor in MacOS, enter `command+shift+t` first to make it unformatted text editing.
   * Make sure to delete the column header (i.e., the first row that contains the column names mni_x, mni_y, and mni_z), and then save this file as **coordinates.node**.
-5. You can now load this onto BrainNet. In BrainNet, choose **BrainNet_ICBM152.nv** as the **surface figure** and choose **coordinates.node** for **Data file (node)**. If you want modularity, under **Node** in Options, go to **Color** and choose the option **Modular**. In **Modular**, click **More** and select your desired colors.  
+5. You can now load this onto BrainNet. In BrainNet, choose **BrainNet_ICBM152.nv** as the **surface figure** and choose **coordinates.node** for **Data file (node)**. If you want modularity, under **Node** in Options, go to **Color** and choose the option **Modular**. In **Modular**, click **More** and select your desired colors.
 6. Finally, click "OK" and generate the figure.
 
 To do create axial views in FSL, you will first have to dilate the foci using the following command in the terminal.
@@ -181,6 +181,6 @@ You can then open the output of this in fsleyes and play with the colors.
 
 If you're ever confused on where to start, always make sure to either read past papers, GitHub repo wikis, or this documentation! On a final note, in whatever way you can, I'd highly recommend you also make two important figures whenever you report your results:
 1. **PRISMA chart**: You can easily find this online or edit a template on your own. This helps readers look at the flow from database search to meta-analysis.
-2. **Table of included experiments**: Pretty self-explanatory. You can use the information from your data extraction of study information for this.  
+2. **Table of included experiments**: Pretty self-explanatory. You can use the information from your data extraction of study information for this.
 
 Good luck!

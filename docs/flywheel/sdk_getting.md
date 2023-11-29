@@ -112,7 +112,7 @@ It is very common for these attachments to be zip files. Often we don't need all
 5cf535cb36da2300443b2fb9/fmriprep/sub-X.html
 ```
 
-That's all the fmriprep output! Suppose we only want to get the confound regressors out of this zip. we can easily do this with a few lines:
+That's all the fMRIPrep output! Suppose we only want to get the confound regressors out of this zip. we can easily do this with a few lines:
 
 ```python
 >>> from os import listdir, path as op
@@ -148,7 +148,7 @@ Since BIDS requires that subject and session are in each filename, we can iterat
 
 ## A full example
 
-Suppose we want to extract the QC tsv from all of the QSIPREP gears attached to the PNC project. First we get a reference to the project container.
+Suppose we want to extract the QC tsv from all of the QSIPrep gears attached to the PNC project. First we get a reference to the project container.
 
 ```python
 >>> pnc = fw.projects.find_first('label=PNC_CS_810336')
@@ -157,7 +157,7 @@ Suppose we want to extract the QC tsv from all of the QSIPREP gears attached to 
 ...                    ana.label.startswith("qsiprep_0.3.16_0.8.0RC3")]
 ```
 
-We can write a temporary function that gets the non-html zip file and extracts the qc file.
+We can write a temporary function that gets the non-HTML zip file and extracts the qc file.
 
 ```python
 >>> import os.path as op
@@ -168,7 +168,7 @@ We can write a temporary function that gets the non-html zip file and extracts t
 ...     zip_files = [f_obj for f_obj in analysis_files if
 ...                  f_obj.name.endswith('.zip') and
 ...                  not f_obj.name.endswith('.html.zip')]
-...  
+...
 ...     # if it succeeded, there will be exactly one results zip
 ...     if not len(zip_files) == 1:
 ...         return False

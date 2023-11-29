@@ -6,9 +6,9 @@ nav_order: 15
 ---
 
 # CONCUR Reimbursement SOP
-Reimbursement for expenses (typically: conference travel) is one of the most administratively demanding tasks in the lab. The goal of this wiki (now maintained by Lia Brodrick) is to make this processess as efficient as possible and reduce headaches. Nonetheless, there are MANY compliance requirements and as such it is *REQUIRED* that this instructions are closely adhered to. 
+Reimbursement for expenses (typically: conference travel) is one of the most administratively demanding tasks in the lab. The goal of this wiki (now maintained by Lia Brodrick) is to make this processess as efficient as possible and reduce headaches. Nonetheless, there are MANY compliance requirements and as such it is *REQUIRED* that this instructions are closely adhered to.
 
-From the outset, please be prepared that this is a very time-intensive process that each lab member must manage for their own expenses.  While Lia is here to assist she is not an admin who will do this for you. As such, it is necessary to read *all* the documentation below *before* proceeding.   Note that questions regarding reimbursement (or suggested updates to this document) should be posted to the #concur slack channel to preserve knowledge over time -- not addressed via DMs to Lia or Ted.  
+From the outset, please be prepared that this is a very time-intensive process that each lab member must manage for their own expenses.  While Lia is here to assist she is not an admin who will do this for you. As such, it is necessary to read *all* the documentation below *before* proceeding.   Note that questions regarding reimbursement (or suggested updates to this document) should be posted to the #concur slack channel to preserve knowledge over time -- not addressed via DMs to Lia or Ted.
 
 For all lab-related expenses that you wish to have reimbursed via the CONCUR system follow the documentation outlined below. If you have a PennKey then you are able to submit reimbursements.  It is _essential_ that this be done in a timely manner; Penn policy prohibits reimbursements after 6 months.  Please submit expenses immediately after they are incurred and *expect a lengthy review process*. Due to high demands for compliance, reimbursements are often rejected by compliance officers multiple times after they have been approved by Ted.  As such, requests not submitted immediately after they are incurred risk being unpaid, leaving the lab member with the bill. There is no remedy for this if it occurs.
 
@@ -16,22 +16,22 @@ For all lab-related expenses that you wish to have reimbursed via the CONCUR sys
 For allowable expenses and funding for travel, please see the [travel guidelines wiki](https://pennlinc.github.io/docs/LabHome/TravelGuidelines/).
 
 
-## Overview of Steps to Reimbursement: 
+## Overview of Steps to Reimbursement:
 For a quick overview, you can check out Lia's video [here](../../assets/Concur_howtovideo_tripreimbursement.mp4).
 
 Explanation on how to complete each step is listed below
 
-1. Prepare expenditure justification form as described below. 
+1. Prepare expenditure justification form as described below.
 2. Update the lab travel expense tracker
 3. Send receipts and expenditure justification for pre-review (BEFORE PI signature)
 4. Incorporate feedback and submit receipts and expenditure justification via CONCUR
 5. You will receive notice if it has been approved via email
 
-Note: If you have booked something via Concur and NOT paid via your own card, you just have to prep the expenditure justification form, have it approved and get it signed. There is no need to then create an expense report and then submit it with the expenditure justification. See the "Booking flights via Concur section" - note this also applies to hotels booked through Concur. 
+Note: If you have booked something via Concur and NOT paid via your own card, you just have to prep the expenditure justification form, have it approved and get it signed. There is no need to then create an expense report and then submit it with the expenditure justification. See the "Booking flights via Concur section" - note this also applies to hotels booked through Concur.
 
 
 ## Prepping the Expenditure Justification Reports
-For each expenditure you must first prepare the standardized Expenditure Justification report.   It is STRONGLY encouraged to use a previously approved justification report examples to avoid multiple rounds of rejection and revision.   Prior examples can be found on PennBox (you can ask Lia to be shared on the CONCUR folder). It is encouraged to retain as much wording from previously approved documents as possible while maintaining accuracy. A blank copy of the expenditure justification form can be found [here](https://www.med.upenn.edu/ggeb/assets/user-content/Financial%20Forms/penn-a21-form.pdf), but again editing a previously-approved example is far preferred to starting from a blank copy.  
+For each expenditure you must first prepare the standardized Expenditure Justification report.   It is STRONGLY encouraged to use a previously approved justification report examples to avoid multiple rounds of rejection and revision.   Prior examples can be found on PennBox (you can ask Lia to be shared on the CONCUR folder). It is encouraged to retain as much wording from previously approved documents as possible while maintaining accuracy. A blank copy of the expenditure justification form can be found [here](https://www.med.upenn.edu/ggeb/assets/user-content/Financial%20Forms/penn-a21-form.pdf), but again editing a previously-approved example is far preferred to starting from a blank copy.
 
 
 ### Fill Out Expenditure Form
@@ -67,7 +67,7 @@ If you have any questions for Lia about concur, please send them in the `#concur
 
 NOTE:  If you are unsure about this step please feel free to review this form with Lia on the #concur channel before sending this to John Hyon (hyon1@pennmedicine.upenn.edu) or the business team (10Admin-Fin@PennMedicine.upenn.edu) - try to avoid emailing him with concur q's.
 
-## Adding delegates 
+## Adding delegates
 Please give Concur delegate access to:
 1. Stace Moore
 2. Patrick Doyle
@@ -77,22 +77,22 @@ Instructions for this can be found [here](../../assets/concur_delegate.pdf)
 
 ## Update the Travel Reimbursement Tracker
 
-Equity and transparency in use of support of travel is important, and will be openly tracked moving forward.  If you are not on this sheet already, make yourself a row. If the conference you are attending is not listed, create it as a column.  Then fill in the amount you are requesting support for in the cell that correpsonds to your row and that conf's col.  Only record the amount you are asking for support _from the lab_. Do NOT include any expenses that were covered by travel awards or other individual-specific funds.  
+Equity and transparency in use of support of travel is important, and will be openly tracked moving forward.  If you are not on this sheet already, make yourself a row. If the conference you are attending is not listed, create it as a column.  Then fill in the amount you are requesting support for in the cell that correpsonds to your row and that conf's col.  Only record the amount you are asking for support _from the lab_. Do NOT include any expenses that were covered by travel awards or other individual-specific funds.
 
-## Booking flights via Concur 
+## Booking flights via Concur
 Note: Sharon Liu is no longer our travel approver, John Hyon(hyon1@pennmedicine.upenn.edu) is. Before you book anything on Concur, make sure your profile is updated to reflect this so that requests are routed to the right person. (Profile > Company Information > Travel Approver on Concur should say John and not Sharon).
 
-1. Prepare an expenditure justification form as in the instructions (DM Ted for which funding source, then ask Lia on this channel for the corresponding code and she’ll DM the code). Send this to John and get it signed by Ted. 
+1. Prepare an expenditure justification form as in the instructions (DM Ted for which funding source, then ask Lia on this channel for the corresponding code and she'll DM the code). Send this to John and get it signed by Ted.
 2. Simultaneously, select flights directly through Concur (login via Pennkey, select destination and dates under Trip Search)
 3. After selecting the flights, payment option = billing goes directly to the UPENN DIRECT BILL ACCOUNT* (...9836)
 4. Next page is trip booking information:
 - trip name is filled automatically
 - add business justification and optionally a trip description, e.g. something like Poster presentation at the OHBM 2023 conference for Dr. Ted Satterthwaite
-- if known, add funding code under Notes to Approver 
+- if known, add funding code under Notes to Approver
 
 
 ### Approval from Business Administrators
-Send the prepared Expenditure Justification in word document form to  (hyon1@pennmedicine.upenn.edu)/ the finance team (10Admin-Fin@PennMedicine.upenn.edu) for pre-review BEFORE submitting via concur AND PI signature on the form. Please cc Ted and Lia on all emails regarding reimbursement. Note that John is EXTREMELY busy and we try to limit asking them lots of q's if possible-- please ask q's on the `#concur` slack channel first. 
+Send the prepared Expenditure Justification in word document form to  (hyon1@pennmedicine.upenn.edu)/ the finance team (10Admin-Fin@PennMedicine.upenn.edu) for pre-review BEFORE submitting via concur AND PI signature on the form. Please cc Ted and Lia on all emails regarding reimbursement. Note that John is EXTREMELY busy and we try to limit asking them lots of q's if possible-- please ask q's on the `#concur` slack channel first.
 
 Make sure to also send the receipt for all expenses. The receipt _must include_ the confirmation of payment (not just the invoice), how the payment was made (typically last 4 digits of the card listed on receipt), each expense itemized, the total amount paid, and the date the payment was completed.  Note that alcohol is never an allowable expense.
 
@@ -101,7 +101,7 @@ John may give you edits, but once the form has been approved you can convert the
 
 
 ## Submitting report via CONCUR
-Note that Lia's video does a good job of covering [this](../../assets/Concur_howtovideo_tripreimbursement.mp4) step. 
+Note that Lia's video does a good job of covering [this](../../assets/Concur_howtovideo_tripreimbursement.mp4) step.
 
 Navigate to the [CONCUR website](https://cms.business-services.upenn.edu/penntravel/expense-report.html), click on the "CONCUR" icon, and sign in with your PennKey
 
@@ -116,7 +116,7 @@ Navigate to the [CONCUR website](https://cms.business-services.upenn.edu/penntra
 - _Country Code_: Whatever country the expenses are from
 - _Report Name_: Create an informative report name
 - _Business Justification_: 1-2 sentences describing the report e.g., “Dr. Satterthwaite traveled to [city] to present data findings at [conference name]. See the expenditure justification report attached for all expenses.”
-- _Trip Begin Date/Trip End Date_: if it’s a travel report, include those dates
+- _Trip Begin Date/Trip End Date_: if it's a travel report, include those dates
 - _LEAVE EVERYTHING ELSE AS IS_
 - Click _NEXT_ to continue
 <img src="/assets/images/CONCUR_reportheader.png" alt="reportheader">
@@ -140,7 +140,7 @@ Navigate to the [CONCUR website](https://cms.business-services.upenn.edu/penntra
 ## CONCUR troubleshooting
 -  If a concur report is returned, you can find the business administrator's feedback by clicking into the report where you see the listed expenses --> click “details” --> “comments” – this is where approvers will comment if they need additional information or documentation
     - <img src="/assets/images/Comments.png" alt="comments">
-  
+
 - Helpful websites for filing overnight travel expenses on CONCUR: (for per diem)
 
     - **Step 1** set up an itinerary: [https://cms.business-services.upenn.edu/penntravel/images/stories/NUI-TEM_Training/cncrtr%20-%20create%20itinerary%20for%20per%20diem%20-%20nui.pdf](https://cms.business-services.upenn.edu/penntravel/images/stories/NUI-TEM_Training/cncrtr%20-%20create%20itinerary%20for%20per%20diem%20-%20nui.pdf)
@@ -153,8 +153,8 @@ Navigate to the [CONCUR website](https://cms.business-services.upenn.edu/penntra
 - For further help contact:
     - Lia Brodrick - lia.brodrick@pennmedicine.upenn.edu
 
-  
-- If you need help and would like another person to be able to view your concur, you can add them as a delegate following the instructions linked above. 
+
+- If you need help and would like another person to be able to view your concur, you can add them as a delegate following the instructions linked above.
 
 ## Purchase Orders (PO)
 - To order supplies that are within our Penn system, you need to complete a series of trainings. This will be for when Ted needs to order certain supplies that can be found in the Penn marketplace. You will be responsible for preparing the purchase order and putting into place for the next step of approvals.

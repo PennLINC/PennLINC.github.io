@@ -78,12 +78,12 @@ In what circumstances do you use `ibash` you ask? From the [LPC wiki](https://wi
 "Use the interactive shell to:
 - Prepare you submit scripts
 - Find apps, browse appl
-- Work on anything you don’t have access to on the submit host
+- Work on anything you don't have access to on the submit host
 - Browse /project/group directory
 - Prototype code and test apps"
 
 ## Requesting software installations
-Open source free apps and most imaging software needs to be installed by PMACS admin. This means you can’t install R, Stata, or Python packages on your own. You can submit a “Systems” ticket at [PMACS Help Desk](https://helpdesk.pmacs.upenn.edu/) requesting that new software be installed.
+Open source free apps and most imaging software needs to be installed by PMACS admin. This means you can't install R, Stata, or Python packages on your own. You can submit a “Systems” ticket at [PMACS Help Desk](https://helpdesk.pmacs.upenn.edu/) requesting that new software be installed.
 
 ## Installing Flywheel on your PMACS account
 You can install the Flywheel command line interface (CLI) locally, which is helpful as the CLI version updates frequently. Follow these steps to install the Flywheel CLI and gain access to `fw` commands. Complete these steps on the log in node, not in an interactive shell.

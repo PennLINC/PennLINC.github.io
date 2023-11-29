@@ -145,7 +145,7 @@ OKAY! We are now ready to jump into an example of a simple InDesign workflow for
 
 <img align="left" width="250" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Folders.png">
 
-I like having 3 sub-folders, one for outputting my figures from RStudio (PDFs), one for my InDesign files (.indd), and one for my final figures (PDFs or PNGs).
+I like having 3 sub-folders, one for outputting my figures from RStudio (PDFs), one for my InDesign files (`.indd`), and one for my final figures (PDFs or PNGs).
 If you need to adjust anything in Illustrator before loading things into InDesign, I usually just edit the RStudio PDFs directly in Illustrator and write over the original file.
 In my PDFs directory, I have individual sub-folders for each figure (Fig1, Fig2, etc.) that contain all the panels I need for a given figure, including separate files for legends.
 
@@ -322,5 +322,5 @@ And you're done!!
 
 ### Save your work
 
-You can save your InDesign document as an .indd file for future editing.
+You can save your InDesign document as an `.indd` file for future editing.
 To save figures for manuscripts, you can do File > Export > PNG, Adobe PDF, etc.

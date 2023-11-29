@@ -157,3 +157,16 @@ www
 xls
 xlsx
 york
+CentOS
+FullTextScreen
+fMRIPrep's
+webpage
+backend
+CTRL
+CLI
+SDK
+data's
+regressors
+QSIPrep
+tsv
+HTML

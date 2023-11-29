@@ -86,7 +86,7 @@ x dplyr::filter() masks stats::filter()
 x dplyr::lag()    masks stats::lag()
 ```
 
-It’s straightforward to read in an EPrime file, using the following:
+It's straightforward to read in an EPrime file, using the following:
 
 ``` r
 dat <- rprime::read_eprime("RTG1_1ITCscanner1LLA-04888-1.txt")
@@ -321,7 +321,7 @@ In this case, we have to do some more data wrangling for the ITC experimental de
 
 Each line of this table indicates an event (trial) happening in the experiment.
 In an ITC task, participants are shown a value of money and a delay.
-They’re asked, “would you rather receive $20 now, or wait X number of days to receive $Y later?”
+They're asked, “would you rather receive $20 now, or wait X number of days to receive $Y later?”
 Hence, each line is an offer in this paradigm.
 To convert this to BIDS, we expect an output.
 
@@ -349,7 +349,7 @@ The first thing we need to define is what choice they made.
 The column `LeftRight` indicates whether the instant $20 option is on the left or right of the screen.
 If `LeftRight == 1`, the delayed option was presented on the left.
 
-We’ll code this as a factor `delay_position` with two levels:
+We'll code this as a factor `delay_position` with two levels:
 1 to indicate it was on the right, and 0 to indicate it was on the left:
 
 ``` r
@@ -360,7 +360,7 @@ trial_df_proc <- trial_df %>%
 
 Next, we define which button they pressed, left (0) or right (1):
 
-We’ll also define the motor response they made, `button_press`, as either 1 (right) or 0 (left).
+We'll also define the motor response they made, `button_press`, as either 1 (right) or 0 (left).
 We use `CHOICE.RESP` and `CHOICE1.RESP` as the indicator of which side they picked.
 If the delayed option was on the left, use `CHOICE.RESP`; `r` is right, `y` is left.
 
@@ -411,7 +411,7 @@ and the value in `Choice1.OnsetTime` is duplicated from the previous row:
     14            246744           270774  right
 
 Here we use the `duplicated` function to tell us if a value in a vector is a duplicate of itself.
-If there’s a duplicate, take the value from the opposite column:
+If there's a duplicate, take the value from the opposite column:
 
 ``` r
 trial_df_proc <- trial_df_proc %>%
@@ -465,7 +465,7 @@ trial_df_proc <- trial_df_proc %>%
   mutate(onset = ifelse(onset == 0, onset, onset - slides_df$Slide1.OffsetTime[2]))
 ```
 
-Here’s the data head so far:
+Here's the data head so far:
 
 ``` r
 trial_df_sv <- trial_df_proc %>%
@@ -486,7 +486,7 @@ trial_df_sv %>%
 
 # K Parameter Estimation
 
-The penultimate step is to estimate each participant’s `k` parameter.
+The penultimate step is to estimate each participant's `k` parameter.
 This is estimated from a discount function that you can read about in
 [this paper](https://www.nature.com/articles/nn2007).
 For our purposes, the code is in matlab and exists as a precompiled binary on CUBIC at
@@ -499,7 +499,7 @@ which outputs the `k` parameter value to
 # Output
 
 After estimating the `k` parameter, we can then calculate the *subjective value*
-(the participant’s evaluation of each offer of money now or later as the experiment continues)
+(the participant's evaluation of each offer of money now or later as the experiment continues)
 by doing $\\frac{\\text{offer}} {1 + k \\times \\text{delay}}$:
 
 ``` r
@@ -511,7 +511,7 @@ final_df <- trial_df_sv %>%
   select(-IA)
 ```
 
-And here’s the output for this example subject:
+And here's the output for this example subject:
 
 ``` r
 final_df %>%

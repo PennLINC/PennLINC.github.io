@@ -5,7 +5,7 @@ parent: Lab Basics
 nav_order: 16
 ---
 
-In this tutorial, you’ll learn how to schedule spaces for meetings. 
+In this tutorial, you'll learn how to schedule spaces for meetings.
 
 ⚠️ ⚠️ WARNING ⚠️ ⚠️ Students are not able to request space in the scheduling system per SPO policy. If students need PSOM space, they will need to go through a full time faculty/staff member (PSOM or HUP) within their department to request space via the EMS site (as below).
 
@@ -30,11 +30,11 @@ Click on `book now` next to `Request a Room`.
 
 <img width="1418" alt="Step3" src="https://user-images.githubusercontent.com/53891017/143114317-f90701d6-005d-4157-aeec-a50e55942d10.png">
 
-Set the `Date`, `Start Time`, `End Time` to the desired value in the `Date & Time` tab. In this example, we are booking a room on Monday, Dec 6 2021. 
+Set the `Date`, `Start Time`, `End Time` to the desired value in the `Date & Time` tab. In this example, we are booking a room on Monday, Dec 6 2021.
 
 After setting the date and time, click on `Search`.
 
-All the rooms that you can request would show up in the search with schedules shown in the bar chart. The dark-blue shaded slots indicate that the corresponding time periods have been booked and thus are not available. 
+All the rooms that you can request would show up in the search with schedules shown in the bar chart. The dark-blue shaded slots indicate that the corresponding time periods have been booked and thus are not available.
 
 Note that the extended whiskers on both sides of a time block represent the overhead setup/preparation time that is alloted for a scheduled meeting. Therefore, time periods covered by the whiskers are also not available.
 
@@ -63,14 +63,14 @@ You can also ignore `Event Equipment` section, which describes the available equ
 <img width="1418" alt="Step9" src="https://user-images.githubusercontent.com/53891017/143132454-8d6fff68-1fe2-46e2-a743-3f5243351f62.png">
 
 
-Unless absolutely necessary, please do not select anything under `MTP Equipment` section, as extra items or services might incur charges. 
+Unless absolutely necessary, please do not select anything under `MTP Equipment` section, as extra items or services might incur charges.
 <img width="1418" alt="Step10" src="https://user-images.githubusercontent.com/53891017/143132711-33f5f440-ad9a-4e35-92ee-98efdacc58ff.png">
 
 
 Same goes for `AV Rental Services`
 
 <img width="1418" alt="Step11" src="https://user-images.githubusercontent.com/53891017/143132753-ae30fe8a-f2d6-4a15-802b-3db3801ca2ec.png">
-For the billing information, you should already have the 26-digit Budget Code that you can directly paste into the blank field. 
+For the billing information, you should already have the 26-digit Budget Code that you can directly paste into the blank field.
 
 <img width="1418" alt="Step12" src="https://user-images.githubusercontent.com/53891017/143133060-c82b24ad-795b-41a0-b496-63432ec11c23.png">
 
