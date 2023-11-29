@@ -8,6 +8,4 @@ nav_order: 8
 
 # Tutorials
 
-Here, you will find selected and hopefully useful tutorials for data analysis and visualization at PennLINC. 
-
-
+Here, you will find selected and hopefully useful tutorials for data analysis and visualization at PennLINC.

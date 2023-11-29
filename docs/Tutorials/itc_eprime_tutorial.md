@@ -11,19 +11,16 @@ nav_order: 4
 
 # Introduction
 
-Alongside your imaging data, BIDS also allows for the storage and
-sharing of events data. Here, we demonstrate how to transform a common
-event file known as EPrime into a BIDS valid events file.
+Alongside your imaging data, BIDS also allows for the storage and sharing of events data.
+Here, we demonstrate how to transform a common event file known as EPrime into a BIDS valid events file.
 
 # EPrime
 
-EPrime is a software suite for experimental psychology. Without saying
-too much, EPrime software can be linked to an fMRI scanner and be used
-to record responses to questionnaires, run experiments with
-participants, and so on. The output of these experiments is an EPrime
-file:
+EPrime is a software suite for experimental psychology.
+Without saying too much, EPrime software can be linked to an fMRI scanner and be used to record responses to questionnaires, run experiments with participants, and so on.
+The output of these experiments is an EPrime file:
 
-``` r
+```r
 ff <- read.delim("RTG1_1ITCscanner1LLA-04888-1.txt", fileEncoding="UCS-2LE")
 # eprime files are already so esoteric that we have to use specific file encoding
 # in R for them to work
@@ -31,40 +28,40 @@ ff <- read.delim("RTG1_1ITCscanner1LLA-04888-1.txt", fileEncoding="UCS-2LE")
 
 This is one EPrime file from a scan session for one subject:
 
-``` r
+```r
 ff$X....Header.Start....[1:50]
 ```
 ```
- [1] "VersionPersist: 1"                "LevelName: Session"              
- [3] "LevelName: Block"                 "LevelName: Trial"                
- [5] "LevelName: SubTrial"              "LevelName: LogLevel5"            
- [7] "LevelName: LogLevel6"             "LevelName: LogLevel7"            
- [9] "LevelName: LogLevel8"             "LevelName: LogLevel9"            
+ [1] "VersionPersist: 1"                "LevelName: Session"
+ [3] "LevelName: Block"                 "LevelName: Trial"
+ [5] "LevelName: SubTrial"              "LevelName: LogLevel5"
+ [7] "LevelName: LogLevel6"             "LevelName: LogLevel7"
+ [9] "LevelName: LogLevel8"             "LevelName: LogLevel9"
 [11] "LevelName: LogLevel10"            "Experiment: RTG1_1ITCscanner1LLA"
-[13] "SessionDate: 04-26-2011"          "SessionTime: 14:30:53"           
-[15] "SessionTimeUtc: 6:30:53 PM"       "Subject: 04888"                  
-[17] "Session: 1"                       "RandomSeed: 711119607"           
-[19] "Group: 1"                         "Display.RefreshRate: 60.052"     
-[21] "*** Header End ***"               ""                                
-[23] ""                                 "Level: 3"                        
-[25] ""                                 ""                                
-[27] "*** LogFrame Start ***"           ""                                
-[29] ""                                 "Procedure: TrialProc"            
-[31] ""                                 ""                                
-[33] "TrialList: 1"                     ""                                
-[35] ""                                 "Offer: 23"                       
-[37] ""                                 ""                                
-[39] "delay: 21"                        ""                                
-[41] ""                                 "NullDuration: 5000"              
-[43] ""                                 ""                                
-[45] "LeftRight: 0"                     ""                                
-[47] ""                                 "FeedbackDur: 0"                  
+[13] "SessionDate: 04-26-2011"          "SessionTime: 14:30:53"
+[15] "SessionTimeUtc: 6:30:53 PM"       "Subject: 04888"
+[17] "Session: 1"                       "RandomSeed: 711119607"
+[19] "Group: 1"                         "Display.RefreshRate: 60.052"
+[21] "*** Header End ***"               ""
+[23] ""                                 "Level: 3"
+[25] ""                                 ""
+[27] "*** LogFrame Start ***"           ""
+[29] ""                                 "Procedure: TrialProc"
+[31] ""                                 ""
+[33] "TrialList: 1"                     ""
+[35] ""                                 "Offer: 23"
+[37] ""                                 ""
+[39] "delay: 21"                        ""
+[41] ""                                 "NullDuration: 5000"
+[43] ""                                 ""
+[45] "LeftRight: 0"                     ""
+[47] ""                                 "FeedbackDur: 0"
 [49] ""                                 ""
 ```
-This is not a very useful representation of data. Fortunately, the
-`rprime` package exists for parsing this file.
+This is not a very useful representation of data.
+Fortunately, the `rprime` package exists for parsing this file.
 
-# `rprime` Package
+# rprime Package
 
 ``` r
 # install.packages("rprime")
@@ -279,9 +276,8 @@ List of 65
 
 ```
 
-This creates a more workable data structure. The section with the
-expriment is called the `trial` frame.`rprime` allows you to filter
-these with built-ins:
+This creates a more workable data structure.
+The section with the expriment is called the `trial` frame.`rprime` allows you to filter these with built-ins:
 
 ``` r
 trial <- filter_in(dat, "Running", "TrialList")
@@ -310,26 +306,24 @@ head(trial_df)
 This is far more useful, as we can see some of the encoded experimental
 variables like `offer`, `delay`, and `choice`.
 
-You can generally expect this method to be useful for parsing any EPrime
-file. To export this to BIDS, one could simply write this dataframe to a
-[BIDS-valid events
-file](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/05-task-events.html):
+You can generally expect this method to be useful for parsing any EPrime file.
+To export this to BIDS, one could simply write this dataframe to a
+[BIDS-valid events file](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/05-task-events.html):
 
-``` r
+```r
 trial_df %>%
   write_delim("sub-X/ses-1/func/sub-X_ses-1_task-ITC_events.tsv")
 ```
 
-In this case, we have to do some more data wrangling for the ITC
-experimental design.
+In this case, we have to do some more data wrangling for the ITC experimental design.
 
 # ITC Experimental Design
 
-Each line of this table indicates an event (trial) happening in the
-experiment. In an ITC task, participants are shown a value of money and
-a delay. They’re asked, “would you rather receive $20 now, or wait X
-number of days to receive $Y later?” Hence, each line is an offer in
-this paradigm. To convert this to BIDS, we expect an output
+Each line of this table indicates an event (trial) happening in the experiment.
+In an ITC task, participants are shown a value of money and a delay.
+They’re asked, “would you rather receive $20 now, or wait X number of days to receive $Y later?”
+Hence, each line is an offer in this paradigm.
+To convert this to BIDS, we expect an output.
 
 ### Mandatory in BIDS:
 
@@ -351,13 +345,12 @@ this paradigm. To convert this to BIDS, we expect an output
 
 # Data Wrangling
 
-The first thing we need to define is what choice they made. The column
-`LeftRight` indicates whether the instant $20 option is on the left or
-right of the screen. If `LeftRight == 1`, the delayed option was
-presented on the left.
+The first thing we need to define is what choice they made.
+The column `LeftRight` indicates whether the instant $20 option is on the left or right of the screen.
+If `LeftRight == 1`, the delayed option was presented on the left.
 
-We’ll code this as a factor `delay_position` with two levels, 1 to
-indicate it was on the right, and 0 to indicate it was on the left:
+We’ll code this as a factor `delay_position` with two levels:
+1 to indicate it was on the right, and 0 to indicate it was on the left:
 
 ``` r
 trial_df_proc <- trial_df %>%
@@ -367,33 +360,32 @@ trial_df_proc <- trial_df %>%
 
 Next, we define which button they pressed, left (0) or right (1):
 
-We’ll also define the motor response they made, `button_press`, as
-either 1 (right) or 0 (left). We use `CHOICE.RESP` and `CHOICE1.RESP` as
-the indicator of which side they picked. If the delayed option was on
-the left, use `CHOICE.RESP`; `r` is right, `y` is left.
+We’ll also define the motor response they made, `button_press`, as either 1 (right) or 0 (left).
+We use `CHOICE.RESP` and `CHOICE1.RESP` as the indicator of which side they picked.
+If the delayed option was on the left, use `CHOICE.RESP`; `r` is right, `y` is left.
 
-Then, we encode the `choice` as either `1=delayed` (the delayed position
-and the chosen button press where the same) or `0=now` (the delayed
-position and the chosen button press where different):
+Then, we encode the `choice` as either `1=delayed`
+(the delayed position and the chosen button press where the same) or `0=now`
+(the delayed position and the chosen button press where different):
 
 ``` r
 trial_df_proc <- trial_df_proc %>%
   mutate(
     button_press = case_when(
-      
+
       LeftRight == 1 & Choice.RESP == "y" ~ 0,
       LeftRight == 1 & Choice.RESP == "r" ~ 1,
       LeftRight == 0 & Choice1.RESP == "y" ~ 0,
       LeftRight == 0 & Choice1.RESP == "r" ~ 1
-      
+
     ),
     choice = case_when(
-      
+
       LeftRight == 1 & Choice.RESP == "y" ~ 1,
       LeftRight == 1 & Choice.RESP == "r" ~ 0,
       LeftRight == 0 & Choice1.RESP == "y" ~ 0,
       LeftRight == 0 & Choice1.RESP == "r" ~ 1
-      
+
       )
     )
 ```
@@ -406,11 +398,11 @@ trial_df_proc <- trial_df_proc %>%
   select(offer, delay, choice, button_press, delay_position, everything())
 ```
 
-The duration of the trial is uniform at 4000ms. There are two columns
-for event timings: `Choice1.OnsetTime` and `Choice.OnsetTime`. If
-`LeftRight==1` the task proceeds to Choice.\*. If they clicked right,
-the time for this gets recorded in `Choice.OnsetTime`, and the value in
-`Choice1.OnsetTime` is duplicated from the previous row:
+The duration of the trial is uniform at 4000ms.
+There are two columns for event timings: `Choice1.OnsetTime` and `Choice.OnsetTime`.
+If `LeftRight==1` the task proceeds to Choice.\*.
+If they clicked right, the time for this gets recorded in `Choice.OnsetTime`,
+and the value in `Choice1.OnsetTime` is duplicated from the previous row:
 
     10            216687           222699  left
     11            228727           222699  left
@@ -418,27 +410,26 @@ the time for this gets recorded in `Choice.OnsetTime`, and the value in
     13            246744           264762  right
     14            246744           270774  right
 
-Here we use the `duplicated` function to tell us if a value in a vector
-is a duplicate of itself. If there’s a duplicate, take the value from
-the opposite column:
+Here we use the `duplicated` function to tell us if a value in a vector is a duplicate of itself.
+If there’s a duplicate, take the value from the opposite column:
 
 ``` r
 trial_df_proc <- trial_df_proc %>%
   mutate(
     onset = case_when(
-       
+
       # the first row should both not be duplicates
       !duplicated(Choice.OnsetTime) & !duplicated(Choice1.OnsetTime) ~ 0,
-      
+
       # if any value in Choice is a duplicate, choose the value from Choice1
       duplicated(Choice.OnsetTime) ~ Choice1.OnsetTime,
-      
+
       # vice versa
       duplicated(Choice1.OnsetTime) ~ Choice.OnsetTime
     ),
-    
+
     duration = 4000,
-    
+
   ) %>%
   select(onset, duration, everything())
 ```
@@ -450,14 +441,14 @@ trial_df_proc <- trial_df_proc %>%
   mutate(
     row_num = row_number(),
     response_time = case_when(
-       
+
       # the first row should be the one that's not zero
       row_num == 1 & Choice.RT == 0 ~ Choice1.RT,
       row_num == 1 & Choice1.RT == 0 ~ Choice.RT,
-      
+
       # if any value in Choice is a duplicate, choose the value from Choice1
       duplicated(Choice.RT) ~ Choice1.RT,
-      
+
       # vice versa
       duplicated(Choice1.RT) ~ Choice.RT
     )
@@ -465,9 +456,9 @@ trial_df_proc <- trial_df_proc %>%
   select(onset, duration, response_time, everything(), -row_num)
 ```
 
-Lastly, we have to account for the timepoint that the task began (as
-opposed to when the participant is reading instructions). This is given
-in the `slides_df`:
+Lastly, we have to account for the timepoint that the task began
+(as opposed to when the participant is reading instructions).
+This is given in the `slides_df`:
 
 ``` r
 trial_df_proc <- trial_df_proc %>%
@@ -497,8 +488,8 @@ trial_df_sv %>%
 
 The penultimate step is to estimate each participant’s `k` parameter.
 This is estimated from a discount function that you can read about in
-[this paper](https://www.nature.com/articles/nn2007). For our purposes,
-the code is in matlab and exists as a precompiled binary on CUBIC at
+[this paper](https://www.nature.com/articles/nn2007).
+For our purposes, the code is in matlab and exists as a precompiled binary on CUBIC at
 `/cbica/projects/wolf_satterthwaite_reward/Curation/code/itc_eprime/matlab_code/kable_itc_wrapper`.
 It was run with
 `/cbica/projects/wolf_satterthwaite_reward/Curation/code/itc_eprime/loop_processed_eprimes.sh`,
@@ -507,10 +498,9 @@ which outputs the `k` parameter value to
 
 # Output
 
-After estimating the `k` parameter, we can then calculate the
-*subjective value* (the participant’s evaluation of each offer of money
-now or later as the experiment continues) by doing
-$\\frac{\\text{offer}} {1 + k \\times \\text{delay}}$:
+After estimating the `k` parameter, we can then calculate the *subjective value*
+(the participant’s evaluation of each offer of money now or later as the experiment continues)
+by doing $\\frac{\\text{offer}} {1 + k \\times \\text{delay}}$:
 
 ``` r
 # a fake k value
@@ -518,7 +508,7 @@ k_param <- 0.07106205
 final_df <- trial_df_sv %>%
   mutate(subjective_value = offer / (1 + k_param * delay)) %>%
   mutate_if(~ is.numeric(.) && all(unique(.) %in% c(0, 1, NA)), factor) %>%
-  select(-IA) 
+  select(-IA)
 ```
 
 And here’s the output for this example subject:

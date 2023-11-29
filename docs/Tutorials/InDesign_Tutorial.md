@@ -14,7 +14,7 @@ InDesign is a powerful software, and there are endless tips and tricks you can f
 Here, I'll go over a very basic workflow that has helped my figure-making be more automated and reproducible.
 
 ### What is InDesign good for?
-InDesign is amazing for **multi-panel figures**: you can lay out each panel, align objects, and add text (i.e. correlations, p-values, panel labels) in just a few clicks.
+InDesign is amazing for **multi-panel figures**: you can lay out each panel, align objects, and add text (i.e., correlations, p-values, panel labels) in just a few clicks.
 Best of all, InDesign makes updating figures *PAINLESS*!!
 I also like using InDesign for making **posters** because of how much easier it is to layout and align figure/text objects than Illustrator.
 
@@ -40,9 +40,11 @@ If you don't have Creative Cloud, you can download InDesign [here](https://helpx
 I typically make one InDesign document for each multi-panel figure.
 After opening up InDesign, click "New File".
 You can choose your document size, which will depend on how big you want to figure to be.
-Nature, for example, suggests preparing figures to fit PDF page size: 210 x 276 mm. We will work with this figure size in this tutorial.
+Nature, for example, suggests preparing figures to fit PDF page size: 210 x 276 mm.
+We will work with this figure size in this tutorial.
 
-Toggle your units to "mm", and enter your figure width and height. <br>
+Toggle your units to "mm", and enter your figure width and height.
+<br>
 <img src="/assets/images_indesign/DocSetup.jpg" height="500"/>
 
 Click "Create", and voilà! You now have a brand new document where you can build your figure.
@@ -64,14 +66,18 @@ Let's zoom into the **Toolbar** to introduce these bad boys:
 
 <img align="left" width="250" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Toolbar.png">
 
-A.  **Selection Tool**: Allows you to select text and graphics frames work. You can work with an object using its bounding box. Notice that when you click an object using the Selection Tool, additional options will show up in the Control Panel on the right (under the Properties tab).
+A.  **Selection Tool**: Allows you to select text and graphics frames work.
+    You can work with an object using its bounding box.
+    Notice that when you click an object using the Selection Tool, additional options will show up in the Control Panel on the right (under the Properties tab).
 
 B.  **Direct Selection Tool**: Allows you to select the contents of a frame (like a placed graphic).
     I don't use this tool as much for our figure-making purposes, but feel free to play around with it.
 
-C.  **Gap Tool**: Measures and adjusts the gap between objects (can be helpful in trying to make sure objects are evently distributed). **Note**: the Gap Tool measures based on the bounding box, so if you have a lot of white space between your image and bounding box, you may not get the best measurement. I don't use the Gap Tool that often, but it is nifty.
-    -   **Click** the space between two objects to measure.\
-    -   **Shift-drag** to move the gap between only the two nearest objects.\
+C.  **Gap Tool**: Measures and adjusts the gap between objects (can be helpful in trying to make sure objects are evently distributed).
+    **Note**: the Gap Tool measures based on the bounding box, so if you have a lot of white space between your image and bounding box, you may not get the best measurement.
+    I don't use the Gap Tool that often, but it is nifty.
+    -   **Click** the space between two objects to measure.
+    -   **Shift-drag** to move the gap between only the two nearest objects.
     -   **Ctrl-drag (Windows) or Command-drag (Mac OS)** to resize the gap instead of moving it.
         Adding the **Shift** key resizes the gap between only the two nearest objects.
 
@@ -89,7 +95,7 @@ E.  **Rectangle Frame Tool**: Arguably the most important tool in InDesign for o
     -   To place image, first select the frame, then do File > Place.
         If you're lazy, you can also click and drag.
         Once you place an object, that frame is now linked to that file.
-        So if you change that file (i.e. edit it in Illustrator or completely make a new version of it in R or Python), InDesign will prompt you to update that frame.
+        So if you change that file (i.e., edit it in Illustrator or completely make a new version of it in R or Python), InDesign will prompt you to update that frame.
         Updating the frame literally takes ONE click!!
     -   You need to know how big your figures are so you can draw an appropriately sized frame.
         Or you can draw an approximate frame, place the image, then tweak the placed image to get it to fit right.
@@ -116,11 +122,12 @@ B.  **Frame Fitting**: Helps manipulate placed images and text.
 ## 4. Example of a Simple InDesign Workflow
 
 A few principles to keep in mind as we start figure-making in InDesign:
--   Have your figure layout already sketched out either on paper or Powerpoint or in your mind's eye. Don't jump into InDesign without already knowing how you want your figure to look.
+-   Have your figure layout already sketched out either on paper or Powerpoint or in your mind's eye.
+    Don't jump into InDesign without already knowing how you want your figure to look.
 -   To maximize automation, reproducibility, and consistency, try to make sure the images you save out from RStudio or Python look as close to the final figure panel as possible.
     For example, have your labels, tick marks, image size, etc. be as clean as possible.
     It is fine for you to save out each panel separately; you can also save them out in a grid arrangement (via packages like cowplot, ggarrange, etc. in R) that reflects what you want for your final product.
--   If there are things you can't automate for your figures in RStudio or Python, for example getting subscripts to be formatted correctly (i.e. *p*<sub>spin</sub>) or editing or formatting legends, you can do those things in Illustrator.
+-   If there are things you can't automate for your figures in RStudio or Python, for example getting subscripts to be formatted correctly (i.e., *p*<sub>spin</sub>) or editing or formatting legends, you can do those things in Illustrator.
     Just remember to save out as a PDF.
 -   InDesign is the last leg in making your figures.
     Making sure everything upstream is correct will make your life easier.
@@ -148,14 +155,15 @@ In my PDFs directory, I have individual sub-folders for each figure (Fig1, Fig2,
 
 <img align="left" width="250" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Output.png">  <br>
 
-Save each panel as a PDF in the appropriate folder (e.g. `/dataclub/PDFs/Fig1/Fig1_<dataset>.pdf`).
+Save each panel as a PDF in the appropriate folder (e.g., `/dataclub/PDFs/Fig1/Fig1_<dataset>.pdf`).
 See [InDesign_Tutorial_Figures.Rmd](https://github.com/PennLINC/PennLINC.github.io/tree/main/docs/Tutorials/InDesign_Tutorial_Files) for my figure-making code.
 **Note**: I've excluded the x and y axis labels from these panels because I don't want them in the final figure; my plotting function also excludes a legend.
 My saved-out panels look something like this:
 
 <img align="center" width="250" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Panel.png">
 
-I also need the legend. To do this, I simply plotted a version WITH the legend and save out.
+I also need the legend.
+To do this, I simply plotted a version WITH the legend and save out.
 I won't go over how to crop out the plot and edit the legend in **Illustrator**, since I'm assuming many of you already have familiarity with that app.
 I saved out my Illustrator file as `SA_Axis_Legend.ai`.
 The legend looks like this:
@@ -164,11 +172,17 @@ The legend looks like this:
 
 ### Now it's time to jump into InDesign!
 
-Set up your document (210 x 276 mm, since we're making a figure for an imaginary Nature submission). Make sure you know what color format your journal requires. Nature recommends RGB but can also take CMYK. To edit these settings, go to Edit > Transparency Blend Space > Document RGB or Document CMYK.
+Set up your document (210 x 276 mm, since we're making a figure for an imaginary Nature submission).
+Make sure you know what color format your journal requires.
+Nature recommends RGB but can also take CMYK.
+To edit these settings, go to Edit > Transparency Blend Space > Document RGB or Document CMYK.
 
 #### 1. First, set up the frames where you will place each object.
 
-Using the **Frame Tool**, click and drag to create a large rectangle where your work will go. While holding the click, press the **right/left** button to add/remove columns and press **up/down** to add/remove rows. Add additional boxes for the legend and axis titles. You can align your boxes by selecting the boxes (**Select Tool**) then choosing an **Align option** in the **Control Panel**.
+Using the **Frame Tool**, click and drag to create a large rectangle where your work will go.
+While holding the click, press the **right/left** button to add/remove columns and press **up/down** to add/remove rows.
+Add additional boxes for the legend and axis titles.
+You can align your boxes by selecting the boxes (**Select Tool**) then choosing an **Align option** in the **Control Panel**.
 
 *Note*: no need to be perfect in the sizing of your frames.
 Definitely helps to be more accurate with aspect ratio, but we can tweak frames later! <br>
@@ -183,9 +197,14 @@ Definitely helps to be more accurate with aspect ratio, but we can tweak frames 
 #### 2. Next, place the plots into each frame.
 
 This can be done by **dragging and dropping** (see Youtube video below), or **select each frame, then File > Place > image.pdf.**
-Notice that the placed images are UGLLYY, like they do not fit right. That is ok!! <br>
+Notice that the placed images are UGLLYY, like they do not fit right.
+That is ok!!
+<br>
 
-After placing all your plots, you can select all of them (**shift + Select Tool**; make sure the boxes are blue not yellow! Yellow = direct selection tool). Scroll to the **Control Panel's frame fitting section**, and click the **appropriate fit**. I chose "Fit Content Proportionally" because that looks best. <br>
+After placing all your plots, you can select all of them (**shift + Select Tool**; make sure the boxes are blue not yellow! Yellow = direct selection tool)
+Scroll to the **Control Panel's frame fitting section**, and click the **appropriate fit**.
+I chose "Fit Content Proportionally" because that looks best.
+<br>
 
 Now, you have a gorgeous initial layout of your figure in < 2 minutes.
 No resizing each plot, no shifting plots up and down to make them line up, etc!!
@@ -226,7 +245,8 @@ To center your text in the vertical direction, scroll down to **Text Frame** in 
 
 [<img width="300" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images_indesign/Text.png">](https://youtu.be/tOKJjiQ12Ws "Text")
 
-Let's add a delta symbol and superscript to our y-axis. Symbols can be added via Type (ribbon) > Glyphs.
+Let's add a delta symbol and superscript to our y-axis.
+Symbols can be added via Type (ribbon) > Glyphs.
 Super- and sub-scripts can be added using the **Control Pane** while utilizing the **Type Tool**.
 <br>
 
@@ -253,7 +273,7 @@ These are super helpful!!
 
 #### 4. Add your finishing touches
 To view your piece without guides, go to **View** (ribbon) > Screen Mode > Preview.
-Make final edits as needed (i.e. changing up the font and sizes, fixing alignment and spacing, etc.)
+Make final edits as needed (i.e., changing up the font and sizes, fixing alignment and spacing, etc.)
 <br>
 
 **Click the following image to watch the video (it will take you to Youtube).**

@@ -20,9 +20,12 @@ nav_order: 2
 
 ## Output: A numpy array of regional values in ascending order according to their index as defined in the labeled image
 
-This tutorial demonstrates how to quantify regional values in an atlas. You will need a labeled image in the same space as the modality you want to quantify regionally. Here, I use a cortical thickness image as an example.
+This tutorial demonstrates how to quantify regional values in an atlas.
+You will need a labeled image in the same space as the modality you want to quantify regionally.
+Here, I use a cortical thickness image as an example.
 
-This tutorial is based on the quantification portion of the [antslongct](https://github.com/PennBBL/antslongct/blob/main/quantifyROIs.py) pipeline.
+This tutorial is based on the quantification portion of the
+[antslongct](https://github.com/PennBBL/antslongct/blob/main/quantifyROIs.py) pipeline.
 
 1.  Load required libraries
 
