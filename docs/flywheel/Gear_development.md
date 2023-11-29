@@ -398,7 +398,7 @@ Once you've finished testing, you can upload your gear to Flywheel with `fw gear
 
 As with all things in life, it's easy to obtain, but much more difficult to maintain.
 
-We strongly recommend version controlling your gear's directory on Github, and committing changes incrementally.
+We strongly recommend version controlling your gear's directory on GitHub, and committing changes incrementally.
 
 If something changes in your code, you must update the `manifest.json` file to increment the version. In Flywheel, you can either choose to have your `<software_tag:gear_version_tag>` identical, e.g. `0.0.1_0.0.1`, or to increment your software more frequently than incrementing the gear. E.g., our fMRIPrep *gear* is on version `0.2.2`, but the fMRIPrep algorithm is on version `1.5.2`; the benefit of this is that we can make changes to one and not the other.
 

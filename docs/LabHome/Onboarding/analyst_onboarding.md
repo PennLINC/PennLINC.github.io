@@ -103,9 +103,9 @@ Other resources:
 
 - [learnR4free](https://www.learnr4free.com/index.html) and [this blog](https://livefreeordichotomize.com/2020/07/02/so-you-want-to-learn-r/) collate a number of external resources
 
-### Git & Github
+### Git & GitHub
 
-Version control with Git and Github is essential for managing reproducible science. The Informatics team handles all of their projects using git, and collaboration on large projects is accomplished primarily through Github Pull Requests, so fluency with basic git commands and familiarity with a Github-based workflow are daily requirements.
+Version control with Git and GitHub is essential for managing reproducible science. The Informatics team handles all of their projects using git, and collaboration on large projects is accomplished primarily through GitHub Pull Requests, so fluency with basic git commands and familiarity with a GitHub-based workflow are daily requirements.
 
 > Q: What is version control? What kinds of files are appropriate for version controlling software?
 
@@ -115,7 +115,7 @@ Version control with Git and Github is essential for managing reproducible scien
 
 > Q: What is a Pull Request? Why is it useful for collaboration?
 
-While git is essential, it doesn't take very long to learn, and the basics quickly become second nature. We recommend [this](https://www.youtube.com/watch?v=SWYqp7iY_Tc) Github crash course (1 hour).
+While git is essential, it doesn't take very long to learn, and the basics quickly become second nature. We recommend [this](https://www.youtube.com/watch?v=SWYqp7iY_Tc) GitHub crash course (1 hour).
 
 Other resources:
 
@@ -128,9 +128,9 @@ Other resources:
 
 ### Reproducible science
 
-We rely on several tools that are essential for reproducible science. 
+We rely on several tools that are essential for reproducible science.
 
--  Analytic notebooks.  All analyses should be conducted within reproducible analytic notebooks, without exception.  The two most widely used are [Jupyter](https://realpython.com/jupyter-notebook-introduction/) and [Rmarkdown](https://rmarkdown.rstudio.com/lesson-1.html). 
+-  Analytic notebooks.  All analyses should be conducted within reproducible analytic notebooks, without exception.  The two most widely used are [Jupyter](https://realpython.com/jupyter-notebook-introduction/) and [Rmarkdown](https://rmarkdown.rstudio.com/lesson-1.html).
 
 - [Containerization with Docker](https://ropenscilabs.github.io/r-docker-tutorial/01-what-and-why.html) is essential for building reproducible software that can be deployed in any environment.  We try to have all subject-level data processing tasks executed by containerized software to ensure reproducability.
 
@@ -185,7 +185,7 @@ Other resources:
 
 ### The Flywheel Imaging Database
 
-Neuroimaging produces vast amounts of data.  Traditionally, this data was dumped onto a unmanaged file system, which created obvious problems for searchability, reproducibility, and scalability.  UPenn now uses the Flywheel platform, which allows data to be "reaped" directly from the scanner to a managed database environment.  Imaging data is stored in "projects", curated to BIDS specifications (see above), allowing containerized analytic pipelines to analyze the data in a fully reproducible manner.   
+Neuroimaging produces vast amounts of data.  Traditionally, this data was dumped onto a unmanaged file system, which created obvious problems for searchability, reproducibility, and scalability.  UPenn now uses the Flywheel platform, which allows data to be "reaped" directly from the scanner to a managed database environment.  Imaging data is stored in "projects", curated to BIDS specifications (see above), allowing containerized analytic pipelines to analyze the data in a fully reproducible manner.
 
 > Q: How is data in Flywheel structured? What are the relationships between different `containers`?
 

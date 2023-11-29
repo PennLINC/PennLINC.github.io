@@ -21,7 +21,7 @@ Because the screening process involves multiple people, here are the highly reco
 Now, to begin screening the abstract records, go back to the project home page and click **Continue** under the section **Title and abstract screening**.
 
 To tag a study, on the abstract screening page, just complete the following steps:
-1. Click the checkmark next to an abstract record.
+1. Click the check mark next to an abstract record.
 2. Click **Tags** and select the appropriate tag. You will see a tag at the bottom of an abstract record if you’ve tagged it. You can always untag a record by clicking the **X** on the tag.
 3. After tagging a study as **Include_[Initials]** or **Exclude_[Initials]**, click **No** or **Yes**. No-voted abstracts will be shown on the **Irrelevant references** section while Yes-voted abstracts” will be shown in **Full Text screening**.
 

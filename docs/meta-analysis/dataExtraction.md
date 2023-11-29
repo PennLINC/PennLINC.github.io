@@ -34,7 +34,7 @@ This part is very straightforward -- you will just be extracting the X, Y, Z coo
 * **n** refers to sample size (in patients vs. controls contrasts, use sample size of patients)
 * **X,Y,Z** are the XYZ coordinates
 * **Space** refers to whether the experiment used MNI or Tal.
-* Lastly, have a column at the end that just says **Main**. This indicates that these coordinates will be used for your main analyses. The hyperlinked example above uses **abberant** to indicate analyses will be used for **abberant** analyses (which was the main analyses in the paper -- however, you can just use the tag **main**).
+* Lastly, have a column at the end that just says **Main**. This indicates that these coordinates will be used for your main analyses. The hyperlinked example above uses **aberrant** to indicate analyses will be used for **aberrant** analyses (which was the main analyses in the paper -- however, you can just use the tag **main**).
 
 If an article has multiple relevant contrasts for your main analyses, combine all the contrasts together into one set of coordinates for the study. For example, if an article had 2 pain experiments of interest (one heat pain paradigm and another cold pain paradigm), I’d group the two coordinate sets together and treat them as one experiment.
 

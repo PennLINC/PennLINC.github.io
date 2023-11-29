@@ -21,7 +21,7 @@ Brief and informative title; not always the same as the manuscript title
 
 Try to make this no more than three highly accessible sentences.
 
-### Project Lead(s) 
+### Project Lead(s)
 
 Anticipated First Author(s)
 
@@ -49,7 +49,7 @@ See the [Stages of a Project](https://pennlinc.github.io/docs/LabHome/ProjectSta
 
 E.g., PNC, HBN, GRMPY, etc
 
-### Github repo
+### GitHub repo
 
 Link to github repository for the project
 
@@ -67,7 +67,7 @@ For task tracking and keeping project meetings on track; provide link.
 
 ### Google Drive Folder
 
-A good place to aggregate and share articles, manuscript drafts, etc; provide link. 
+A good place to aggregate and share articles, manuscript drafts, etc; provide link.
 
 ### Zotero library
 
@@ -79,4 +79,4 @@ I.e., citations to poster presentations, links to preprints, final publication c
 
 ### Code documentation
 
-This section is the bulk of the project page, and can be broken up as best fits the project.  Remember that this should be acessible prose that allows your replicator, reviewer, or interested reader to step through your code and understand how the code corresponds to the findings described in the paper. At a minimum, there should be clear documentation regarding sample selection (e.g., inclusion/exclusion), preprocessing (e.g., container version, data freeze), and hypothesis testing (usually in the form of an analytic notebook).   See the [Project Reproducibility  Guide](https://pennlinc.github.io/docs/LabHome/ReproSystem/) for more information.   
+This section is the bulk of the project page, and can be broken up as best fits the project.  Remember that this should be acessible prose that allows your replicator, reviewer, or interested reader to step through your code and understand how the code corresponds to the findings described in the paper. At a minimum, there should be clear documentation regarding sample selection (e.g., inclusion/exclusion), preprocessing (e.g., container version, data freeze), and hypothesis testing (usually in the form of an analytic notebook).   See the [Project Reproducibility  Guide](https://pennlinc.github.io/docs/LabHome/ReproSystem/) for more information.

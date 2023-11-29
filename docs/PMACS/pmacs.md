@@ -21,7 +21,7 @@ This section gives an overview of how to get started on PMACS Limited Performanc
 Send the lab's access manager (Tinashe) your Pennkey, full name, and Penn email, and have them fill a ticket and request access for you. When access has been granted, you will receive an email with a temporary password through SecureShare. Log in via [this link](https://reset.pmacs.upenn.edu/) with your temporary password and set a new PMACS password. Your Pennkey and new PMACS password will be used to ssh into the LPC and to access the PMACS help desk/ticketing system.
 
 ## Logging in to PMACS LPC
-Once you've set up your login credentials for the PMACS LPC, you can SSH into the LPC from anywhere (even without Penn VPN). You can SSH into PMACS using the following command: 
+Once you've set up your login credentials for the PMACS LPC, you can SSH into the LPC from anywhere (even without Penn VPN). You can SSH into PMACS using the following command:
 
 ```bash
 $ ssh -Y [username]@bblsub.pmacs.upenn.edu #SSH only. No sftp. No outbound access. Can submit or check jobs.
@@ -127,7 +127,7 @@ $ You are currently logged in as <username> to upenn.flywheel.io
 ## Cloning and Updating GitHub Repos on PMACS
 If you have already created an ssh private key for your PMACS account and have added it to both the ssh-agent on PMACS (~/.ssh/id_rsa and id_rsa.pub files) and to your GitHub account, you can clone, pull, and push git repositories using bblsub and an available github module on PMACS.
 
-Specifically, to clone and update reposm you should first ssh in via bblsub 
+Specifically, to clone and update reposm you should first ssh in via bblsub
 
 ```bash
 $ ssh -Y [username]@bblsub
@@ -402,7 +402,7 @@ When you come back to continue working, loop back to step 4.
 
 Data processing pipelines, such as [fmriprep](https://fmriprep.org/en/stable/) and [qsiprep](https://qsiprep.readthedocs.io/en/latest/), can be run easily by creating singularity images on PMACS. Below steps use qsiprep as an example, but they can be applied to other pipelines as well.
 
-### Creating singularity images from dockerhub on PMACS
+### Creating singularity images from DockerHub on PMACS
 
 1. Log onto **bblsub**
    ```bash

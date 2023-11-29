@@ -22,7 +22,7 @@ Many useful software tools have difficult-to-compile dependencies. A great way t
 
 ## Creating a singularity image
 
-Docker images are available on dockerhub. You can choose any of these images and convert them to a singularity image by specifying their location on dockerhub. For example, there is a docker image of DSI Studio that we might want to run on the cluster. This program is very difficult to compile, so we can point singularity at this docker url and build a singularity image.
+Docker images are available on DockerHub. You can choose any of these images and convert them to a singularity image by specifying their location on DockerHub. For example, there is a docker image of DSI Studio that we might want to run on the cluster. This program is very difficult to compile, so we can point singularity at this docker URL and build a singularity image.
 
 ```console
 $  singularity \
@@ -48,7 +48,7 @@ SUPPORT_URL="http://www.debian.org/support"
 BUG_REPORT_URL="https://bugs.debian.org/"
 
 ```
-The line starting with ``Singularity`` is a bash shell inside the image. We can prove this by printing the contents of ``/etc/os-release``, which shows that this shell thinks it's in Debian. If we run a similar command outside of the container's shell, we can see we're back on Centos:
+The line starting with ``Singularity`` is a bash shell inside the image. We can prove this by printing the contents of ``/etc/os-release``, which shows that this shell thinks it's in Debian. If we run a similar command outside of the container's shell, we can see we're back on CentOS:
 
 ```console
 $ cat /etc/redhat-release
@@ -152,7 +152,7 @@ download templates. This is a problem on PMACS because the compute hosts
 do not connect to the internet. This means you'll have to manually download
 the templateflow data and link this directory into the container at run time.
 
-Here is fmriprep's documentation on [this problem](https://fmriprep.org/en/stable/singularity.html#templateflow-and-singularity) with [more details here](https://neurostars.org/t/problems-using-pediatric-template-from-templateflow/4566/15).
+Here is fMRIPrep's documentation on [this problem](https://fmriprep.org/en/stable/singularity.html#templateflow-and-singularity) with [more details here](https://neurostars.org/t/problems-using-pediatric-template-from-templateflow/4566/15).
 
 Ultimately, you'll need to do something like this (templates listed are the ones that are typically needed to run fMRIPrep):
 

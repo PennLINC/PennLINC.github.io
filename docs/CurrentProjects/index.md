@@ -38,12 +38,12 @@ Below is a list of the current projects in the lab:
 
 If you'd like to add your project to this list, read on! Successful/complete documentation of your project requires two things:
 
-1. A Github Pages site, and
+1. A GitHub Pages site, and
 2. An entry on this page
 
-## Github Pages Documentation
+## GitHub Pages Documentation
 
-We use Github Pages to reproducibly document how we arrived at a scientific finding, usually for a paper or poster. A Github Pages site is a static website linked directly to a Github repository -- for example, this website is a Github Pages site for the Github repository [PennLINC/pennlinc.github.io](https://github.com/PennLINC/PennLINC.github.io). The underlying code is markdown and is rendered (converted) automatically into a website by Github. You'll want to create one of these sites for your project and its code repository. To learn how to do this, see [this tutorial](/docs/Contributing/project-documentation/).
+We use GitHub Pages to reproducibly document how we arrived at a scientific finding, usually for a paper or poster. A GitHub Pages site is a static website linked directly to a GitHub repository -- for example, this website is a GitHub Pages site for the GitHub repository [PennLINC/pennlinc.github.io](https://github.com/PennLINC/PennLINC.github.io). The underlying code is markdown and is rendered (converted) automatically into a website by GitHub. You'll want to create one of these sites for your project and its code repository. To learn how to do this, see [this tutorial](/docs/Contributing/project-documentation/).
 
 ## Project Page Entry
 

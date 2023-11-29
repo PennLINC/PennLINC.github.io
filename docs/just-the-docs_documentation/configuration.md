@@ -26,7 +26,7 @@ View this site's [_config.yml](https://github.com/PennLINC/PennLINC.github.io/tr
 ## Site logo
 
 ```yaml
-# Set a path/url to a logo that will be displayed instead of the title
+# Set a path/URL to a logo that will be displayed instead of the title
 logo: "/assets/images/just-the-docs.png"
 ```
 

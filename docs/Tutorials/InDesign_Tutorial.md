@@ -28,7 +28,7 @@ InDesign is NOT good for creating or editing details of a graphic - leave graphi
 3. Brief Overview of Relevant InDesign Tools
 4. Example of a Simple InDesign Workflow
 
-*Note*: Github only supports embedded videos up to 10MB, thus some of the videos in this tutorial require you to click and navigate to Youtube due to large video sizes!
+*Note*: GitHub only supports embedded videos up to 10MB, thus some of the videos in this tutorial require you to click and navigate to Youtube due to large video sizes!
 Once on Youtube, you can choose the video quality to be 1080p60 or higher for best viewing.
 
 ## 1. Install InDesign

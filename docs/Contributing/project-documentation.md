@@ -9,7 +9,7 @@ nav_order: 2
 
 # Project Documentation with GitHub Pages
 
-In the event that you've completed and/or published a large project with PennLINC, you may want to write documentation for replication and easy sharing. The recommended way of doing this is to create a website for the Github repository of the project, using Github Pages.
+In the event that you've completed and/or published a large project with PennLINC, you may want to write documentation for replication and easy sharing. The recommended way of doing this is to create a website for the GitHub repository of the project, using GitHub Pages.
 
 To write documentation for a finished project using GitHub Pages, begin by going to this tutorial [here](https://web.archive.org/web/20211113215309/https://www.thinkful.com/learn/a-guide-to-using-github-pages/start/). The steps outlined below will guide you through the same steps as in the link.
 
@@ -32,7 +32,7 @@ Each project page should be organized according to the [Project Template](https:
   * Create a markdown file called **index.md**. This is your documentation, so edit this with documentation on your project. [Here's](https://www.markdownguide.org/basic-syntax/) a great guide for getting started with Markdown if you haven't used it before.
   * Push it to GitHub by using `git push origin gh-pages`
 
-Your page is now set and can be found by typing via the url **pennlinc.github.io/YOUR_PROJECT_NAME_HERE** (replace **YOUR_PROJECT_NAME_HERE** with your GitHub repo name)!
+Your page is now set and can be found by typing via the URL **pennlinc.github.io/YOUR_PROJECT_NAME_HERE** (replace **YOUR_PROJECT_NAME_HERE** with your GitHub repo name)!
 
 Now, if you want to go back to the branch of your original repository, you can use the command `git checkout master` (and if you ever want to go back to the branch of the GitHub Page, you can use `git checkout gh`). You can always check which branch you're in by using the command `git branch -al`.
 
@@ -52,9 +52,9 @@ Now, if you want a nice theme, do the following:
 
 Note that if you'd like to include a table of contents in your project page, doing so is simple!
 Just include the lines ```1. TOC
-{:toc}``` at the level you'd like your table to be. Every title and subtitle after those lines should be reflected in your table of contents. You can now jump to each section by clicking on it's respective title in the table! 
+{:toc}``` at the level you'd like your table to be. Every title and subtitle after those lines should be reflected in your table of contents. You can now jump to each section by clicking on it's respective title in the table!
 
-Here is an example: 
+Here is an example:
 1. TOC
 {:toc}
 

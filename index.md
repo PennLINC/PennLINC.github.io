@@ -20,4 +20,4 @@ This is the internal website for PennLINC procedures, tutorials, and practices. 
 </ul>
 
 
-This documentation website was created using [Jekyll and Github pages](https://help.github.com/en/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll); the template is [`just-the-docs`](https://pmarsceill.github.io/just-the-docs/).
+This documentation website was created using [Jekyll and GitHub pages](https://help.github.com/en/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll); the template is [`just-the-docs`](https://pmarsceill.github.io/just-the-docs/).
