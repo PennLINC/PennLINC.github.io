@@ -24,95 +24,94 @@ This tutorial demonstrates how to quantify regional values in an atlas. You will
 
 This tutorial is based on the quantification portion of the [antslongct](https://github.com/PennBBL/antslongct/blob/main/quantifyROIs.py) pipeline.
 
-1. Load required libraries
+1.  Load required libraries
 
-```python
-import sys
-import nibabel as nb
-import pandas as pd
-import numpy as np
-import nilearn
-from nilearn.maskers import NiftiLabelsMasker
-```
+    ```python
+    import sys
+    import nibabel as nb
+    import pandas as pd
+    import numpy as np
+    import nilearn
+    from nilearn.maskers import NiftiLabelsMasker
+    ```
 
-2. Declare dummy subject and session labels
+2.  Declare dummy subject and session labels
 
-```python
-# You should provide as command line inputs for your own script
-sub = 'sub-101'
-ses = 'ses-STUDY1'
-```
+    ```python
+    # You should provide as command line inputs for your own script
+    sub = 'sub-101'
+    ses = 'ses-STUDY1'
+    ```
 
-3. Load the labels in the subject's T1w space
+3.  Load the labels in the subject's T1w space
 
-```python
-atlas = nb.load(f'{sub}_{ses}_DKTlabels.nii.gz')
-```
-
-
-4. Load the image that needs regional quantification (cortical thickness here)
-
-```python
-cort = nb.load(f'{sub}_{ses}_CorticalThickness.nii.gz')
-```
+    ```python
+    atlas = nb.load(f'{sub}_{ses}_DKTlabels.nii.gz')
+    ```
 
 
-5. Load the index to region name mapping
+4.  Load the image that needs regional quantification (cortical thickness here)
 
-```python
-dkt_df = pd.read_csv('mindboggleCorticalLabels.csv')
-```
+    ```python
+    cort = nb.load(f'{sub}_{ses}_CorticalThickness.nii.gz')
+    ```
 
-6. Rename columns to be python-friendly
+5.  Load the index to region name mapping
 
-```python
-dkt_df = dkt_df.rename(columns={"Label.ID": "LabelID", "Label.Name": "LabelName"})
-```
+    ```python
+    dkt_df = pd.read_csv('mindboggleCorticalLabels.csv')
+    ```
 
-7. Get the integer values that correspond to each region in the DKT atlas
+6.  Rename columns to be python-friendly
 
-```python
-ints = dkt_df.LabelID.values
-```
+    ```python
+    dkt_df = dkt_df.rename(columns={"Label.ID": "LabelID", "Label.Name": "LabelName"})
+    ```
 
-8. Get the names of the regions
+7.  Get the integer values that correspond to each region in the DKT atlas
 
-```python
-names = dkt_df.LabelName.to_numpy()
-names = [name.replace('.', '_') for name in names]
-```
+    ```python
+    ints = dkt_df.LabelID.values
+    ```
 
-9. Load the labeled image and fit the masker object
+8.  Get the names of the regions
 
-```python
-masker = NiftiLabelsMasker(f'{sub}_{ses}_DKTIntersection.nii.gz')
-masker.fit()
-```
+    ```python
+    names = dkt_df.LabelName.to_numpy()
+    names = [name.replace('.', '_') for name in names]
+    ```
+
+9.  Load the labeled image and fit the masker object
+
+    ```python
+    masker = NiftiLabelsMasker(f'{sub}_{ses}_DKTIntersection.nii.gz')
+    masker.fit()
+    ```
 
 10. Quantify regional values!!!
 
-```python
-cortvals = masker.transform(f'{sub}_{ses}_CorticalThickness.nii.gz')
-```
+    ```python
+    cortvals = masker.transform(f'{sub}_{ses}_CorticalThickness.nii.gz')
+    ```
 
 11. Create column names
 
-```python
-cort_names = ['mprage_jlf_ct_'+name for name in names]
-colnames = ['sublabel', 'seslabel']
-colnames.extend(cort_names)
-```
+    ```python
+    cort_names = ['mprage_jlf_ct_'+name for name in names]
+    colnames = ['sublabel', 'seslabel']
+    colnames.extend(cort_names)
+    ```
 
 12. Create a vector of values for the session's row in the csv
 
-```python
-vals = [sub, ses]
-vals.extend(cortvals.tolist()[0])
-```
+    ```python
+    vals = [sub, ses]
+    vals.extend(cortvals.tolist()[0])
+    ```
 
 13. Output data as a csv
 
-```python
-out_df = pd.DataFrame(data=[vals], columns=colnames)
-out_df.to_csv(f'{sub}_{ses}_struc.csv', index=False)
-```
+    ```python
+    out_df = pd.DataFrame(data=[vals], columns=colnames)
+    out_df.to_csv(f'{sub}_{ses}_struc.csv', index=False)
+    ```
