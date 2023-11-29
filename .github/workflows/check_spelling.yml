@@ -3,8 +3,8 @@ name: Check Spelling
 on:
   pull_request:
     paths:
-    - 'docs/**.txt'
-    - 'docs/**.md'
+    - '**.txt'
+    - '**.md'
 jobs:
   spelling:
     runs-on: ubuntu-latest

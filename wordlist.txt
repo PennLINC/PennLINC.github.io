@@ -6,7 +6,10 @@ AdditionalExclusionTags
 Binarize
 Biobehavioral
 BrainNet
+CLI
 CSV
+CTRL
+CentOS
 Cochrane
 Covidence
 DATEHERE
@@ -27,9 +30,11 @@ FSL
 FWE
 Foci
 FullTextReview
+FullTextScreen
 GRMPY
 GitHub
 HBN
+HTML
 IASP
 LINC
 MEDLINE
@@ -48,6 +53,7 @@ PennLINC
 Photoshop
 PsycINFO
 PubMed
+QSIPrep
 RIS
 ROI
 ROIresults
@@ -56,6 +62,7 @@ Repo
 Reproducibility
 Rproj
 SCOPUS
+SDK
 SGE
 SPM
 StudyInformation
@@ -76,6 +83,7 @@ Zotero
 al
 allPain
 antsCT
+backend
 cFWE
 clusterNifti
 clusterText
@@ -84,9 +92,11 @@ codebase
 coordinateData
 cplusplus
 crd
+data's
 endfor
 et
 fMRIPrep
+fMRIPrep's
 fNIRS
 figureTemplates
 filesystem
@@ -128,6 +138,7 @@ preprints
 preprocessing
 prospero
 ps
+regressors
 renderer
 repo
 ris
@@ -145,6 +156,7 @@ threshContrasts
 thresholded
 tmp
 toc
+tsv
 uk
 unformatted
 untag
@@ -153,20 +165,8 @@ visualstudio
 voxel
 voxels
 wayback
+webpage
 www
 xls
 xlsx
 york
-CentOS
-FullTextScreen
-fMRIPrep's
-webpage
-backend
-CTRL
-CLI
-SDK
-data's
-regressors
-QSIPrep
-tsv
-HTML

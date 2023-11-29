@@ -23,4 +23,4 @@ matrix:
       - 'code'
       - 'pre'
   sources:
-  - '**/*.md'
+  - 'docs/**/*.md'
