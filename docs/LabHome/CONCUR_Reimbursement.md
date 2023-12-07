@@ -6,6 +6,11 @@ nav_order: 15
 ---
 
 # CONCUR Reimbursement SOP
+
+
+Please note the latest information is available [here](https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/Finance%20and%20Administration%20Team_2023.10.06_distributed.pptx).
+
+
 Reimbursement for expenses (typically: conference travel) is one of the most administratively demanding tasks in the lab. The goal of this wiki (now maintained by Lia Brodrick) is to make this processess as efficient as possible and reduce headaches. Nonetheless, there are MANY compliance requirements and as such it is *REQUIRED* that this instructions are closely adhered to. 
 
 From the outset, please be prepared that this is a very time-intensive process that each lab member must manage for their own expenses.  While Lia is here to assist she is not an admin who will do this for you. As such, it is necessary to read *all* the documentation below *before* proceeding.   Note that questions regarding reimbursement (or suggested updates to this document) should be posted to the #concur slack channel to preserve knowledge over time -- not addressed via DMs to Lia or Ted.  
