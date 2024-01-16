@@ -56,9 +56,10 @@ You can hit the space bar to read all of this or `q` to exit.
 
 ## Project Directory Access Request
 
-Once you have access to CUBIC, you may need to start a project in a new directory. Visit [this wiki](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects#Project_Creation_Request) for more, or follow along below.
+Once you have access to CUBIC, you may need to start a project in a new directory. You can find the CBICA Wiki, which covers project creation instructions (also described below), through the [PennMedicine Remote Access Portal](https://pennmedaccess.uphs.upenn.edu/). After logging in with your UPHS credentials, you can find the CBICA Wiki under "Corporate Resources." 
+ 
 
-First you need to fill out the data management document available [here](https://cbica-wiki.uphs.upenn.edu/wiki/images/Project_data_use_template.doc). This document will ask you for a number of details about your project, including the data's source and estimates about how much disk space you will need over a 6 month, 12 month, and 24 month period, and the estimated lifespan of the data ( 🤷). You will also need to provide the CUBIC usernames for everyone you want to have read and/or write access to the project — getting this done ahead of time is strongly recommended because, as you can imagine, requesting changes after-the-fact can be a bother.
+First you need to fill out the data management document available [here](https://cbica-wiki.uphs.upenn.edu/wiki/images/Project_data_use_template.doc). If this link doesn't work for you, you can find this document on the CBICA Wiki: Main Page > Research projects > 3 Access/New Project Creation > Project Creation Request. This document will ask you for a number of details about your project, including the data's source and estimates about how much disk space you will need over a 6 month, 12 month, and 24 month period, and the estimated lifespan of the data ( 🤷). You will also need to provide the CUBIC usernames for everyone you want to have read and/or write access to the project — getting this done ahead of time is strongly recommended because, as you can imagine, requesting changes after-the-fact can be a bother.
 
 Additionally, you will need to be familiar with:
 
@@ -71,7 +72,7 @@ This document must be saved as a `.txt` file and before being submitted with you
 
 Finally, you will need approval from your PI. This involves sending an email to the PI with a written blurb to the effect of "Do you approve of this project folder request", to which the PI only needs to respond "Yes, approved". Once you've got this you can screenshot the conversation (include the date in frame) and save that as an image.
 
-With these two documents, you can now submit the request via the the [Request Tracker](https://cbica-infr-vweb.uphs.upenn.edu/rt/) — you'll need your CBICA/CUBIC login credentials for this.
+With these two documents, you can now submit the request via the the CBICA Request Tracker. Similar to the CBICA Wiki, you need to access the Request Tracker through the [PennMedicine Remote Access Portal](https://pennmedaccess.uphs.upenn.edu/), then click CBICA Request Tracker. You'll need your CBICA/CUBIC login credentials for this (same as UPHS credentials).
 
 <img src="/assets/images/request-tracker.png" alt="">
 
@@ -81,7 +82,7 @@ Open a new ticket and, like applying for a job, **FILL OUT THE REQUEST WITH THE 
 
 Lastly, attach your supporting documents.
 
-The process for accessing an existing project is similar, but fortunately you will not have to fill out a new data management document; only the PI approval and filling of the online ticket is required. You should receive an email from CBICA confirming your request, and you can always return to the [Request Tracker](https://cbica-infr-vweb.uphs.upenn.edu/rt/) to see the status of your ticket.
+The process for accessing an existing project is similar, but fortunately you will not have to fill out a new data management document; only the PI approval and filling of the online ticket is required. You should receive an email from CBICA confirming your request, and you can always return to the Request Tracker to see the status of your ticket.
 
 
 ## File permissions on CUBIC
