@@ -355,7 +355,7 @@ To mount a directory, (on Mac), use the `samba` server along with Mac's built in
 select a server address, use:
 
 ```
-smb://cubic-share.uphs.upenn.edu
+smb://cubic-share.uphs.upenn.edu/cbica/
 ```
 
 Along with your CUBIC credentials. This is the most seamless method and will likely have better long term support, but again is mostly useful for opening
