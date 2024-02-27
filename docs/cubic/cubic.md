@@ -251,17 +251,28 @@ your home directory, and moving a handful of files about. For more demanding fil
 
 2. Make an empty mount point folder on your local machine. Make sure that only the user (not group or others) have access to this mount directory!
 ```bash
-$ mkdir /Users/<username>/ImageData/PMACS_remote
-$ chmod 700 /Users/<username>/ImageData/PMACS_remote
+$ cd 
+$ mkdir -p cbica/projects/<project_name> 
+$ chmod 700 cbica/projects/<project_name> 
 ```
-1. Mount the desired PMACS directory to your newly created, local mount directory using sshfs and bblsub
+
+3. Mount the desired CUBIC directory to your newly created, local mount directory using sshfs and cubic-sattertt
 ```bash
-$ sshfs [username]@bblsub:<my-folder-on-PMACS> <my-local-mount-folder> -o defer_permissions,volname=project
+$ sshfs -o defer_permissions <username>@cubic-login.uphs.upenn.edu:/cbica/projects/<project_name>/ /cbica/projects/<project_name>/
 ```
-1. Unmount when done! You should run this unmount command from outside of the mount point.
+4. Unmount when done! You should run this unmount command from outside of the mount point.
 ```bash
-$ diskutil umount force /Users/<username>/ImageData/PMACS_remote
+$ cd   # just to make sure we are not inside the mount dir
+
+$ umount /cbica/projects/<project_name> # note that command is not "unmount"!!
 ```
+
+5. Make an alias for mounting project directory:
+```bash
+alias alias_name="sshfs -o defer_permissions <username>@cubic-login.uphs.upenn.edu:/cbica/projects/<project_name> /cbica/projects/<project_name>/"
+```
+
+
 
 ### Method III: Accessing CUBIC via live coding with RStudio or Python (interactive)
 
