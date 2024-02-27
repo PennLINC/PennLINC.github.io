@@ -289,12 +289,12 @@ $ sshfs -o defer_permissions <username>@cubic-login.uphs.upenn.edu:/cbica/projec
 ```bash
 $ cd   # just to make sure we are not inside the mount dir
 
-$ umount /cbica/projects/<project_name>
+$ umount /cbica/projects/<project_name> # note that command is not "unmount"!!
 ```
 
-5. Make alias for mounting project directory:
+5. Make an alias for mounting project directory:
 ```bash
-alias alias_name="sshfs -o defer_permissions <username>@cubic-login.uphs.upenn.edu:/cbica/projects/luo_wm_dev /cbica/projects/<project_name>/"
+alias alias_name="sshfs -o defer_permissions <username>@cubic-login.uphs.upenn.edu:/cbica/projects/<project_name> /cbica/projects/<project_name>/"
 ```
 
 
