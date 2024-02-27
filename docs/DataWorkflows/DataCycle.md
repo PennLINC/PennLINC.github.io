@@ -58,6 +58,7 @@ Try `fw-heudiconv-export -h` for more info.
 
 ## Globus
 
+##### Note: this section has not been tested in a long time
 [Globus](https://www.globus.org/) is a research data management platform whose best feature is data transfer and sharing. It's surprisingly easy to use and gets the job done with minimal setup. The data sharing concept revolves around setting virtual *endpoints* that data can be shared to and from. Endpoints can be thought of conceptually as mounts, where you can give outbound network access to a certain directory on your machine or cluster, and by sharing the URL of your endpoint, someone can access your directory through the internet or network cluster.
 
 Currently, the best way to use Globus is either through your local disk or on PMACs (recommended). We're still awaiting CUBIC authorization. The general docs for globus are located [here](https://docs.globus.org/how-to/), but for posterity, here are the best instructions:
@@ -76,7 +77,7 @@ On PMACs:
 1. Log in to PMACs' dedicated node for Globus functionality:
 
 ```
-# first ssh into sciget for network access
+# first ssh into bblsub for network access
 ssh -y <username>@bblsub
 
 # then from there, log onto the globus node
@@ -95,60 +96,6 @@ globusconnect -start &
 4. Visit [https://docs.globus.org/how-to/get-started/](https://docs.globus.org/how-to/get-started/) to access the File Manager, as in the Local Disk instructions, to start transferring data.
 
 
-# rclone
-
-[rclone](https://rclone.org/) is a command line program to manage files on cloud storage. It is a feature rich alternative to cloud vendors' web storage interfaces. Over 40 cloud storage products support rclone including S3 object stores, business & consumer file storage services, as well as standard transfer protocols.
-
-Rclone has powerful cloud equivalents to the unix commands rsync, cp, mv, mount, ls, ncdu, tree, rm, and cat. Rclone's familiar syntax includes shell pipeline support, and --dry-run protection. It is used at the command line, in scripts or via its API.
-
-Rclone has been specifically useful for accessing data within the University of Minnesota's Supercomputing Institute's [2nd tier storgage](https://www.msi.umn.edu/content/second-tier-storage). This is the primary use case for which we recommend rclone for data transfer.
-
-Rclone has only been tested for transfer to PMACS. To start, you might want to make a project directory on PMACS as a landing zone for your data. Please see [PMACS documentation](/docs/pmacs#making-a-project-directory) for further detail.
-
-On the other end of the transfer, you will need filesystem access to the directory for which you wish to transfer data from. In the tested use case (UMN's MSI second tier storage -> PMACS), an MSI username and password is a prequisite to performing this file transfer. Additionally, your MSI username will need permissions to your directory of interest. For now, we are dependent on our collaborators for facilitating this step.
-
-Once you have a PMACS directory, MSI user, and permissions for that MSI user, you may proceed through the following steps to transfer data from MSI's second tier/s3 storage to PMACS:
-
-1. Install rclone. Download the appropriate version of rclone from [this link](https://rclone.org/downloads/), Intel/AMD 64 bit for linux works for PMACS. If you are on PennMed internet, you might be told that "this page is dangerous" and might have to click a "proceed anyways" link. You can use `scp` to bring it to your PMACS home or project directory, and `unzip` to unzip the file. From here, you can either proceed with the full installation instructions and add rclone commands to your path, or you can just call directly from the unzipped folder (i.e., `./rclone-v1.56.2-linux-amd64/rclone`).
-
-2. Obtain your AWS secret keys from MSI. Use [this link](https://www.msi.umn.edu/content/s3-credentials) to get an access key and secret key for your MSI username. You'll need to log in to obtain them.
-
-3. Configure rclone. Use the command `rclone config` (or `./rclone-v1.56.2-linux-amd64/rclone config`) to configure rclone for use. Here's how you should respond to the subsequent configuration prompts:
-
-        a. `n` for new remote
-
-        b. name your remote. `3bassigned_name` in the example below (step 4).
-
-        c. select `4` for "type" to select Amazon S3 compliant storage
-
-        d. select `3` for the type of S3 provider, corresponding to Ceph Object Storage
-
-        e. hit enter to select default for `env_auth`
-
-        f. enter your AWS access key from step 2 for the `AWS Access Key ID` prompt
-
-        g. enter your AWS secret access key from step 2 for the `AWS Secret Access Key` prompt
-
-        h. hit enter to select the default for Region to connect to (`region`)
-
-        i. enter `s3.msi.umn.edu` for Endpoint for S3 API (`endpoint`)
-
-        j. hit enter to select the default for `location constraint`
-
-        k. enter `1` for owner full control (`acl`). You'll be able to change local permissions once the data is in.
-
-        l. hit enter to select the default for `server_side_encryption`
-
-        m. hit enter to select the default for `sse_kms_key_id`
-
-        n. hit `n` or enter to NOT edit advanced configuration of the remote
-
-        o. Check the outputted config file, hit `y` when ready to approve and move ahead with accessing the remote
-
-4. Test rclone. Using the name you assigned for the remote in 3b, you should be able to list the contents of the directory you wish to transfer with `rclone ls 3bassigned_name:name_of_directory`. Note that for globbing/wild card usage works slightly differently for rclone than for your standard linux `ls`'ing. `--include` and `--exclude` flags can be applied in tandem with wildcards to alter which files you return for `rclone ls`, `rclone copy`, and `rclone sync`. See [this page](https://rclone.org/filtering/) for more detail.
-
-6. Transfer data. Finally, to transfer data from `name_of_directory` to your PMACS directory, use `rclone copy 3bassigned_name:name_of_directory/name_of_desired_file /path_of_desired_output_directory` or `rclone sync`. Details on both are available [here](https://rclone.org/commands/rclone_copy/) and [here](https://rclone.org/commands/rclone_sync/), respectively. If using an include or exclude flag, insert it between the remote and local directory, as detailed in rclone's documentation.
-
 # Curating BIDS Datasets
 {: .no_toc }
 
@@ -164,9 +111,7 @@ stages.
 ## Preparing your environment
 
 If you are curating data on a Penn cluster, you will need to set up a conda
-environment for your project. For information on how to set up conda
-on each clustess [instructions for CUBIC]() and
-[instructions for PMACS](). You will need to install [datalad](Datalad.md) and CuBIDS
+[environment](https://pennlinc.github.io/docs/cubic#installing-miniconda-in-your-project-the-hard-way) for your project. You will need to install [datalad](Datalad.md) and CuBIDS
 for the rest of the steps in this workflow. To do so, create a conda
 environment.
 
@@ -337,30 +282,30 @@ Admittedly, `cp` can be a time consuming process for very large BIDS datasets �
 ### OPTIONAL: set up a remote backup
 
 At this point you may want to back up this data on a separate server for
-safe-keeping. One great option is to use the `sciget` server
+safe-keeping. One great option is to use the `bblsub` server
 as a RIA store. You can push a copy of your original data to this store, then
 push again when curation is complete. To create a RIA store on pmacs, be sure
 you can log in using ssh key pairs from CUBIC.
 
 ```bash
-(base) [yourname@cubic-login2 testing]$ ssh sciget
+(base) [yourname@cubic-login2 testing]$ ssh bblsub
 Last login: Wed Mar 24 14:27:30 2021 from 
-[yourname@sciget ~]$
+[yourname@bblsub ~]$
 ```
 
 If the above does not work, set up SSH keys and edit `~/.ssh/config` until it does.
-Once working, create a directory on `sciget` that will hold your RIA store.
+Once working, create a directory on `bblsub` that will hold your RIA store.
 
 ```bash
-[yourname@sciget ~]$ mkdir /project/myproject/datalad_ria
-[yourname@sciget ~]$ logout
+[yourname@bblsub ~]$ mkdir /project/myproject/datalad_ria
+[yourname@bblsub ~]$ logout
 ```
 
 and back on `CUBIC` add the store to your dataset
 
 ```bash
 $ cd curation/
-$ bids_remote=ria+ssh://sciget:/project/myproject/datalad_ria
+$ bids_remote=ria+ssh://bblsub:/project/myproject/datalad_ria
 $ ds_id=$(datalad -f '{infos[dataset][id]}' wtf -S dataset)
 $ bids_ria_url="${bids_remote}#${dsi_id}"
 $ datalad create-sibling-ria -s pmacs-ria ${bids_ria_url}
