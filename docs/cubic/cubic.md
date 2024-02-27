@@ -27,32 +27,7 @@ Once inside the Penn network, the login to CUBIC looks like this:
 ```python
 $ ssh -Y username@cubic-sattertt
 ```
-You use your UPHS password to login. On success you will be greeted with their message and any news:
-
-```
-                               Welcome to
-
-
-                   #####   ######   ###   #####      #
-                  #     #  #     #   #   #     #    # #
-                  #        #     #   #   #         #   #
-                  #        ######    #   #        #     #
-                  #        #     #   #   #        #######
-                  #     #  #     #   #   #     #  #     #
-                   #####   ######   ###   #####   #     #
-
-                  =======================================
-            Center for Biomedical Image Computing and Analytics
-
-
-
-				**** Reminder ****
-
-		The login nodes are shared by all users and are intended
-		for interactive work only. Long-running tasks requiring
-```
-
-You can hit the space bar to read all of this or `q` to exit.
+You use your UPHS password to login.
 
 ## Project Directory Access Request
 
