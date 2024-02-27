@@ -8,7 +8,8 @@ nav_order: 4
 # PennLINC Project Setup Guide
 
 Each project at PennLINC has several key elements to facilitate collaboration and ensure reproducbility.
-For clarity in naming, all elements should be named similarly-- often ```Lastname_ProjectName``` with CamelCasing, where "Lastname" is the last name of the first author / trainee leading the project.
+For clarity in naming, all elements should be named similarly-- often ```Lastname_ProjectName``` with CamelCasing,
+where "Lastname" is the last name of the first author / trainee leading the project.
 Links to much of the relevant software can be found in the lab [Software and Environments](https://pennlinc.github.io/docs/Basics/basics/) page.
 
 
@@ -18,7 +19,11 @@ All code, from the beginning of the project, should be in a GitHub repository.
 This is a prerequisite for reproducible neuroscience -- please start your project out on the right foot!
 These repos should reside in the [PennLINC org](www.github.com/PennLINC), not your personal github.
 
-There is a GitHub repository template that you should use to create your project repository: <https://github.com/PennLINC/paper-template>.
+{: .important-title }
+> Use the Template!
+>
+> There is a GitHub repository template that you should use to create your project repository:
+> <https://github.com/PennLINC/paper-template>.
 
 
 ## Project documentation on GitHub Pages
