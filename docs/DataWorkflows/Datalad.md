@@ -17,7 +17,7 @@ Building on top of Git and git-annex, DataLad allows you to version control arbi
 
 ### Installing Datalad 
 
-1. The best way to install datalad on HPC systems like cubic is using conda. First, make sure Miniconda is installed in your project folder (see instructions [here](https://pennlinc.github.io/docs/cubic#installing-miniconda-in-your-project-the-hard-way).
+1. The best way to install datalad on HPC systems like cubic is using conda. First, make sure Miniconda is installed in your project folder (see instructions [here](https://pennlinc.github.io/docs/cubic#installing-miniconda-in-your-project-the-hard-way)).
 2. Then, create an environment for this:
 `conda create -n dlad python=3.10`
 `conda activate dlad`

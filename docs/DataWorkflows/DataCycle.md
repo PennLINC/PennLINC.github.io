@@ -97,16 +97,12 @@ globusconnect -start &
 
 
 # Curating BIDS Datasets
-{: .no_toc }
+
 
 BIDS curation can be a frustrating process. This guide describes best practices for
 the curation process using a local filesystem. We divide this process into multiple
 stages.
 
-
-
-* TOC
-{:toc}
 
 ## Preparing your environment
 
@@ -610,25 +606,22 @@ This data is typically stored on PMACS as BIDS datasets, transferred from CUBIC 
 
 
 # Getting your data from PMACS to CUBIC
-Data can be fetched back from PMACS, if needed, using the documentation specified [here](/docs/DataWorkflows/FetchingYourData.md). At the moment, all the data we have is already on PMACS and you will not need to curate any legacy data/ data that has already been collected a while back. These datasets and the links to fetch them are listed [here](./AvailableStaticData.md)
+Data can be fetched back from PMACS, if needed, using the documentation specified [here](/docs/DataWorkflows/FetchingYourData.md). At the moment, all the data we have is already on PMACS and you will not need to curate any legacy data/ data that has already been collected a while back. These datasets and the links to fetch them are listed [here](./AvailableStaticData.md).
 
 # Unzipping your data
 
-Data on PMACS might be zipped, or unzipped. In the case of unzipped data, you should be good to go following the guidelines on finding files you need [here](./FetchingYourData.md)! If your data is zipped, you might need a little more work.
+Data on PMACS might be zipped, or unzipped. In the case of unzipped data, you should be good to go following the guidelines on finding files you need [here](./FetchingYourData.md)! If your data is zipped, you might need a little more work- short code for this is available [here](./FetchingYourData.md).
 
 The following walkthrough should help you unzip your data. These lines of code can be customized per your needs to unzip some or all subjects and then some or all files: 
 
 Before running a loop for all participants of a dataset, you probably first want to figure out what data is available, and which files you’d want to get. Most datasets are zipped, so here is a walkthrough for a single subject. In this case, we’re interested in getting fMRIPrep data from PNC, which is zipped and stored on PMACS. 
 
-Once data is cloned from PMACS, let’s cd into to it to see what’s there: 
+Once data is cloned from PMACS, let’s `cd` into to it to see what’s there: 
 
 ```bash
-CHANGELOG.md			       sub-NevilleLongbottom_fmriprep-20.2.3.zip@     sub-2967555571_fmriprep-20.2.3.zip@    sub-3880738222_fmriprep-20.2.3.zip@
-code/				       sub-NevilleLongbottom_freesurfer-20.2.3.zip@   sub-2967555571_freesurfer-20.2.3.zip@  sub-3880738222_freesurfer-20.2.3.zip@
-inputs/				       sub-1942988748_fmriprep-20.2.3.zip@    sub-2967570405_fmriprep-20.2.3.zip@    sub-3882431387_fmriprep-20.2.3.zip@
-pennlinc-containers/		       sub-1942988748_freesurfer-20.2.3.zip@  sub-2967570405_freesurfer-20.2.3.zip@  sub-3882431387_freesurfer-20.2.3.zip@
-README.md			       sub-194324018_fmriprep-20.2.3.zip@     sub-296947353_fmriprep-20.2.3.zip@     sub-3885398873_fmriprep-20.2.3.zip@
-sub-1000393599_fmriprep-20.2.3.zip@    sub-194324018_freesurfer-20.2.3.zip@   sub-296947353_freesurfer-20.2.3.zip@   sub-3885398873_freesurfer-20.2.3.zip@
+sub-DobbySockster_fmriprep-20.2.3.zip@     
+sub-HarryPotter_fmriprep-20.2.3.zip@
+sub-NevilleLongbottom_freesurfer-20.2.3.zip@   
 ```
 
 The folder contains a bunch of folders and simlinks to zipped participants. 
@@ -676,14 +669,14 @@ unzip "/cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped/$file" -d /
 The output of the unzipping will look something like this: 
 
 ```bash
-Archive:  /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped_test/sub-NevilleLongbottom_fmriprep-20.2.3.zip
+Archive:  /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped/sub-NevilleLongbottom_fmriprep-20.2.3.zip
 [...]
-   creating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped_test/fmriprep/sub-NevilleLongbottom/ses-PNC1/anat/
-  inflating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped_test/fmriprep/sub-NevilleLongbottom/ses-PNC1/anat/sub-NevilleLongbottom_ses-PNC1_acq-refaced_desc-aparcaseg_dseg.nii.gz
+   creating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped/fmriprep/sub-NevilleLongbottom/ses-PNC1/anat/
+  inflating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped/fmriprep/sub-NevilleLongbottom/ses-PNC1/anat/sub-NevilleLongbottom_ses-PNC1_acq-refaced_desc-aparcaseg_dseg.nii.gz
 [...]
-   creating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped_test/fmriprep/sub-NevilleLongbottom/ses-PNC1/func/
+   creating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped/fmriprep/sub-NevilleLongbottom/ses-PNC1/func/
 [...]
-  inflating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped_test/fmriprep/sub-NevilleLongbottom/ses-PNC1/func/sub-NevilleLongbottom_ses-PNC1_task-rest_acq-singleband_space-fsLR_den-91k_bold.dtseries.nii
+  inflating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped/fmriprep/sub-NevilleLongbottom/ses-PNC1/func/sub-NevilleLongbottom_ses-PNC1_task-rest_acq-singleband_space-fsLR_den-91k_bold.dtseries.nii
 ```
 
 Let’s say we’re interested in just getting the 91k bold dtseries nifti. 

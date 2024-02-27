@@ -243,6 +243,77 @@ Critically, the reference to the EXACT version of the file you used in your
 analysis will be fetched if you need to
 [access the data again](#clone-the-static-data).
 
+## Getting data from a zipped dataset. The following code is helpful for the same: 
+
+
+```bash
+#!/bin/bash
+# conda activate dlad
+
+# clone static data of interest from PMACS, here LINC_PNC#~FMRIPREP_zipped, 
+# but can be replaced with anything in the "Clone URL" column here https://pennlinc.github.io/docs/DataTasks/AvailableStaticData/
+datalad clone ria+ssh://dumbledore@bblsub.pmacs.upenn.edu:/static/LINC_PNC#~FMRIPREP_zipped /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/datalad
+
+# do this so that you don't have to enter your pmacs password 1 million times when datalad getting files
+# eval $(ssh-agent)
+# ssh-add ~/.ssh/id_rsa_pmacs
+
+# The clone files exist only remotely until we get them locally, so once we have a clone of the data, we need to "datalad get" the files we are interested in. 
+cd /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/datalad
+
+# to see the history of what happened to a zipped dataset (i.e. get simlinks without actually getting the data locally)
+# datalad get -n .
+
+# ----------------------------------------
+## get a few subjects for testing ###
+# ----------------------------------------
+
+subject_ids=("HarryPotter","LordVoldemort","NevilleLongbottom")
+
+for id in "${subject_ids[@]}"; do
+	# get filename
+	file="sub-${id}*zip"
+
+	# make directory to store unzipped files
+	mkdir -p /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped
+	mkdir -p /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped
+
+	# get the file
+	datalad get $file -J 8
+
+	# copy the zip to another directory outside of the official datalad clone so that I'm not messing with it
+	cp $file /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped
+
+	# unzip the files outside of the datalad clone
+	unzip "/cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped/$file" -d /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped/
+
+	# # drop the file
+	datalad drop --nocheck $file
+
+done
+
+# -------------------------------------------------
+#### get zip files for the entire PNC dataset #####
+# -------------------------------------------------
+
+# Note: if this requires inputting the password every time, may need to switch to python and use glob patterns
+
+for file in *zip ; do
+
+	sub=${file%_*}
+	datalad get $file -J 8
+
+ 	# unzip the zip 
+	unzip "/cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped/$file" -d /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped/
+
+ 	# unzip specific files only (needs tweatking if want specific files, example here)
+ 	# unzip -j "$file" "xcp_abcd/$sub/ses-PNC1/func/*ses-PNC1_task-rest_acq-singleband_space-fsLR_den-91k_desc-alff*" -d /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/$sub
+
+	# drop the file
+	datalad drop --nocheck $file
+
+done
+```
 
 ## SSH Keys from cubic project uses to pmacs personal users: NOT ALLOWED!
 
