@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Writing Your Own Docs
+title: Updating PennLINC.github.io
 parent: Documentation
 nav_order: 1
 has_toc: true
 ---
 
-# Writing Project Documentation
+# Updating the Docs
 {: .no_toc }
 
 ## Table of contents
@@ -54,7 +54,11 @@ In this case, you can create a new file right from the Github:
 
 <img src="/assets/images/adding_a_new_file.png" alt="">
 
-*Note: you don't have to explicitly create folders in the Github web interface; just type out your filename and path with backslashes and Github will automatically create the directory structure for you.*
+{: .note-title }
+> Warning
+>
+> You don't have to explicitly create folders in the Github web interface;
+> just type out your filename and path with backslashes and Github will automatically create the directory structure for you.
 
 ## Scenario 2: Contributing to Existing Documentation
 
