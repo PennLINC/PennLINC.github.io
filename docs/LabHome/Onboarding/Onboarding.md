@@ -13,7 +13,7 @@ This page is geared for new lab members soon after they arrive. Below is a check
 
 ## General section onboarding
 
-PennLINC sits within the [Neurodevelopment and Psychosis Section](https://www.med.upenn.edu/bbl/) of the [Department of Psychiatry](https://www.med.upenn.edu/psychiatry/). As such, there is are several section-level onboarding steps that are detailed [here](https://wiki.pmacs.upenn.edu/neuropsych/index.php/Administrative). Note that this page requires PennKey access; getting a PennKey and other initial tasks are coordinated by Stace Moore (stacem@pennmedicine.upenn.edu) as the primary personnel liaison  for the section.
+PennLINC sits within the [Neurodevelopment and Psychosis Section](https://www.med.upenn.edu/bbl/) of the [Department of Psychiatry](https://www.med.upenn.edu/psychiatry/). As such, there is are several section-level onboarding steps that are detailed [here](https://wiki.pmacs.upenn.edu/neuropsych/Administrative). Note that this page requires PennKey access; getting a PennKey and other initial tasks are coordinated by Stace Moore (stacem@pennmedicine.upenn.edu) as the primary personnel liaison  for the section.
 
 ## PennLINC welcome coffees
 
