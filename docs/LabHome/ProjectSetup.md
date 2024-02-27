@@ -7,6 +7,8 @@ nav_order: 4
 
 # PennLINC Project Setup Guide
 
+*NOTE: this page is due for a refactor to align with the new project setup scheme developed by Dr. Taylor Salo
+
 Each project at PennLINC has several key elements to facilitate collaboration and ensure reproducbility.  For clarity in naming, all elements should be named similarly-- often ```Lastname_ProjectName``` with CamelCasing, where "Lastname" is the last name of the first author / trainee leading the project.  Links to much of the relevant software can be found in the lab [Software and Environments](https://pennlinc.github.io/docs/Basics/basics/) page.
 
 
@@ -27,16 +29,6 @@ All projects in the lab are collaborative, and furthermore form a knowledge and 
 Ted is a slack admin and can add you to the "BBL" slack, which encompasses all the labs in LiBI and the Psychosis and Development Section; PennLINC is a member.
 
 The main execption to this are documents (e.g., manuscripts) that need  review; please send these directly to Ted via email.  See also the note on [Communication and Collaboration](coming soon).
-
-
-### Trello board
-
-Trello is a simple webapp that we use for project tracking.  There is a "board" for each project (Ted will create); all boards are part of the [Trello PennLINC organization](https://trello.com/pennlinc). Get a trello username and send it to Ted so he can add you.
-
-
-### Google drive folder
-
-It is often useful to have a shared directory on google drive to share relevant articles and manuscript drafts. 
 
 
 ### Zotero library

@@ -30,6 +30,8 @@ Below is a list of the current projects in the lab:
 | Mapping the relationship of white matter lesions to depression in multiple sclerosis  | Erica Baller | [https://pennlinc.github.io/msdepression/](https://pennlinc.github.io/msdepression/){:target= "blank"}|
 | ModelArray: an R package for statistical analysis of fixel-wise data (and beyond) | Chenying Zhao | [ModelArray documentation website](https://pennlinc.github.io/ModelArray/); <br /> [source code for ModelArray](https://github.com/PennLINC/ModelArray); <br /> [source code for ConFixel](https://github.com/PennLINC/ConFixel); <br /> [code used in the paper](https://github.com/PennLINC/ModelArray_paper); <br /> [other supporting code for ModelArray/ConFixel](https://github.com/PennLINC/ModelArray_tests) |
 | Establishing the Validity of Compressed Sensing Diffusion Spectrum Imaging (CS-DS) | Hamsi Radhakrishnan | [code used in the paper](https://github.com/PennLINC/cs_dsi) |
+|Functional Connectivity Development along the Sensorimotor-Association Axis Enhances the Cortical Hierarchy| Audrey Luo | [https://pennlinc.github.io/network_replication/](https://pennlinc.github.io/network_replication/) |
+| BABS: BIDS App Bootstrap | Chenying Zhao | [BABS documentation website](https://pennlinc-babs.readthedocs.io); <br /> [source code for BABS](https://github.com/PennLINC/babs); <br /> [code used in the paper](https://github.com/PennLINC/babs_paper); <br /> [other supporting code for BABS](https://github.com/PennLINC/babs_tests) |
 
 ---------------------------------------------------------------------------------
 

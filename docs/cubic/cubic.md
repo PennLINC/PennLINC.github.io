@@ -10,7 +10,7 @@ has_toc: false
 # Using the CUBIC Cluster
 {: .no_toc }
 
-## Table of contents
+# Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
@@ -18,7 +18,7 @@ has_toc: false
 
 The cubic cluster is a very powerful set of servers that we can use for computing. Although they are running Linux, familiarity with Linux does not mean that you will be able to effectively use CUBIC. This section details how to get up and running on the CUBIC cluster. In general we now recommend using [PMACS](https:https://pennlinc.github.io/docs/pmacs) for specific analysis projects, and reserve CUBIC for use as a high-performance compute engine for large batches of containerized jobs that are launched from Flywheel.  However, for specific projects (esp collaborations with CBICA), it may make sense to have your project live on CUBIC.
 
-## Setting up your account
+# Setting up your account
 
 To get login credentials for CUBIC, you must have already a Penn Medicine account (i.e. an @pennmedicine.upenn.edu email). Once you do, ask the lab's PMACS/CUBIC manager to create a ticket asking for a new CUBIC account. You will receive an email with your login credentials and other instructions. Once you are granted login credentials for CUBIC, you will be able to connect from inside the Penn Medicine network using SSH. To access the network remotely, follow [instructions to install the client](http://www.uphs.upenn.edu/network/index_vpn.html). If you can successfully authenticate but are blocked from access, you may need to contact someone to put you on an exceptions list.
 
@@ -27,38 +27,14 @@ Once inside the Penn network, the login to CUBIC looks like this:
 ```python
 $ ssh -Y username@cubic-sattertt
 ```
-You use your UPHS password to login. On success you will be greeted with their message and any news:
+You use your UPHS password to login.
 
-```
-                               Welcome to
+# Project Directory Access Request
 
+Once you have access to CUBIC, you may need to start a project in a new directory. You can find the CBICA Wiki, which covers project creation instructions (also described below), through the [PennMedicine Remote Access Portal](https://pennmedaccess.uphs.upenn.edu/). After logging in with your UPHS credentials, you can find the CBICA Wiki under "Corporate Resources." 
+ 
 
-                   #####   ######   ###   #####      #
-                  #     #  #     #   #   #     #    # #
-                  #        #     #   #   #         #   #
-                  #        ######    #   #        #     #
-                  #        #     #   #   #        #######
-                  #     #  #     #   #   #     #  #     #
-                   #####   ######   ###   #####   #     #
-
-                  =======================================
-            Center for Biomedical Image Computing and Analytics
-
-
-
-				**** Reminder ****
-
-		The login nodes are shared by all users and are intended
-		for interactive work only. Long-running tasks requiring
-```
-
-You can hit the space bar to read all of this or `q` to exit.
-
-## Project Directory Access Request
-
-Once you have access to CUBIC, you may need to start a project in a new directory. Visit [this wiki](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects#Project_Creation_Request) for more, or follow along below.
-
-First you need to fill out the data management document available [here](https://cbica-wiki.uphs.upenn.edu/wiki/images/Project_data_use_template.doc). This document will ask you for a number of details about your project, including the data's source and estimates about how much disk space you will need over a 6 month, 12 month, and 24 month period, and the estimated lifespan of the data ( 🤷). You will also need to provide the CUBIC usernames for everyone you want to have read and/or write access to the project — getting this done ahead of time is strongly recommended because, as you can imagine, requesting changes after-the-fact can be a bother.
+First you need to fill out the data management document available [here](https://cbica-wiki.uphs.upenn.edu/wiki/images/Project_data_use_template.doc). If this link doesn't work for you, you can find this document on the CBICA Wiki: Main Page > Research projects > 3 Access/New Project Creation > Project Creation Request. This document will ask you for a number of details about your project, including the data's source and estimates about how much disk space you will need over a 6 month, 12 month, and 24 month period, and the estimated lifespan of the data ( 🤷). You will also need to provide the CUBIC usernames for everyone you want to have read and/or write access to the project — getting this done ahead of time is strongly recommended because, as you can imagine, requesting changes after-the-fact can be a bother.
 
 Additionally, you will need to be familiar with:
 
@@ -71,7 +47,7 @@ This document must be saved as a `.txt` file and before being submitted with you
 
 Finally, you will need approval from your PI. This involves sending an email to the PI with a written blurb to the effect of "Do you approve of this project folder request", to which the PI only needs to respond "Yes, approved". Once you've got this you can screenshot the conversation (include the date in frame) and save that as an image.
 
-With these two documents, you can now submit the request via the the [Request Tracker](https://cbica-infr-vweb.uphs.upenn.edu/rt/) — you'll need your CBICA/CUBIC login credentials for this.
+With these two documents, you can now submit the request via the the CBICA Request Tracker. Similar to the CBICA Wiki, you need to access the Request Tracker through the [PennMedicine Remote Access Portal](https://pennmedaccess.uphs.upenn.edu/), then click CBICA Request Tracker. You'll need your CBICA/CUBIC login credentials for this (same as UPHS credentials).
 
 <img src="/assets/images/request-tracker.png" alt="">
 
@@ -81,10 +57,10 @@ Open a new ticket and, like applying for a job, **FILL OUT THE REQUEST WITH THE 
 
 Lastly, attach your supporting documents.
 
-The process for accessing an existing project is similar, but fortunately you will not have to fill out a new data management document; only the PI approval and filling of the online ticket is required. You should receive an email from CBICA confirming your request, and you can always return to the [Request Tracker](https://cbica-infr-vweb.uphs.upenn.edu/rt/) to see the status of your ticket.
+The process for accessing an existing project is similar, but fortunately you will not have to fill out a new data management document; only the PI approval and filling of the online ticket is required. You should receive an email from CBICA confirming your request, and you can always return to the Request Tracker to see the status of your ticket.
 
 
-## File permissions on CUBIC
+# File permissions on CUBIC
 
 Unlike many shared computing environments, read and write permissions are *not* configured using groups. Instead, individual users are granted access to data on a project-by-project basis. For example, if you are a member of the project `pnc_fixel_cs` you will not be able to read or write directly to that project's directory (which will be something like `/cbica/projects/pnc_fixel_cs`).
 
@@ -103,11 +79,7 @@ $ echo $HOME
 
 This means that the user will have their own startup scripts like `.bashrc` and `.bash_profile` in their `$HOME` directory.
 
-### Keypress issues
-
-Sometimes after logging in as a project user, you will find that you have to type each character twice for it to appear in your terminal. If this happens you can start another shell within your new shell by running `bash` or `zsh` in your new bash session. This usually creates a responsive shell.
-
-## Configuring a CUBIC account
+# Configuring a CUBIC account
 
 Note that individual user accounts typically have very little hard drive space allotted to them. You will likely be doing all your heavy computing while logged in as a project user. This means that you will want to configure your *project user* account with any software you need. This example we will use the `xcpdev` account as an example. First, log in as the project user:
 
@@ -147,7 +119,7 @@ $ ls -al .
 
 and we can see that the file is now writable.
 
-### Quick fixes for annoying behavior
+## Quick fixes for annoying behavior
 
 By default, CUBIC replaces some basic shell programs with aliases. In your `.bashrc` file you can remove these by deleting the following lines:
 
@@ -173,10 +145,7 @@ echo PATH=/directory/where/your/installation/lives:${PATH} >> ~/.bashrc
 source ~/.bashrc
 ```
 
-## Installing miniconda in your project (The easy way)
-
-For simple use of a Python interpreter managed by `conda`, you can use the installed module(s) like `module load python/anaconda/3`. To install your own version with more customization, follow below.
-## Installing miniconda in your project (The hard way)
+# Installing miniconda in your project
 
 You will want a python installation that you have full control over. After logging in as your project user and changing permission on your `.bashrc` file, you can install miniconda using
 
@@ -227,146 +196,21 @@ $ conda activate flywheel
 $ pip install flywheel-sdk
 ```
 
-## Installing the flywheel CLI tool
+Note: For simple use of a Python interpreter managed by `conda`, you can use the installed module(s) like `module load python/anaconda/3`. But it is highly recommended to install miniconda as described above.
 
-To install the Flywheel CLI tool on CUBIC, you will again need to be logged in as your project user and have a writable `.bashrc`. Now create a place to put the `fw` executable.
+# Interacting with CUBIC: data analysis and data transfer
 
-```bash
-$ cd
-$ mkdir -p software/flywheel
-$ cd software/flywheel
-```
+You have two resources to interact with data. You can use CUBIC or you can use your local computer to manipulate data. Both of these have unique advantages. CUBIC is huge and largely non-interactive high performance computing cluster, and your laptop has beautiful graphics and is completely controlled by you.
 
-Flywheel will complain if your version is out of date, so best to find the latest version and download that. You can find the latest version by [logging into flywheel](Upenn.flywheel.io). Once you've logged in, in the upper-right corner, select your account menu, and select Profile. Scroll down to the Download Flywheel CLI section, and you should see the latest version (e.g. 10.7.3). In the first line below, replace `<version>` with the version number you just found (e.g. `https://storage.googleapis.com/flywheel-dist/cli/10.7.3/fw-linux_amd64.zip`).
+You’ll have to move data back and forth between these two resources. This section outlines 3 different approached to do this.
 
-```bash
-$ wget https://storage.googleapis.com/flywheel-dist/cli/<version>/fw-linux_amd64.zip
-$ unzip fw-linux_amd64.zip
-$ echo "export PATH=\$PATH:~/software/flywheel/linux_amd64" >> ~/.bashrc
-$ exit
-$ exit
-$ sudo -u xcpdev bash
-$ bash
-$ fw login $APIKEY
-```
-
-where `$APIKEY` is replaced with your flywheel api key. You can find your personal api key in your account profile (same place you went for the version #) by scrolling all the way to the bottom.
-
-## Checking that your python SDK works
-
-After running the `fw login` command from above you can activate your `flywheel` conda environment and check that you can connect:
-
-```bash
-$ conda activate flywheel
-$ python
-```
-
-and in python
-
-```python
->>> import flywheel
->>> fw = flywheel.Client()
-```
-
-If there is no error message, you have a working Flywheel SDK!
-
-## Finalizing your setup
-
-After all these steps, it makes sense to return your .bashrc to non-writable mode
-
-```bash
-$ chmod -w ~/.bashrc
-```
-
-## Downloading data from flywheel to CUBIC
-
-The following script is an example of download the output of a flywheel analysis to CUBIC
-
-```python
-import flywheel
-import os
-
-fw = flywheel.Client()
-
-project = fw.lookup('bbl/ALPRAZ_805556') # Insert your project name here
-subjects = project.subjects() # This returns the subjects that are in your project
-
-# This is a string that you will use to partial match the name of the analysis output you want.
-analysis_str = 'acompcor'
-
-for sub in subjects:
-    """Loop over subjects and get each session"""
-    sub_label = sub.label.lstrip('0') #Remove leading zeros
-
-    for ses in sub.sessions():
-        ses_label = ses.label.lstrip('0') #Remove leading zeros
-        """Get the analyses for that session"""
-        full_ses = fw.get(ses.id)
-        these_analyses = [ana for ana in full_ses.analyses if analysis_str in ana.label]
-        these_analyses_labs = [ana.label for ana in full_ses.analyses if analysis_str in ana.label]
-        if len(these_analyses)<1:
-             print('No analyses {} {}'.format(sub_label,ses_label))
-             continue
-        for this_ana in these_analyses:
-            """Looping over all analyses that match your string"""
-            if not this_ana.files:
-                # There are no output files.
-                continue
-
-            outputs = [f for f in this_ana.files if f.name.endswith('.zip')
-                and not f.name.endswith('.html.zip')] # Grabbing the zipped output file
-            output = outputs[0]
-
-            # I am getting this ana_label to label my directory.
-            ## You may want to label differently and/or
-            ## change the string splitting for your specific case.
-            ana_label = this_ana.label.split(' ')[0]
-
-            dest = '/cbica/projects/alpraz_EI/data/{}/{}/{}/'.format(ana_label,sub_label,ses_label) #output location
-            try:
-                os.makedirs(dest) # make the output directory
-            except OSError:
-                print(dest+" exists")
-            else: print("creating "+dest)
-            dest_file = dest+output.name
-            if not os.path.exists(dest_file):
-                """Download output file if it does not already exist"""
-                print("Downloading", dest_file)
-                output.download(dest_file)
-                print('Done')
-```
-
-We can run this script using qsub and the following bash script.
-Providing the full path to python is important! Your path may be different depending on install location. Obviously the name of your python script may also be different.
-
-```bash
-#!/bin/bash
-unset PYTHONPATH
-~/miniconda3/envs/flywheel/bin/python download_from_flywheel.py
-```
-
-## Mounting CUBIC on your local machine
- 
-One way to interact with CUBIC files is to _mount_ the server on to your filesystem. This can be useful for quickly moving a small number of files back and forth
-(for example with NIfTIs you want't to view). It's _not_ meant for large file management or version control purposes (see the next section for solutions for those).
-
-To mount a directory, (on Mac), use the `samba` server along with Mac's built in server connector. Follow this [short link](https://support.apple.com/en-gb/guide/mac-help/mchlp1140/mac#:~:text=Connect%20to%20a%20computer%20or%20server%20by%20entering%20its%20address,Click%20Connect.) to see how; when prompted to
-select a server address, use:
-
-```
-smb://cubic-share.uphs.upenn.edu
-```
-
-Along with your CUBIC credentials. This is the most seamless method and will likely have better long term support, but again is mostly useful for opening
-your home directory, and moving a handful of files about. For more demanding file transfers, including moving files to projects, see the next section.
-
-## Moving data to and from CUBIC
+## Method I: (non-interactive)
 
 Because of CUBIC's unique "project user" design, the protocol for moving files to CUBIC is a bit different than on a normal cluster. It is possible to move files to CUBIC by conventional means, or through your mount point, but this can cause annoying permissions issues and is not recommended.
 
 Note that you will need to be within the UPenn infrastructure (i.e. on VPN or on campus) to move files to and from CUBIC.
 
-### Moving files to CUBIC
+### Copying files to CUBIC
 All project directories will include a folder called `dropbox/` in the project home directory. Depositing files into this folder will automatically make the project user the owner of the file. Please note, however, that this ownership conversion is not always instantaneous and can take a few minutes, so be patient. Note also that anyone in the project group can move files into this folder. Finally, keep in mind that the dropbox can only contain 1GB or 1000 files at any given time.
 
 `scp` is the recommended command-line transfer software for moving files onto and off of CUBIC. One need only specify the file(s) to move and the CUBIC destination. See the example below, where `<...>` indicates user input:
@@ -377,17 +221,60 @@ This command would copy all `nii.gz` files from `/path/to/` into the `dropbox/` 
 
 Moving files directly to a non `dropbox/` folder on CUBIC with scp or your mount point *is* possible for a user with project directory write permissions, though is not recommended. Such files will retain the ownership of the CUBIC user who transferred the files, and permissions can only be changed by that user or a user with sudo priveleges.
 
-### Moving files from CUBIC
+### Copying files from CUBIC
 This is much simpler. One can simply use scp (or rsync, or whatever) to copy files from a source on cubic to their local destination. E.g.
 
 `scp <username>@cubic-sattertt:/cbica/projects/<project_dir/path/files.csv> </local/path/to/put/files/>`
 
 It is also possible to copy files through the mount point, but this would be quite slow and is not really the purpose of the mount point.
 
+## Method II: Mounting CUBIC in your local machine (interactive)
 
-##  Using R/R-studio and Installation of R packages
+### Mounting CUBIC on your local machine using smb
+ 
+One way to interact with CUBIC files is to _mount_ the server on to your filesystem. This can be useful for quickly moving a small number of files back and forth
+(for example with NIfTIs you want't to view). It's _not_ meant for large file management or version control purposes (see the next section for solutions for those).
 
-### Set up and run RStudio instance  
+To mount a directory, (on Mac), use the `samba` server along with Mac's built in server connector. Follow this [short link](https://support.apple.com/en-gb/guide/mac-help/mchlp1140/mac#:~:text=Connect%20to%20a%20computer%20or%20server%20by%20entering%20its%20address,Click%20Connect.) to see how; when prompted to
+select a server address, use:
+
+```
+smb://cubic-share.uphs.upenn.edu/cbica/
+```
+
+Along with your CUBIC credentials. This is the most seamless method and will likely have better long term support, but again is mostly useful for opening
+your home directory, and moving a handful of files about. For more demanding file transfers, including moving files to projects, see the next section.
+
+### Mounting CUBIC on your local machine using FUSE
+
+1. If you are using a Mac, first install [OSXFuse and SSHFS](https://osxfuse.github.io/).
+
+2. Make an empty mount point folder on your local machine. Make sure that only the user (not group or others) have access to this mount directory!
+```bash
+$ cd 
+$ mkdir -p cbica/projects/<project_name> 
+$ chmod 700 cbica/projects/<project_name> 
+```
+
+3. Mount the desired CUBIC directory to your newly created, local mount directory using sshfs and cubic-sattertt
+```bash
+$ sshfs -o defer_permissions <username>@cubic-login.uphs.upenn.edu:/cbica/projects/<project_name>/ /cbica/projects/<project_name>/
+```
+4. Unmount when done! You should run this unmount command from outside of the mount point.
+```bash
+$ cd   # just to make sure we are not inside the mount dir
+
+$ umount /cbica/projects/<project_name> # note that command is not "unmount"!!
+```
+
+5. Make an alias for mounting project directory:
+```bash
+alias alias_name="sshfs -o defer_permissions <username>@cubic-login.uphs.upenn.edu:/cbica/projects/<project_name> /cbica/projects/<project_name>/"
+```
+
+## Method III: Accessing CUBIC via live coding with RStudio or Python (interactive)
+
+### R: Set up and run RStudio instance  
 
 Use the following tutorial to set up and run a simple RStudio instance on the cluster. This method of using RStudio with cubic is highly recommended for most purposes. 
 
@@ -439,8 +326,269 @@ Side effects:
 - R package installations are made to the user's local R location unless explicitly changed.
 - Be aware of login nodes on CUBIC -- if you start an RStudio instance with port X on login node 1, and are unexpectedly disconnected from the cluster, that port may be blocked until you can stop the instance on login node 1
 
+### Python: Working with Visual Code Studio
+
+#### Prerequisite
+
+You will need [ssh Keys](https://pennlinc.github.io/docs/Basics/sshKeys/) set up, a PMACS or CUBIC account (with VPN).
+
+#### General Principles & Motivation
+
+1. We want to code interactively with zero lag in a format that encourages documenting your code
+2. We want the software and data we are using to be on the cluster, preventing version issues or having to download a test set to your local machine
+3. We want it to cooperate with all of CUBIC's nuances
+3. We want it to be easy!
+
+This means we are going to not use X11 at all. Why? Because running graphics on the cluster, and then having them sent to your local screen, is very laggy and not dependable.
+
+#### Code Server
+
+There are many viable IDEs for interactive coding, and a very popular/accessible one is [VSCode](https://code.visualstudio.com/). It's packed with features, plugins, and themes that make writing code fun and easy. Internally, it's a nodejs app
+written in React and runs on Chrome, which technically means it's a server. Indeed, a group called [Coder](https://coder.com/)
+have already developed and released the application for _just the backend server_, that users can easily run as an app
+on their machine and send the pretty graphics to a browser themselves. That's what we're going to do here using singularity
+and SSH port forwarding.
+
+{: .note-title }
+> ##### Why not just use VSCode Remote?
+>
+>[VSCode-Remote](https://code.visualstudio.com/docs/remote/remote-overview) is VSCode's built-in shipped method for
+working on remote servers. It's well documented, and works just fine as is, but our setup on CUBIC makes it challenging
+to use VSCode remote. The main issue is that the remote server it runs can only have access to the first user who logs in,
+which is not how CUBIC's project user setup works. You end up with a VSCode running from your personal user trying to modify and write files or submit jobs for a project user. We've tried setting up [jump hosts](https://www.doc.ic.ac.uk/~nuric/coding/how-to-setup-vs-code-remote-ssh-with-a-jump-host.html),
+[proxy commands](https://stackoverflow.com/questions/57289351/is-it-possible-to-create-a-proxy-in-remote-ssh-visual-studio-code), and brute forcing a user change with [RemoteCommand](https://github.com/microsoft/vscode-remote-release/issues/690) -- none of the methods worked on CUBIC. Code Server is our next best bet.
+
+#### Installation
+
+Before doing any installation or running any singularity image, please make sure you are using as a project user:
+```shell
+sudo -u <project_username> sudosh
+```
+
+First, we're going to install the necessary requirements for running the app. So go ahead and log in to CUBIC/PMACS and head to
+an appropriate project directory (yes, this works for multiple CUBIC project users) or your user directory.
+
+First, you'll want to install Node using NVM (Node Version Manager). I'd suggest creating a `software` directory to manage
+all of this, and download the installation of NVM:
+
+```shell
+# make sure bashrc is writable
+cd ~
+chmod +w .bashrc
+
+mkdir ~/software && wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
+
+This post script ensures it's available; copy-paste and run:
+```shell
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
+
+Lastly, exit and re-login to the terminal, and check everything went well with:
+
+```shell
+nvm -v
+```
+
+Next, install Node version 16 (the version is important):
+
+```shell
+nvm install --lts # install node
+nvm install 16    # version number updated on 11/7/22
+
+node -v           # check the version
+```
+
+From here, you can install the underlying `code-server` application:
+
+```shell
+npm install -g code-server --unsafe-perm # unsafe is necessary on cubic for permissions reasons
+```
+
+If there is error message from above command, try these instead:
+
+```shell
+npm install -g yarn
+yarn add code-server
+```
+
+
+At this point, you're ready to run `code-server`, but you can only do it as a
+_service_, and for that we use singularity. Let's set up the necessary singularity image.
+
+```shell
+mkdir -p ~/software/singularity_images && cd ~/software/singularity_images
+singularity pull docker://codercom/code-server
+```
+
+That's it! You're ready to code with `code-server`.
+
+#### Basic Use of Code Server
+
+You can take a look at the options available for `code-server` really quickly with `singularity exec`:
+
+```shell
+singularity exec ~/software/singularity_images/code-server_latest.sif code-server -h
+```
+
+What we want to do is start a singularity instance to run the service, and then execute the app
+in that instance. You also want to make sure `code-server` has access to things like CUBIC's tempdir:
+
+```shell
+singularity instance start \
+    --bind $PWD,$TMPDIR \
+    ~/software/singularity_images/code-server_latest.sif \
+    my-vscode # You can name the instance anything you want
+```
+
+You can name the instance anything you want; if you're working in a CUBIC project directory
+with multiple users, you can log in to the project user and name your instance with your own
+name to differentiate it from other users. You can always check what singularity instances
+are running with `singularity instance list`.
+
+Now, in that instance, start running code-server:
+
+```
+PORT=8767
+
+singularity exec \
+    --bind $PWD,$TMPDIR \
+    instance://my-vscode \
+    code-server \
+    --port $PORT &         # use & so you can run in the background and continue using the shell
+
+# expect a printout with node runtime
+```
+
+The `PORT` argument is important; it must be a number of 4-5 digits that is unique to you. The reason
+being that this is the "channel" that your local machine will use to send inputs and outputs back and forth
+to the running singularity instance. So pick one number, and stick with it.
+
+Lastly, open a new terminal window to manage the `PORT` and link it with the same number:
+
+```
+ssh -L localhost:8767:localhost:8767 <username>@cubic-sattertt    # change <username> to your cubic username
+
+# this process must remain running so don't `ctrl`+`c` it until you're done working
+```
+
+Now, in your web browser locally, visit `localhost:YOURPORT` (in this example, `localhost:8767`).
+If you see this screen, you're in business:
+
+<img src="/assets/images/vscode_login.png" alt="login">
+
+To login, go back to your terminal and find the password in the config file and input:
+
+```shell
+# please first make sure you have logged in as cubic project user, instead of personal user (as the config.yaml is saved in project user folder):
+# sudo -u <project_username> sudosh
+
+cat ~/.config/code-server/config.yaml
+```
+
+Here we are, editing code on CUBIC with the beautiful VSCode IDE:
+
+<img src="/assets/images/vscode_running.png" alt="login">
+
+Let's confirm that you are a project user (instead of using your personal account): Open a terminal (click icon at the corner of top left -> Terminal --> New Terminal), type `whoami`. You should see the project user name, instead of your personal username. This is very important - otherwise, you're editing the files using your personal account, and creating potential permission issues.
+
+`code-server` is almost exactly VSCode, so if you want to make the most of this powerful IDE,
+visit [their intro guide](https://code.visualstudio.com/docs/getstarted/tips-and-tricks).
+
+#### Caveats & Limitations
+
+1. VSCode has a great interface for git, but will struggle to manage a very large directory that's tracked by
+git; be prepared for it to notify you if you, for example, open a BIDS directory tracked with datalad
+
+2. The integrated terminal is a shell opened by Singularity, so it does not source your `bashrc`/`bash_profile`.
+This means some of your installed command line programs may not be accessible. Keep your normal terminal open alongside
+your `code-server` GUI for best practices.
+
+3. All users in a project share the same `~/.config/code-server/config.yaml`, so the password is not unique by default.
+It is possible to deactivate authentication when you start the server with `--auth none`, and it's also possible
+to point to a specific config file with `--config` that you could use to keep your own password (untested).
+
+4. Similarly, with VSCode extensions, it's recommended to store your extensions in a specific directory
+if you expect to share the project directory. You can then point to it with `--user-data-dir` and `--extensions-dir`.
+This is arguably less seamless than [VSCode-Remote](https://code.visualstudio.com/docs/remote/remote-overview) functionality, but we believe this is a better workaround because
+VSCode-Remote is not fully functional in our case.
+
+Speaking of extensions...
+
+#### Basic extensions
+
+Max put together a great list of extensions [here](https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/master/docs/Basics/vs-code-extension-list_mb.txt); check them out and install them with the Extensions Tab.
+
+For example, with VSPapaya, you can open NIfTIs and DICOMs:
+
+<img src="/assets/images/vspapaya.png" alt="vspapaya">
+
+You get great integration with Git using the Git Extension pack
+
+<img src="/assets/images/vscode_git_tree.png" alt="git">
+
+The most important extension though is how to enable interactive, REPL style programming for active debugging and data
+analysis. We do this with `conda`.
+
+#### REPL (Interactive Programming)
+
+You can code in Jupyter Notebooks right in `code-server`. First, ensure that you have a [conda environment setup](http://pennlinc.github.io/docs/cubic#installing-miniconda-in-your-project-the-hard-way).
+Once you're ready, start up your `code-server` and make sure the [Jupyter extension](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) is installed. Use the command palette (`cmd`+`shift`+`p`) to search for Jupyter interpreters.
+
+<img src="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/OpenCommandPalatte.gif" alt="cmdpalette">
+
+In the command palette, simply type `interpreter`, and select "Jupyter: Select interpreter to start Jupyter server".
+
+If you have `conda` set up correctly, your `code-server` should begin listing what conda environments you have
+and the different versions of Python that are available. Once you've picked one, you can then run/debug a Python file
+in a Jupyter kernel, debug files with the built-in debugger, develop Jupyter notebooks, etc.
+
+<img src="/assets/images/vscode_features.png" alt="all features!">
+
+#### Closing the Server
+
+If you disconnect from CUBIC unexpectedly, the process running `code-server` (the `singularity exec`) will be killed, so
+actively running Jupyter kernels will be lost. Generally, though, if the `singularity instance` service is still running,
+unsaved files can still be recovered (always save your work though, of course). To stop the server, find the process _within_ the singularity instance, and kill it:
+
+```shell
+singularity exec instance://my-vscode ps -x
+
+##   PID TTY      STAT   TIME COMMAND
+##     1 ?        Sl     0:00 sinit
+##    16 pts/112  Sl+    0:01 /usr/lib/code-server/lib/node /usr/lib/code-server --port 8767
+##    40 pts/112  Sl+    0:38 /usr/lib/code-server/lib/node /usr/lib/code-server --port 8767
+##    52 pts/112  Sl+    0:00 /usr/lib/code-server/lib/node /usr/lib/code-server/lib/vscode/out/bootstrap-fork --type=ptyHost
+##   700 pts/112  Sl+    0:11 /usr/lib/code-server/lib/node /usr/lib/code-server/lib/vscode/out/bootstrap-fork --type=extensionHost --uriTrans
+##   711 pts/112  Sl+    0:00 /usr/lib/code-server/lib/node /usr/lib/code-server/lib/vscode/out/bootstrap-fork --type=fileWatcher
+##   874 pts/112  Sl+    0:00 /cbica/home/taperat/miniconda3/envs/flywheel/bin/python /cbica/home/taperat/.local/share/code-server/extensions/
+##   886 pts/112  S+     0:00 /cbica/home/taperat/miniconda3/bin/python /cbica/home/taperat/.local/share/code-server/extensions/ms-python.pyth
+##   914 pts/117  Ss     0:00 /bin/bash
+##  1063 pts/117  S+     0:00 /cbica/home/taperat/miniconda3/envs/flywheel/bin/python
+##  1151 pts/112  R+     0:00 /bin/ps -x
+
+singularity exec instance://my-vscode kill 16 # kill the node code-server process
+```
+
+If you are happy with your work and your project, and don't plan to come back to it for a while, make sure
+to kill the singularity instance to free up compute resources
+
+```shell
+singularity instance stop my-vscode
+```
+
+#### Conclusion
+
+We encourage you to try out interactive programming with `code-server`. It's a great tool for data science that we
+hope you'll take advantage of and customize for your work. If you have any trouble running it, improvements to suggest, or want to share a cool
+workflow or extension, please do so on the slack informatics channel or in our [issues page](https://github.com/PennLINC/PennLINC.github.io/issues). Many thanks to [this blog](https://isaiahtaylor.medium.com/use-vs-code-on-a-supercomputer-15e4cbbb1bc2) for demonstrating
+this first.
+
+# Using R/R-studio and Installation of R packages on CUBIC
  
-### Use R and RStudio on CUBIC directly 
+## Use R and RStudio on CUBIC directly 
 1. Currently  R-4.2.2 is installed on CUBIC. If you are satisfied with R-4.2.2, simply load it with `module load R/4.2.2`, and directly go to step 2 below. However, you can install another R version in any directory of your choice, usually home directory `/cbica/home/username`.
 To install R in your desired directory, follow the following steps.
 
@@ -497,7 +645,7 @@ And submit your job, for example:
       qsub -l h_vmem=25G,s_vmem=24G bash_script.sh
       ```
  
-### Use a Docker Image containing R packages on CUBIC
+## Use a Docker Image containing R packages on CUBIC
 If you run into issues installing your needed R packages on cubic, you can use a Docker image that contains a number of R packages already. For example, if you have a huge analysis in R that requires you to submit a job on CUBIC, but you can't successfully install your R packages of interests onto CUBIC, this method is a great workaround. 
 
 This [docker-R github repo](https://github.com/PennLINC/docker_R) contains documentation on how you can either 1) directly use [a publicly available Docker image](https://hub.docker.com/r/pennlinc/docker_r) that contains a bunch of R packages already, or 2) build your own Docker image with the specific packages you need. After setting up your Docker image, you can submit a job on CUBIC to run all the Rscripts you want! For details, please see instructions [here](https://github.com/PennLINC/docker_R).
@@ -509,22 +657,173 @@ the neuroR container on [docker hub](https://hub.docker.com/r/pennsive/neuror) h
 ```sh
 module load neuroR/0.2.0 # will load R 4.1
 ```
+
+# Using Python on CUBIC
  
+ Sure, you could install your own python (and you can!), but if you want to just use one that works well with PennLincKit, all you have to do is the following
+
+If you want it to be your default:
+```bash
+echo 'export PATH="/cbica/home/<username>/anaconda3/bin:$PATH"' >> ~/.bashrc
+```
+If you want it for a session:
+```bash
+export PATH="/cbica/home/<username>/anaconda3/bin:$PATH"
+```
+
+# Using "screen" on CUBIC
+
+Note: `screen` sessions must be run under `cubic-sattertt`.
+
+## Why "screen"
+
+Have you ever faced the scenario where you are testing a script interactively on the login node of your remote machine, and suddenly the VPN connection drops and your work is lost? Luckily, there is a Linux utility called `screen` on the `sattertt` login node that allows us to resume sessions that otherwise would be lost. 
+
+
+`screen` comes in handy when you want to let stuff run in the background without having to maintain a VPN or SSH connection. For example, let's say you want to submit many jobs to cubic at once. Since it can take a few minutes for each job to submit, you'd need to hold your VPN connection and your terminal window open for many hours if you're submitting several hundreds or even thousands of jobs. This is unrealistic for several reasons: your VPN connection is very likely to occassionally get dropped; your wifi connection might fail; you might accidentally close a terminal window; or maybe you just don't want to be biking down the Schuylkill river trail with your laptop open. In any case, you don't want to have to start all over or figure out where it left off if something interrupts your job submissions. 
+
+The `screen` command will allow you to safely run whatever you need even without maintaining a connection and then return to check in on your process later. 
+
+## What is "screen"
+
+`screen` is a terminal window manager. When you call the screen command, it creates a separate window where you can work as you would in a normal terminal window. `screen` is already installed in the `sattertt` node. 
+
+## Start a session
+You can type `screen` to start a screen session. 
+
+If you want to specify a meaningful name for the session in place of the default `cubic-sattertt` suffix, you can use the `-S` flag as in `screen -S [session_name]`. Type `man screen` for more information. If you are interested, you can also check out the [official GNU screen documentation](https://www.gnu.org/software/screen/manual/screen.html#Overview) for more customization tips.
+
+Here I am creating a new screen session with the name `example`.
+
+```bash
+(base) [username@cubic-sattertt ~]$ screen -S example 
+```
+
+
+Note that it should say something like `[screen 0: username@cubic-sattertt:~]` on the terminal tab bar after creating the session.
+
+
+You can use `screen -ls` to ensure that the screen session has been started.
+
+```bash
+(base) [username@cubic-sattertt ~]$ screen -ls # input
+
+There is a screen on:               # output
+	155085.example	(Attached)
+1 Socket in /var/run/screen/S. 
+
+```
+## Detach a session
+
+As previously mentioned, programs launched in a screen session would continue to run when their window is closed or when the screen session is detached from the terminal. 
+
+The reason is because `screen` makes it possible for you to leave a terminal window (detach) and return to it later (reattach). This can come in handy when you are `rsync`-ing files between two servers or any other commands that can take an unpredictable amount of time. 
+
+`screen -d` would detach the current screen session.
+
+
+If you have several screen sessions going on, you can provide the session id of the specific screen session that you'd like to reattach:
+
+`screen -d session_id`
+
+Here I detach the screen session by specifying the session id
+
+```bash
+(base) [username@cubic-sattertt ~]$ screen -ls # input
+
+There is a screen on:               # output
+	155085.example	(Attached)
+1 Socket in /var/run/screen/S. 
+
+(base) [username@cubic-sattertt ~]$ screen -d example # input
+```
+
+Again, you can use `screen -ls` to ensure that the screen session has been detached.
+
+```bash
+(base) [username@cubic-sattertt ~]$ screen -ls # input
+
+There is a screen on:               # output
+	155085.example	(Detached)
+1 Socket in /var/run/screen/S. 
+
+
+```
+
+_Note: You can send commands to a screen session instead of the shell by pressing `Ctrl-a` (that is pressing the control key and the letter `a` at the same time)._
+
+Now feel free to do other stuff!
+
+## Reattach a session
+
+How do we return to and check on the programs launched earlier in  a detached screen session? The magic wand we use is reattach the session.
+`screen -r` would reattach the detached screen session.
+
+If you have several screen sessions going on, you can provide the session id of the specific screen session that you'd like to reattach:
+
+`screen -r session_id`
+
+Here I detach the screen session by specifying the session name (which is also okay)
+
+```bash
+
+(base) [username@cubic-sattertt ~]$ screen -r example # input
+
+```
+
+Again, you can use `screen -ls` to ensure that the screen session has been reattached.
+
+```bash
+(base) [username@cubic-sattertt ~]$ screen -ls # input
+
+There is a screen on:               # output
+	155085.example	(Attached)
+1 Socket in /var/run/screen/S. 
+
+
+```
+
+## Exit a session
+
+Type `exit` on the screen terminal window to exit the session completely. 
+
+```bash
+
+(base) [username@cubic-sattertt ~]$ exit # input
+
+```
+
+You will be dropped back to your shell and see the message `[screen is terminating]`.
 
 
 
-## CPUs, Nodes, & Memory
+As an alternative, you can also press `Ctrl-a` and `k`. If you do so, you will be  asked `Ready kill this window [y/n]?`. 
 
-CUBIC has:
+## If you forgot to detach
 
-- 168 compute nodes
+If you lost the VPN connection or close the session terminal window or without detaching the session, you can run `screen -d -r` or `screen -dr` to return to the previously launched screen session.
 
-- 4840 CPUs
+## Summary of handy "screen" commands
 
-- 58 TB of RAM
+- Start a named screen session - `screen -S [session_name]`
+- Display all available screen sessions running in your system - `screen -ls`
+- Detach a screen session - `screen -d [optional: screen_id]` or `Ctrl-a` and `d`
+- Reattach a screen session - `screen -r [optional: session_id]` 
 
-Each node has 2CPUs with 16-24 cores.
-### Specifying CPUs on a node
+
+## Other resources
+
+I've used the resources below in this tutorial. Feel free to check them out.
+
+[How To Use Linux Screen - rackAID](https://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/)
+
+[Why and How to use Linux Screen Tool](https://www.youtube.com/watch?v=TEehA8Q3D18)
+
+[Using Screen - MIT SIPB](https://sipb.mit.edu/doc/screen/)
+
+# Job submission on CUBIC
+
+## Specifying CPUs on a node
 
 In order to prevent your jobs from dying without the cluster giving errors or warnings, there are several steps that can be taken:
 
@@ -540,7 +839,7 @@ In order to prevent your jobs from dying without the cluster giving errors or wa
 	b. 	`qsub -pe threaded N-M`
 	where `N-M` speicify a range of CPUs and `M>N`
 
-### Errors with Allocating Memory/Memory Overflow
+## Errors with Allocating Memory/Memory Overflow
 
 Here is an example of a memory allocation error message:
 
@@ -559,34 +858,7 @@ Note that the use of `h_vmem` adds 2.5 GBs to the original `mem_gb` specificatio
 
 Note that `s_vmem` adds only 2 GBs to the original `mem_gb` specification. This is because soft memory has more flexibility than hard memory specifications. This is recommended to be used when the exact memory required by each subject is not concretely known so as to diminish the risk of the job being killed by accident.
 
-## Running X11 Sessions
-Sometimes you'll want to run an application on CUBIC that requires a GUI. In order to be able to view and interact with GUIs from remote applications, you can use X11 to provide a display window.
+## Useful tips and tricks
 
-To get started, you'll probably need to download [XQuartz](https://www.xquartz.org/) (if your local machine is a Mac) or [Xming](http://www.straightrunning.com/XmingNotes/) (for Windows). More information on setting up - as well as detailed instructions for configuring/using Xming - can be found [here](https://cets.seas.upenn.edu/answers/x11-forwarding.html). If you're running Linux, congratulations, should already be good to go. 
-
-To start a X session on CUBIC project user:
-1. If you're on a Mac, make sure XQuartz is installed and running. From the terminal, ssh to your account: 
-```bash
-$ ssh -Y yourusername@cubic-sattertt
-```
-2. Log into the project user with sudox:
-```bash
-$ sudox -u projectusername -i
-```
-3. Load your application from the command line, and the GUI will open
-
-More information on running sudox as project user on CUBIC is available [here](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects#Graphical_Commands_as_Project_Pseudo-User)
-
-## GUIs
-
-On the Satterthwaite Lab node, you can access graphical user interfaces for apps like Afni by launching your session like:
-
-```shell
-ssh -X -Y
-```
-
-This has been tested only on Mac using the XQuartz utility -- see [here](https://www.cyberciti.biz/faq/apple-osx-mountain-lion-mavericks-install-xquartz-server/) for more on XQuartz.
-
-## Additional information about CUBIC
+# Additional information about CUBIC
 [This page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects) has tons of other useful information about using CUBIC. Anyone who plans on using CUBIC regularly should probably browse it. Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others. Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page.
-

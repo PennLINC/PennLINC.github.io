@@ -7,7 +7,7 @@ nav_order: 2
 
 # Project Meetings with Ted
 
-All PennLINC team members are expected to lead a scientific project.  
+All PennLINC team members lead a scientific project.  
 
 ## Scheduling
 
@@ -15,22 +15,12 @@ For each of these projects, members typically meet weekly with Ted. However, if 
 
 ### Secondary mentor
 
-For projects led by junior trainees (i.e., CRCs, new data analysts, and rotating graduate students), Ted will identify a more-experienced team member (i.e., senior grad student, post-doc, or staff scientist) as a secondary/mid-level mentor.  This is critical, as the mid-level mentor tends to be both a) more available and b) more technically skilled.   The junior trainee should typically also have a separate 1:1 meeting with the mid-level mentor one or more times per week outside of the weekly meeting with Ted.   The mid-level mentor usually is the second author on the paper, and serves as the “replication buddy” (see [project reproducibility guide]( https://pennlinc.github.io/docs/LabHome/ReproSystem/)).
+For projects led by junior trainees (i.e., CRCs, new data analysts, and rotating graduate students), Ted will identify a more-experienced team member (i.e., senior grad student, post-doc, or staff scientist) as a secondary/mid-level mentor.  This is critical, as the mid-level mentor tends to be both a) more available and b) more technically skilled.   The junior trainee should typically also have a separate 1:1 meeting with the mid-level mentor one or more times per week outside of the weekly meeting with Ted.   The mid-level mentor usually is the second author on the paper, and serves as the “replication buddy” (see [project reproducibility guide]( https://pennlinc.github.io/docs/LabHome/ReproSystem/)). For more experineced team members project meetings are often 1:1; it is still a very good idea to identify the reprobilibuddy early on in the project. 
 
 ### Preparation
 
-For these meetings, please update the trello board ahead of the meeting so project progress can be clearly tracked. My preference is that data at these meetings is presented in the form of RMarkdown or Juypter notebooks to enhance reproducibility, although images attached to trello or power point slide decks are acceptable as well.  Please keep all markdown/notebook PDFs and slide decks reviewed in the weekly meeting in a clearly labeled folder in the shared google drive.  
+For these meetings, please update the trello board ahead of the meeting so project progress can be clearly tracked. My preference is that data at these meetings is presented in the form of RMarkdown or Juypter notebooks to enhance reproducibility, although images in power point slide decks can be acceptable as well.
 
-
-### See also
-
-[Project setup guide](https://pennlinc.github.io/docs/LabHome/ProjectSetup/)
-
-[Stages of a Project](https://pennlinc.github.io/docs/LabHome/ProjectStages/)
-
-[Project setup on PMACS](coming soon)
-
-[project reproducibility guide](https://pennlinc.github.io/docs/LabHome/ReproSystem/)
 
 
 

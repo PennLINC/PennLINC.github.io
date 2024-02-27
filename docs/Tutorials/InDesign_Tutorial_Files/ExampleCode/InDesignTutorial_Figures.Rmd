@@ -1,0 +1,146 @@
+---
+title: "InDesign Tutorial"
+author: "Audrey Luo"
+date: "2023-08-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+require(ggplot2)
+library(ggseg)
+library(magrittr)
+Sys.setenv(RGL_USE_NULL=TRUE)
+library(ggsegExtra)
+library(ggsegSchaefer)
+library(scales)
+library(stringr)
+library(tidyr)
+library(ggpubr)
+path_data = "/Users/audluo/Library/CloudStorage/Box-Box/Box_PhD_Land/PennLINC/other/dataclub/InDesign/Example/ExampleData"
+path_saveout = "/Users/audluo/Library/CloudStorage/Box-Box/Box_PhD_Land/PennLINC/other/dataclub/InDesign/Example/PDFs/Fig1"
+```
+
+## Function for plotting figures 
+```{r fig_function}
+## FIGURE: age effect vs SA axis rank 
+# @param axis A dataframe with SA-axis rank and GAM results
+# @param legend_position A string indicating where legend should be (i.e. "none" or "bottom")
+gam_figure <- function(axis, legend_position){
+  axis <- axis %>% mutate(SA.axis_rank_signif = ifelse(significant.fdr == 1, SA.axis_rank, NA))
+  AgeEffect_figure <- ggplot(axis, aes(x=SA.axis_rank, y=GAM.age.AdjRsq, fill = SA.axis_rank_signif)) + 
+    geom_point(color = "gray", shape = 21, size=3.5) + 
+    paletteer::scale_fill_paletteer_c("grDevices::RdYlBu", direction = -1, limits = c(min(axis$SA.axis_rank), max(axis$SA.axis_rank)), oob = squish) +
+    paletteer::scale_color_paletteer_c("grDevices::RdYlBu", direction = -1, limits = c(min(axis$SA.axis_rank), max(axis$SA.axis_rank)), oob = squish) +
+    ylim(-0.065, 0.15) +   
+      geom_smooth(data = axis, method='lm', se=TRUE, fill=alpha(c("gray70"),.9), col="black") +
+      theme(plot.margin = margin(0,0.5,0,0, "cm"),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.line = element_line(color = "black"),
+        axis.text=element_text(size=24, color = "black"),
+        panel.background=element_blank(),  
+        legend.position = legend_position) + stat_cor(method = "spearman", p.accuracy = 0.001, r.accuracy = 0.01, label.x = 130, label.y = 0.12)
+  return(AgeEffect_figure)
+}
+
+```
+
+ 
+## Plot Age effect vs. S-A axis rank for 4 datasets
+```{r plot}
+PNC <- read.csv(sprintf("%1$s/%2$s_GBC.axis_schaefer200.csv", path_data, "PNC"))
+NKI <- read.csv(sprintf("%1$s/%2$s_GBC.axis_schaefer200.csv", path_data, "NKI"))
+HCPD <- read.csv(sprintf("%1$s/%2$s_GBC.axis_schaefer200_covbat.csv", path_data, "HCPD"))
+HBN <- read.csv(sprintf("%1$s/%2$s_GBC.axis_schaefer200_covbat.csv", path_data, "HBN"))
+
+PNC.fig <- gam_figure(PNC, "none")
+NKI.fig <- gam_figure(NKI, "none")
+HCPD.fig <- gam_figure(HCPD, "none")
+HBN.fig <- gam_figure(HBN, "none")
+```
+
+
+
+## Save out
+```{r}
+PNC.fig
+ggsave(sprintf("%1$s/Fig1_%2$s.pdf", path_saveout, "PNC"), dpi=1200, width = 5, height = 4)
+
+NKI.fig
+ggsave(sprintf("%1$s/Fig1_%2$s.pdf", path_saveout, "NKI"), dpi=1200, width = 5, height = 4)
+
+HCPD.fig
+ggsave(sprintf("%1$s/Fig1_%2$s.pdf", path_saveout, "HCPD"), dpi=1200, width = 5, height = 4)
+
+HBN.fig
+ggsave(sprintf("%1$s/Fig1_%2$s.pdf", path_saveout, "HBN"), dpi=1200, width = 5, height = 4)
+```
+
+
+## Save a version with the legend
+```{r}
+legend <- gam_figure(HBN, "bottom")
+legend
+ggsave(sprintf("%1$s/Fig1_withLegend.pdf", path_saveout), dpi=1200, width = 5, height = 4)
+```
+
+## Let's change up the figures! *NEW COLOR PALETTE*
+```{r new_fig_function}
+## FIGURE: age effect vs SA axis rank 
+# @param axis A dataframe with SA-axis rank and GAM results
+# @param legend_position A string indicating where legend should be (i.e. "none" or "bottom")
+gam_figure_PY <- function(axis, legend_position){
+  axis <- axis %>% mutate(SA.axis_rank_signif = ifelse(significant.fdr == 1, SA.axis_rank, NA))
+  AgeEffect_figure <- ggplot(axis, aes(x=SA.axis_rank, y=GAM.age.AdjRsq, fill = SA.axis_rank_signif)) + 
+    geom_point(color = "gray", shape = 21, size=3.5) + 
+    scale_fill_gradient2(low = "goldenrod1", mid = "white", high = "#6f1282", guide = "colourbar", aesthetics = "fill", name = NULL, midpoint = 100) +
+    ylim(-0.065, 0.15) +   
+      geom_smooth(data = axis, method='lm', se=TRUE, fill=alpha(c("gray70"),.9), col="black") +
+      theme(plot.margin = margin(0,0.5,0,0, "cm"),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.line = element_line(color = "black"),
+        axis.text=element_text(size=24, color = "black"),
+        panel.background=element_blank(),  
+        legend.position = legend_position) + stat_cor(method = "spearman", p.accuracy = 0.001, r.accuracy = 0.01, label.x = 130, label.y = 0.12)
+  return(AgeEffect_figure)
+}
+
+```
+
+
+## Plot new figures
+```{r}
+
+PNC.fig_PY <- gam_figure_PY(PNC, "none")
+NKI.fig_PY <- gam_figure_PY(NKI, "none")
+HCPD.fig_PY <- gam_figure_PY(HCPD, "none")
+HBN.fig_PY <- gam_figure_PY(HBN, "none")
+
+```
+
+
+## Save out new figures 
+```{r}
+
+PNC.fig_PY
+ggsave(sprintf("%1$s/Fig1_%2$s.pdf", path_saveout, "PNC"), dpi=1200, width = 5, height = 4)
+
+NKI.fig_PY
+ggsave(sprintf("%1$s/Fig1_%2$s.pdf", path_saveout, "NKI"), dpi=1200, width = 5, height = 4)
+
+HCPD.fig_PY
+ggsave(sprintf("%1$s/Fig1_%2$s.pdf", path_saveout, "HCPD"), dpi=1200, width = 5, height = 4)
+
+HBN.fig_PY
+ggsave(sprintf("%1$s/Fig1_%2$s.pdf", path_saveout, "HBN"), dpi=1200, width = 5, height = 4)
+
+
+# don't forget to save out a version with the legend too!
+legend_PY <- gam_figure_PY(HBN, "bottom")
+legend_PY
+ggsave(sprintf("%1$s/Fig1_withLegend.pdf", path_saveout), dpi=1200, width = 5, height = 4)
+```
+

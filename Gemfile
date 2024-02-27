@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 gemspec
-gem "webrick"
-gem 'listen', '~> 3.0.8'
-gem "kramdown-parser-gfm"
+
+gem "jekyll-github-metadata", ">= 2.15"
+
+gem "jekyll-include-cache", group: :jekyll_plugins
+
+gem "html-proofer", "~> 5.0", :group => :development
