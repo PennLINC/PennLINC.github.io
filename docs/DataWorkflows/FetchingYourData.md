@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Getting Static Data from PMACS
-parent: Data Tasks
+parent: Data Workflows
 nav_order: 1
 has_toc: true
 ---
@@ -33,7 +33,7 @@ PI to open a ticket in the [PMACS helpdesk](https://helpdesk.pmacs.upenn.edu/).
 
 Once you have a PMACS account you will need to open a ticket to request access
 to the specific datasets you want.  You can see a [list of available
-data](https://pennlinc.github.io/docs/DataTasks/AvailableStaticData/).
+data](https://pennlinc.github.io/docs/DataWorkflows/AvailableStaticData/).
 Suppose you want access to the HBN and PNC data (the dataset is listed in the
 leftmost column), include in the ticket
 
@@ -95,7 +95,7 @@ In order to get the data to your computer, you need to ensure 3 things:
 
 If these conditions are met, you're ready to access some data! Suppose I'd like
 to see the regional time series data for CCNP. Checking the
-[list of available datasets](/docs/DataTasks/AvailableStaticData.md#available-static-datasets) I
+[list of available datasets](/docs/DataWorkflows/AvailableStaticData.md#available-static-datasets) I
 see the `Clone URL` column lists `LINC_CCNP#~XCP_unzipped` for this resource.
 
 Items in the `Clone URL` are used to get a clonable address for the data. The
@@ -257,3 +257,5 @@ This unfortunately means you will need to enter your password to copy over the d
 To minimize password entry, try to `datalad get` files using file glob patterns
 and using the `-J` flag to download content in parallel.
 
+
+# unzip

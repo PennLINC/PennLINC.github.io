@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Available Static Datasets
-parent: Data Tasks
+parent: Data Workflows
 nav_order: 2
 has_toc: false
 ---

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Data Tasks
+title: Data Workflows
 has_children: true
 has_toc: true
 nav_order: 14
