@@ -612,7 +612,7 @@ Data can be fetched back from PMACS, if needed, using the documentation specifie
 
 # Unzipping your data
 
-Occasionally, data may be zipped. More information about this can be found [here](./FetchingYourData.md)!
+Occasionally, data may be zipped. More information about this can be found [here](FetchingYourData.md)!
 
 # Processing your data
 [BABS](https://pennlinc-babs.readthedocs.io/en/latest/) is a quick and easy tool for processing pipelines via [Datalad](./Datalad.md). The documentation is thorough, with information on setting up, installing, and running BABS on data. An example walkthrough is also available via the documentation. 
