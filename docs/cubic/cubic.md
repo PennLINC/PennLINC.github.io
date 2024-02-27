@@ -531,7 +531,8 @@ You get great integration with Git using the Git Extension pack
 
 The most important extension though is how to enable interactive, REPL style programming for active debugging and data
 analysis. We do this with `conda`.
-## REPL (Interactive Programming)
+
+#### REPL (Interactive Programming)
 
 You can code in Jupyter Notebooks right in `code-server`. First, ensure that you have a [conda environment setup](http://pennlinc.github.io/docs/cubic#installing-miniconda-in-your-project-the-hard-way).
 Once you're ready, start up your `code-server` and make sure the [Jupyter extension](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) is installed. Use the command palette (`cmd`+`shift`+`p`) to search for Jupyter interpreters.
@@ -683,11 +684,11 @@ Have you ever faced the scenario where you are testing a script interactively on
 
 The `screen` command will allow you to safely run whatever you need even without maintaining a connection and then return to check in on your process later. 
 
-## What Is `screen`
+## What is "screen"
 
 `screen` is a terminal window manager. When you call the screen command, it creates a separate window where you can work as you would in a normal terminal window. `screen` is already installed in the `sattertt` node. 
 
-## Start a Session
+## Start a session
 You can type `screen` to start a screen session. 
 
 If you want to specify a meaningful name for the session in place of the default `cubic-sattertt` suffix, you can use the `-S` flag as in `screen -S [session_name]`. Type `man screen` for more information. If you are interested, you can also check out the [official GNU screen documentation](https://www.gnu.org/software/screen/manual/screen.html#Overview) for more customization tips.
@@ -712,7 +713,7 @@ There is a screen on:               # output
 1 Socket in /var/run/screen/S. 
 
 ```
-## Detach a Session
+## Detach a session
 
 As previously mentioned, programs launched in a screen session would continue to run when their window is closed or when the screen session is detached from the terminal. 
 
@@ -753,7 +754,7 @@ _Note: You can send commands to a screen session instead of the shell by pressin
 
 Now feel free to do other stuff!
 
-## Reattach a Session
+## Reattach a session
 
 How do we return to and check on the programs launched earlier in  a detached screen session? The magic wand we use is reattach the session.
 `screen -r` would reattach the detached screen session.
@@ -782,7 +783,7 @@ There is a screen on:               # output
 
 ```
 
-## Exit a Session
+## Exit a session
 
 Type `exit` on the screen terminal window to exit the session completely. 
 
@@ -798,11 +799,11 @@ You will be dropped back to your shell and see the message `[screen is terminati
 
 As an alternative, you can also press `Ctrl-a` and `k`. If you do so, you will be  asked `Ready kill this window [y/n]?`. 
 
-## If You Forgot to Detach
+## If you forgot to detach
 
 If you lost the VPN connection or close the session terminal window or without detaching the session, you can run `screen -d -r` or `screen -dr` to return to the previously launched screen session.
 
-## Summary of Handy `screen` Commands
+## Summary of handy "screen" commands
 
 - Start a named screen session - `screen -S [session_name]`
 - Display all available screen sessions running in your system - `screen -ls`
@@ -810,7 +811,7 @@ If you lost the VPN connection or close the session terminal window or without d
 - Reattach a screen session - `screen -r [optional: session_id]` 
 
 
-## Other Resources
+## Other resources
 
 I've used the resources below in this tutorial. Feel free to check them out.
 
@@ -821,20 +822,6 @@ I've used the resources below in this tutorial. Feel free to check them out.
 [Using Screen - MIT SIPB](https://sipb.mit.edu/doc/screen/)
 
 # Job submission on CUBIC
-
-## Useful tips and tricks
-
-# CPUs, Nodes, & Memory
-
-CUBIC has:
-
-- 168 compute nodes
-
-- 4840 CPUs
-
-- 58 TB of RAM
-
-Each node has 2CPUs with 16-24 cores.
 
 ## Specifying CPUs on a node
 
@@ -870,6 +857,8 @@ If you see this:
 Note that the use of `h_vmem` adds 2.5 GBs to the original `mem_gb` specification. This is to remain on the safe side of memory specification to the cluster as the cluster will kill any job that uses more than the requested memory space when requesting hard memory (`h_vmem`). This function is used to save space on the cluster such that several jobs can be run simultaneously but is only advised to be used when the user is sure about the memory specification needed.
 
 Note that `s_vmem` adds only 2 GBs to the original `mem_gb` specification. This is because soft memory has more flexibility than hard memory specifications. This is recommended to be used when the exact memory required by each subject is not concretely known so as to diminish the risk of the job being killed by accident.
+
+## Useful tips and tricks
 
 # Additional information about CUBIC
 [This page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects) has tons of other useful information about using CUBIC. Anyone who plans on using CUBIC regularly should probably browse it. Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others. Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page.
