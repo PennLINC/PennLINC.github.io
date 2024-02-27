@@ -1,3 +1,11 @@
+---
+layout: default
+title: cubic-flywheel
+parent: Archive
+nav_order: 1
+has_toc: true
+---
+
 ## Installing the flywheel CLI tool
 
 To install the Flywheel CLI tool on CUBIC, you will again need to be logged in as your project user and have a writable `.bashrc`. Now create a place to put the `fw` executable.
