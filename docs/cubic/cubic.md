@@ -280,7 +280,8 @@ $ cd
 $ mkdir -p cbica/projects/<project_name> 
 $ chmod 700 cbica/projects/<project_name> 
 ```
-3. Mount the desired CUBIC directory to your newly created, local mount directory using sshfs and bblsub
+
+3. Mount the desired CUBIC directory to your newly created, local mount directory using sshfs and cubic-sattertt
 ```bash
 $ sshfs -o defer_permissions <username>@cubic-login.uphs.upenn.edu:/cbica/projects/<project_name>/ /cbica/projects/<project_name>/
 ```
