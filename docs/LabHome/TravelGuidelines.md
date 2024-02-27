@@ -10,13 +10,13 @@ nav_order: 8
 
 ### NOTE: COVID 19 requires fluid evaluation of conference travel; all travel is subject to current Penn guidelines.
 
-Some general guidelines on conference / travel guidelines for PennLINC team members follow below.   These are general guidelines (not inflexible rules); please contact Ted if further discussion is warranted.   
+Some general guidelines on conference / travel guidelines for PennLINC team members follow below.   These are general guidelines (not inflexible rules); please contact Ted if further discussion is warranted.
 
-1.  Trainees/staff have a varying base rate of conference funds available based on their primary funding mechanism.  I will provide travel/conf funds  to allow each trainee $2k per year in total domestic travel expenses. 
+1.  Trainees/staff have a varying base rate of conference funds available based on their primary funding mechanism.  I will provide travel/conf funds  to allow each trainee $2k per year in total domestic travel expenses.
 
-2.  To receive travel support, one must have an accepted first-author poster or talk that has _not previously been presented_.  Re-presentation of a project is usually not contrary to conference rules, but is (usually) not eligible for travel funds. 
+2.  To receive travel support, one must have an accepted first-author poster or talk that has _not previously been presented_.  Re-presentation of a project is usually not contrary to conference rules, but is (usually) not eligible for travel funds.
 
-3.  Data should be in near-final form by time of presentation— i.e., the reported results in the abstract should be close what will appear in the paper.   These results should be independently replicated by another member of the team prior to conference submission (see [Project Reproducibility Guide](https://github.com/PennBBL/labhome/wiki/Project-Reproducibility-Guide)).  Note that potential reviewers often will be interested in the poster at a conference; it is poor form for results to change dramatically from the poster to the paper.
+3.  Data should be in near-final form by time of presentation— i.e., the reported results in the abstract should be close what will appear in the paper.   These results should be independently replicated by another member of the team prior to conference submission (see [Project Reproducibility Guide](/docs/LabHome/ReproSystem)).  Note that potential reviewers often will be interested in the poster at a conference; it is poor form for results to change dramatically from the poster to the paper.
 
 4.  If there is a travel award available for the conference, one _must_ apply for it in order to be eligible for travel funds.   Note that the deadline for these awards is often far ahead of of the abstract deadline. This is particularly relevant for OHBM, and often is the only mechanism for international travel (see below)
 
@@ -28,6 +28,6 @@ Some general guidelines on conference / travel guidelines for PennLINC team memb
 
 8.  Please submit receipts _immediately_ after the trip. Delayed submission can risk the ability to receive reimbursement due to strict university/federal regulations, which is a bureaucratic process.  This requires going through Concur.  Sophia is the current Concur expert in the lab.  _Please note that if you are going to use shared accommodation, it is best to email John Hyon about this before the trip._  (And *always* cc me on any correspondence with John).
 
-10. Conference travel is a privilege, and is dependent upon both funding and being a positive force for the community. This includes supporting colleagues in collaborative projects, testing software, writing documentation, and regular attendance at lab meetings & the seminar series.   
+10. Conference travel is a privilege, and is dependent upon both funding and being a positive force for the community. This includes supporting colleagues in collaborative projects, testing software, writing documentation, and regular attendance at lab meetings & the seminar series.
 
 11. If you are presenting a poster, please use our lab template in Illustrator - either [horizontal](https://github.com/PennLINC/PennLINC.github.io/raw/main/docs/LabHome/poster.ai) or [vertical](https://github.com/PennLINC/PennLINC.github.io/raw/main/docs/LabHome/poster_vertical.ai) or any open source [editor](https://github.com/PennLINC/PennLINC.github.io/raw/main/docs/LabHome/poster.svg)

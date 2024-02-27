@@ -75,7 +75,7 @@ The lab standard is now to release all analysis code.
 To ensure reproducibility, all results should be replicated by an independent member of the lab at multiple stages (see below).
 The replication buddy should be involved in the project from the beginning, and usually is the second author on the paper.
 This is a lot of work and should not be taken on lightly; also think ahead for a long project and ensure that the buddy will be present in the lab for the anticipated duration of the project.
-See the [Project Reproducibility Guide](https://github.com/PennBBL/labhome/wiki/Project-Reproducibility-Guide) for more information.
+See the [Project Reproducibility Guide](/docs/LabHome/ReproSystem) for more information.
 
 
 ### 7)	Assess data availability & ensure data access
@@ -96,7 +96,7 @@ We prefer a highly-structured process for image processing to ensure reproducibi
 See XCP documentation for further information (this is a bit of a work in progress at the moment).
 Note that a sub-sample (usually n~10) of subject level data should replicated, and the main subject-level derivatives produced by the pipeline should be placed in a read-only data freeze for the dataset.
 For most projects, analyses should only use replicated data that is pulled directly from this data freeze folder.
-See the [Project Reproducibility Guide](https://github.com/PennBBL/labhome/wiki/Project-Reproducibility-Guide) for more information.
+See the [Project Reproducibility Guide](/docs/LabHome/ReproSystem) for more information.
 
 
 ### 9)	Clearly define inclusion criteria and construct sample in a reproducible manner
@@ -117,7 +117,7 @@ In general all analytics should use reproducible, well commented notebooks.
 
 ### 11)	 Replicate interim results
 
-As detailed in the [Project Reproducibility Guide](https://github.com/PennBBL/labhome/wiki/Project-Reproducibility-Guide), once a “main result” that will be the organizing hook for a paper is revealed, it is a good idea to call your replication buddy.
+As detailed in the [Project Reproducibility Guide](/docs/LabHome/ReproSystem), once a “main result” that will be the organizing hook for a paper is revealed, it is a good idea to call your replication buddy.
 Cleaning your code and having them provide both a “true” replication (taking input data and running a model with their own code) and a “technical” replication (i.e., stepping through your code) is advised to make sure errors are caught before a paper is written.
 (Often, around this stage, a project is presented at a conference—see the conference wiki for more information).
 
@@ -136,7 +136,7 @@ It is often good to create draft figure panels for the entire paper before polis
 
 ### 14)	 Final reproducibility check: Clean code, make GitHub repo, companion wiki, and replicate final results
 
-At this step, one has all the code and results in hand.  Before writing (or as it begins), it is important to make a clean GitHub repo that will be submitted with the paper, along with a companion wiki that patiently steps interested readers through this code and allows them to reproduce your work.  Once this is complete, send the wiki and repo to your replication buddy, who will check your work (see [Project Reproducibility Guide](https://github.com/PennBBL/labhome/wiki/Project-Reproducibility-Guide)).   Note that it is imperative to repeat this process if results change in the writing process below; analyses added at a late stage when one is trying to get the paper out the door tend to be more likely to be problematic.
+At this step, one has all the code and results in hand.  Before writing (or as it begins), it is important to make a clean GitHub repo that will be submitted with the paper, along with a companion wiki that patiently steps interested readers through this code and allows them to reproduce your work.  Once this is complete, send the wiki and repo to your replication buddy, who will check your work (see [Project Reproducibility Guide](/docs/LabHome/ReproSystem)).   Note that it is imperative to repeat this process if results change in the writing process below; analyses added at a late stage when one is trying to get the paper out the door tend to be more likely to be problematic.
 
 
 ### 15)	Make final figures & write text
