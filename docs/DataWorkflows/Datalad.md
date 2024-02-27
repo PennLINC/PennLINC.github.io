@@ -2,7 +2,7 @@
 layout: default
 title: Datalad
 parent: Data Workflows
-nav_order: 5
+nav_order: 0
 has_toc: false
 ---
 

@@ -2,7 +2,7 @@
 layout: default
 title: Data Cycle
 parent: Data Workflows
-nav_order: 5
+nav_order: 1
 has_toc: true
 ---
 The data cycle includes the following steps: 
