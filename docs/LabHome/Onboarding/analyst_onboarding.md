@@ -9,7 +9,7 @@ has_toc: true
 # Informatics Training
 {: .no_toc}
 
-The Informatics team plays a significant role in PennLINC's scientific engine. This page outlines the onboarding process for informatics work, including data curation, analysis, and software development, and is particularly geared towards new data analysts. The goal of this section is to provide the resources necessary to develop the **core competencies** for informatics at PennLINC. Note that there is no expectation that you master *all* of the competencies below in one sitting - just that you are familiar with how to go about accomplishing these tasks (or at least google your way through it).
+This page outlines the onboarding process for core informatics tasks, including data curation, analysis, and software development, and is particularly geared towards new data analysts or graduate students. 
 
 
 ## Table of contents
@@ -29,9 +29,8 @@ The core competencies of informatics are split into 4 major units:
 
 3. [Processing pipelines](#unit-3-processing-pipelines)
 
-4. [Hypothesis Testing & Analysis]() (Coming Soon!)
 
-The units are designed around the day-to-day tasks of Informatics team members, with different tasks utilizing a number of competencies from each of these units. In a perfect world, Informatics team members are experts in all 3 units, but in practice, your eventual expertise will depend on your assigned projects within the lab, along with past experience, interests, and desire to learn. All team members should be quite familiar with the skills described in units 1 & 2, and because of the large knowledge base, team members tend to specialize in specific analytic pipelines (unit 3) and analytic techniques (unit 4).
+The units are designed around the day-to-day tasks of Informatics team members, with different tasks utilizing a number of competencies from each of these units. In a perfect world, Informatics team members are experts in all 3 units, but in practice, your eventual expertise will depend on your assigned projects within the lab, along with past experience, interests, and desire to learn.
 
 In the sections below, we outline each major competency by asking simple, task-based questions, and provide our best recommended resource for learning each of the competencies, as well as a glossary of (optional) secondary resources. There is an estimated time to complete these, but don't feel locked into these time-frames. If you have previously developed one of these skills before, and can confidently answer a question already, feel free to briefly skim the resource.
 
@@ -181,48 +180,18 @@ We recommend learning about BIDS straight from the source: the [official BIDS sp
 Other resources:
 
 - [AndysBrainBook](https://andysbrainbook.readthedocs.io/en/latest/OpenScience/OS/BIDS_Overview.html)
+  
+
+### Curating data with CuBIDS
+
+Curating a BIDS dataset is incredibly important and surprisingly challenging.  However, the curation process is required before data can be processed using the pipelines detailed below.  We developed and support dedicated software -- CuBIDS -- for this task.  
+
+[CuBIDS paper](https://www.pennlinc.io/_files/ugd/46db66_27b4a2b6f76541a2a511a367235b54dc.pdf)
+
+[CuBIDS docs](https://cubids.readthedocs.io/en/latest/)
 
 
-### The Flywheel Imaging Database
 
-Neuroimaging produces vast amounts of data.  Traditionally, this data was dumped onto a unmanaged file system, which created obvious problems for searchability, reproducibility, and scalability.  UPenn now uses the Flywheel platform, which allows data to be "reaped" directly from the scanner to a managed database environment.  Imaging data is stored in "projects", curated to BIDS specifications (see above), allowing containerized analytic pipelines to analyze the data in a fully reproducible manner.   
-
-> Q: How is data in Flywheel structured? What are the relationships between different `containers`?
-
-> Q: How would you view a particular scan on the website, given the session and subject labels? How would you find the same data programmatically?
-
-> Q: How would you edit metadata for an entire collection of subjects?
-
-> Q: What is a `gear`? How would you run `gears` (both on the website and programmatically)?
-
-There are admittedly a large number of Flywheel resources that are not (yet) organized optimally. It's recommended that you follow the order below:
-
-- [General overview](https://docs.flywheel.io/hc/en-us/sections/360001703554-Flywheel-Overview) and the [Overview Webinar](https://docs.flywheel.io/hc/en-us/articles/360044328514-Webinar-series-Intro-to-Flywheel) (1 hour)
-- [SDK Webinar](https://docs.flywheel.io/hc/en-us/articles/360044853993-Webinar-series-Intro-to-the-Flywheel-SDK) (1 hour)
-- [BIDS on Flywheel](https://docs.flywheel.io/hc/en-us/articles/360008162154-BIDS-Overview) (< 1 hour)
-- [Running Gears](https://pennlinc.github.io/docs/flywheel/sdk_running/) (< 1 hour)
-
-
-### BIDS Curation on Flywheel
-
-As mentioned, a major task for the Informatics team is the curation of data into BIDS. This competency lets you to accomplish this on Flywheel using an internal tool called `fw-heudiconv`, developed and maintained by Tinashe Tapera.
-
-> Q: What is a BIDS heuristic? How would you create a heuristic for `fw-heudiconv`?
-
-> Q: How do you run `fw-heudiconv`?
-
-> Q: How would you change something you've curated?
-
-`fw-heudiconv` has been documented internally:
-
-- [On readthedocs](https://fw-heudiconv.readthedocs.io/en/latest/overview.html)
-- [On this site!](/docs/flywheel/bids/#step-by-step-bids-curation-with-fw-heudiconv)
-
-(< 1 hour)
-
-[Jump to top](#informatics-training)
-
----
 
 ## Unit 3: Processing Pipelines
 
@@ -234,6 +203,17 @@ For fMRI, we recommend `fMRIPrep`. Start with [this primer on fMRI Preprocessing
 
 Additionally, check out the [Nature Methods paper](https://www.nature.com/articles/s41592-018-0235-4) written for the software.
 
+### BOLD post-processing with XCP-D
+
+After having run `fMRIPrep`, your BOLD data is successfully pre-processed.  However, several steps are still required to produce the derived data that we analyze.  For analysis of intrinsic functional connectivity (assessing which brain regions are working together over time), additional denoising (cleaning) of the data is necessary, as well as calculating these *functional connectivity* measures themselves.  These tasks (and MANY others!) are accomplished with XCP-D (e.g., the Extensible Connectivity Pipelines - DCAN collab).  An earlier version of the software -- `XCPEngine`-- was initially developed by lab alumni data analyst Rastko Ciric (now a bioengineering graduate student at Stanford), and was expanded and revised by Dr. Azeez Adebimpe.  Subsequently, XCPEngine was refactored as XCP-D by Dr. Taylor Salo, Kahini Mehta, and many friends at the University of Minnesota in collaboration with Dr. Damien Fair .  
+
+
+Check out the XCP-D [preprint]( https://www.pennlinc.io/_files/ugd/bdbf09_292d766fd35743108aa1615b5b21b66d.pdf) and [docs]( https://xcp-d.readthedocs.io/en/latest/).  
+
+To learn more about the original `XCPEngine`, check out the [benchmarking](https://pubmed.ncbi.nlm.nih.gov/28302591/) or [Nature Methods](https://www.nature.com/articles/s41596-018-0065-y)  papers.
+![image](https://github.com/PennLINC/PennLINC.github.io/assets/7276743/eadb95ee-5e4d-497c-911e-fff1969b3524)
+
+
 ### Diffusion Data
 
 For diffusion imaging, we recommend `QSIPrep`, developed primarily by Dr. Matt Cieslak (manuscript [here](https://www.nature.com/articles/s41592-021-01185-5)). Learn about `QSIPrep` at its official [readthedocs site](https://qsiprep.readthedocs.io/en/latest/).
@@ -242,38 +222,3 @@ For diffusion imaging, we recommend `QSIPrep`, developed primarily by Dr. Matt C
 
 For diffusion imaging, we recommend `ASLPrep`<sup>[1](#myfootnote1)</sup>, developed primarily by Dr. Azeez Adebimpe (manuscript in preparation). Learn about `ASLPrep` at its official [readthedocs site](https://aslprep.readthedocs.io/en/latest/).
 
-### BOLD post-processing: Functional Connectivity & Task fMRI
-
-After having run `fMRIPrep`, your BOLD data is successfully pre-processed.  However, several steps are still required to produce the derived data that we analyze. For task fMRI, for example, one post-processing step is running a general linear model that represents the task being done by the participant in the scanner. For analysis of intrinsic functional connectivity (assessing which brain regions are working together over time), additional denoising (cleaning) of the data is necessary, as well as calculating these *functional connectivity* measures themselves.  These tasks (and MANY others!) are accomplished by the eXtensible Connectivity Pipelines (`XCPEngine`).   `XCPEngine` was initially deveoped by lab alumni data analyst Rastko Ciric (now a bioengineering graduate student at Stanford), and has been revised, expanded, and maintained by Dr. Azeez Adebimpe.  Because it was one of the primary utilities developed to be compatible with fMRIPREP, it is currently widely used in labs around the world (with tens of thousands of executions per month). Learn more about `XCPEngine` at its official [readthedocs site](https://xcpengine.readthedocs.io/), or by reading the [benchmarking](https://pubmed.ncbi.nlm.nih.gov/28302591/) or [Nature Methods](https://www.nature.com/articles/s41596-018-0065-y)  papers.
-
-[Jump to top](#informatics-training)
-
----
-
-# Hypothesis Testing & Analysis
-
-This section is currently still in development.
-
-[Jump to top](#informatics-training)
-
----
-
-# Epilogue
-
-These *core competencies* detailed above may seem overwhelming. There is a lot of information and readers may be coming from different scientific backgrounds, with different levels of experience. Some of the terminologies used in neuroimaging can feel like jargon, and it doesn't help that PennLINC, and the University itself, may have their own unending lists of foreign words, phrases, tools, softwares...
-
-*Don't panic*.
-
-These resources are here for *everyone's* reference, and always will be. It's not expected that you will breeze through all of the above in one sitting, especially in addition to other lab-wide onboarding tasks. Instead, remember:
-
-- **Work at a comfortable pace**: fast enough to get through the material, but not so fast that you don't get to appreciate the material.
-- **Reach out for help**: don't spend so long on a problem that it consumes your entire day. The sites listed may not always be perfect resources for learning, and sometimes more assistance is necessary.
-- **Google is your friend**: don't hesitate to go outside of our recommended list/glossary of resources when you come across a word you don't recognize or can't make sense of (see [MRIQuestions](http://mriquestions.com/index.html))
-- **You'll get your hands dirty eventually**: it's normal to feel like you haven't developed a competency when you haven't yet actually *run* some of these tools and programs.
-- **Contribute**: science gets better when we do it together. If you find a superior/additional resource for learning these competencies, or simply find errors that need to be fixed, don't hesitate to [contribute](/docs/Contributing/documentation_guidelines/) to this document.
-
-# *Good luck!*
-{: .no_toc}
-
----
-<a name="myfootnote1">1</a>: Are you starting to notice a pattern? The reason for this is that *Prep* workflows are all built using a neuroimaging framework called [NiPype](https://nipype.readthedocs.io/en/latest/index.html); advanced users are encouraged to check it out.
