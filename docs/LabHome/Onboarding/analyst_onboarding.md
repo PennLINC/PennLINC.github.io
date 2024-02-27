@@ -208,10 +208,9 @@ Additionally, check out the [Nature Methods paper](https://www.nature.com/articl
 After having run `fMRIPrep`, your BOLD data is successfully pre-processed.  However, several steps are still required to produce the derived data that we analyze.  For analysis of intrinsic functional connectivity (assessing which brain regions are working together over time), additional denoising (cleaning) of the data is necessary, as well as calculating these *functional connectivity* measures themselves.  These tasks (and MANY others!) are accomplished with XCP-D (e.g., the Extensible Connectivity Pipelines - DCAN collab).  An earlier version of the software -- `XCPEngine`-- was initially developed by lab alumni data analyst Rastko Ciric (now a bioengineering graduate student at Stanford), and was expanded and revised by Dr. Azeez Adebimpe.  Subsequently, XCPEngine was refactored as XCP-D by Dr. Taylor Salo, Kahini Mehta, and many friends at the University of Minnesota in collaboration with Dr. Damien Fair .  
 
 
-Check out the XCP-D [preprint]( https://www.pennlinc.io/_files/ugd/bdbf09_292d766fd35743108aa1615b5b21b66d.pdf) and [docs]( https://xcp-d.readthedocs.io/en/latest/).  
+Check out the XCP-D [preprint](https://www.pennlinc.io/_files/ugd/bdbf09_292d766fd35743108aa1615b5b21b66d.pdf) and [docs](https://xcp-d.readthedocs.io/en/latest/).  
 
-To learn more about the original `XCPEngine`, check out the [benchmarking](https://pubmed.ncbi.nlm.nih.gov/28302591/) or [Nature Methods](https://www.nature.com/articles/s41596-018-0065-y)  papers.
-![image](https://github.com/PennLINC/PennLINC.github.io/assets/7276743/eadb95ee-5e4d-497c-911e-fff1969b3524)
+To learn more about the original `XCPEngine`, check out the [benchmarking](https://pubmed.ncbi.nlm.nih.gov/28302591/) or [Nature Methods](https://www.nature.com/articles/s41596-018-0065-y) papers.
 
 
 ### Diffusion Data
