@@ -137,7 +137,7 @@ Now install `jekyll` using a ruby "gem", by doing the following:
 gem install --user-install bundler -v 2.4.22
 gem install --user-install jekyll
 ```
-Note that the version may change and you may need to install/update some dependencies using the same format!
+Note that the version may change and you may need to install/update some dependencies using the same format! You can use `sudo` for permissions errors. 
 
 In this last step, you instruct `jekyll` to take all of the templates and files in the current directory and spin them up into a webpage, and `ruby` will serve it on your local machine. The instruction for this, from the root directory of the repo:
 ```
