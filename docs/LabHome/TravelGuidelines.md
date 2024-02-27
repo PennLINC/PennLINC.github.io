@@ -20,5 +20,3 @@ If you are presenting a poster, please use our lab template in Illustrator - eit
 As much as possible, all flights + hotels should be booked via Concur, which avoids carrying significant costs on your personal credit card. Please submit receipts _immediately_ after the trip. Delayed submission can risk the ability to receive reimbursement due to strict university/federal regulations, which is a bureaucratic process.  Any expenses not approved for reimbursement (even if submitted before!) within 6 months are NOT eligible for reimbursement. Reimbursement is via Concur; please see the [Concur](https://pennlinc.github.io/docs/LabHome/CONCUR_Reimbursement/) documentation and check the #Concur channel for details. 
 
 Conference travel is a privilege, and is dependent upon both funding and being a positive force for the community. This includes supporting colleagues in collaborative projects, testing software, writing documentation, and regular attendance at lab meetings & the seminar series.
-![image](https://github.com/PennLINC/PennLINC.github.io/assets/7276743/0318b382-ce89-4684-a98d-e25890683bf6)
-
