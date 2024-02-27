@@ -1,3 +1,11 @@
+---
+layout: default
+title: cubic-X11GUI
+parent: Archive
+nav_order: 2
+has_toc: true
+---
+
 ## Running X11 Sessions
 Sometimes you'll want to run an application on CUBIC that requires a GUI. In order to be able to view and interact with GUIs from remote applications, you can use X11 to provide a display window.
 
