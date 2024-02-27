@@ -57,18 +57,7 @@ The main execption to this are documents (e.g., manuscripts) that need review; p
 See also the note on [Communication and Collaboration](coming soon).
 
 
-## Google drive folder
-
-It is often useful to have a shared directory on google drive to share relevant articles and manuscript drafts.
-
-
-## Zotero library
-
-Right at the start of a project, when people on the team start sending you relevant papers, download Zotero and create a reference library for the project.
-Definitely do this before you start doing a literature review.
-
-
-## Project folder
+### Zotero library
 
 While some projects can be done locally on your laptop, many require more computing resources.
 In general, we now reccomend projects use the PMACS LPC; see the [PMACS pages](/docs/pmacs) for details.

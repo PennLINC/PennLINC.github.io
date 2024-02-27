@@ -8,9 +8,11 @@ nav_order: 6
 
 # PennLINC Project Reproducibility Guide 
 
-### 1. Replication buddy. 
+### 1. Find Your Reproducabilibuddy. 
 
-Identify a replication buddy at the start of the project.  This is usually the second or third author.  This is a lot of work, so replication buddy must “buy in” for real, and have approval of their direct supervisor.  The replication buddy should keep a separate folder in the project repo labeled “ReplicationCode” for all code used in the replication process.
+The reproducibility system is core for ALL projects at PennLINC. Every time we haven't followed this system, we've really regreted it. Ted wrote an essay for _The Transmitter_ on this topic; check it out [here](https://www.thetransmitter.org/open-neuroscience-and-data-sharing/how-scuba-diving-helped-me-embrace-open-science/).
+
+Identify a reproducibility buddy at the start of the project; we call this person your `Reproducabilibuddy`.  This is usually the second (somtimes, third) author.  This is a lot of work, so replication buddy must “buy in” for real, and have approval of their direct supervisor.  
 
 
 ### 2. Sample selection.
@@ -24,7 +26,7 @@ _Technical replication (second):_ buddy looks over code notebook to make sure it
 
 ### 3. Subject level data.
 
-Subject level data should always come from either a flywheel project where containerized gear have been run (better) or an approved data freeze (legacy data)
+Subject level data should ideally come from a static dataset where data has been preprocessed using reproducible informatics workflows (e.g., containerized pipelines in DataLad). 
    
 _Project lead re-replicates a small sub-sample of data._ In general, it is good practice to know where your data comes from if your name is first on the paper.  This can be as simple as executing the container/gear and making sure you get the same results for a handful of subjects, but ideally you should udnerstand how the pipeline works and was configured prior to being run. 
 

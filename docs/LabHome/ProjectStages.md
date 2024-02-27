@@ -143,7 +143,9 @@ At this step, one has all the code and results in hand.  Before writing (or as i
 
 It is strongly suggest reading this article by Konrad Cording prior to starting your paper: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619.
 
-In general, the workflow ted prefers is below.  While a given step is "on Ted's Desk", it makes sense to work on the next step. In general, it is strongly preferred to jointly review an outline for each section before the text is written.
+For writing style, we tend to prefer our prose to be "clear" over "pretty".  For a great book on clear writing, I strongly reccomend "Writing for Busy Readers" by Todd Rogers & Jessica Lasky-Fink; Ted is happy to buy team members a copy.
+
+In general, the workflow for paper review that we follow is below.  While a given step is "on Ted's Desk", it makes sense to work on the next step. In general, it is strongly preferred to jointly review an outline for each section before the text is written.
 
 1) Review abstract + figures + figure legends.
 3) Methods section
@@ -152,7 +154,7 @@ In general, the workflow ted prefers is below.  While a given step is "on Ted's 
 6) Discussion
 
 In general our papers tend to have a lot of co-authors so writing the paper in either a google doc OR microsoft word online is suggested.
-This will make the process of integrating co-author changes much less painful.
+This will make the process of integrating co-author changes much less painful; we discourage distributing word docs as an attachment.
 
 
 ### 16)	Polish text with faculty mentor
