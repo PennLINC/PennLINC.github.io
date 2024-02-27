@@ -23,7 +23,7 @@ We end here with some [final words](#final-words).
 
 ## Before you start coding for a project
 
-* Initialize a GitHub repository for your project [under PennLINC GitHub group](https://github.com/PennLINC). Use Git and GitHub from the beginning of your project, instead of not using them until the end stage of the project. You'll appreciate the code version control when you hope to see the changes of your code. If you are a bit hesitated for making your code fully public at the beginning of the project, that's okay - you can always choose to make the GitHub repository "Private".
+* Create a GitHub repository for your project under the [PennLINC GitHub group](https://github.com/PennLINC). Use Git and GitHub from the beginning of your project, instead of waiting until the end stage of the project. You'll appreciate the version control when you need to look back at changes you made to your code throughout the project's lifespan. If you are worried about making your code fully public at the beginning of the project, that's okay - you can always choose to make the GitHub repository "Private".
 * Organization:
   * You might organize your scripts in several different folders (e.g., for different purposes - image processing, hypothesis tests, etc). Add a `README.md` for each folder to describe the folder's purpose and what's included.
   * Do not mix code with your data; instead, make separate folders for code and data.
@@ -35,7 +35,10 @@ We end here with some [final words](#final-words).
 ## Coding itself
 
 ### Just before coding
-Think about the function of the code you want to achieve. What language will be efficient to achieve your goal here? You can have more than one language of code in one project! Python might be easy for image processing; R would be easy for data wrangling; bash scripts are easy for submitting jobs on clusters.
+Think about the purpose of the code you want to achieve.
+What language will be efficient to achieve your goal here?
+You can have more than one language of code in one project!
+Python is good for image processing, data wrangling, and figure generation; R is good for data wrangling, statistical analysis, and figure generation; bash scripts are best for submitting jobs on clusters.
 
 If the code involves a few steps, you might get lost when coding/focusing on one step. Consider writing down the list of the steps as comments before you start coding it.
 
@@ -47,43 +50,66 @@ Sometimes you hope to define a list of brain regions in your analysis, and you'l
 
 
 ### Data wrangling
-The data analysis part after (pre)processing often involve data wrangling. We **highly** recommend using R to handle the data wrangling part. [Tidy data](https://r4ds.had.co.nz/tidy-data.html) is often very helpful here. It is important to note that, although some columns seem redundant in the tidy data, it is very important to include them so that future data wrangling will be easy, and it'll be easy for sanity checks too (i.e., you'll know the exact information of the observation, e.g., from which subject, which session, which method, etc)
+The data analysis part after (pre)processing often involve data wrangling.
+We **strongly** recommend using R to handle the data wrangling part.
+[Tidy data](https://r4ds.had.co.nz/tidy-data.html) is often very helpful here.
+It is important to note that, although some columns seem redundant in the tidy data, 
+it is very important to include them so that future data wrangling will be easy, 
+and it'll be easy for sanity checks too 
+(i.e., you'll know the exact information of the observation, 
+e.g., from which subject, which session, which method, etc).
 
 ### Reduce manual work and additional brain work!!!
-This is very important. Manual work e.g., manually counting or changing numbers increases risk of mistakes and reduces the confidence of what you reported in the manuscript. In addition, it will also increase the burden for the replication buddy - they need to more carefully check it to make sure what you reported are consistent with the original output, especially if they are in different format.
+This is very important.
+Manual work (e.g., manually counting or changing numbers) increases risk of mistakes and reduces the confidence of what you reported in the manuscript.
+In addition, it will also increase the burden for the reproducibility buddy - they need to more carefully check it to make sure what you reported are consistent with the original output, especially if they are in a different format.
 
-* Generate the final table or figure **directly** from the code as much as possible
-  * Avoid additional manual work (e.g., round up, copy-paste, combination of figure panels) to generate the final table or figure you'll use in the paper. Instead:
-  * Consider using R to export pdf of tables.
+* Generate final tables and figures **directly** from the code as much as possible.
+* Avoid additional manual work (e.g., round up, copy-paste, combination of figure panels) to generate the final table or figure you'll use in the paper. Instead:
+  * Consider using R to export pdf versions of tables.
   * Consider writing code to directly generate the figure you want, instead of manually adjusting the fonts in Illustrator or Powerpoint later.
   * Consider writing code to directly combine figure panels and save the figure (rather than use Illustrator to do so).
-  * Consider directly generating the final format of the values, e.g., let the code round up statistics; if you will report R-squared, let the code calculate the squared number for you; let the code count for you, instead of doing it by yourself
+  * Consider directly generating the final format of the values, e.g., let the code round up statistics; if you will report R-squared, let the code calculate the squared number for you; let the code count for you, instead of doing it by yourself.
 
 ## After you coded a bit
 
 ### Test out!
 
-#### Use toy data to test out
-It's important to test out if your code really works as you thought. Make some simple toy data, apply your code, and see if you can get what you want.
+#### Use toy data to test your code
+It's important to test out if your code really works as you thought.
+Make some simple toy data, apply your code, and see if you can get what you want.
 
 #### Include sanity checks
-Are the shape (number of rows and columns) of the data frame you generated is consistent with expectations? Use `testthat` from R (e.g., `expect_that()`), and `assert` from Python to assert that what you actually get is the same as what you expect. Sanity checks are very helpful to rule out mistakes.
+Are the shape (number of rows and columns) of the data frame you generated is consistent with expectations?
+Use `testthat` from R (e.g., `expect_that()`), and `assert` from Python to assert that what you actually get is the same as what you expect.
+Sanity checks are very helpful to rule out mistakes.
 
 #### "Make incremental changes and test as you go."
 This section is copied from [an OHBM blog](https://www.ohbmtrainees.com/blog-overview/2023/2/10/coding-best-practices-for-academia-bridging-the-gap-between-research-and-industry):
 
-"Instead of writing your entire code at once, make small changes and test each step as you go. This approach will make debugging much easier. This is especially important if you are using version control software, such as Git, where each incremental change should be its own commit."
+> "Instead of writing your entire code at once, make small changes and test each step as you go. This approach will make debugging much easier. This is especially important if you are using version control software, such as Git, where each incremental change should be its own commit."
 
 
-### Write documentations!
-Sometimes we're too focused on coding itself, but not paying attention to write some notes for explanation. You'll quickly forget the definition of arguments and the purpose of a function. Write a bit documentation for a function + for a script file before you move on to another task. You can also write docs before you write the function and use it to guide your coding.
+### Document your code and make it readable
+Sometimes we're too focused on writing runnable code and we forget to write notes for explanation.
+You'll quickly forget the definition of arguments and the purpose of a function.
+Document your code before you move on to another task.
+You can also write docs before you write the function and use it to guide your coding.
 
-For a script's or function's docs, it should include:
-* the purpose of the script (or function)
-* explanation of arguments: name, data type expected, what it means
-* explanation of outputs: name, data type, what does it mean
+We strongly recommend doing the following:
 
-For overview docs of scripts, you might consider a `README.md` for each folder of your scripts. This `README.md` gives an overview of all your scripts, which might follow the workflow of running these scripts.
+1. Add comments throughout the code to make sure readers can understand what's happening.
+2. Add docstrings to any functions and scripts you write.
+    - Stick with a popular convention for your docstrings. For example, you can use [numpydoc](https://numpydoc.readthedocs.io/en/latest/index.html) for Python code.
+    - The docstring should include the following: 
+        - the purpose of the script (or function)
+        - explanation of arguments: name, data type expected, what it means
+        - explanation of outputs: name, data type, what does it mean
+3. Use informative variable names.
+    - Single-letter variables (e.g., `i`) are generally not helpful for readers. Using interpretable variables will make it easier for readers (and future you) to make sense of the code.
+
+For overview docs of scripts, you might consider including a `README.md` for each folder of your scripts.
+This `README.md` should an overview of all your scripts, as well as the order in which those scripts should be run.
 
 
 ## Final words
