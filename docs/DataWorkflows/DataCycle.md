@@ -5,6 +5,7 @@ parent: Data Workflows
 nav_order: 1
 has_toc: true
 ---
+# The Data [Cycle](/assets/images/datalad.svg)
 The data cycle includes the following steps: 
 1. Fetching raw data
 3. Curation of datasets
