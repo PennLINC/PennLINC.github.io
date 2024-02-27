@@ -15,6 +15,8 @@ Building on top of Git and git-annex, DataLad allows you to version control arbi
 - Capture full provenance records
 - Ensure complete reproducibility
 
+<img src="/assets/images/datalad.svg">
+
 ### Installing Datalad 
 
 1. The best way to install datalad on HPC systems like cubic is using conda. First, make sure Miniconda is installed in your project folder (see instructions [here](https://pennlinc.github.io/docs/cubic#installing-miniconda-in-your-project-the-hard-way)).
