@@ -6,6 +6,7 @@ has_children: true
 permalink: docs/cubic
 has_toc: false
 ---
+hi testing~!
 
 # Using the CUBIC Cluster
 {: .no_toc }
