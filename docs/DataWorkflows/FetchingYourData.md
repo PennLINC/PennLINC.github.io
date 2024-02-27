@@ -81,8 +81,6 @@ sessions:
 $ echo 'module load git' >> ~/.bashrc
 ```
 
-
-
 # Clone the static data
 
 In order to get the data to your computer, you need to ensure 3 things:
@@ -143,8 +141,7 @@ sub-colornest002
 sub-colornest195
 ```
 
-This directory contains all the outputs from xcp_d for each subject. Now, let's see if we can find the
-actual file we want to get for each subject. We can see all the files for a single subject with `find`
+This directory contains all the outputs from xcp_d for each subject. Now, let's see if we can find the actual file we want to get for each subject. We can see all the files for a single subject with `find`
 
 ```
 $ find sub-colornest001

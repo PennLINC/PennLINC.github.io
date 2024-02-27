@@ -9,7 +9,7 @@ The data cycle includes the following steps:
 1. Fetching raw data
 3. Curation of datasets
 2. Fetching the data onto the right cluster
-3. Unzipping the data
+3. Unzipping the data (as needed)
 4. Processing the data!
 5. Sharing the data
 
@@ -613,76 +613,141 @@ This data is typically stored on PMACS as BIDS datasets, transferred from CUBIC 
 Data can be fetched back from PMACS, if needed, using the documentation specified [here](/docs/DataWorkflows/FetchingYourData.md). At the moment, all the data we have is already on PMACS and you will not need to curate any legacy data/ data that has already been collected a while back. These datasets and the links to fetch them are listed [here](./AvailableStaticData.md)
 
 # Unzipping your data
-Remember, you need to datalad get your data before you can unzip it!
 
-The following commands should help you unzip your data. These can be customized per your needs to unzip some or all subjects and then some or all files: 
+Data on PMACS might be zipped, or unzipped. In the case of unzipped data, you should be good to go following the guidelines on finding files you need [here](./FetchingYourData.md)! If your data is zipped, you might need a little more work.
 
-Here is an example of how to get zipped data: 
+The following walkthrough should help you unzip your data. These lines of code can be customized per your needs to unzip some or all subjects and then some or all files: 
+
+Before running a loop for all participants of a dataset, you probably first want to figure out what data is available, and which files you’d want to get. Most datasets are zipped, so here is a walkthrough for a single subject. In this case, we’re interested in getting fMRIPrep data from PNC, which is zipped and stored on PMACS. 
+
+Once data is cloned from PMACS, let’s cd into to it to see what’s there: 
 
 ```bash
-#!/bin/bash
-# conda activate $(environment_with_datalad_installed)
-
-# clone static data of interest from PMACS,  
-# but can be replaced with anything in the "Clone URL" column here https://pennlinc.github.io/docs/DataTasks/AvailableStaticData/
-datalad clone ria+ssh://dumbledore@bblsub.pmacs.upenn.edu:/static/LINC_PNC#~FMRIPREP_zipped /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/datalad
-
-
-# The clone files exist only remotely until we get them locally, so once we have a clone of the data, we need to "datalad get" the files we are interested in. 
-cd /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/datalad
-
-# to see the history of what happened to a zipped dataset (i.e. get simlinks without actually getting the data locally)
-# datalad get -n .
-
-# ----------------------------------------
-## get a few subjects for testing ###
-# ----------------------------------------
-
-subject_ids=("Harry Potter","Lord Voldemort","Hermione Granger")
-
-for id in "${subject_ids[@]}"; do
-	# get filename
-	file="sub-${id}*zip"
-
-	# make directory to store unzipped files
-	mkdir -p /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped
-	mkdir -p /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped
-
-	# get the file
-	datalad get $file -J 8
-
-	# copy the zip to another directory outside of the official datalad clone so that I'm not messing with it
-	cp $file /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped
-
-	# unzip the files outside of the datalad clone
-	unzip "/cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped/$file" -d /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped/
-
-	# # drop the file
-	datalad drop --nocheck $file
-
-done
-
-# -------------------------------------------------
-#### get zip files for the entire  dataset #####
-# -------------------------------------------------
-
-
-for file in *zip ; do
-
-	sub=${file%_*}
-	datalad get $file -J 8
-
- 	# unzip the zip 
-	unzip "/cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped/$file" -d /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped/
-
- 	# unzip specific files only (needs tweaking if want specific files, example here for ALFF)
- 	# unzip -j "$file" "xcp_abcd/$sub/ses-PNC1/func/*ses-PNC1_task-rest_acq-singleband_space-fsLR_den-91k_desc-alff*" -d /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/$sub
-
-	# drop the file
-	datalad drop --nocheck $file
-
-done
+CHANGELOG.md			       sub-NevilleLongbottom_fmriprep-20.2.3.zip@     sub-2967555571_fmriprep-20.2.3.zip@    sub-3880738222_fmriprep-20.2.3.zip@
+code/				       sub-NevilleLongbottom_freesurfer-20.2.3.zip@   sub-2967555571_freesurfer-20.2.3.zip@  sub-3880738222_freesurfer-20.2.3.zip@
+inputs/				       sub-1942988748_fmriprep-20.2.3.zip@    sub-2967570405_fmriprep-20.2.3.zip@    sub-3882431387_fmriprep-20.2.3.zip@
+pennlinc-containers/		       sub-1942988748_freesurfer-20.2.3.zip@  sub-2967570405_freesurfer-20.2.3.zip@  sub-3882431387_freesurfer-20.2.3.zip@
+README.md			       sub-194324018_fmriprep-20.2.3.zip@     sub-296947353_fmriprep-20.2.3.zip@     sub-3885398873_fmriprep-20.2.3.zip@
+sub-1000393599_fmriprep-20.2.3.zip@    sub-194324018_freesurfer-20.2.3.zip@   sub-296947353_freesurfer-20.2.3.zip@   sub-3885398873_freesurfer-20.2.3.zip@
 ```
+
+The folder contains a bunch of folders and simlinks to zipped participants. 
+
+### Step 2: Get and unzip a participant
+
+The next step is to get and unzip data for one participant to figure out what files are available. 
+
+```bash
+# make directory to store unzipped files
+mkdir -p /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped
+mkdir -p /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped
+
+# define a specific participant file 
+file="sub-NevilleLongbottom_fmriprep-20.2.3.zip"
+
+# get the file for one specific participant
+datalad get $file -J 8 # runs the job on 8 threads
+```
+
+The output of datalat get will look like this: 
+
+```bash
+It is highly recommended to configure Git before using DataLad. Set both 'user.name' and 'user.email' configuration variables.
+Total:   0%|                                                                                | 0.00/1.19G [00:00<?, ? Bytes/s]
+dumbledore@bblsub.pmacs.upenn.edu's password:
+```
+
+Before starting the download, the system will ask for your PMACS (note: not CUBIC!) password. Type it in and it will start showing a progress bar for the download. Eventually, you know that the download is successful when you see this output: 
+
+```bash
+get(ok): sub-NevilleLongbottom_fmriprep-20.2.3.zip (file) [from output-storage...]
+```
+
+Next, let’s copy the zipped data to another directory outside of the official datalad clone so that we're keeping things separate from the cloned folder, and then unzip it and save that into our unzipped folder: 
+
+```bash
+# copy the zip
+cp $file /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped
+
+# unzip the files outside of the datalad clone
+unzip "/cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped/$file" -d /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped/
+```
+
+The output of the unzipping will look something like this: 
+
+```bash
+Archive:  /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped_test/sub-NevilleLongbottom_fmriprep-20.2.3.zip
+[...]
+   creating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped_test/fmriprep/sub-NevilleLongbottom/ses-PNC1/anat/
+  inflating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped_test/fmriprep/sub-NevilleLongbottom/ses-PNC1/anat/sub-NevilleLongbottom_ses-PNC1_acq-refaced_desc-aparcaseg_dseg.nii.gz
+[...]
+   creating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped_test/fmriprep/sub-NevilleLongbottom/ses-PNC1/func/
+[...]
+  inflating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped_test/fmriprep/sub-NevilleLongbottom/ses-PNC1/func/sub-NevilleLongbottom_ses-PNC1_task-rest_acq-singleband_space-fsLR_den-91k_bold.dtseries.nii
+```
+
+Let’s say we’re interested in just getting the 91k bold dtseries nifti. 
+
+```bash
+# get the subject ID out of the zip file name (sub-NevilleLongbottom)
+sub=${file%_*}
+
+# unzip just one specific file (bold nifti)
+unzip -j "$file" "fmriprep/$sub/ses-PNC1/func/${sub}_ses-PNC1_task-rest_acq-singleband_space-fsLR_den-91k_bold.dtseries.nii" \
+	-d /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/$sub
+```
+
+The output will look like this: 
+
+```bash
+Archive:  sub-NevilleLongbottom_fmriprep-20.2.3.zip
+  inflating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/sub-NevilleLongbottom/sub-NevilleLongbottom_ses-PNC1_task-rest_acq-singleband_space-fsLR_den-91k_bold.dtseries.nii
+```
+
+Note that you can also unzip a couple of files with a certain path structure by using wildcards. For example, we can download all bold dtseries files with different extensions: 
+
+```bash
+unzip -j "$file" "fmriprep/$sub/ses-PNC1/func/${sub}_ses-PNC1_task-rest_acq-singleband_space-fsLR_den-91k_bold.dtseries*" -d /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/$sub
+```
+
+This will download all available files with this path structure, here a nifti and a json: 
+
+```bash
+inflating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/sub-NevilleLongbottom/sub-NevilleLongbottom_ses-PNC1_task-rest_acq-singleband_space-fsLR_den-91k_bold.dtseries.json
+inflating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/sub-NevilleLongbottom/sub-NevilleLongbottom_ses-PNC1_task-rest_acq-singleband_space-fsLR_den-91k_bold.dtseries.nii
+```
+
+Alternatively, you can place the wildcard elsewhere, for instance to get all types of tasks (rest, etc.): 
+
+```bash
+unzip -j "$file" "fmriprep/$sub/ses-PNC1/func/${sub}_ses-PNC1_task-*_space-fsLR_den-91k_bold.dtseries.nii" -d /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/$sub
+
+```
+
+This downloads several dtseries, for `frac2back`,  `idemo` and `rest` tasks : 
+
+```bash
+Archive:  sub-NevilleLongbottom_fmriprep-20.2.3.zip
+  inflating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/sub-NevilleLongbottom/sub-NevilleLongbottom_ses-PNC1_task-frac2back_space-fsLR_den-91k_bold.dtseries.nii
+  inflating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/sub-NevilleLongbottom/sub-NevilleLongbottom_ses-PNC1_task-idemo_space-fsLR_den-91k_bold.dtseries.nii
+  inflating: /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/sub-NevilleLongbottom/sub-NevilleLongbottom_ses-PNC1_task-rest_acq-singleband_space-fsLR_den-91k_bold.dtseries.nii
+```
+
+Now that we figured out what files are available for a given participant, let’s “drop” the zipped participant data. This doesn’t do anything to the original data on PMACS, but just removes the downloaded data in the cloned dataset in your project directory, which saves space.
+
+```bash
+# drop the file
+datalad drop --nocheck $file
+```
+
+This is what the output should look like: 
+
+```bash
+It is highly recommended to configure Git before using DataLad. Set both 'user.name' and 'user.email' configuration variables.
+drop(ok): sub-NevilleLongbottom_fmriprep-20.2.3.zip (file)
+```
+
+Now that we know how to look for available data in a zipped static PMACS dataset, we’re ready to scale things up and download all required data for the whole dataset!
 
 # Processing your data
 [BABS](https://pennlinc-babs.readthedocs.io/en/latest/) is a quick and easy tool for processing pipelines via [Datalad](./Datalad.md). The documentation is thorough, with information on setting up, installing, and running BABS on data. An example walkthrough is also available via the documentation. 

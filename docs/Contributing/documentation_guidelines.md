@@ -141,10 +141,13 @@ gem install --user-install bundler jekyll
 Note that the version may change and you may need to install/update some dependencies using the same format! You can use `sudo` for permissions errors. 
 
 In this last step, you instruct `jekyll` to take all of the templates and files in the current directory and spin them up into a webpage, and `ruby` will serve it on your local machine. The instruction for this, from the root directory of the repo:
+
 ```
 cd PennLINC.github.io
-bundle exec jekyll serve
+bundle install
+bundle _2.1.4_ exec jekyll serve
 ```
+Note that this is the version (2.1.4) that works for me at this moment. This may change!
 
 If you see something like this:
 
