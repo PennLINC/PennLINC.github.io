@@ -9,7 +9,7 @@ has_toc: true
 
 The data cycle includes the following steps: 
 1. Fetching raw data
-3. Curation of datasets
+3. Dataset curation
 2. Fetching the data onto the right cluster
 3. Unzipping the data (as needed)
 4. Processing the data!
