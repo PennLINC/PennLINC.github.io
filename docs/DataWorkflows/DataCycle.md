@@ -202,7 +202,7 @@ You can add git like so:
 $ git init
 ```
 
-And remember, if you explicitly want to ignore something from tracking (with either `git` or `datalad`), add that path to a `.gitnignore` file ([see here](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files) and [here](https://handbook.datalad.org/en/latest/beyond_basics/101-179-gitignore.html)).
+And remember, if you explicitly want to ignore something from tracking (with either `git` or `datalad`), add that path to a `.gitignore` file ([see here](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files) and [here](https://handbook.datalad.org/en/latest/beyond_basics/101-179-gitignore.html)).
 
 ### Add NIfTI information to the sidecars
 
