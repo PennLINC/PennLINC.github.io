@@ -104,9 +104,9 @@ globusconnect -start &
 # Curating BIDS Datasets
 
 
-BIDS curation can be a frustrating process. This guide describes best practices for
-the curation process using a local filesystem. We divide this process into multiple
-stages.
+BIDS curation can be a frustrating process. 
+This guide describes best practices for the curation process using a local filesystem. 
+We divide this process into multiple stages.
 
 
 ## Preparing your environment
