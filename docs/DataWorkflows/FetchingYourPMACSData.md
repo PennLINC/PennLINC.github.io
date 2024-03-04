@@ -83,16 +83,27 @@ $ echo 'module load git' >> ~/.bashrc
 
 # Clone the static data
 
-In order to get the data to your computer, you need to ensure 3 things:
+in order to get the data to your computer or in your CUBIC project directory, you need to ensure 3 things:
 
   1. You have a PMACS account and the account has been added to the relevant data group (see above)
   2. Your computer is on the [UPHS VPN](/docs/cubic/cubic.md#setting-up-your-account) or the
      [PMACS VPN](/docs/PMACS/pmacs.md#logging-in-to-pmacs-lpc)
   3. You have datalad, git and git-annex installed on your computer
   4. You have verified that you have your PMACS accound set up (see above section)
+  2. You have [datalad](./Datalad.md), git and git-annex installed on your computer or on your CUBIC project directory 
+  5. If you're planning to download data into your CUBIC project directory, you are logged in to CUBIC project [user](../cubic/cubic.md)
 
-If these conditions are met, you're ready to access some data! Suppose I'd like
-to see the regional time series data for CCNP. Checking the
+If these conditions are met, you're ready to access some data! 
+
+If these conditions are met, you're ready to access some data!
+Generally, datasets can be in two different formats:
+- unzipped: this type of dataset allows to access all different subdirectories and files of all participants directly
+- zipped: this type of dataset has one zip file per participant. This allows more efficient storing, and requires a few extra steps to figure out what kinds of files are available and to download them.
+
+Ways of looking at and then getting each type of dataset are explained below.
+
+# Getting an unzipped dataset
+Suppose I'd like to see the regional time series data for CCNP. Checking the
 [list of available datasets](/docs/DataWorkflows/AvailableStaticData.md#available-static-datasets) I
 see the `Clone URL` column lists `LINC_CCNP#~XCP_unzipped` for this resource.
 
@@ -141,7 +152,11 @@ sub-colornest002
 sub-colornest195
 ```
 
-This directory contains all the outputs from xcp_d for each subject. Now, let's see if we can find the actual file we want to get for each subject. We can see all the files for a single subject with `find`
+This directory contains all the outputs from xcp_d for each subject. 
+
+## Figuring out what data is available (single participant)
+
+Now, let's see if we can find the actual file we want to get for each subject. We can see all the files for a single subject with `find`
 
 ```
 $ find sub-colornest001
@@ -161,8 +176,10 @@ sub-colornest001/figures/sub-colornest001_ses-1_task-rest_run-2_space-MNI152NLin
 sub-colornest001/figures/sub-colornest001_ses-1_task-rest_run-2_space-fsLR_desc-bbregister_bold.svg
 ```
 
-I see that the atlas I want (Gordon) can be found for each subject with a pattern. To actually transfer these files,
-I need to tell datalad to fetch them from PMACs. This is done with the following command:
+I see that the atlas I want (Gordon) can be found for each subject with a pattern. 
+
+## Getting files for the entire dataset
+To actually transfer these files, I need to tell datalad to fetch them from PMACs. This is done with the following command:
 
 ```
 $ datalad get sub-*/ses*/func/sub-*space-MNI152NLin6Asym_atlas-Gordon_desc-timeseries_res-2_bold.tsv -J 3
@@ -175,7 +192,8 @@ environment that limits your resources you can omit this flag and a single
 process will be used. This command may take some time to run. At the end you
 will see a message like:
 
-You may be asked for your password if you haven't [set up an ssh key](#set
+You may be asked for your password if you haven't set up an [SSH key](https://pennlinc.github.io/docs/Basics/sshKeys/).
+
 ```
 [username]@[login node name].pmacs.upenn.edu's password:
 get(ok): sub-colornest112/ses-1/func/sub-colornest112_ses-1_task-rest_run-2_space-MNI152NLin6Asym_atlas-Gordon_desc-timeseries_res-2_bold.tsv (file) [from output-storage...]
@@ -245,7 +263,7 @@ analysis will be fetched if you need to
 
 # Unzipping your data
 
-Data on PMACS might be zipped, or unzipped. In the case of unzipped data, you should be good to go following the guidelines on finding files you need [here](./FetchingYourData.md)! If your data is zipped, you might need a little more work.
+Data on PMACS might be zipped, or unzipped. In the case of unzipped data, you should be good to go following the guidelines on finding files you need [here](./FetchingYourPMACSData.md)! If your data is zipped, you might need a little more work.
 
 The following walkthrough should help you unzip your data. These lines of code can be customized per your needs to unzip some or all subjects and then some or all files: 
 
@@ -282,7 +300,7 @@ The output of datalat get will look like this:
 ```bash
 It is highly recommended to configure Git before using DataLad. Set both 'user.name' and 'user.email' configuration variables.
 Total:   0%|                                                                                | 0.00/1.19G [00:00<?, ? Bytes/s]
-dumbledore@bblsub.pmacs.upenn.edu's password:
+dumbledore@[login node].pmacs.upenn.edu's password:
 ```
 
 Before starting the download, the system will ask for your PMACS (note: not CUBIC!) password. Type it in and it will start showing a progress bar for the download. Eventually, you know that the download is successful when you see this output: 
@@ -375,6 +393,8 @@ It is highly recommended to configure Git before using DataLad. Set both 'user.n
 drop(ok): sub-NevilleLongbottom_fmriprep-20.2.3.zip (file)
 ```
 
+## Getting files for the entire dataset
+
 Now that we know how to look for available data in a zipped static PMACS dataset, we’re ready to scale things up and download all required data for the whole dataset!
 
 Here's how this may look unzipping on a larger scale: 
@@ -387,11 +407,8 @@ Here's how this may look unzipping on a larger scale:
 
 # clone static data of interest from PMACS, here LINC_PNC#~FMRIPREP_zipped, 
 # but can be replaced with anything in the "Clone URL" column here https://pennlinc.github.io/docs/DataTasks/AvailableStaticData/
-datalad clone ria+ssh://dumbledore@bblsub.pmacs.upenn.edu:/static/LINC_PNC#~FMRIPREP_zipped /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/datalad
+datalad clone ria+ssh://dumbledore@[login node].pmacs.upenn.edu:/static/LINC_PNC#~FMRIPREP_zipped /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/datalad
 
-# do this so that you don't have to enter your pmacs password 1 million times when datalad getting files
-# eval $(ssh-agent)
-# ssh-add ~/.ssh/id_rsa_pmacs
 
 # The clone files exist only remotely until we get them locally, so once we have a clone of the data, we need to "datalad get" the files we are interested in. 
 cd /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/datalad
@@ -431,8 +448,6 @@ done
 #### get zip files for the entire PNC dataset #####
 # -------------------------------------------------
 
-# Note: if this requires inputting the password every time, may need to switch to python and use glob patterns
-
 for file in *zip ; do
 
 	sub=${file%_*}
@@ -441,8 +456,8 @@ for file in *zip ; do
  	# unzip the zip 
 	unzip "/cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/zipped/$file" -d /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/unzipped/
 
- 	# unzip specific files only (needs tweatking if want specific files, example here)
- 	# unzip -j "$file" "xcp_abcd/$sub/ses-PNC1/func/*ses-PNC1_task-rest_acq-singleband_space-fsLR_den-91k_desc-alff*" -d /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/$sub
+ 	# unzip specific files only (needs tweaking if want specific files, example here)
+ 	# unzip -j "$file" "fmriprep/$sub/ses-PNC1/func/${sub}_ses-PNC1_task-rest_acq-singleband_space-fsLR_den-91k_bold.dtseries*" -d /cbica/projects/hogwarts/data/PNC/PNC_fMRIPrep_v20_2_3/$sub
 
 	# drop the file
 	datalad drop --nocheck $file

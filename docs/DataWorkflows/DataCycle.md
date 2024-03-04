@@ -100,6 +100,9 @@ globusconnect -start &
 
 4. Visit [https://docs.globus.org/how-to/get-started/](https://docs.globus.org/how-to/get-started/) to access the File Manager, as in the Local Disk instructions, to start transferring data.
 
+## Via datalad
+You can `datalad clone` many relevant datasets, particularly via OpenNeuro. More information on this is available [here](https://handbook.datalad.org/en/latest/usecases/openneuro.html).
+
 
 # Curating BIDS Datasets
 
@@ -611,11 +614,11 @@ This data is typically stored on PMACS as BIDS datasets, transferred from CUBIC 
 
 
 # Getting your data from PMACS to CUBIC
-Data can be fetched back from PMACS, if needed, using the documentation specified [here](/docs/DataWorkflows/FetchingYourData.md). At the moment, all the data we have is already on PMACS and you will not need to curate any legacy data/ data that has already been collected a while back. These datasets and the links to fetch them are listed [here](./AvailableStaticData.md).
+Data can be fetched back from PMACS, if needed, using the documentation specified [here](/docs/DataWorkflows/FetchingYourPMACSData.md). At the moment, all the data we have is already on PMACS and you will not need to curate any legacy data/ data that has already been collected a while back. These datasets and the links to fetch them are listed [here](./AvailableStaticData.md).
 
 # Unzipping your data
 
-Occasionally, data may be zipped. More information about this can be found [here](/PennLINC.github.io/docs/DataWorkflows/FetchingYourData.md)!
+Occasionally, data may be zipped. More information about this can be found [here](/PennLINC.github.io/docs/DataWorkflows/FetchingYourPMACSData.md)!
 
 # Processing your data
 [BABS](https://pennlinc-babs.readthedocs.io/en/latest/) is a quick and easy tool for processing pipelines via [Datalad](./Datalad.md). The documentation is thorough, with information on setting up, installing, and running BABS on data. An example walkthrough is also available via the documentation. 
@@ -672,3 +675,7 @@ There are always barriers to sharing data. Someone needs access to something and
 - How big is the data? Does this _have to_ be shared on a cluster? Maybe it's more appropriate to download it locally and upload it to [Box](https://www.isc.upenn.edu/pennbox) or [SecureShare](https://www.isc.upenn.edu/security/secure-share)
 - What clusters are involved? CUBIC has a complicated permissions system; PMACS is more lenient but how will you move data from CUBIC to PMACS?
 - Do you need `datalad` tracking? How much do collaborators care about that (weighed against how much _you_ care about that)? `datalad` can be fun, but it is definitely a commitment that you can't easily back out of
+
+## Datalad to OpenNeuro
+
+Data can be transferred via Datalad to OpenNeuro, following [these](https://docs.openneuro.org/packages/openneuro-cli.html) steps. 
