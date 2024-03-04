@@ -261,7 +261,7 @@ Critically, the reference to the EXACT version of the file you used in your
 analysis will be fetched if you need to
 [access the data again](#clone-the-static-data).
 
-# Unzipping your data
+# Getting a zipped dataset
 
 Data on PMACS might be zipped, or unzipped. In the case of unzipped data, you should be good to go following the guidelines on finding files you need [here](./FetchingYourPMACSData.md)! If your data is zipped, you might need a little more work.
 
