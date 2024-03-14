@@ -23,7 +23,7 @@ Step 1 --- Creating the Key Pair
 The first step is to create a key pair on the client machine. This will likely be your local computer. Type the following command into your local command line:
 
 ```bash
-ssh-keygen -t rsa -b 4096 -C "PROJECTUSER@cubic"
+ssh-keygen -t rsa -b 4096 -C "PROJECTUSER@CUBIC"
 ```
 
 You should see
