@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Collaboration & Sharing
-parent: The Way
-nav_order: 4
+parent: Archive
+nav_order: 5
 has_toc: true
 ---
 
