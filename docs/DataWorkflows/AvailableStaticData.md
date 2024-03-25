@@ -38,7 +38,8 @@ There are multiple different types of processed output available here, for the f
 
 *Note that, when available, the QC files are also generated. In case these files are not generated, users will have to concatenate the individual subject files across the subjects themselves in order to generate a dataset-wide QC file.*
 
-!!! It is also generally best to use the latest available version of a dataset
+!!! note Important note
+It is also generally best to use the latest available version of a dataset
 
 Below, you can find a list of studies, modalities, and their clone IDs: 
 
