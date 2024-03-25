@@ -2,7 +2,7 @@
 layout: default
 title: CUBIC-X11GUI
 parent: archive
-nav_order: 2
+nav_order: 7
 has_toc: true
 ---
 

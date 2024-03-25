@@ -2,7 +2,7 @@
 layout: default
 title: CUBIC
 nav_order: 7
-has_children: true
+has_children: false
 permalink: docs/cubic
 has_toc: false
 ---
