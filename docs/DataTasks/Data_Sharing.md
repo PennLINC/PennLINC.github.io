@@ -4,7 +4,7 @@ _Note: this draft conceptualizes what data sharing may look like after post-bac 
 ### Internal collaborations
 1. Speak to Ted about the data required and confirm what is needed for the request
 2. Nail down inclusion criteria
-3. Post on `#informatics` team, tagging a point-person flagged by Ted to ask for the data
+3. Post on the `#informatics` Slack channel, tagging a point-person flagged by Ted to ask for the data
 4. Communicate with the point-person on an **open channel** to determine the best way to get data
 
 #### For data on PMACS
