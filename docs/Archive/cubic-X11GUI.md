@@ -1,7 +1,7 @@
 ---
 layout: default
 title: CUBIC-X11GUI
-parent: Archive
+parent: archive
 nav_order: 2
 has_toc: true
 ---

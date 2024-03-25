@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Collaboration & Sharing
-parent: Archive
+parent: archive
 nav_order: 5
 has_toc: true
 ---

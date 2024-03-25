@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Fetching Your Data
-parent: Archive
+parent: archive
 nav_order: 2
 has_toc: true
 ---

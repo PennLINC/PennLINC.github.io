@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Archive
+title: archive
 nav_order: 16
 has_children: true
 ---
