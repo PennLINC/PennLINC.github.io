@@ -1,3 +1,11 @@
+---
+layout: default
+title: Data Sharing
+parent: Data Workflows
+nav_order: 5
+has_toc: false
+---
+
 # Policies for requesting/sharing data
 _Note: this draft conceptualizes what data sharing may look like after post-bac data analysts are no longer on the informatics team_
 
