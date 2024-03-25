@@ -39,7 +39,8 @@ Strongly consider pre-registration on OSF and prospectively identify potential r
 This step is skipped at one’s peril.
 Nothing is worse than sitting down to write a paper and then realizing only at that late stage that the question was largely answered by a study you were not aware of.
 A literature review also is critically important in sharpening hypotheses in order to maximize the potential impact of the question being asked.
-As the first author, it is important to internalize that you need to rapidly become the expert on the topic of the project—do not trust your faculty mentor to be aware of all relevant literature.
+As the first author, it is important to internalize that you need to rapidly become the expert on the topic of the project—
+do not trust your faculty mentor to be aware of all relevant literature.
 Often the whole reason for a new project is that it is a new area that the faculty member is not an expert in.
 Try to be comprehensive at this stage, and use a reference manager to stay organized.
 Reading abstracts and examining figures is a way to rapidly get the sense of a new field.
@@ -74,7 +75,8 @@ At a minimum, the first, second (usually: your replication buddy, see below), an
 The lab standard is now to release all analysis code.
 To ensure reproducibility, all results should be replicated by an independent member of the lab at multiple stages (see below).
 The replication buddy should be involved in the project from the beginning, and usually is the second author on the paper.
-This is a lot of work and should not be taken on lightly; also think ahead for a long project and ensure that the buddy will be present in the lab for the anticipated duration of the project.
+This is a lot of work and should not be taken on lightly;
+also think ahead for a long project and ensure that the buddy will be present in the lab for the anticipated duration of the project.
 See the [Project Reproducibility Guide](/docs/LabHome/ReproSystem) for more information.
 
 
@@ -86,7 +88,8 @@ Much of the impact of a paper is determined by the sample size; small samples re
 In particular, pay attention to key subject level variables such as demographics, symptom scores, diagnoses.
 If the imaging data has already been processed and QA’d, it is a good to check how big your sample will be after QA (see also “inclusion criteria and sample construction” below).
 Finally, note that all projects should receive explicit written approval from the study PI who collected the data prior to beginning.
-For the PNC, this includes approval of the data access committee, which meets once per month; please account for this process with regards to timeline / deadlines.
+For the PNC, this includes approval of the data access committee, which meets once per month;
+please account for this process with regards to timeline / deadlines.
 
 
 ### 8)	Process & QA imaging data
@@ -94,7 +97,8 @@ For the PNC, this includes approval of the data access committee, which meets on
 If data has not already been processed, this is an important and sometimes time-consuming step.
 We prefer a highly-structured process for image processing to ensure reproducibility using XCP-based modules whenever possible.
 See XCP documentation for further information (this is a bit of a work in progress at the moment).
-Note that a sub-sample (usually n~10) of subject level data should replicated, and the main subject-level derivatives produced by the pipeline should be placed in a read-only data freeze for the dataset.
+Note that a sub-sample (usually n~10) of subject level data should replicated,
+and the main subject-level derivatives produced by the pipeline should be placed in a read-only data freeze for the dataset.
 For most projects, analyses should only use replicated data that is pulled directly from this data freeze folder.
 See the [Project Reproducibility Guide](/docs/LabHome/ReproSystem) for more information.
 
@@ -117,8 +121,12 @@ In general all analytics should use reproducible, well commented notebooks.
 
 ### 11)	 Replicate interim results
 
-As detailed in the [Project Reproducibility Guide](/docs/LabHome/ReproSystem), once a “main result” that will be the organizing hook for a paper is revealed, it is a good idea to call your replication buddy.
-Cleaning your code and having them provide both a “true” replication (taking input data and running a model with their own code) and a “technical” replication (i.e., stepping through your code) is advised to make sure errors are caught before a paper is written.
+As detailed in the [Project Reproducibility Guide](/docs/LabHome/ReproSystem),
+once a “main result” that will be the organizing hook for a paper is revealed,
+it is a good idea to call your replication buddy.
+Cleaning your code and having them provide both a “true” replication
+(taking input data and running a model with their own code) and a “technical” replication
+(i.e., stepping through your code) is advised to make sure errors are caught before a paper is written.
 (Often, around this stage, a project is presented at a conference—see the conference wiki for more information).
 
 
@@ -131,21 +139,32 @@ Often times this step reveals that something is missing, and one or two more ana
 
 ### 13)	 Create draft figures
 
-It is often good to create draft figure panels for the entire paper before polishing them to high gloss for publication.  These figures should be made reproducibly so they can be replicated (in the next step).  Making beautiful final figures before replication is not efficient. Bottom line?: Initial draft figures should be reproducible rather than gorgeous.
+It is often good to create draft figure panels for the entire paper before polishing them to high gloss for publication.
+These figures should be made reproducibly so they can be replicated (in the next step).
+Making beautiful final figures before replication is not efficient.
+Bottom line?: Initial draft figures should be reproducible rather than gorgeous.
 
 
 ### 14)	 Final reproducibility check: Clean code, make GitHub repo, companion wiki, and replicate final results
 
-At this step, one has all the code and results in hand.  Before writing (or as it begins), it is important to make a clean GitHub repo that will be submitted with the paper, along with a companion wiki that patiently steps interested readers through this code and allows them to reproduce your work.  Once this is complete, send the wiki and repo to your replication buddy, who will check your work (see [Project Reproducibility Guide](/docs/LabHome/ReproSystem)).   Note that it is imperative to repeat this process if results change in the writing process below; analyses added at a late stage when one is trying to get the paper out the door tend to be more likely to be problematic.
+At this step, one has all the code and results in hand.
+Before writing (or as it begins), it is important to make a clean GitHub repo that will be submitted with the paper,
+along with a companion wiki that patiently steps interested readers through this code and allows them to reproduce your work.
+Once this is complete, send the wiki and repo to your replication buddy, who will check your work (see [Project Reproducibility Guide](/docs/LabHome/ReproSystem)).
+Note that it is imperative to repeat this process if results change in the writing process below;
+analyses added at a late stage when one is trying to get the paper out the door tend to be more likely to be problematic.
 
 
 ### 15)	Make final figures & write text
 
 It is strongly suggest reading this article by Konrad Cording prior to starting your paper: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619.
 
-For writing style, we tend to prefer our prose to be "clear" over "pretty".  For a great book on clear writing, I strongly reccomend "Writing for Busy Readers" by Todd Rogers & Jessica Lasky-Fink; Ted is happy to buy team members a copy.
+For writing style, we tend to prefer our prose to be "clear" over "pretty".
+For a great book on clear writing, I strongly reccomend "Writing for Busy Readers" by Todd Rogers & Jessica Lasky-Fink; Ted is happy to buy team members a copy.
 
-In general, the workflow for paper review that we follow is below.  While a given step is "on Ted's Desk", it makes sense to work on the next step. In general, it is strongly preferred to jointly review an outline for each section before the text is written.
+In general, the workflow for paper review that we follow is below.
+While a given step is "on Ted's Desk", it makes sense to work on the next step.
+In general, it is strongly preferred to jointly review an outline for each section before the text is written.
 
 1) Review abstract + figures + figure legends.
 3) Methods section
@@ -193,7 +212,8 @@ We kindly ask for your effort on several things:
 * Even if you don't have any comments, we nonetheless request ask you to reply to this email with your written approval.
 
 
-We ask that you submit your feedback in the next 14 days. Once we have integrated your feedback, we will submit this a preprint (to BioRxiv) and then to `Journal X`.
+We ask that you submit your feedback in the next 14 days.
+Once we have integrated your feedback, we will submit this a preprint (to BioRxiv) and then to `Journal X`.
 If more time is needed, please just reach out and let us know.
 
 Here is the link to the manuscript {insert link}; again, please switch to "Suggesting" mode to track changes.
