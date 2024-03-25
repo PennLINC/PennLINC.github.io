@@ -36,7 +36,7 @@ your project, log in as the project user and run:
 
 ```shell
 $ wget https://raw.githubusercontent.com/PennLINC/TheWay/main/scripts/cubic/cubic-setup-project-user.sh
-$ bash cubic-setup-project-user.sh ${HOME}
+$ bash CUBIC-setup-project-user.sh ${HOME}
 ```
 
 [Download and install CuBIDS](https://bids-bond.readthedocs.io/en/latest/index.html). Note that
@@ -201,7 +201,7 @@ push again when curation is complete. To create a RIA store on pmacs, be sure
 you can log in using ssh key pairs from CUBIC.
 
 ```bash
-(base) [yourname@cubic-login2 testing]$ ssh sciget
+(base) [yourname@CUBIC-login2 testing]$ ssh sciget
 Last login: Wed Mar 24 14:27:30 2021 from 
 [yourname@sciget ~]$
 ```

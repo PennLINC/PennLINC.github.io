@@ -247,11 +247,11 @@ analysis will be fetched if you need to
 [access the data again](#clone-the-static-data).
 
 
-## SSH Keys from cubic project uses to pmacs personal users: NOT ALLOWED!
+## SSH Keys from CUBIC project uses to pmacs personal users: NOT ALLOWED!
 
-This is not allowed! SSH keys would give all those access to the cubic project user
+This is not allowed! SSH keys would give all those access to the CUBIC project user
 access to the key owner's pmacs account. This is too dangerous and therefore ssh key
-use is not allowed from a cubic project user to a pmacs personal user account.
+use is not allowed from a CUBIC project user to a pmacs personal user account.
 
 This unfortunately means you will need to enter your password to copy over the data.
 To minimize password entry, try to `datalad get` files using file glob patterns
