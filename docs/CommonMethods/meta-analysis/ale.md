@@ -2,6 +2,7 @@
 layout: default
 title: ALE
 parent: Meta-analysis
+grand_parent: Common Methods
 nav_order: 6
 ---
 
@@ -70,7 +71,7 @@ These few lines make sure all the proper directories are in your pathway.
 myPath=genpath(pwd);
 setup(myPath);
 ```
-This line reads the coordinate data.  
+This line reads the coordinate data.
 ```
 ale_inputCoords(‘coordinateData.xls`);
 ```
@@ -167,7 +168,7 @@ Foci can be found in the **Foci** output folder. You can display them in BrainNe
 4. After you're done editing the spreadsheet, copy and paste the MNI coordinates under the columns **mni_x**, **mni_y**, and **mni_z** into a text editor **as well as the three new columns generated**.
   * If you use TextEditor in MacOS, enter `command+shift+t` first to make it unformatted text editing.
   * Make sure to delete the column header (i.e., the first row that contains the column names mni_x, mni_y, and mni_z), and then save this file as **coordinates.node**.
-5. You can now load this onto BrainNet. In BrainNet, choose **BrainNet_ICBM152.nv** as the **surface figure** and choose **coordinates.node** for **Data file (node)**. If you want modularity, under **Node** in Options, go to **Color** and choose the option **Modular**. In **Modular**, click **More** and select your desired colors.  
+5. You can now load this onto BrainNet. In BrainNet, choose **BrainNet_ICBM152.nv** as the **surface figure** and choose **coordinates.node** for **Data file (node)**. If you want modularity, under **Node** in Options, go to **Color** and choose the option **Modular**. In **Modular**, click **More** and select your desired colors.
 6. Finally, click "OK" and generate the figure.
 
 To do create axial views in FSL, you will first have to dilate the foci using the following command in the terminal.
@@ -181,6 +182,6 @@ You can then open the output of this in fsleyes and play with the colors.
 
 If you're ever confused on where to start, always make sure to either read past papers, GitHub repo wikis, or this documentation! On a final note, in whatever way you can, I'd highly recommend you also make two important figures whenever you report your results:
 1. **PRISMA chart**: You can easily find this online or edit a template on your own. This helps readers look at the flow from database search to meta-analysis.
-2. **Table of included experiments**: Pretty self-explanatory. You can use the information from your data extraction of study information for this.  
+2. **Table of included experiments**: Pretty self-explanatory. You can use the information from your data extraction of study information for this.
 
 Good luck!

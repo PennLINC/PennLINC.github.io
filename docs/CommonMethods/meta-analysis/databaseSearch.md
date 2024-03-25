@@ -2,6 +2,7 @@
 layout: default
 title: Database Search
 parent: Meta-analysis
+grand_parent: Common Methods
 nav_order: 2
 ---
 
