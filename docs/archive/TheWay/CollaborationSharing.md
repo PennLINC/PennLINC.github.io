@@ -15,7 +15,7 @@ Below are a few example scenarios and what best recommendations we have for shar
 
 # BIDS Data
 
-Sharing BIDS data typically happens at the beginning of a project. We recommend looking into the options on [this page about fetching your data](/docs/TheWay/FetchingYourData#FetchingYourData).
+Sharing BIDS data typically happens at the beginning of a project. We recommend looking into the options on [this page about fetching your data](/docs/DataWorkflows/FetchingYourPMACSData.md).
 
 # Outputs from TheWay
 
