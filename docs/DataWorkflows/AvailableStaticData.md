@@ -19,7 +19,7 @@ has_toc: false
 7. [BHRC](https://osf.io/ktz5h/) - Brazilian High Risk Cohort; ages 5-14 and N~=600
 
 
-## Our modalities
+## Available modalities
 
 There are multiple different types of processed output available here, for the fMRI and DWI modalities. At the moment, no ASLPrep or perfusion data is available via PMACS. 
 
