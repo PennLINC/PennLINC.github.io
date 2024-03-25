@@ -18,24 +18,19 @@ has_toc: true
 This section gives an overview of how to get started on PMACS Limited Performance Computing (LPC) cluster. For additional information, check out the [LPC wiki](https://wiki.pmacs.upenn.edu/pub/LPC). NOTE: The full URL to the pmacs servers have not been included here. If you need to know the full URL, please ask on slack.
 
 ## Obtaining PMACS LPC Access
-Send the lab's access manager (Tinashe) your Pennkey, full name, and Penn email, and have them fill a ticket and request access for you. When access has been granted, you will receive an email with a temporary password through SecureShare. Log in via [this link](https://reset.pmacs.upenn.edu/) with your temporary password and set a new PMACS password. Your Pennkey and new PMACS password will be used to ssh into the LPC and to access the PMACS help desk/ticketing system.
+Send the lab's access manager (you can ask who this is on the #informatics Slack channel) your Pennkey, full name, and Penn email, and have them fill a ticket and request access for you. When access has been granted, you will receive an email with a temporary password through SecureShare. Log in via [this link](https://reset.pmacs.upenn.edu/) with your temporary password and set a new PMACS password. Your Pennkey and new PMACS password will be used to ssh into the LPC and to access the PMACS help desk/ticketing system.
 
 ## Logging in to PMACS LPC
-Once you've set up your login credentials for the PMACS LPC, you can SSH into the LPC from anywhere (even without Penn VPN). You can SSH into PMACS in two different ways, depending on what tasks you want to execute:
+Once you've set up your login credentials for the PMACS LPC, you can SSH into the LPC from anywhere (even without Penn VPN). You can SSH into PMACS using the following command: 
 
 ```bash
-$ ssh -Y [username]@scisub.pmacs.upenn.edu #SSH only. No sftp. No outbound access. Can submit or check jobs.
-$ ssh -Y [username]@sciget.pmacs.upenn.edu #SSH, but has outbound access to use git, svn, wget, et cetera to download data. Can *not* submit or check jobs.
+$ ssh -Y [username]@bblsub.pmacs.upenn.edu #SSH only. No sftp. No outbound access. Can submit or check jobs.
+
 ```
 
 Enter PMACS password when prompted.
 
-Again, you can submit jobs on `scisub`, and you get interface with the outside world (e.g., using conda / pip install, wget) on `sciget`. We recommend also doing an SSH into `sciget7` as it seems to be the most up-to-date node:
-
-```bash
-$ ssh -Y [username]@sciget
-$ ssh sciget7
-```
+You can submit jobs on `bblsub`, and you get interface with the outside world (e.g., using conda / pip install, wget).
 
 In general, there is a set of software libraries and tools we expect you'll need, such as `R`, `conda`, and `FSL`; we've made these available for you in a module. To load this module, simply type the following:
 
@@ -130,11 +125,12 @@ $ You are currently logged in as <username> to upenn.flywheel.io
 > Note: Sometimes `fw status` gets you this error message: `'Connection to upenn.flywheel.io timed out. (connect timeout=10)')': /api/auth/status`. In this case, logging out of PMACS and logging in again should fix the issue.
 
 ## Cloning and Updating GitHub Repos on PMACS
-If you have already created an ssh private key for your PMACS account and have added it to both the ssh-agent on PMACS (~/.ssh/id_rsa and id_rsa.pub files) and to your GitHub account, you can clone, pull, and push git repositories using sciget and an available github module on PMACS.
+If you have already created an ssh private key for your PMACS account and have added it to both the ssh-agent on PMACS (~/.ssh/id_rsa and id_rsa.pub files) and to your GitHub account, you can clone, pull, and push git repositories using bblsub and an available github module on PMACS.
 
-Specifically, to clone and update repos you should first ssh in via sciget (rather than via scisub). Sciget allows connections to outbound networks.
+Specifically, to clone and update reposm you should first ssh in via bblsub 
+
 ```bash
-$ ssh -Y [username]@sciget
+$ ssh -Y [username]@bblsub
 ```
 Next, load a git-related module.
 ```bash
@@ -170,9 +166,9 @@ $ ssh-add ~/.ssh/id_rsa
 $ mkdir /Users/<username>/ImageData/PMACS_remote
 $ chmod 700 /Users/<username>/ImageData/PMACS_remote
 ```
-3. Mount the desired PMACS directory to your newly created, local mount directory using sshfs and sciget
+3. Mount the desired PMACS directory to your newly created, local mount directory using sshfs and bblsub
 ```bash
-$ sshfs [username]@sciget:<my-folder-on-PMACS> <my-local-mount-folder> -o defer_permissions,volname=project
+$ sshfs [username]@bblsub:<my-folder-on-PMACS> <my-local-mount-folder> -o defer_permissions,volname=project
 ```
 4. Unmount when done! You should run this unmount command from outside of the mount point.
 ```bash
@@ -182,13 +178,13 @@ $ diskutil umount force /Users/<username>/ImageData/PMACS_remote
 ## Enabling X11 forwarding
 To use graphics on PMACS, make sure that you:
 - Have [XQuartz](https://www.xquartz.org/) installed on your local Mac
-- log in to scisub via ssh -Y
+- log in to bblsub via ssh -Y
 - use xbash for your interactive shell
 
 
 ## Transferring files to and from the LPC
 - You can transfer files to and from PMACS with username@transfer. This can be used with SFTP, rsync, and scp. (You cannot use transfer for ssh).
-- Sciget can be used with scp, but transfer is reccomended. As in:
+- bblsub can be used with scp, but transfer is reccomended. As in:
 ```bash
 $ [<username>@<source_server> ~]$ scp /data/jux/BBL/projects/multishell_diffusion/processedData/multishellPipelineFall2017/*/*/prestats/eddy/*_msRD.nii.gz <username>@transfer:/project/grmpy_diffusion/diffusion_metrics/
 ```
@@ -320,17 +316,17 @@ First, pick a port number. RStudio by default tries to set it at `8787`, so it's
 safe to assume whenever you're on the cluster that someone is already using it.
 Also, it's a good idea to use 3 separate terminals to supervise what you're doing. Let's call them `t1, t2, t3`.
 
-1. Log in to `sciget` on `t1`.
+1. Log in to `bblsub` on `t1`.
 
 ```sh
 # In this example I'm using 9999. DO NOT USE THIS. BIG SAD.
-t1[localmachine]$ ssh -Y -L localhost:9999:localhost:9999 <username>@sciget
+t1[localmachine]$ ssh -Y -L localhost:9999:localhost:9999 <username>@bblsub
 ```
 
-2. From `sciget`, login to the Singularity node on PMACS.
+2. From `bblsub`, login to the Singularity node on PMACS.
 
 ```sh
-t1[<username>@sciget ~]$ ssh singularity01
+t1[<username>@bblsub ~]$ ssh singularity01
 ```
 
 3. On the Singularity node, fetch and set up the Singularity image.
@@ -358,15 +354,15 @@ t1[<username>@singularity01 ~]$ netstat -tunlp
 t1[<username>@singularity01 ~]$ netstat -tunlp | grep rserver
 ```
 
-5. On `t2`, login to `sciget` and "listen" to the port from Singularity.
+5. On `t2`, login to `bblsub` and "listen" to the port from Singularity.
 
 ```sh
 # I tend to just repeat the port numbers because I forget which is which
-t2[localmachine]$ ssh -Y <username>@sciget
-t2[<username>@sciget ~]$ ssh -NfL localhost:9999:localhost:9999 singularity01
+t2[localmachine]$ ssh -Y <username>@bblsub
+t2[<username>@bblsub ~]$ ssh -NfL localhost:9999:localhost:9999 singularity01
 ```
 
-6. On `t3`, "listen" to the port from `sciget`.
+6. On `t3`, "listen" to the port from `bblsub`.
 
 ```sh
 t3[localmachine ~]$ ssh -NfL localhost:9999:localhost:9999 singularity01
@@ -408,9 +404,9 @@ Data processing pipelines, such as [fmriprep](https://fmriprep.org/en/stable/) a
 
 ### Creating singularity images from dockerhub on PMACS
 
-1. Log onto **sciget**
+1. Log onto **bblsub**
    ```bash
-   $ ssh -Y <user>@sciget
+   $ ssh -Y <user>@bblsub
    ```
 2. Connect to singularity
    ```bash

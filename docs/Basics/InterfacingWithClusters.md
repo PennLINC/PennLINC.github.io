@@ -82,7 +82,7 @@ node -v           # check the version
 From here, you can install the underlying `code-server` application:
 
 ```shell
-npm install -g code-server --unsafe-perm # unsafe is necessary on cubic for permissions reasons
+npm install -g code-server --unsafe-perm # unsafe is necessary on CUBIC for permissions reasons
 ```
 
 If there is error message from above command, try these instead:
@@ -147,7 +147,7 @@ to the running singularity instance. So pick one number, and stick with it.
 Lastly, open a new terminal window to manage the `PORT` and link it with the same number:
 
 ```
-ssh -L localhost:8767:localhost:8767 <username>@cubic-sattertt    # change <username> to your cubic username
+ssh -L localhost:8767:localhost:8767 <username>@CUBIC-sattertt    # change <username> to your CUBIC username
 
 # this process must remain running so don't `ctrl`+`c` it until you're done working
 ```
@@ -160,7 +160,7 @@ If you see this screen, you're in business:
 To login, go back to your terminal and find the password in the config file and input:
 
 ```shell
-# please first make sure you have logged in as cubic project user, instead of personal user (as the config.yaml is saved in project user folder):
+# please first make sure you have logged in as CUBIC project user, instead of personal user (as the config.yaml is saved in project user folder):
 # sudo -u <project_username> sudosh
 
 cat ~/.config/code-server/config.yaml
