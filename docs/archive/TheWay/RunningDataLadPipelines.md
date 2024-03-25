@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Running Pipelines with DataLad
-parent: The Way
-nav_order: 3
+parent: archive
+nav_order: 4
 has_toc: true
 ---
 

@@ -9,6 +9,40 @@ has_toc: false
 # Available Static datasets
 {: .no_toc }
 
+## Available studies
+1. [HCPD](https://www.humanconnectome.org/study/hcp-lifespan-development/data-releases) - The Human Connectome Project Developmental Sample; ages roughly 5-21 and N=~600. 
+2. [PNC](https://www.med.upenn.edu/bbl/philadelphianeurodevelopmentalcohort.html) - The Philadelphia Neurodevelopmental cohort; ages roughly 8-23 and N=~1600.
+3. [CCNP](https://www.sciencedirect.com/science/article/pii/S1878929321001109) - The Chinese Colornest Project (developmental); ages 6-18 and N=~200.
+4. [HBN](https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/About.html)- The Healthy Brain Network; ages 5-21 and N~=2500.
+5. [PACCT/ECAS](https://danlab.psychology.columbia.edu/research/studies) - Parents and Children Coming Together/Early Caregiving Adversities; ages 5-12 and N~=350
+6. [NKI](https://www.nki.rfmh.org/study/rockland-sample/) - Nathan Kline Institute Rockland sample; ages 6-85 and N~=1300
+7. [BHRC](https://osf.io/ktz5h/) - Brazilian High Risk Cohort; ages 5-14 and N~=600
+
+
+## Available modalities
+
+There are multiple different types of processed output available here, for the fMRI and DWI modalities. At the moment, no ASLPrep or perfusion data is available via PMACS. 
+
+### BIDS
+1. BIDS - These are curated in [BIDS](https://bids.neuroimaging.io/) format, but unprocessed. Typically these are put through the processing pipelines mentioned below before they can be used for any analyses.
+
+### fMRI 
+2. [fMRIPrep](https://fmriprep.org/en/stable/) - This data is preprocesed, but our lab typically does not use fMRIPrep derivatives directly, and runs them through XCP first. 
+3. [XCP-D](https://xcp-d.readthedocs.io/en/latest/index.html) - These derivatives are commonly used for papers - particularly the ALFF, parcellated timeseries, and functional connectivity matrices. The in-lab developer is Taylor Salo. 
+
+### DWI data
+2. [QSIPrep](https://qsiprep.readthedocs.io/en/latest/) - This data is preprocesed, and typically the `preproc-dwi` files are used in further analyses/ put through QSIRecon workflows. The in-lab developer is Matt Cieslak. 
+3. QSIRecon workflows - there are multiple different modes here, including `msmt`, `autotrack`,`gqi`,`sift`, `scalarfest` and `hsvs`. More information about the outputs of these can be found [here](https://qsiprep.readthedocs.io/en/latest/reconstruction.html). 
+
+
+
+*Note that, when available, the QC files are also generated. In case these files are not generated, users will have to concatenate the individual subject files across the subjects themselves in order to generate a dataset-wide QC file.*
+
+!!! note Important note
+It is also generally best to use the latest available version of a dataset
+
+Below, you can find a list of studies, modalities, and their clone IDs: 
+
 | Study | Content                           | Clone URL                       | Format | Dataset ID                           |
 | ----- | --------------------------------- | ------------------------------- | ------ | ------------------------------------ |
 | PNC   | BIDS                              | LINC_PNC#~BIDS                  | Files  | f2cb6108-521b-4653-b492-003321e5f5e3 |

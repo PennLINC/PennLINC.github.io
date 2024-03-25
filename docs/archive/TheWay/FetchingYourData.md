@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Fetching Your Data
-parent: The Way
-nav_order: 1
+parent: archive
+nav_order: 2
 has_toc: true
 ---
 

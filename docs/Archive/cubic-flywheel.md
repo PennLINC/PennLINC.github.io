@@ -1,7 +1,7 @@
 ---
 layout: default
 title: CUBIC-flywheel
-parent: Archive
+parent: archive
 nav_order: 1
 has_toc: true
 ---

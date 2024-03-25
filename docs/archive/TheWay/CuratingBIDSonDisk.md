@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Curating BIDS Datasets
-parent: The Way
-nav_order: 2
+parent: archive
+nav_order: 3
 has_toc: true
 ---
 

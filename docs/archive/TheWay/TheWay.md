@@ -1,9 +1,9 @@
 ---
 layout: default
 title: The Way
-has_children: true
+parent: archive
+nav_order: 1
 has_toc: true
-nav_order: 13
 ---
 
 Here we document standard practices we've developed while working with
