@@ -1,9 +1,7 @@
 ---
 layout: default
 title: just-the-docs
-nav_order: 15
 has_children: true
-permalink: docs/just-the-docs_documentation/index
 ---
 
 # How to use `just-the-docs`

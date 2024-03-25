@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Collaboration & Sharing
-parent: archive
+parent: Archived Documentation
 nav_order: 5
 has_toc: true
 ---
@@ -35,7 +35,7 @@ For most of our use, you want to clone the _output_ of a specific pipeline -- th
 datalad clone ria+file:///PATH_TO_FMRIPREP_DATASET/output_ria#~data fmriprep_outputs
 ```
 
-If the person is happy with this format and working with `datalad`, they can use this command to get the cloned data. 
+If the person is happy with this format and working with `datalad`, they can use this command to get the cloned data.
 
 ## Datalad to Non-Datalad
 

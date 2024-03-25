@@ -859,4 +859,52 @@ Note that `s_vmem` adds only 2 GBs to the original `mem_gb` specification. This 
 ## Useful tips and tricks
 
 # Additional information about CUBIC
-[This page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects) has tons of other useful information about using CUBIC. Anyone who plans on using CUBIC regularly should probably browse it. Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others. Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page.
+[This page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Main_Page) has tons of other useful information about using CUBIC. Anyone who plans on using CUBIC regularly should probably browse it. Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others. Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page.
+
+# Template for submitting a job: 
+
+After writing the script you want to run, let's say, a script called `pull.sh`:
+
+```
+singularity build xcp-0-7-0.sif docker://pennlinc/xcp_d:0.7.0
+```
+
+you can submit it via the command `qsub pull.sh`. 
+
+You can specify memory limits or other resources in your command, or even in your script, in the following format:
+```
+#$ -l h_vmem=40G
+singularity build xcp-0-7-0.sif docker://pennlinc/xcp_d:0.7.0
+```
+
+More resource limitations can be found on the page linked above. 
+
+# Submitting array jobs
+
+Sometimes, you may have 400 jobs, but you may only want to run 4 at a time. How can we achieve this??? By using array jobs. 
+
+Let's create some files:
+
+1. We already have our main code that we want to run
+2. A file of `qsub_params.txt`, or keyword arguments that we want our script to run (eg: containing subject ID and session ID)
+3.  `qsub_array.sh`
+```
+#!/bin/bash
+#$ -cwd
+#$ -N UNZIPsub # name of job
+#$ -e ~/analysis/logs # error log location
+#$ -o ~/analysis/logs # output log location
+params_file=~/qsub_params.txt # file containing keyword arguments
+params=$(head -n $SGE_TASK_ID $params_file | tail -n 1)
+
+bash ${script_to_run}.sh $params
+
+```
+4. We can now submit jobs in this format: `qsub -t 1-400 -tc 4 qsub_array.sh`
+
+# Tips for debugging if your CUBIC job fails
+1. First, re-run the job with more memory. If this fails still, you can proceed to the next steps. 
+2. Check the error logs to see if it is a software specfic error. If not, proceed to the next steps. 
+3. Try running your main script (the one you submitted via `qsub`) to see if there are any errors in your code set-up before the main computation is underway. 
+4. If this does not work, try searching on Slack to see if anyone has asked a similar question before. 
+5. If you are still stuck, it might be worth asking on the #informatics team at this point!
