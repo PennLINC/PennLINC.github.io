@@ -2,7 +2,7 @@
 layout: default
 title: Using Containers
 nav_order: 12
-has_children: true
+has_children: false
 permalink: docs/containers
 has_toc: false
 ---
