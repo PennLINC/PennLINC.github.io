@@ -1,32 +1,16 @@
-//
 // The basic two column layout
-//
-
-.page-wrap {
-  @include mq(md) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-}
 
 .side-bar {
-  z-index: 100;
+  z-index: 0;
   display: flex;
   flex-wrap: wrap;
   background-color: $sidebar-color;
 
   @include mq(md) {
-    flex-wrap: nowrap;
-    position: absolute;
+    flex-flow: column nowrap;
+    position: fixed;
     width: $nav-width-md;
     height: 100%;
-    flex-direction: column;
     border-right: $border $border-color;
     align-items: flex-end;
   }
@@ -37,20 +21,7 @@
   }
 }
 
-.main-content-wrap {
-  @include mq(md) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-overflow-scrolling: touch;
-    overflow-x: hidden;
-    overflow-y: scroll;
-  }
-}
-
-.main-content {
+.main {
   @include mq(md) {
     position: relative;
     max-width: $content-width;
@@ -58,16 +29,19 @@
   }
 
   @include mq(lg) {
-    margin-left: calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
+    // stylelint-disable function-name-case
+    // disable for Max(), we want to use the CSS max() function
+    margin-left: Max(
+      #{$nav-width},
+      calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width})
+    );
+    // stylelint-enable function-name-case
   }
 }
 
-.js-main-content:focus {
-  outline: none;
-}
-
-.page {
+.main-content-wrap {
   @include container;
+
   padding-top: $gutter-spacing-sm;
   padding-bottom: $gutter-spacing-sm;
 
@@ -77,16 +51,14 @@
   }
 }
 
-.page-header {
-  @include container;
+.main-header {
+  z-index: 0;
   display: none;
-  padding-top: $gutter-spacing-sm;
-  padding-bottom: $gutter-spacing-sm;
   background-color: $sidebar-color;
 
   @include mq(md) {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     height: $header-height;
     background-color: $body-background-color;
     border-bottom: $border $border-color;
@@ -101,10 +73,9 @@
   }
 }
 
-.navigation,
+.site-nav,
 .site-header,
 .site-footer {
-
   width: 100%;
 
   @include mq(lg) {
@@ -112,10 +83,15 @@
   }
 }
 
-.navigation {
-  @include container;
+.site-nav {
+  display: none;
+
+  &.nav-open {
+    display: block;
+  }
 
   @include mq(md) {
+    display: block;
     padding-top: $sp-8;
     padding-bottom: $gutter-spacing-sm;
     overflow-y: auto;
@@ -129,7 +105,6 @@
   align-items: center;
 
   @include mq(md) {
-    z-index: 101;
     height: $header-height;
     max-height: $header-height;
     border-bottom: $border $border-color;
@@ -138,6 +113,7 @@
 
 .site-title {
   @include container;
+
   flex-grow: 1;
   display: flex;
   height: 100%;
@@ -164,20 +140,34 @@
   }
 }
 
-.menu-button {
-  appearance: none;
+.site-button {
   display: flex;
   height: 100%;
   padding: $gutter-spacing-sm;
   align-items: center;
-  color: $link-color;
-  text-transform: uppercase;
-  background: transparent;
-  border: 0;
+}
 
-  @include mq(md) {
+@include mq(md) {
+  .site-header .site-button {
     display: none;
   }
+}
+
+.site-title:hover {
+  background-image: linear-gradient(
+    -90deg,
+    rgba($feedback-color, 1) 0%,
+    rgba($feedback-color, 0.8) 80%,
+    rgba($feedback-color, 0) 100%
+  );
+}
+
+.site-button:hover {
+  background-image: linear-gradient(
+    -90deg,
+    rgba($feedback-color, 1) 0%,
+    rgba($feedback-color, 0.8) 100%
+  );
 }
 
 // stylelint-disable selector-max-type
@@ -185,6 +175,7 @@
 body {
   position: relative;
   padding-bottom: $sp-10;
+  overflow-y: scroll;
 
   @include mq(md) {
     position: static;
@@ -196,14 +187,23 @@ body {
 
 .site-footer {
   @include container;
+
   position: absolute;
   bottom: 0;
   left: 0;
   padding-top: $sp-4;
   padding-bottom: $sp-4;
+  color: $grey-dk-000;
+  @include fs-2;
 
   @include mq(md) {
     position: static;
     justify-self: end;
   }
+}
+
+.icon {
+  width: $sp-5;
+  height: $sp-5;
+  color: $link-color;
 }

@@ -122,11 +122,12 @@ Next, make sure you have `Ruby` installed; the best way to check this is to do `
 To install ruby, just do:
 
 ```
-brew install ruby
+brew install ruby@3.2
 
 # YOU SHOULD PROBABLY ALSO ADD IT TO YOUR PATH LIKE SO:
 
-echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.bash_profile
+export PATH="/Users/~/.gem/ruby/2.6.0/bin:$PATH"
+
 ```
 
 Now install `jekyll` using a ruby "gem", by doing the following:
@@ -134,14 +135,19 @@ Now install `jekyll` using a ruby "gem", by doing the following:
 ```
 # PERMISSIONS MAY BE REQUIRED
 
+gem install --user-install bundler -v 2.4.22
 gem install --user-install bundler jekyll
 ```
+Note that the version may change and you may need to install/update some dependencies using the same format! You can use `sudo` for permissions errors. 
 
 In this last step, you instruct `jekyll` to take all of the templates and files in the current directory and spin them up into a webpage, and `ruby` will serve it on your local machine. The instruction for this, from the root directory of the repo:
+
 ```
 cd PennLINC.github.io
-bundle exec jekyll serve
+bundle install
+bundle _2.1.4_ exec jekyll serve
 ```
+Note that this is the version (2.1.4) that works for me at this moment. This may change!
 
 If you see something like this:
 
