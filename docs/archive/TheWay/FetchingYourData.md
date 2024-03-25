@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Fetching Your Data
-parent: archive
+parent: Archived Documentation
 nav_order: 2
 has_toc: true
 ---
@@ -94,7 +94,7 @@ For any dataset that comes with a manifest file, the steps are as below:
 {: .no_toc }
 
 Prepare a well-organized CSV or TSV or JSON file from the given manifest file
-The file should contain columns that specifies, for each entry, the URL and the relative path of the destination file to which the URL’s content will be downloaded. 
+The file should contain columns that specifies, for each entry, the URL and the relative path of the destination file to which the URL’s content will be downloaded.
 The first few rows of an example file is shown below. For security purposes, the information shown in the shaded block below is not real and is only intended for educational purposes.
 
 ```
@@ -103,13 +103,13 @@ sub1,s3://NDAR_BUCKET/SUBMISSION_ID/.../a.json, a.json
 sub2,s3://NDAR_BUCKET/SUBMISSION_ID/.../b.json, b.json
 sub3,s3://NDAR_BUCKET/SUBMISSION_ID/.../c.nii.gz, c.nii.gz
 ```
-In this case,  `submission_id` column holds the subject ID, `associated_file` column holds the s3 links/URL and `filename` column holds the relative path of the destination file to which the URL’s content will be downloaded. 
+In this case,  `submission_id` column holds the subject ID, `associated_file` column holds the s3 links/URL and `filename` column holds the relative path of the destination file to which the URL’s content will be downloaded.
 
-  
+
 Next we would need to obtain relevant AWS S3 credentials, which are needed to access S3 Objects. For datasets held in [NDA](https://nda.nih.gov/), the web service provides temporary credentials in three parts:
 
-   + an access key, 
-   + a secret key, 
+   + an access key,
+   + a secret key,
    + and a session token
 
 All three parts are needed in order to authenticate properly with S3 and retrieve data. AWS credentials for [NDA](https://nda.nih.gov/) can be obtained according to the following steps:
@@ -120,7 +120,7 @@ Note 2: This tutorial is partially adapted from the NDA's tutorial [How to Acces
 
 
 
-## Step 1: Download a copy of the NDA download manager 
+## Step 1: Download a copy of the NDA download manager
 {: .no_toc }
 
 The command line downdownload manager is written in Java and allows for the automatic download of files. We can use `wget` to retrieve the program from the NIH web server.
@@ -131,7 +131,7 @@ The command line downdownload manager is written in Java and allows for the auto
 ## Step 2: Unzip the download manager
  {: .no_toc }
 
- Since the downloaded program is a zipped file, we would need to unzip the program to use the download manager. 
+ Since the downloaded program is a zipped file, we would need to unzip the program to use the download manager.
 
   ```
   unzip downloadmanager.zip
@@ -180,7 +180,7 @@ aws_session_token = xxxxx[copy and paste the value of sessionToken in `awskeys.t
 git annex info | grep datalad
 ```
 
-If not enabled (that is, no string returned), run the `git annex initremote` command. 
+If not enabled (that is, no string returned), run the `git annex initremote` command.
 Don't forget to give the remote a name (it is `datalad` here). The following command will configure datalad as a special remote for the annexed contents in the dataset.
 
 ```
@@ -207,14 +207,14 @@ cd HCP-D
 ## Step 7: Run datalad addurls command
 {: .no_toc }
 
-It would be helpful to first go over the [documentation](http://docs.datalad.org/en/stable/generated/man/datalad-addurls.html) to have the command tailored to your needs. 
+It would be helpful to first go over the [documentation](http://docs.datalad.org/en/stable/generated/man/datalad-addurls.html) to have the command tailored to your needs.
 Take HCP-D as an example, you will run:
 
 ```
 datalad addurls FILE_PREPARED_IN_STEP_0 '{associated_file}' '{filename}'
 ```
 
-where `{associated_file}` refers to the `associated_file` column in `FILE_PREPARED_IN_STEP_0` and `{filename}` refers to the `filename` column in `FILE_PREPARED_IN_STEP_0`. 
+where `{associated_file}` refers to the `associated_file` column in `FILE_PREPARED_IN_STEP_0` and `{filename}` refers to the `filename` column in `FILE_PREPARED_IN_STEP_0`.
 
 # rclone
 
