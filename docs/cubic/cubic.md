@@ -861,11 +861,7 @@ In order to prevent your jobs from dying without the cluster giving errors or wa
 	where `N-M` speicify a range of CPUs and `M>N`
 
 
-## Useful tips and tricks
-
-# Additional information about CUBIC
-[This page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Main_Page) has tons of other useful information about using CUBIC. Anyone who plans on using CUBIC regularly should probably browse it. Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others. Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page.
-
+# Useful tips and tricks
 
 
 ## Submitting array jobs
@@ -916,3 +912,7 @@ Note that `s_vmem` adds only 2 GBs to the original `mem_gb` specification. This 
 4. Try running your main script (the one you submitted via `qsub`) to see if there are any errors in your code set-up before the main computation is underway. 
 5. If this does not work, try searching on Slack to see if anyone has asked a similar question before. 
 6. If you are still stuck, it might be worth asking on the #informatics team at this point!
+
+
+# Additional information about CUBIC
+[This page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Main_Page) has tons of other useful information about using CUBIC. Anyone who plans on using CUBIC regularly should probably browse it. Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others. Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page.
