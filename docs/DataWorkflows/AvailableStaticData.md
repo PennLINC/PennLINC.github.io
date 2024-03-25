@@ -35,11 +35,10 @@ There are multiple different types of processed output available here, for the f
 3. QSIRecon workflows - there are multiple different modes here, including `msmt`, `autotrack`,`gqi`,`sift`, `scalarfest` and `hsvs`. More information about the outputs of these can be found [here](https://qsiprep.readthedocs.io/en/latest/reconstruction.html). 
 
 
-##### Notes: 
-*Note that, when available, the QC files are also generated.
-In case these files are not generated, users will have to concatenate the individual subject files across the subjects themselves in order to generate a dataset-wide QC file.*
 
-*It is also generally best to use the latest available version of a dataset* 
+*Note that, when available, the QC files are also generated. In case these files are not generated, users will have to concatenate the individual subject files across the subjects themselves in order to generate a dataset-wide QC file.*
+
+!!! It is also generally best to use the latest available version of a dataset
 
 Below, you can find a list of studies, modalities, and their clone IDs: 
 
