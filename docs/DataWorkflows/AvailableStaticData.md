@@ -9,7 +9,7 @@ has_toc: false
 # Available Static datasets
 {: .no_toc }
 
-## Our studies
+## Available studies
 1. [HCPD](https://www.humanconnectome.org/study/hcp-lifespan-development/data-releases) - The Human Connectome Project Developmental Sample; ages roughly 5-21 and N=~600. 
 2. [PNC](https://www.med.upenn.edu/bbl/philadelphianeurodevelopmentalcohort.html) - The Philadelphia Neurodevelopmental cohort; ages roughly 8-23 and N=~1600.
 3. [CCNP](https://www.sciencedirect.com/science/article/pii/S1878929321001109) - The Chinese Colornest Project (developmental); ages 6-18 and N=~200.
