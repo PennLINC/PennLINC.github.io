@@ -263,11 +263,11 @@ analysis will be fetched if you need to
 
 # Getting a zipped dataset
 
-Data on PMACS might be zipped, or unzipped. In the case of unzipped data, you should be good to go following the guidelines on finding files you need [here](./FetchingYourPMACSData.md)! If your data is zipped, you might need a little more work.
-
-The following walkthrough should help you unzip your data. These lines of code can be customized per your needs to unzip some or all subjects and then some or all files: 
+The following walkthrough should help you unzip your data if it is a zipped dataset. These lines of code can be customized per your needs to unzip some or all subjects and then some or all files: 
 
 Before running a loop for all participants of a dataset, you probably first want to figure out what data is available, and which files you’d want to get. Most datasets are zipped, so here is a walkthrough for a single subject. In this case, we’re interested in getting fMRIPrep data from PNC, which is zipped and stored on PMACS. 
+
+## Figuring out what data is available (single participant)
 
 Once data is cloned from PMACS, let’s `cd` into to it to see what’s there: 
 
