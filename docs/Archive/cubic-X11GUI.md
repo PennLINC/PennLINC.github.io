@@ -1,6 +1,6 @@
 ---
 layout: default
-title: cubic-X11GUI
+title: CUBIC-X11GUI
 parent: Archive
 nav_order: 2
 has_toc: true
@@ -14,7 +14,7 @@ To get started, you'll probably need to download [XQuartz](https://www.xquartz.o
 To start a X session on CUBIC project user:
 1. If you're on a Mac, make sure XQuartz is installed and running. From the terminal, ssh to your account: 
 ```bash
-$ ssh -Y yourusername@cubic-sattertt
+$ ssh -Y yourusername@CUBIC-sattertt
 ```
 2. Log into the project user with sudox:
 ```bash
