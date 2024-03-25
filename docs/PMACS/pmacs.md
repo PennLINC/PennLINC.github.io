@@ -18,7 +18,7 @@ has_toc: true
 This section gives an overview of how to get started on PMACS Limited Performance Computing (LPC) cluster. For additional information, check out the [LPC wiki](https://wiki.pmacs.upenn.edu/pub/LPC). NOTE: The full URL to the pmacs servers have not been included here. If you need to know the full URL, please ask on slack.
 
 ## Obtaining PMACS LPC Access
-Send the lab's access manager (Tinashe) your Pennkey, full name, and Penn email, and have them fill a ticket and request access for you. When access has been granted, you will receive an email with a temporary password through SecureShare. Log in via [this link](https://reset.pmacs.upenn.edu/) with your temporary password and set a new PMACS password. Your Pennkey and new PMACS password will be used to ssh into the LPC and to access the PMACS help desk/ticketing system.
+Send the lab's access manager (you can ask who this is on the #informatics Slack channel) your Pennkey, full name, and Penn email, and have them fill a ticket and request access for you. When access has been granted, you will receive an email with a temporary password through SecureShare. Log in via [this link](https://reset.pmacs.upenn.edu/) with your temporary password and set a new PMACS password. Your Pennkey and new PMACS password will be used to ssh into the LPC and to access the PMACS help desk/ticketing system.
 
 ## Logging in to PMACS LPC
 Once you've set up your login credentials for the PMACS LPC, you can SSH into the LPC from anywhere (even without Penn VPN). You can SSH into PMACS using the following command: 
