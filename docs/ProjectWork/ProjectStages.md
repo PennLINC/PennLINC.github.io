@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Stages of a Project
-parent: Lab Basics
-nav_order: 5
+parent: Projects
+nav_order: 2
 ---
 
 # Stages of a Project at PennLINC

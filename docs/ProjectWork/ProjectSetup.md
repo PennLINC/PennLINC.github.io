@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Project Setup
-parent: Lab Basics
-nav_order: 4
+parent: Projects
+nav_order: 1
 ---
 
 # PennLINC Project Setup Guide
