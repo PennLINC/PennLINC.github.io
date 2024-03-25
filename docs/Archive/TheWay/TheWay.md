@@ -1,7 +1,7 @@
 ---
 layout: default
 title: The Way
-parent: archive
+parent: Archived Documentation
 nav_order: 1
 has_toc: true
 ---

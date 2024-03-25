@@ -8,7 +8,7 @@ permalink: /
 
 # Welcome to The Penn Lifespan Informatics and Neuroimaging Center (PennLINC)
 
-This is the internal website for PennLINC procedures, tutorials, and practices.  This effort's success is dependent on your involvement as lab members and a community, so if you have edits to suggest, or documentation requests, please make them known by submitting an [issue](https://github.com/PennLINC/PennLINC.github.io/issues) or a [Pull Request](https://github.com/PennLINC/PennLINC.github.io/pulls). If you are a LINC member and are documenting one of your tools/processes, please create your documentation according to the [LINC documentation guidelines](docs/Contributing/contributing) and submit a [Pull Request](https://github.com/PennLINC/PennLINC.github.io/pulls), so it can be reviewed and added to the site.
+This is the internal website for PennLINC procedures, tutorials, and practices.  This effort's success is dependent on your involvement as lab members and a community, so if you have edits to suggest, or documentation requests, please make them known by submitting an [issue](https://github.com/PennLINC/PennLINC.github.io/issues) or a [Pull Request](https://github.com/PennLINC/PennLINC.github.io/pulls). If you are a LINC member and are documenting one of your tools/processes, please create your documentation according to the [LINC documentation guidelines](/docs/documentation/documentation_guidelines) and submit a [Pull Request](https://github.com/PennLINC/PennLINC.github.io/pulls), so it can be reviewed and added to the site.
 
 #### Thank you to the contributors for LINC tutorials!
 <ul class="list-style-none">

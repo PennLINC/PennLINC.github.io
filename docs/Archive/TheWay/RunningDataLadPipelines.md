@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Running Pipelines with DataLad
-parent: archive
+parent: Archived Documentation
 nav_order: 4
 has_toc: true
 ---
@@ -62,9 +62,9 @@ $ rm /full/path/to/qsiprep-0.14.2.sif
 
 We assume your BIDS data is curated and available either on your local file system
 or a remote datalad source. We're going to "bootstrap" the process of both
-creating the analysis dataset, and running a pipeline on each subject. The 
+creating the analysis dataset, and running a pipeline on each subject. The
 word “bootstrap” can be thought of as a term for "set up a pipeline to
-datalad-clone each participant to a temporary working space, process 
+datalad-clone each participant to a temporary working space, process
 each participant with a reproducible/tracked datalad-run command,
 and safely merge the outputs together in the user’s project”.
 
@@ -214,7 +214,7 @@ you delete all your jobs.
 
 ### When jobs are stuck in the "r" state
 
-Sometimes, your qsub jobs will get stuck due to cluster/node issues. This will require you to rerun those stuck jobs. In order to do this, you can use our `qstat_to_qsub_calls_rerun.sh` script that can be found [here](https://github.com/PennLINC/RBC/blob/master/PennLINC/Generic/qstat_to_qsub_calls_rerun.py). This script takes in the path to the analysis directory of the pipeline you ran, runs `qstat` under the hood, cross references the job IDs with the logs directory to get the subject IDs of all stuck subjects, and writes out a `qsub_calls_rerun.sh` file to the `analysis/code directory`, and `qdel` the stuck jobIDs. This file contains a truncated version of `qsub_calls.sh` and includes the qsub calls to the pipeline for only the subjects who were stuck. Lastly, you will need to kill the stuck jobs and `bash code/qsub_calls_rerun.sh` from the analysis directory. Repeat this process if another rerun is required. See below for an example: 
+Sometimes, your qsub jobs will get stuck due to cluster/node issues. This will require you to rerun those stuck jobs. In order to do this, you can use our `qstat_to_qsub_calls_rerun.sh` script that can be found [here](https://github.com/PennLINC/RBC/blob/master/PennLINC/Generic/qstat_to_qsub_calls_rerun.py). This script takes in the path to the analysis directory of the pipeline you ran, runs `qstat` under the hood, cross references the job IDs with the logs directory to get the subject IDs of all stuck subjects, and writes out a `qsub_calls_rerun.sh` file to the `analysis/code directory`, and `qdel` the stuck jobIDs. This file contains a truncated version of `qsub_calls.sh` and includes the qsub calls to the pipeline for only the subjects who were stuck. Lastly, you will need to kill the stuck jobs and `bash code/qsub_calls_rerun.sh` from the analysis directory. Repeat this process if another rerun is required. See below for an example:
 
 `python qstat_to_qsub_calls_rerun.sh /cbica/projects/RBC/production/PNC/fmriprep/analysis`
 
@@ -279,7 +279,7 @@ testing
 ├── exemplars_dir
 └── exemplar_test
     ├── bootstrap-fmriprep.sh
-    ├── fmriprep                 # your analysis lives here           
+    ├── fmriprep                 # your analysis lives here
     │   ├── analysis               # datalad tracked scripts and logs
     │   │   ├── CHANGELOG.md
     │   │   ├── code
@@ -364,7 +364,7 @@ Like so:
 $ bash bootstrap-fmriprep-audit.sh /path/to/exemplar_test/fmriprep
 ```
 
-The contents of the resulting `fmriprep-audit` directory are analogous to the 
+The contents of the resulting `fmriprep-audit` directory are analogous to the
 `fmriprep` directory. Hence, you should make sure to edit `analysis/code/participant_job.sh`
 to suit your needs — particularly, you should set the correct conda environment:
 
@@ -397,7 +397,7 @@ Now, you're ready to run the audit (from the `analysis` directory):
 $ bash code/qsub_calls.sh
 ```
 
-This is a very quick program — once it's complete, you can check if a branch was 
+This is a very quick program — once it's complete, you can check if a branch was
 created successfully as before:
 
 ```bash
@@ -493,7 +493,7 @@ only the _adjusted_ BIDS participants that adheres to the bootstrap workflow:
 ```shell
 .
 ├── bootstrap-fmriprep.sh
-├── fmriprep                         
+├── fmriprep
 │   ├── analysis                # go here
 │   ├── input_ria
 │   ├── merge_ds
@@ -534,11 +534,11 @@ and the various Audit scripts.
 
 # Generating QCs
 
-First, download the script in the same place that you started your pipeline. We currently have QCscripts for ASLPrep and XCP. 
-For fMRIPrep, QCs are analyzed from XCP. 
-Note that for XCP, the unzip script is different https://raw.githubusercontent.com/PennLINC/TheWay/main/scripts/cubic/bootstrap-xcp-qc.sh due to the presence of different tasks. 
+First, download the script in the same place that you started your pipeline. We currently have QCscripts for ASLPrep and XCP.
+For fMRIPrep, QCs are analyzed from XCP.
+Note that for XCP, the unzip script is different https://raw.githubusercontent.com/PennLINC/TheWay/main/scripts/cubic/bootstrap-xcp-qc.sh due to the presence of different tasks.
 
-The example shown below uses ASLPrep outputs. 
+The example shown below uses ASLPrep outputs.
 ```
 wget https://raw.githubusercontent.com/PennLINC/TheWay/main/scripts/cubic/bootstrap-aslprep-qc.sh
 ```
@@ -565,7 +565,7 @@ Like so:
 $ bash bootstrap-aslprep-qc.sh /path/to/exemplar_test/aslprep
 ```
 
-The contents of the resulting `ASLPREP_QC` directory are analogous to the 
+The contents of the resulting `ASLPREP_QC` directory are analogous to the
 `ASLPrep` directory. Hence, you should make sure to edit `analysis/code/participant_job.sh`
 to suit your needs — particularly, you should set the correct conda environment:
 
@@ -598,7 +598,7 @@ Now, you're ready to run the script (from the `analysis` directory):
 $ bash code/qsub_calls.sh
 ```
 
-This is a very quick program — once it's complete, you can check if a branch was 
+This is a very quick program — once it's complete, you can check if a branch was
 created successfully as before:
 
 ```bash
@@ -691,7 +691,7 @@ dssource="$1"
 pushgitremote="$2"
 subid="$3"
 ```
-The variables are normally set when you run qsub_calls.sh as `$1`, `$2` and `$3`, but you don’t get that in an interactive run. Therefore for testing on one subjec on the interactive node, we want to specify the `dssource` (input source), `pushgitremote` (the path to the output branch for the job), and the `subid` (subject id). 
+The variables are normally set when you run qsub_calls.sh as `$1`, `$2` and `$3`, but you don’t get that in an interactive run. Therefore for testing on one subjec on the interactive node, we want to specify the `dssource` (input source), `pushgitremote` (the path to the output branch for the job), and the `subid` (subject id).
 
 In order to obtain the correct output branch for the chosen subject, you would need to check out the file `qsub_calls.sh` and extract relevant information corresponding to the chosen subject. In your `qsub_calls.sh`, you should have something similar to the following lines:
 ```

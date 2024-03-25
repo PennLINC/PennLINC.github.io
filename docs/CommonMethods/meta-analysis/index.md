@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Meta-analysis
+parent: Common Methods
 has_children: true
 has_toc: true
-nav_order: 9
+nav_order: 3
 ---
 # Meta-analyses
 

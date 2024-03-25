@@ -30,12 +30,12 @@ If you'd like to add your study to this list, read on! Successful/complete docum
 
 ## Github Pages Documentation
 
-We use Github Pages to reproducibly document how we arrived at a scientific finding, usually for a paper or poster. A Github Pages site is a static website linked directly to a Github repository -- for example, this website is a Github Pages site for the Github repository [PennLINC/pennlinc.github.io](https://github.com/PennLINC/PennLINC.github.io). The underlying code is markdown and is rendered (converted) automatically into a website by Github. You'll want to create one of these sites for your project and its code repository. To learn how to do this, see [this tutorial](/docs/Contributing/project-documentation/).
+We use Github Pages to reproducibly document how we arrived at a scientific finding, usually for a paper or poster. A Github Pages site is a static website linked directly to a Github repository -- for example, this website is a Github Pages site for the Github repository [PennLINC/pennlinc.github.io](https://github.com/PennLINC/PennLINC.github.io). The underlying code is markdown and is rendered (converted) automatically into a website by Github. You'll want to create one of these sites for your project and its code repository. To learn how to do this, see [this tutorial](/docs/documentation/project-documentation/).
 
 ## Study Page Entry
 
 Lastly, you'll need to add your study to the list below.
-To add a study to this list, please first read the [documentation guide](/docs/Contributing/documentation_guidelines) to familiarize yourself with the process of adding content to this website. When it comes time to add your study, simply add a Pull Request with your entry in the raw text of table:
+To add a study to this list, please first read the [documentation guide](/docs/documentation/documentation_guidelines) to familiarize yourself with the process of adding content to this website. When it comes time to add your study, simply add a Pull Request with your entry in the raw text of table:
 
 ```
 | Study Title   |    Lead Name(s)    |               Link                |
