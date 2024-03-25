@@ -863,6 +863,11 @@ Note that `s_vmem` adds only 2 GBs to the original `mem_gb` specification. This 
 
 # Template for submitting a job: 
 
+{: .warning-title }
+> Warning
+>
+> If you are submitting a job that uses the temporary working directory, make sure to point it to `$TMP`.
+
 After writing the script you want to run, let's say, a script called `pull.sh`:
 
 ```
