@@ -8,10 +8,8 @@ has_toc: true
 
 # Best practices for coding for scientific computing at PennLINC
 
-This is a guide for coding for scientific computing at PennLINC. People may have different styles
-in coding; however, there are a few guidelines we recommend here in order to enhance code's reproducibility, reusability, to make it less prone to mistakes, etc. In other words, your 
-code achieves exactly what you wanted; after several months, when looking at your code, you 
-can still quickly get what you coded; you or other lab members can also reuse your code for other projects in the future.
+This is a guide for coding for scientific computing at PennLINC. People may have different styles in coding; however, there are a few guidelines we recommend here in order to enhance code's reproducibility, reusability, to make it less prone to mistakes, etc. In other words, your 
+code achieves exactly what you wanted; after several months, when looking at your code, you can still quickly get what you coded; you or other lab members can also reuse your code for other projects in the future.
 
 We will describe the guidelines in three stages: 
 
@@ -29,7 +27,7 @@ We end here with some [final words](#final-words).
   * Do not mix code with your data; instead, make separate folders for code and data.
   * Avoid using GitHub to track image data or any data with large file size, or any data you will frequently change. Use `DataLad` to track your data.
   * Keep raw data in a separate folder. Save data derivatives in another folder.
-* Tools: VS Code provides a great UI for coding (e.g., Python, bash), and it is also very helpful for git version control; R Studio provides a great UI for coding in R. Tips: use the "outline" in those tools to jump across sections in scripts.
+* Tools: VS Code provides a great UI for coding (e.g., Python, bash), and it is also very helpful for git version control; R Studio provides a great UI for coding in R. Tips: use the "outline" in those tools to jump across sections in scripts. For Python, using autoformatting tools like  `black` and `isort` and linting tools like `flake8` can help make sure your code is readable.
 
 
 ## Coding itself

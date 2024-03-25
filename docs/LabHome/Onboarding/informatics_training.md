@@ -9,14 +9,7 @@ has_toc: true
 # Informatics Training
 {: .no_toc}
 
-<<<<<<< HEAD:docs/LabHome/Onboarding/informatics_training.md
-Probably all team members in the lab will get involve in research that includes informatics work.
-This page outlines the onboarding process for informatics work, including data curation, analysis, and software development, and is particularly geared towards new data analysts.
-The goal of this section is to provide the resources necessary to develop the **core competencies** for informatics at PennLINC.
-Note that there is no expectation that you master *all* of the competencies below in one sitting - just that you are familiar with how to go about accomplishing these tasks (or at least google your way through it).
-=======
 This page outlines the onboarding process for core informatics tasks, including data curation, analysis, and software development, and is particularly geared towards new data analysts or graduate students. 
->>>>>>> main:docs/LabHome/Onboarding/analyst_onboarding.md
 
 
 ## Table of contents
@@ -36,14 +29,8 @@ The core competencies of informatics are split into 5 major units:
 
 3. [Data Management, Curation](#unit-3-data-management-curation)
 
-<<<<<<< HEAD:docs/LabHome/Onboarding/informatics_training.md
-4. [Processing pipelines](#unit-4-processing-pipelines)
-
-5. [Hypothesis Testing & Analysis]() (Coming Soon!)
-=======
 
 The units are designed around the day-to-day tasks of Informatics team members, with different tasks utilizing a number of competencies from each of these units. In a perfect world, Informatics team members are experts in all 3 units, but in practice, your eventual expertise will depend on your assigned projects within the lab, along with past experience, interests, and desire to learn.
->>>>>>> main:docs/LabHome/Onboarding/analyst_onboarding.md
 
 **Objectives for lab members (but not in Informatics team)**: You should be at least familiar with unit 1. _________ Matt please add more ____________
 
