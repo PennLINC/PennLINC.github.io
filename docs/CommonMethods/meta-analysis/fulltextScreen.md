@@ -2,6 +2,7 @@
 layout: default
 title: Full-text Screening
 parent: Meta-analysis
+grand_parent: Common Methods
 nav_order: 4
 ---
 
@@ -12,7 +13,7 @@ You will be doing full text screening offline on a spreadsheet in Google Drive (
 ### 4.1. Setup
 
 This setup creates a Google Drive folder that organizes the screened materials. You can refer to the [structural imaging chronic pain meta-analysis folder](https://drive.google.com/drive/folders/1syctHLpLzhEMUtkJZ7oSeYD34RhifYKl?usp=sharing) for an example.
-1. Before going through full texts, create a **Screen** folder in Google Drive with the subdirectories **Ambiguous**, **Email**, and **Include**.  
+1. Before going through full texts, create a **Screen** folder in Google Drive with the subdirectories **Ambiguous**, **Email**, and **Include**.
   * These subdirectories will be where you put articles that you’re unsure about (ambiguous), you will email authors about later for more data (email), and you will include.
 2. Next, create a spreadsheet to record the full text screening process. Here, you will create a spreadsheet titled [FullTextReview_[DATE]](https://docs.google.com/spreadsheets/d/1Jz-KXWTQtTDmV-IvvGW46NuCFnXEbHjqMcWppQ0MZBg/edit?usp=sharing) in the **Screen** folder.
   * To import your abstract records from Covidence onto this, go to the main page of your project. Click **Export**. Choose the Category **Full text review** and format **CSV**.

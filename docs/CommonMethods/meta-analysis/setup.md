@@ -2,6 +2,7 @@
 layout: default
 title: Setup
 parent: Meta-analysis
+grand_parent: Common Methods
 nav_order: 1
 ---
 
