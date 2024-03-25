@@ -40,6 +40,10 @@ General guidelines for external data sharing are as below:
 2. Inclusion criteria will be decided by us before the data transfer, and shared with the data recipients.
 3. Data recipients will confirm the inclusion criteria.
 
-**Note: If someone wants ABCD data, we will interactively zoom call with them to get a transfer set up. This is not data we will transfer.**
+{: .note-title }
+> Note
+>
+> If someone wants ABCD data, we will interactively zoom call with them to get a transfer set up.
+> This is not data we will transfer.
 
 Make sure to communicate about the status of the project and keep collaborators in the loop, also being available for questions after the data is successfully transferred. 
