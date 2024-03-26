@@ -863,6 +863,19 @@ In order to prevent your jobs from dying without the cluster giving errors or wa
 
 # Useful tips and tricks
 
+## You have SSH keys for Github set up, but want to push to a different account? 
+
+Try: 
+
+```
+git config --local credential.helper ""
+git push origin master
+```
+
+in that repository. This will always prompt you for your username and password now. 
+
+It configures your local repo to ignore the (likely globally) configured credential.helper, e.g. the Windows credential store. This also means it asks for a username/password each time it needs it, as nothing is configured.
+
 ## Editing files
 Using vim to edit text in files is typically the best way to proceed on the cluster. 
 
