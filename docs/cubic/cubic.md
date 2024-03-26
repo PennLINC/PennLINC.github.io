@@ -863,6 +863,8 @@ In order to prevent your jobs from dying without the cluster giving errors or wa
 
 # Useful tips and tricks
 
+## Editing files
+Using vim to edit text in files is typically the best way to proceed on the cluster. 
 
 ## Submitting array jobs
 
