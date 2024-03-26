@@ -873,6 +873,8 @@ Let's create some files:
 1. We already have our main code that we want to run
 2. A file of `qsub_params.txt`, or keyword arguments that we want our script to run (eg: containing subject ID and session ID)
 3.  `qsub_array.sh`
+
+    
 ```
 #!/bin/bash
 #$ -cwd
@@ -885,6 +887,7 @@ params=$(head -n $SGE_TASK_ID $params_file | tail -n 1)
 bash ${script_to_run}.sh $params
 
 ```
+
 4. We can now submit jobs in this format: `qsub -t 1-400 -tc 4 qsub_array.sh`
 
 ## Tips for debugging if your CUBIC job fails
