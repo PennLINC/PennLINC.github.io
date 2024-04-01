@@ -927,10 +927,10 @@ Note that the use of `h_vmem` adds 2.5 GBs to the original `mem_gb` specificatio
 Note that `s_vmem` adds only 2 GBs to the original `mem_gb` specification. This is because soft memory has more flexibility than hard memory specifications. This is recommended to be used when the exact memory required by each subject is not concretely known so as to diminish the risk of the job being killed by accident.
 
 
-3. Check the error logs to see if it is a software specfic error. If not, proceed to the next steps. 
-4. Try running your main script (the one you submitted via `qsub`) to see if there are any errors in your code set-up before the main computation is underway. 
-5. If this does not work, try searching on Slack to see if anyone has asked a similar question before. 
-6. If you are still stuck, it might be worth asking on the #informatics team at this point!
+2. Check the error logs to see if it is a software specfic error. If not, proceed to the next steps. 
+3. Try running your main script (the one you submitted via `qsub`) to see if there are any errors in your code set-up before the main computation is underway. 
+4. If this does not work, try searching on Slack to see if anyone has asked a similar question before. 
+5. If you are still stuck, it might be worth asking on the #informatics team at this point!
 
 
 # Additional information about CUBIC
