@@ -18,6 +18,7 @@ has_toc: false
 6. [NKI](https://www.nki.rfmh.org/study/rockland-sample/) - Nathan Kline Institute Rockland sample; ages 6-85 and N~=1300
 7. [BHRC](https://osf.io/ktz5h/) - Brazilian High Risk Cohort; ages 5-14 and N~=600
 
+Also note that sometimes, PNC IDs will be labelled differently (as RBC IDs). This mapping can be found here: `/cbica/projects/RBC/Curation/RBC_demo_pheno/data/bblid_renamed.csv`. 
 
 ## Available modalities
 
