@@ -836,7 +836,7 @@ singularity build xcp-0-7-0.sif docker://pennlinc/xcp_d:0.7.0
 
 you can submit it via the command `qsub pull.sh`. 
 
-You can specify memory limits or other resources in your command (see below), or even in your script, in the following format:
+You can specify memory limits or other resources (such as number of CPUs) in your command (see below), or even in your script, in the following format:
 ```
 #$ -l h_vmem=40G
 singularity build xcp-0-7-0.sif docker://pennlinc/xcp_d:0.7.0
