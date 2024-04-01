@@ -11,14 +11,13 @@ has_toc: false
 
 ## Available studies
 1. [HCPD](https://www.humanconnectome.org/study/hcp-lifespan-development/data-releases) - The Human Connectome Project Developmental Sample; ages roughly 5-21 and N=~600. 
-2. [PNC](https://www.med.upenn.edu/bbl/philadelphianeurodevelopmentalcohort.html) - The Philadelphia Neurodevelopmental cohort; ages roughly 8-23 and N=~1600.
+2. [PNC](https://www.med.upenn.edu/bbl/philadelphianeurodevelopmentalcohort.html) - The Philadelphia Neurodevelopmental cohort; ages roughly 8-23 and N=~1600. Also note that sometimes, PNC IDs will be labelled differently (as RBC IDs). The mapping between the two can be found here: `/cbica/projects/RBC/Curation/RBC_demo_pheno/data/bblid_renamed.csv`. 
 3. [CCNP](https://www.sciencedirect.com/science/article/pii/S1878929321001109) - The Chinese Colornest Project (developmental); ages 6-18 and N=~200.
 4. [HBN](https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/About.html)- The Healthy Brain Network; ages 5-21 and N~=2500.
 5. [PACCT/ECAS](https://danlab.psychology.columbia.edu/research/studies) - Parents and Children Coming Together/Early Caregiving Adversities; ages 5-12 and N~=350
 6. [NKI](https://www.nki.rfmh.org/study/rockland-sample/) - Nathan Kline Institute Rockland sample; ages 6-85 and N~=1300
 7. [BHRC](https://osf.io/ktz5h/) - Brazilian High Risk Cohort; ages 5-14 and N~=600
 
-Also note that sometimes, PNC IDs will be labelled differently (as RBC IDs). This mapping can be found here: `/cbica/projects/RBC/Curation/RBC_demo_pheno/data/bblid_renamed.csv`. 
 
 ## Available modalities
 
