@@ -36,7 +36,8 @@ There are multiple different types of processed output available here, for the f
 
 
 
-*Note that, when available, the QC files are also generated. In case these files are not generated, users will have to concatenate the individual subject files across the subjects themselves in order to generate a dataset-wide QC file.*
+*Note that, when available, the QC files are also generated - EITHER in the parent bootstrap OR in a separate bootstrap - you will need to check the list below carefully.
+In case these files are not generated, users will have to concatenate the individual subject files across the subjects themselves in order to generate a dataset-wide QC file.*
 
 > Warning
 >
