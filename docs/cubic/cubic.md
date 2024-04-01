@@ -831,6 +831,7 @@ I've used the resources below in this tutorial. Feel free to check them out.
 After writing the script you want to run, let's say, a script called `pull.sh`:
 
 ```
+source ${CONDA_PREFIX}/bin/activate base # this is how we activate a conda environment in a script to be qsubbed. This will not work if you run it in Linux in a session.
 singularity build xcp-0-7-0.sif docker://pennlinc/xcp_d:0.7.0
 ```
 
@@ -838,7 +839,7 @@ you can submit it via the command `qsub pull.sh`.
 
 You can specify memory limits or other resources (such as number of CPUs) in your command (see below), or even in your script, in the following format:
 ```
-#$ -l h_vmem=40G
+#$ -l h_vmem=40G # set memory limit
 singularity build xcp-0-7-0.sif docker://pennlinc/xcp_d:0.7.0
 ```
 
