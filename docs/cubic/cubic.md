@@ -935,3 +935,7 @@ Note that `s_vmem` adds only 2 GBs to the original `mem_gb` specification. This 
 
 # Additional information about CUBIC
 [This page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Main_Page) has tons of other useful information about using CUBIC. Anyone who plans on using CUBIC regularly should probably browse it. Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others. Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page.
+
+# Mapping of the commands in SGE to Slurm
+
+This webpage is a helpful resource: [https://github.com/aws/aws-parallelcluster/wiki/Transition-from-SGE-to-SLURM](https://github.com/aws/aws-parallelcluster/wiki/Transition-from-SGE-to-SLURM)
