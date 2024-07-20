@@ -18,9 +18,14 @@ has_toc: false
 
 The CUBIC cluster is a very powerful set of servers that we can use for computing. Although they are running Linux, familiarity with Linux does not mean that you will be able to effectively use CUBIC. This section details how to get up and running on the CUBIC cluster. In general we now recommend using [PMACS](https:https://pennlinc.github.io/docs/pmacs) for storing specific analysis projects, and reserve CUBIC for use as a high-performance compute engine for large batches of containerized jobs that are launched from Flywheel.  However, for specific projects (esp collaborations with CBICA), it may make sense to have your project live on CUBIC.
 
-# Setting up your account
+# Getting + setting up your CUBIC account
 
-To get login credentials for CUBIC, you must have already a Penn Medicine account (i.e. an @pennmedicine.upenn.edu email). Once you do, ask the lab's PMACS/cubic manager (you can ask who this on the #informatics channel on Slack) to create a ticket asking for a new CUBIC account. You will receive an email with your login credentials and other instructions. Once you are granted login credentials for CUBIC, you will be able to connect from inside the Penn Medicine network using SSH. To access the network remotely, follow [instructions to install the client](http://www.uphs.upenn.edu/network/index_vpn.html). If you can successfully authenticate but are blocked from access, you may need to contact someone to put you on an exceptions list.
+To get login credentials for CUBIC, you must have already a Penn Medicine account (i.e. an @pennmedicine.upenn.edu email) as well as UPHS VPN.  This is handled in onboarding; if you do not have these ask Ted + post to the #it_issues channel on slack and flag Andrew Zitelli. 
+
+
+Once you do, you can ask for a CUBIC account.  The current procedure is to email Jessica Incmikoski -- the AI2D/CBICA admin -- for an account and CC Ted; who will approve. She will work with the CUBIC team to initiate account creation. 
+
+Once the account is made, you will receive an email with your login credentials and other instructions. Once you are granted login credentials for CUBIC, you will be able to connect from inside the Penn Medicine network using SSH. To access the network remotely, follow [instructions to install the client](http://www.uphs.upenn.edu/network/index_vpn.html). If you can successfully authenticate but are blocked from access, you may need to contact someone to put you on an exceptions list.
 
 Once inside the Penn network, the login to CUBIC looks like this:
 
