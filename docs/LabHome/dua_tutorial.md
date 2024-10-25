@@ -43,7 +43,7 @@ Go to **DATA: If you want to receive/send data for research from/to an outside p
 
 <img width="848" alt="third-step" src="https://user-images.githubusercontent.com/53891017/127526206-1a42661a-9556-441a-aebc-d25dc149a028.png">
 
-<img width="638" alt="fifth-step" src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images/ris_p1.png">
+<img width="638" alt="ris_p1" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images/ris_p1.png">
 
 > **Are you receiving or are you sending data?**
 
@@ -122,8 +122,7 @@ Below is how you would fill out the data information for ABCD/CCF.
 
 **Modify as necessary for your specific requested dataset.**
 
-<img width="638" alt="eighth-step" src="https://github.com/PennLINC/PennLINC.github.io/blob/main/assets/images/nih_contact.png">
-
+<img width="638" alt="nih_contact" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images/nih_contact.png">
 
 ## Step 6 : Upload data use agreement
 
