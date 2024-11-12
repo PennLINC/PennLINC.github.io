@@ -20,10 +20,10 @@ The CUBIC cluster is a very powerful set of servers that we can use for computin
 
 # Getting + setting up your CUBIC account
 
-To get login credentials for CUBIC, you must have already a Penn Medicine account (i.e. an @pennmedicine.upenn.edu email) as well as UPHS VPN.  This is handled in onboarding; if you do not have these ask Ted + post to the #it_issues channel on slack and flag Andrew Zitelli. 
+To get login credentials for CUBIC, you must have already a Penn Medicine account (i.e. an @pennmedicine.upenn.edu email) as well as UPHS VPN.  This is handled in onboarding; if you do not have these ask Ted + post to the #it_issues channel on slack and flag Andrew Zitelli.
 
 
-Once you do, you can ask for a CUBIC account.  The current procedure is to email Jessica Incmikoski -- the AI2D/CBICA admin -- for an account and CC Ted; who will approve. She will work with the CUBIC team to initiate account creation. 
+Once you do, you can ask for a CUBIC account.  The current procedure is to email Jessica Incmikoski -- the AI2D/CBICA admin -- for an account and CC Ted; who will approve. She will work with the CUBIC team to initiate account creation.
 
 Once the account is made, you will receive an email with your login credentials and other instructions. Once you are granted login credentials for CUBIC, you will be able to connect from inside the Penn Medicine network using SSH. To access the network remotely, follow [instructions to install the client](http://www.uphs.upenn.edu/network/index_vpn.html). If you can successfully authenticate but are blocked from access, you may need to contact someone to put you on an exceptions list.
 
@@ -37,7 +37,7 @@ You use your UPHS password to login.
 # Project Directory Access Request
 
 Once you have access to CUBIC, you may need to start a project in a new directory. You can find the CBICA Wiki, which covers project creation instructions (also described below), through the [PennMedicine Remote Access Portal](https://pennmedaccess.uphs.upenn.edu/). After logging in with your UPHS credentials, you can find the CBICA Wiki under "Corporate Resources."  The direcet link to the relevant sections on CUBIC project direction creation is [here](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects#Project_Creation_Request).  Note again that one must be on the VPN to access this page.
- 
+
 
 First you need to fill out the data management document available [here](https://cbica-wiki.uphs.upenn.edu/wiki/images/Project_data_use_template.doc). If this link doesn't work for you, you can find this document on the CBICA Wiki: `Main Page > Research projects > 3 Access/New Project Creation > Project Creation Request`. This document will ask you for a number of details about your project, including the data's source and estimates about how much disk space you will need over a 6 month, 12 month, and 24 month period, and the estimated lifespan of the data ( 🤷). You will also need to provide the CUBIC usernames for everyone you want to have read and/or write access to the project — getting this done ahead of time is strongly recommended because, as you can imagine, requesting changes after-the-fact can be a bother.
 
@@ -52,7 +52,7 @@ This document must be saved as a `.txt` file and before being submitted with you
 
 Finally, you will need approval from your PI. This involves sending an email to the PI with a written blurb to the effect of "Do you approve of this project folder request", to which the PI only needs to respond "Yes, approved". Once you've got this you can screenshot the conversation (include the date in frame) and save that as an image.
 
-With these two documents, you can now submit the request via the the CBICA Request Tracker. Similar to the CBICA Wiki, you need to access the Request Tracker through the [PennMedicine Remote Access Portal](https://pennmedaccess.uphs.upenn.edu/), then click CBICA Request Tracker. You'll need your CBICA/cubic login credentials for this (same as UPHS credentials).
+With these two documents, you can now submit the request via the the CBICA Request Tracker. Similar to the CBICA Wiki, you need to access the Request Tracker through the [PennMedicine Remote Access Portal](https://pennmedaccess.uphs.upenn.edu/), then click CBICA Request Tracker. You'll need your CBICA/cubic login credentials for this (same as UPHS credentials)!
 
 <img src="/assets/images/request-tracker.png" alt="">
 
@@ -234,7 +234,7 @@ It is also possible to copy files through the mount point, but this would be qui
 ## Method II: Mounting CUBIC in your local machine (interactive)
 
 ### Mounting CUBIC on your local machine using smb
- 
+
 One way to interact with CUBIC files is to _mount_ the server on to your filesystem. This can be useful for quickly moving a small number of files back and forth
 (for example with NIfTIs you want't to view). It's _not_ meant for large file management or version control purposes (see the next section for solutions for those).
 
@@ -254,9 +254,9 @@ your home directory, and moving a handful of files about. For more demanding fil
 
 2. Make an empty mount point folder on your local machine. Make sure that only the user (not group or others) have access to this mount directory!
 ```bash
-$ cd 
-$ mkdir -p cbica/projects/<project_name> 
-$ chmod 700 cbica/projects/<project_name> 
+$ cd
+$ mkdir -p cbica/projects/<project_name>
+$ chmod 700 cbica/projects/<project_name>
 ```
 
 3. Mount the desired CUBIC directory to your newly created, local mount directory using SSHfs and CUBIC-sattertt
@@ -277,9 +277,9 @@ alias alias_name="SSHfs -o defer_permissions <username>@CUBIC-login.uphs.upenn.e
 
 ## Method III: Accessing CUBIC via live coding with RStudio or Python (interactive)
 
-### R: Set up and run RStudio instance  
+### R: Set up and run RStudio instance
 
-Use the following tutorial to set up and run a simple RStudio instance on the cluster. This method of using RStudio with CUBIC is highly recommended for most purposes. 
+Use the following tutorial to set up and run a simple RStudio instance on the cluster. This method of using RStudio with CUBIC is highly recommended for most purposes.
 
 Usage:
 
@@ -311,7 +311,7 @@ git clone https://github.com/PennLINC/pennlinc_rstudio.git
 
 ```shell
 cd pennlinc_rstudio
-./startup_rstudio.sh <PATH/TO/SINGULARITY/IMAGE.simg> <PORTNUMBER> 
+./startup_rstudio.sh <PATH/TO/SINGULARITY/IMAGE.simg> <PORTNUMBER>
 ```
 
 4. Visit this address in a web browser:
@@ -590,8 +590,8 @@ workflow or extension, please do so on the slack informatics channel or in our [
 this first.
 
 # Using R/R-studio and Installation of R packages on CUBIC
- 
-## Use R and RStudio on CUBIC directly 
+
+## Use R and RStudio on CUBIC directly
 1. Currently  R-4.2.2 is installed on CUBIC. If you are satisfied with R-4.2.2, simply load it with `module load R/4.2.2`, and directly go to step 2 below. However, you can install another R version in any directory of your choice, usually home directory `/cbica/home/username`.
 To install R in your desired directory, follow the following steps.
 
@@ -625,12 +625,12 @@ To install R in your desired directory, follow the following steps.
 
     ```R
        .libPaths('/cbica/home/username/Rlibs`)
-       install.packages("package_name", repos='http://cran.us.r-project.org', lib='/cbica/home/username/Rlibs') 
+       install.packages("package_name", repos='http://cran.us.r-project.org', lib='/cbica/home/username/Rlibs')
        library(package_name, lib.loc="/cbica/home/username/Rlibs")
 
     ```
     You can have more than one R-packages directory.
-    
+
 3. You can also use r-studio on CUBIC  by simply load rstudio using `module`.
 
      ```bash
@@ -640,16 +640,16 @@ To install R in your desired directory, follow the following steps.
 4. If you are working with large amounts of data, you may want to submit a job in R. Make sure the packages you need in you Rscript are installed properly and remember to specify 'lib.loc' when loading libraries in your .R file. Write your bash script:
       ```sh
       #!/bin/bash
-      Rscript --save /cbica/projects/project_name/script_name.R 
+      Rscript --save /cbica/projects/project_name/script_name.R
       ```
 
-And submit your job, for example: 
+And submit your job, for example:
       ```sh
       qsub -l h_vmem=25G,s_vmem=24G bash_script.sh
       ```
- 
+
 ## Use a Docker Image containing R packages on CUBIC
-If you run into issues installing your needed R packages on CUBIC, you can use a Docker image that contains a number of R packages already. For example, if you have a huge analysis in R that requires you to submit a job on CUBIC, but you can't successfully install your R packages of interests onto CUBIC, this method is a great workaround. 
+If you run into issues installing your needed R packages on CUBIC, you can use a Docker image that contains a number of R packages already. For example, if you have a huge analysis in R that requires you to submit a job on CUBIC, but you can't successfully install your R packages of interests onto CUBIC, this method is a great workaround.
 
 This [docker-R github repo](https://github.com/PennLINC/docker_R) contains documentation on how you can either 1) directly use [a publicly available Docker image](https://hub.docker.com/r/pennlinc/docker_r) that contains a bunch of R packages already, or 2) build your own Docker image with the specific packages you need. After setting up your Docker image, you can submit a job on CUBIC to run all the Rscripts you want! For details, please see instructions [here](https://github.com/PennLINC/docker_R).
 
@@ -662,7 +662,7 @@ module load neuroR/0.2.0 # will load R 4.1
 ```
 
 # Using Python on CUBIC
- 
+
  Sure, you could install your own python (and you can!), but if you want to just use one that works well with PennLincKit, all you have to do is the following
 
 If you want it to be your default:
@@ -680,26 +680,26 @@ Note: `screen` sessions must be run under `CUBIC-sattertt`.
 
 ## Why "screen"
 
-Have you ever faced the scenario where you are testing a script interactively on the login node of your remote machine, and suddenly the VPN connection drops and your work is lost? Luckily, there is a Linux utility called `screen` on the `sattertt` login node that allows us to resume sessions that otherwise would be lost. 
+Have you ever faced the scenario where you are testing a script interactively on the login node of your remote machine, and suddenly the VPN connection drops and your work is lost? Luckily, there is a Linux utility called `screen` on the `sattertt` login node that allows us to resume sessions that otherwise would be lost.
 
 
-`screen` comes in handy when you want to let stuff run in the background without having to maintain a VPN or SSH connection. For example, let's say you want to submit many jobs to CUBIC at once. Since it can take a few minutes for each job to submit, you'd need to hold your VPN connection and your terminal window open for many hours if you're submitting several hundreds or even thousands of jobs. This is unrealistic for several reasons: your VPN connection is very likely to occassionally get dropped; your wifi connection might fail; you might accidentally close a terminal window; or maybe you just don't want to be biking down the Schuylkill river trail with your laptop open. In any case, you don't want to have to start all over or figure out where it left off if something interrupts your job submissions. 
+`screen` comes in handy when you want to let stuff run in the background without having to maintain a VPN or SSH connection. For example, let's say you want to submit many jobs to CUBIC at once. Since it can take a few minutes for each job to submit, you'd need to hold your VPN connection and your terminal window open for many hours if you're submitting several hundreds or even thousands of jobs. This is unrealistic for several reasons: your VPN connection is very likely to occassionally get dropped; your wifi connection might fail; you might accidentally close a terminal window; or maybe you just don't want to be biking down the Schuylkill river trail with your laptop open. In any case, you don't want to have to start all over or figure out where it left off if something interrupts your job submissions.
 
-The `screen` command will allow you to safely run whatever you need even without maintaining a connection and then return to check in on your process later. 
+The `screen` command will allow you to safely run whatever you need even without maintaining a connection and then return to check in on your process later.
 
 ## What is "screen"
 
-`screen` is a terminal window manager. When you call the screen command, it creates a separate window where you can work as you would in a normal terminal window. `screen` is already installed in the `sattertt` node. 
+`screen` is a terminal window manager. When you call the screen command, it creates a separate window where you can work as you would in a normal terminal window. `screen` is already installed in the `sattertt` node.
 
 ## Start a session
-You can type `screen` to start a screen session. 
+You can type `screen` to start a screen session.
 
 If you want to specify a meaningful name for the session in place of the default `CUBIC-sattertt` suffix, you can use the `-S` flag as in `screen -S [session_name]`. Type `man screen` for more information. If you are interested, you can also check out the [official GNU screen documentation](https://www.gnu.org/software/screen/manual/screen.html#Overview) for more customization tips.
 
 Here I am creating a new screen session with the name `example`.
 
 ```bash
-(base) [username@CUBIC-sattertt ~]$ screen -S example 
+(base) [username@CUBIC-sattertt ~]$ screen -S example
 ```
 
 
@@ -713,14 +713,14 @@ You can use `screen -ls` to ensure that the screen session has been started.
 
 There is a screen on:               # output
 	155085.example	(Attached)
-1 Socket in /var/run/screen/S. 
+1 Socket in /var/run/screen/S.
 
 ```
 ## Detach a session
 
-As previously mentioned, programs launched in a screen session would continue to run when their window is closed or when the screen session is detached from the terminal. 
+As previously mentioned, programs launched in a screen session would continue to run when their window is closed or when the screen session is detached from the terminal.
 
-The reason is because `screen` makes it possible for you to leave a terminal window (detach) and return to it later (reattach). This can come in handy when you are `rsync`-ing files between two servers or any other commands that can take an unpredictable amount of time. 
+The reason is because `screen` makes it possible for you to leave a terminal window (detach) and return to it later (reattach). This can come in handy when you are `rsync`-ing files between two servers or any other commands that can take an unpredictable amount of time.
 
 `screen -d` would detach the current screen session.
 
@@ -736,7 +736,7 @@ Here I detach the screen session by specifying the session id
 
 There is a screen on:               # output
 	155085.example	(Attached)
-1 Socket in /var/run/screen/S. 
+1 Socket in /var/run/screen/S.
 
 (base) [username@CUBIC-sattertt ~]$ screen -d example # input
 ```
@@ -748,7 +748,7 @@ Again, you can use `screen -ls` to ensure that the screen session has been detac
 
 There is a screen on:               # output
 	155085.example	(Detached)
-1 Socket in /var/run/screen/S. 
+1 Socket in /var/run/screen/S.
 
 
 ```
@@ -781,14 +781,14 @@ Again, you can use `screen -ls` to ensure that the screen session has been reatt
 
 There is a screen on:               # output
 	155085.example	(Attached)
-1 Socket in /var/run/screen/S. 
+1 Socket in /var/run/screen/S.
 
 
 ```
 
 ## Exit a session
 
-Type `exit` on the screen terminal window to exit the session completely. 
+Type `exit` on the screen terminal window to exit the session completely.
 
 ```bash
 
@@ -800,7 +800,7 @@ You will be dropped back to your shell and see the message `[screen is terminati
 
 
 
-As an alternative, you can also press `Ctrl-a` and `k`. If you do so, you will be  asked `Ready kill this window [y/n]?`. 
+As an alternative, you can also press `Ctrl-a` and `k`. If you do so, you will be  asked `Ready kill this window [y/n]?`.
 
 ## If you forgot to detach
 
@@ -811,7 +811,7 @@ If you lost the VPN connection or close the session terminal window or without d
 - Start a named screen session - `screen -S [session_name]`
 - Display all available screen sessions running in your system - `screen -ls`
 - Detach a screen session - `screen -d [optional: screen_id]` or `Ctrl-a` and `d`
-- Reattach a screen session - `screen -r [optional: session_id]` 
+- Reattach a screen session - `screen -r [optional: session_id]`
 
 
 ## Other resources
@@ -826,7 +826,7 @@ I've used the resources below in this tutorial. Feel free to check them out.
 
 # Job submission on CUBIC
 
-## Template for submitting a job: 
+## Template for submitting a job:
 
 {: .warning-title }
 > Warning
@@ -840,7 +840,7 @@ source ${CONDA_PREFIX}/bin/activate base # this is how we activate a conda envir
 singularity build xcp-0-7-0.sif docker://pennlinc/xcp_d:0.7.0
 ```
 
-you can submit it via the command `qsub pull.sh`. 
+you can submit it via the command `qsub pull.sh`.
 
 You can specify memory limits or other resources (such as number of CPUs) in your command (see below), or even in your script, in the following format:
 ```
@@ -848,7 +848,7 @@ You can specify memory limits or other resources (such as number of CPUs) in you
 singularity build xcp-0-7-0.sif docker://pennlinc/xcp_d:0.7.0
 ```
 
-More resource limitations can be found on [this page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Main_Page). 
+More resource limitations can be found on [this page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Main_Page).
 
 ## Specifying CPUs on a node
 
@@ -869,25 +869,25 @@ In order to prevent your jobs from dying without the cluster giving errors or wa
 
 # Useful tips and tricks
 
-## You have SSH keys for Github set up, but want to push to a different account? 
+## You have SSH keys for Github set up, but want to push to a different account?
 
-Try: 
+Try:
 
 ```
 git config --local credential.helper ""
 git push origin master
 ```
 
-in that repository. This will always prompt you for your username and password now. 
+in that repository. This will always prompt you for your username and password now.
 
 It configures your local repo to ignore the (likely globally) configured credential.helper, e.g. the Windows credential store. This also means it asks for a username/password each time it needs it, as nothing is configured.
 
 ## Editing files
-Using vim to edit text in files is typically the best way to proceed on the cluster. 
+Using vim to edit text in files is typically the best way to proceed on the cluster.
 
 ## Submitting array jobs
 
-Sometimes, you may have 400 jobs, but you may only want to run 4 at a time. How can we achieve this??? By using array jobs. 
+Sometimes, you may have 400 jobs, but you may only want to run 4 at a time. How can we achieve this??? By using array jobs.
 
 Let's create some files:
 
@@ -895,7 +895,7 @@ Let's create some files:
 2. A file of `qsub_params.txt`, or keyword arguments that we want our script to run (eg: containing subject ID and session ID)
 3.  `qsub_array.sh`
 
-    
+
 ```
 #!/bin/bash
 #$ -cwd
@@ -932,9 +932,9 @@ Note that the use of `h_vmem` adds 2.5 GBs to the original `mem_gb` specificatio
 Note that `s_vmem` adds only 2 GBs to the original `mem_gb` specification. This is because soft memory has more flexibility than hard memory specifications. This is recommended to be used when the exact memory required by each subject is not concretely known so as to diminish the risk of the job being killed by accident.
 
 
-2. Check the error logs to see if it is a software specfic error. If not, proceed to the next steps. 
-3. Try running your main script (the one you submitted via `qsub`) to see if there are any errors in your code set-up before the main computation is underway. 
-4. If this does not work, try searching on Slack to see if anyone has asked a similar question before. 
+2. Check the error logs to see if it is a software specfic error. If not, proceed to the next steps.
+3. Try running your main script (the one you submitted via `qsub`) to see if there are any errors in your code set-up before the main computation is underway.
+4. If this does not work, try searching on Slack to see if anyone has asked a similar question before.
 5. If you are still stuck, it might be worth asking on the #informatics team at this point!
 
 
