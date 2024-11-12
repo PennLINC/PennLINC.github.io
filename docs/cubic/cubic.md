@@ -822,43 +822,95 @@ I've used the resources below in this tutorial. Feel free to check them out.
 [Using Screen - MIT SIPB](https://sipb.mit.edu/doc/screen/)
 
 # Job submission on CUBIC
+CUBIC now uses SLURM as its job scheduler (previously CUBIC used SGE). The basic syntax for submitting jobs on SLURM is the following:
 
-## Specifying CPUs on a node
+```bash
+sbatch my_script.sh
+```
 
-In order to prevent your jobs from dying without the cluster giving errors or warnings, there are several steps that can be taken:
+`my_script.sh` must have the following directives in its header:
+```bash
+#!/bin/bash
+#SBATCH --nodes=1               # number of nodes should be 1 (>1 requires use of a library such as MPI (Message-Passing Interface) which CUBIC doesn't have as of now...)
+#SBATCH --ntasks=1              # number of tasks 
+#SBATCH --cpus-per-task=1                  
+#SBATCH --time=00:30:00         # Set expected wall time it takes for your job
 
-1. Include `-e` in the code to make sure that the environment is clean. It will also be important to check the `.e` log for the environment to spot potential warning that will specify whether or not the environment is corrupted.
-2. Check for a core dump to identify whether there are certain jobs that did not go through:
-	If there is a `core.XXX` file then the job definitely exited unusually.
-3. Some jobs may be killed on cubic if the job is allocated to nodes where the number of CPUs specified in the code is less than the total available CPUs on that node. While it is not possible to select a particular node on CUBIC, it is possible to specify the requirement for submission so that it matches the nodes themselves. It is possible to specify the number of CPUs to be used during submission with the following code:
+# code for your job
+```
 
-	a. `qsub -pe threaded N -l h_vmem=XG,s_vmem=YG`
-	where `X` and `Y` represent numbers and `N` is the number of CPUs.
-	`h_vmem` is the hard limit of the memory up to which the job can consume, and `s_vmem` is the soft virtual memory that is the minimum requested to run the job.
+It can also have additional directives such as:
+```bash
+#SBATCH --job-name="job_name"
+#SBATCH --output="output.out"   
+#SBATCH --error="error.err" 
+```
 
-	b. 	`qsub -pe threaded N-M`
-	where `N-M` speicify a range of CPUs and `M>N`
+Alternatively, your sbatch directives can be included in the command line instead. For example:
+```bash
+sbatch --nodes=1 --ntasks=1 --cpus-per-task=1 --time=00:30:00 --job-name="job_name" --output="output.out" --error="error.err" my_script.sh 
+```
+(In this alternative, the directives would not be in `my_script.sh`.)
 
-## Errors with Allocating Memory/Memory Overflow
 
-Here is an example of a memory allocation error message:
+You can read CBICA's documentation on basic job submission here:
+https://cbica-wiki.uphs.upenn.edu/docs/List_of_Slurm_Articles/
 
-`mmap cannot allocate memory failed (/gpfs/fs001/cbica/projects/RBC/Pipeline_Timing/cpac_1.7.1.simg), reading buffer sequentially…`
 
-If you see this:
+### Checking SLURM job status
 
-- Make sure in this case that everything is in the right directory.
+If you need to cancel your job:
+```bash
+scancel $jobid # cancel your job! 
+```
 
-- Make sure that the allocation of memory is specified. Example: `mem_gb 20`
+Other commands for checking your job status and looking at job history:
+```bash
+# check the status of all your jobs
+squeue -u username 
 
-- Make sure that the memory is being requested in the cluster itself and not just specified in the code:
-`qsub -l h_vmem=22.5 , s_vmem=22G testrun.sh`
+# another way to do it
+squeue --me 
 
-Note that the use of `h_vmem` adds 2.5 GBs to the original `mem_gb` specification. This is to remain on the safe side of memory specification to the cluster as the cluster will kill any job that uses more than the requested memory space when requesting hard memory (`h_vmem`). This function is used to save space on the cluster such that several jobs can be run simultaneously but is only advised to be used when the user is sure about the memory specification needed.
+# check the status of specific job
+squeue $jobid 
 
-Note that `s_vmem` adds only 2 GBs to the original `mem_gb` specification. This is because soft memory has more flexibility than hard memory specifications. This is recommended to be used when the exact memory required by each subject is not concretely known so as to diminish the risk of the job being killed by accident.
+# this is just a nice shortcut to expand the headings of squeue :)
+squeue --o "%.18i %.9P %.60j %.8u %.8T %.10M %.9l %.6D %R" --me  
 
-## Useful tips and tricks
+# display history of jobs starting at a specific time 
+sacct -u username --starttime=yyyy-mm-dd -o JobID,JobName,Elapsed,State,MaxRSS,ReqMem,Timelimit 
+```
+
+### Figuring out how much memory to request
+
+```bash
+# check how much time your job took, 
+# how much memory you had requested and how much was actually used. 
+# Adjust your future jobs from this information
+seff $jobid 
+
+# same thing but for job arrays
+seff_array $jobid 
+```
+
+ ### Job arrays
+Job arrays in SLURM are useful for running a series of similar or repetitive tasks, like processing multiple participants. By submitting a job array, you create a single job submission with multiple sub-jobs (or array tasks). This reduces SLURM’s workload in scheduling compared to submitting each job individually. Furthermore, instead of manually creating and tracking many separate jobs, you use a single job script that SLURM handles as an array. You can access each task's unique identifier within the script (using the environment variable `$SLURM_ARRAY_TASK_ID`).
+
+ You can refer to the excellent CUBIC wiki documentation on simple job arrays:
+ https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_05_-_Array_Jobs/
+
+### Job dependencies
+Job dependencies allow you to control the order in which jobs run, setting conditions so that a job only starts once another job has completed a specific action. This is helpful if you have a series of tasks where one needs to finish before the next can start.
+
+CUBIC wiki examples for simple and intermediate job dependencies: 
+ 
+https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_06_-_Job_Dependencies_%28Simple%29/
+
+https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_07_-_Job_Dependencies_%28Intermediate%29/
+
+### Job arrays with job dependencies!
+Say you have an analysis pipeline with multiple steps that can't be consolidated into a single script. And you want to run one job array after the other. You can run job arrays with job dependencies, and dynamically update your output and error log files! Here is a [repo of a current project](https://github.com/audreycluo/cubic_luowmdev/tree/main/tract_to_cortex) with an example of job arrays with job dependencies. See scripts `c**` for a clean example. This repo will be updated once the project is completed.
 
 # Additional information about CUBIC
 [This page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects) has tons of other useful information about using CUBIC. Anyone who plans on using CUBIC regularly should probably browse it. Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others. Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page.
