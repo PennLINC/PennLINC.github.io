@@ -19,6 +19,10 @@ PennLINC sits within the [Neurodevelopment and Psychosis Section](https://www.me
 
 Simply put: If we don't know each other we miss out.  We miss out on opportunities for collaboration, inter-personal connection, fun, and a richer community. While this usually happens organically -- lab meetings, happy hours, unscheduled interactions -- basic practices also help. Whenever a new team member joins PennLINC, it is expected that within the first few months of their time in the lab that *every* existing team member reach out to them to schedule a "welcome coffee". This doesn't have to actually involve coffee, but should allow for at least 30+ min to get to know each other.  There are many things we can't control in the world, but we *can* create a friendly, welcoming, and collaborative environment here.
 
+## PennLINC Science Siblings
+
+The goal of this initiative is to facilitate connection, support, and fun for new lab members. Upon your arrival, please send Ted a list of 2-3 individuals who you’d like to be your science sibling. Not sure who to choose? Look over the biographies on the lab website and have introductory conversations via the coffee chat system (see above). Ted will arrange a match based on career stage, bandwidth, & availability. You’ll meet with your “senior sib” ~3 times a year to informally discuss any & all questions on science, PennLinc, and life. 
+
 
 ## PennLINC systems onboarding
 
