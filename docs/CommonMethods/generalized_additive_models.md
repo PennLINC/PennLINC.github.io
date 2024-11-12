@@ -1,8 +1,7 @@
 ---
 layout: default
-title: Generalized Additive Models
+title: Generalized Additive Models (GAMs)
 parent: Common Methods
-nav_order: 1
 ---
 
 One of the preferred statistical modeling methods in the lab is the generalized additive model (GAM),
