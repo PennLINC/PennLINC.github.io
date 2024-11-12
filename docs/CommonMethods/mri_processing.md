@@ -137,10 +137,20 @@ We use the following workflow for DWI data:
 
 ## Arterial Spin Labeling
 
+Arterial spin labeling (ASL) is a sequence that tags blood in the neck and
+tracks the flow of that blood into the brain.
+The primary output of an ASL sequence is cerebral blood flow (CBF),
+although some protocols, such as multi-delay ASL,
+can be used to estimate other meaningful blood flow measures,
+such as arterial transit time (ATT), arterial bolus arrival time (aBAT),
+and arterial blood volume (ABV).
+
 ### PennLINC-preferred ASL Protocols
 
 Generally, for developmental samples (PennLINC's bread and butter),
 we use a single-delay PCASL protocol developed by Manuel Taso.
+This protocol is extremely quick (~4:30) and provides both ASL data and
+a low-resolution quantitative T1 map.
 
 For aging populations, we might use a multi-delay PCASL protocol,
 but that hasn't come up in our internal studies yet.
