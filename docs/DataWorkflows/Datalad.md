@@ -26,6 +26,9 @@ conda create -n dlad python=3.11
 conda activate dlad
 ```
 3. Then, install datalad:
-`conda install datalad git git-annex`
+```bash
+conda install datalad git git-annex
+pip install --upgrade datalad # datalad from conda-forge might not be the most update
+```
 
 Note that this page is still under construction and more information may be added at a later date. 
