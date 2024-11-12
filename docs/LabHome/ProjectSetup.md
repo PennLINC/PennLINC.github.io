@@ -13,7 +13,7 @@ where "Lastname" is the last name of the first author / trainee leading the proj
 Links to much of the relevant software can be found in the lab [Software and Environments](https://pennlinc.github.io/docs/Basics/basics/) page.
 
 ## CUBIC Project Request
-To request project space on CUBIC, you first need to submit a [New Project Request ticket](https://cbica-portal.uphs.upenn.edu/rt/SelfService/CreateTicketInQueue.html) ("Cluster - New Project" ticket). You must already have a [CUBIC account](URL HERE) to begin this process.
+To request project space on CUBIC, you first need to submit a [New Project Request ticket](https://cbica-portal.uphs.upenn.edu/rt/SelfService/CreateTicketInQueue.html) ("Cluster - New Project" ticket). You must already have a [CUBIC account](https://pennlinc.github.io/docs/cubic#getting--setting-up-your-cubic-account) to begin this process.
 
 Before submitting this ticket, do the following:
 - Send Ted an email requesting permission, even if he has already has given you permission verbally. This doesn't have to be long, just something like "I am writing to request permission to create [Project Name] on CUBIC." Ted will respond, approving this request. **Save a screenshot of Ted's response email**.
