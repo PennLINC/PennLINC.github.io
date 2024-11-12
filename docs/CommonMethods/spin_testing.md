@@ -22,7 +22,7 @@ This particular example uses the [Alexander-Bloch et al., 2018 *NeuroImage*](htt
 
 František Váša also has R and a Matlab implementations based on the [Alexander-Bloch et al., 2018 *NeuroImage*](https://doi.org/10.1016/j.neuroimage.2018.05.070) spin-test:
 
-[https://github.com/frantisekvasa/rotate_parcellation/tree/master](https://github.com/frantisekvasa/rotate_parcellation/tree/master)
+[`frantisekvasa/rotate_parcellation`](https://github.com/frantisekvasa/rotate_parcellation/tree/master)
 
 Briefly, it’s a two step process. Here’s an example of how Val Sydnor used the R version in her [thalamocortical development project](https://github.com/PennLINC/thalamocortical_development/tree/main): 
 
