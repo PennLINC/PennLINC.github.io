@@ -19,6 +19,10 @@ PennLINC sits within the [Neurodevelopment and Psychosis Section](https://www.me
 
 Simply put: If we don't know each other we miss out.  We miss out on opportunities for collaboration, inter-personal connection, fun, and a richer community. While this usually happens organically -- lab meetings, happy hours, unscheduled interactions -- basic practices also help. Whenever a new team member joins PennLINC, it is expected that within the first few months of their time in the lab that *every* existing team member reach out to them to schedule a "welcome coffee". This doesn't have to actually involve coffee, but should allow for at least 30+ min to get to know each other.  There are many things we can't control in the world, but we *can* create a friendly, welcoming, and collaborative environment here.
 
+## PennLINC Science Siblings
+
+The goal of this initiative is to facilitate connection, support, and fun for new lab members. Upon your arrival, please send Ted a list of 2-3 individuals who you’d like to be your science sibling. Not sure who to choose? Look over the biographies on the lab website and have introductory conversations via the coffee chat system (see above). Ted will arrange a match based on career stage, bandwidth, & availability. You’ll meet with your “senior sib” ~3 times a year to informally discuss any & all questions on science, PennLinc, and life. 
+
 
 ## PennLINC systems onboarding
 
@@ -37,3 +41,7 @@ Additionally, we use two compute platforms that you will need access to.
 [PMACS](https://pennlinc.github.io/docs/pmacs):  We use the PMACS low performance cluster (LPC) for hosting "static" datasets -- e.g., curated datasets as well as processed derivatives.  Lab members need a PMACS accoutn to access these resource datasets.  
 
 [CUBIC](https://pennlinc.github.io/docs/cubic):  We use the large high performance cluster (HPC) named CUBIC for large volumes of parallelizable subject-specific processing jobs. Additionally, specific projects may use CUBIC due to specific computational or software requirements.   See the [CUBIC page](https://www.med.upenn.edu/cbica/cubic.html) for more information; it is a large compute resources created by our collaborators in the [Center for Biomedical Image Computing and Analytics (CBICA)](https://www.med.upenn.edu/cbica/).  See the PennLINC [CUBIC page](https://pennlinc.github.io/docs/cubic) for details on how to gain access, create projects, and other tips.
+
+## Birthdays at PennLINC
+
+Your birthday is important!! A lab birthday captain keeps track of birthdays. Our current birthday captain is Juliette - please add your birthday to this [spreadsheet](https://docs.google.com/spreadsheets/d/17PlorJSWi5ZeW-XXERIMC0xyFOFdOTNR_t9L1-_BwrQ/edit?usp=sharing). All PennLINC members also get their birthday off without reporting it as PTO.  Have fun & celebrate!!!  

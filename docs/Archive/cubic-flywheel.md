@@ -1,8 +1,8 @@
 ---
 layout: default
-title: cubic-flywheel
-parent: Archive
-nav_order: 1
+title: CUBIC-flywheel
+parent: Archived Documentation
+nav_order: 6
 has_toc: true
 ---
 

@@ -12,20 +12,23 @@ nav_order: 11
 
 # Creating a Data Use Agreement for NIMH Datasets
 
-_Note: This tutorial uses the [PING](https://nda.nih.gov/edit_collection.html?id=2607) dataset as an example for illustration purposes._
+_Note: This tutorial uses the [ABCD](https://nda.nih.gov/abcd) and [HCP/CCF](https://www.humanconnectome.org/) datasets as an example for illustration purposes._
 
-You will need a valid [PennKey](https://pennkeysupport.upenn.edu/) in order to create a new data use agreement.
+## Getting started : Download and fill out the most up-to-date Data Use Certification (DUC)
 
-## Getting started : Download and fill out the most up-to-date form
+You can access the most recent version [here](https://nda.nih.gov/ndapublicweb/Documents/NDA+Data+Access+Request+DUC+FINAL.pdf). If the link doesn't work, you can search Google for "NIMH Data Archive Data Use Certification" to get the most updated version. 
 
-You can access the most recent version [here](https://nda.nih.gov/about/forms.html). Make sure that you select **Data Use Certification (DUC)** to download the form.
+Next, you need to fill out the form (don't forget to add yourself as a recipient), and have Ted sign it. 
 
-<img width="638" alt="zero-step" src="https://user-images.githubusercontent.com/53891017/127577597-6a126d78-a706-4c61-a1a5-735e2eab46ca.png">
+One thing of note is under section *5. Other Recipient(s)* on page 9, if there are not enough entries for all DUC Recipients, you can duplicate this page and use Adobe Acrobat Pro to modify page numbers and field labels. Steps for changing form fields are:
 
-Next, you need to fill out the form (don't forget to add yourself as a recipient), and have Ted sign it.
-
+1. Navigate to Prepare Form mode (you can find this under "Tools" > "Prepare Form").
+2. Select each form field that has been duplicated and click the field's properties (right-click > Properties).
+3. In the General tab, change the name of the field to something unique for each duplicated page.
  
-## Step 1 : Enter the RIS 
+## Step 1 : Enter the RIS
+
+You will need a valid [PennKey](https://pennkeysupport.upenn.edu/) for this step.
 
 [Research Inventory System](https://researchinventory.apps.upenn.edu/researchInventory/jsp/fast2.do?bhcp=1) is the web-based application for requesting, routing, and issuing various research related agreements.
 
@@ -40,13 +43,15 @@ Go to **DATA: If you want to receive/send data for research from/to an outside p
 
 <img width="848" alt="third-step" src="https://user-images.githubusercontent.com/53891017/127526206-1a42661a-9556-441a-aebc-d25dc149a028.png">
 
+<img width="638" alt="ris_p1" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images/ris_p1.png">
+
 > **Are you receiving or are you sending data?**
 
-Since we are requesting data access, we select _receiving_.
+Since we are requesting data access, we select **Receiving**.
 
 > Type of data
 
-In the case of [PING](https://nda.nih.gov/edit_collection.html?id=2607), the type of data is "de-identified health information".
+In the case of ABCD/CCF, the type of data is **De-identified health information**.
 
 > Please provide brief description of data
 
@@ -54,18 +59,21 @@ Please provide basic description of your requested dataset.
 
 > Can the data be obtained from an alternative source?
 
-In the case of [PING](https://nda.nih.gov/edit_collection.html?id=2607), the answer is **No**.
+In the case of ABCD/CCF, the answer is **No**.
 
 > Are you aware of any export restrictions regarding the data?
 
-Just select **No**.
+Select **No**.
 
-<img width="638" alt="fifth-step" src="https://user-images.githubusercontent.com/53891017/127527738-b29342d2-8bce-4b09-a89e-1eec9251f700.png">
+> Will this data include the transter, storage and use of data originating from the Philadelphia VA Hospital?
+
+In the case of ABCD/CCF, the answer is **No**.
 
 ## Step 3 : Select faculty member, business administrator and department
 <img width="638" alt="sixth-step" src="https://user-images.githubusercontent.com/53891017/127528655-0d26b3e9-26f6-45bc-b658-7014418698e3.png">
 
 In our case, faculty member is Theodore Satterthwaite, and the department is Neuropsychiatry.
+
 <img width="912" alt="sixth-step-filled-out" src="https://user-images.githubusercontent.com/53891017/127531608-6c2717bb-1925-4ac5-bdff-950027b0f3da.png">
 
 Consult the team for business administrator.
@@ -83,39 +91,38 @@ Consult the team to come up with a research plan. This should be a short paragra
 > +	_Other corporate sponsored research_
 > +	_Other_
 
-[PING](https://nda.nih.gov/edit_collection.html?id=2607) is funded by the National Institute of Mental Health (NIMH) which is a federal agency. Hence we select **Federally sponsored/federal flow through research**
+ABCD/CCF is funded by the National Institute of Mental Health (NIMH) which is a federal agency. Hence we select **Federally sponsored/federal flow through research**
 	
 > _Are your requests (materials, data, equipment, confidential information , services and/or collaboration) related or connected to a sponsored research agreement (SRA), a clinical trial agreement (CTA), a government or grant funded project, or will it be charged to a fund?_
 > + _Yes_
 > + _No_
 	
-In the case of [PING](https://nda.nih.gov/edit_collection.html?id=2607), the data request is for the purpose of scientific research. The research is neither related nor connected to a sponsored research agreement (SRA), a clinical trial agreement (CTA), a government or grant funded project. Hence we select **No**
+In the case of ABCD/CCF, the data request is for the purpose of scientific research. The research is neither related nor connected to a sponsored research agreement (SRA), a clinical trial agreement (CTA), a government or grant funded project. Hence we select **No**
 
 
 > _What is the likelihood of an invention resulting from the research?_
 > + _May possibly result in an invention_
 > + _Is likely to result in an invention_
-> +	_Is unlikely to result in an invention_
+> + _Is unlikely to result in an invention_
 
 
-In the case of [PING](https://nda.nih.gov/edit_collection.html?id=2607), the data request is for the purpose of scientific research that would not lead to any invention.**
+In the case of ABCD/CCF, the data request is for the purpose of scientific research that **would not lead to any invention**.
 
 > _Is the research related to any of your previous or pending disclosures of inventions?_
 > + _Yes_
-> +	_No_
+> + _No_
 
-In the case of [PING](https://nda.nih.gov/edit_collection.html?id=2607), the data request is for the purpose of scientific research that is not related to any disclosures of inventions. Hence we select **No**
+In the case of ABCD/CCF, the data request is for the purpose of scientific research that is not related to any disclosures of inventions. Hence we select **No**
 
 **Modify as necessary for your specific requested dataset.**
 
 ## Step 5 : Fill out data information
 
-Below is how you would fill out the data information for [PING](https://nda.nih.gov/edit_collection.html?id=2607).
+Below is how you would fill out the data information for ABCD/CCF.
 
 **Modify as necessary for your specific requested dataset.**
 
-<img width="638" alt="eighth-step" src="https://user-images.githubusercontent.com/53891017/127549332-898c308e-be85-4dad-a181-01039c70fa1a.png">
-
+<img width="638" alt="nih_contact" src="https://raw.githubusercontent.com/PennLINC/PennLINC.github.io/main/assets/images/nih_contact.png">
 
 ## Step 6 : Upload data use agreement
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Archive
-nav_order: 16
+title: Archived Documentation
+nav_order: 1600
 has_children: true
 ---
 

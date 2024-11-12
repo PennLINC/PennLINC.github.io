@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Penn LINC Neuroinformatics
+title: PennLINC Lab Manual
 description: Informatics tutorials
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://PennLINC.github.io" # the base hostname & protocol for your site, e.g. http://example.com
@@ -113,8 +113,9 @@ nav_sort: case_sensitive # Capital letters sorted before lowercase
 
 # External navigation links
 nav_external_links:
-  - title: Just the Docs on GitHub
-    url: https://github.com/just-the-docs/just-the-docs
+  - title: Lab Website
+    url: https://pennlinc.io
+    opens_in_new_tab: true
 
 # Footer content
 # appears at the bottom of every page's main content
