@@ -13,6 +13,8 @@ and arterial spin labeling (ASL).
 This page summarizes the acquisitions we tend to use,
 as well as the processing tools we use for each.
 
+We almost exclusively acquire our data on a 3T Siemens Prisma MRI scanner.
+
 ## Table of Contents
 {: .no_toc .text-delta }
 
@@ -93,11 +95,21 @@ In the future, we will be able to use the phase data for the following:
 - Complex-valued ICA (see [`nipreps/fMRIPost-phase`](https://github.com/nipreps/fmripost-phase))
 - Phase jolt and phase jump time series calculation (see [`nipreps/fMRIPost-phase`](https://github.com/nipreps/fmripost-phase))
 
-#### No-excitation noise volumes
+#### No-excitation Noise Volumes
 
 At the end of the protocol, we acquire 3 volumes without a radiofrequency pulse.
 These no-excitation volumes are then used to characterize the thermal noise levels in the data,
 which improves thermal noise removal by NORDIC.
+
+
+#### Concurrent Physiological Recording
+
+We try to acquire cardiac data with plethysmography and respiration data with
+a chest belt during our fMRI acquisitions.
+In practice, we've had trouble with the chest belt.
+
+These physiological data can be used to remove non-neural noise from the fMRI data,
+as well as for direct analysis.
 
 
 ### Processing fMRI Data
