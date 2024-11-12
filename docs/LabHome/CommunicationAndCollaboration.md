@@ -4,6 +4,7 @@ title: Communication, Collaboration, & Slack Norms
 parent: Lab Basics
 nav_order: 7
 ---
+## Communication, Collaboration, & Norms on Using Slack
 
 Our lab has a very active slack! PennLINC’s slack channels are within the Psychosis and Neurodevelopment Section slack organization (”Penn Neuropsych” org).  This organization includes hundreds of members and norms will vary across groups in this org.  Here we outline several of the best practices and norms for slack use in PennLINC.
 
