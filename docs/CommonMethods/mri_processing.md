@@ -47,6 +47,12 @@ and warps the data to requested template spaces.
 > We generally rely on the structural processing from these pipelines
 > instead of running sMRIPrep directly.
 
+### Freesurfer
+
+Freesurfer is a very popular tool for segmenting sMRI data and projecting it to the surface.
+We generally run Freesurfer within one of the BIDS Apps (sMRIPrep, fMRIPrep, ASLPrep, etc.)
+rather than running it separately.
+
 
 ## Functional Magnetic Resonance Imaging
 
