@@ -11,7 +11,7 @@ Reimbursement for expenses (typically: conference travel) can be administrativel
 
 Transport (flights, trains, etc) should  be booked directly via Concur(see below); this obviates the need for post-hoc reimbursement.
 
-Please note: is that it is essential that reimbursements are submitted in a timely manner; Penn policy prohibits reimbursements after 6 months. Sometimes review can be lengthy and several revisions are needed due to the multiple layers of compliance at Penn.  As such, requests not submitted immediately after they are incurred risk being unpaid; sadly there is no remedy for this after 6 months.
+Please note: it is essential that reimbursements are submitted in a timely manner; Penn policy prohibits reimbursements after 6 months. Sometimes review can be lengthy and several revisions are needed due to the multiple layers of compliance at Penn.  As such, requests not submitted immediately after they are incurred risk being unpaid; sadly there is no remedy for this after 6 months.
 
 For more details on funding for travel, please see the [travel guidelines wiki](https://pennlinc.github.io/docs/LabHome/TravelGuidelines/).
 
@@ -27,7 +27,7 @@ To do this, go to Profile Settings —> Expense Settings —> Expense Delegates
 
 ## Get approval for the expense
 
-Email Ted to ask for approval of expense and  ask the funding source; take a screenshot.  You will need to provide this in the expense report.
+Email Ted to ask for approval of expense and ask for the funding source; take a screenshot.  You will need to provide this in the expense report.
 
 ## Create your expense report
 
@@ -60,7 +60,7 @@ Extensive additional resources on expense reports can be found [here](https://be
 
 ## Ask the finance team to review your report 
 
-Email Patrick that you’ve created the report and ask him to review it. Once any subgested edits are incorporated, you can submit it. If a concur report is returned, you can find the business administrator's feedback by clicking into the report where you see the listed expenses --> click “details” --> “comments” – this is where approvers will comment if they need additional information or documentation
+Email Patrick that you’ve created the report and ask him to review it. Once any suggested edits are incorporated, you can submit it. If a concur report is returned, you can find the business administrator's feedback by clicking into the report where you see the listed expenses --> click “details” --> “comments” – this is where approvers will comment if they need additional information or documentation.
   
 
 ## Update the Travel Reimbursement Tracker
