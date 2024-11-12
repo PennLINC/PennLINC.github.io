@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Communication, Collaboration, & Slack Norms 
+title: Communication, Collaboration, & Slack 
 parent: Lab Basics
 nav_order: 7
 ---
