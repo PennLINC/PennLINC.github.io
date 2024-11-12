@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Neurosynth
+title: Neurosynth 2.0
 parent: Meta-analysis
 grand_parent: Common Methods
 nav_order: 8
@@ -12,3 +12,4 @@ Neurosynth Compose is the next-generation of Neurosynth, which is a platform for
 - **Documentation**: https://neurostuff.github.io/compose-docs/
 - **Tutorial**: https://neurostuff.github.io/compose-docs/tutorial
 - **Neurosynth Compose website**: https://compose.neurosynth.org/
+- **Original Neurosynth website**: https://neurosynth.org/ 
