@@ -20,7 +20,7 @@ This particular example uses the [Alexander-Bloch et al., 2018 *NeuroImage*](htt
 
 ## Spin tests using R
 
-František Váša also has R and a Matlab implementations based on the [Alexander-Bloch et al., 2018 *NeuroImage](https://doi.org/10.1016/j.neuroimage.2018.05.070)* spin-test:
+František Váša also has R and a Matlab implementations based on the [Alexander-Bloch et al., 2018 *NeuroImage*](https://doi.org/10.1016/j.neuroimage.2018.05.070) spin-test:
 
 [https://github.com/frantisekvasa/rotate_parcellation/tree/master](https://github.com/frantisekvasa/rotate_parcellation/tree/master)
 
