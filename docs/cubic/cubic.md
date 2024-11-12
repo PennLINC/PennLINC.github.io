@@ -203,7 +203,7 @@ conda activate myproject
 
 Note: An important benefit of using Miniforge is that it gives you access to `mamba`! This can be used in place of most `conda` commands (e.g., `mamba install ...` or `mamba update...`) and uses a C-based implementation of `conda` that tends to run noticeably faster.
 
-Note: For simple use of a Python interpreter managed by `conda`, you can use the installed module(s) like `module load python/anaconda/3`. But it is **highly recommended** to install miniconda as described above.
+Note: For simple use of a Python interpreter managed by `conda`, you can use the installed module(s) like `module load python/anaconda/3`. But it is **highly recommended** to install miniforge as described above.
 
 # Interacting with CUBIC: data analysis and data transfer
 
