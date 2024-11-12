@@ -26,17 +26,6 @@ _Note: this draft conceptualizes what data sharing may look like after post-bac 
 - Make a directory formatted as follows: `LastName_ProjectName_Year` and work inside the directory if you are using an old project
 - Filter data by inclusion criteria
 
-#### For external data 
-Example: Getting data via S3 links from MSI, uploading from personal laptop, etc. Note that private documentation on obtaining data from MSI is available to informatics team members, 
-and they should also have the credentials required for this process. 
-
-- Transfer ALL needed data to CUBIC. Make sure to work in a relevant project/ create a new one as needed
-- Make sure to transfer the data to a dropbox that the project user can later `scp` files out of, so that the project user has read-write access to the data
-- Make a directory formatted as follows: `LastName_ProjectName_Year` and work inside the directory if you are using an old project
-- Filter data by inclusion criteria
-
-Then proceed to work with the data.
-
 ### External collaborations
 The transfer method on what softwares our collaborators have access to. We often use Box, zipping data before uploading it (using `tar -czvf <ArchiveName>.tar.gz <PathToFile>"`)
 
