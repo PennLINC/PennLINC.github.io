@@ -829,118 +829,92 @@ I've used the resources below in this tutorial. Feel free to check them out.
 [Using Screen - MIT SIPB](https://sipb.mit.edu/doc/screen/)
 
 # Job submission on CUBIC
+CUBIC now uses SLURM as its job scheduler (previously CUBIC used SGE). The basic syntax for submitting jobs on SLURM is the following:
 
-## Template for submitting a job:
-
-{: .warning-title }
-> Warning
->
-> If you are submitting a job that uses the temporary working directory, make sure to point it to `$TMP`.
-
-After writing the script you want to run, let's say, a script called `pull.sh`:
-
-```
-source ${CONDA_PREFIX}/bin/activate base # this is how we activate a conda environment in a script to be qsubbed. This will not work if you run it in Linux in a session.
-singularity build xcp-0-7-0.sif docker://pennlinc/xcp_d:0.7.0
+```bash
+sbatch my_script.sh
 ```
 
-you can submit it via the command `qsub pull.sh`.
-
-You can specify memory limits or other resources (such as number of CPUs) in your command (see below), or even in your script, in the following format:
-```
-#$ -l h_vmem=40G # set memory limit
-singularity build xcp-0-7-0.sif docker://pennlinc/xcp_d:0.7.0
-```
-
-More resource limitations can be found on [this page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Main_Page).
-
-## Specifying CPUs on a node
-
-In order to prevent your jobs from dying without the cluster giving errors or warnings, there are several steps that can be taken:
-
-1. Include `-e` in the code to make sure that the environment is clean. It will also be important to check the `.e` log for the environment to spot potential warning that will specify whether or not the environment is corrupted.
-2. Check for a core dump to identify whether there are certain jobs that did not go through:
-	If there is a `core.XXX` file then the job definitely exited unusually.
-3. Some jobs may be killed on CUBIC if the job is allocated to nodes where the number of CPUs specified in the code is less than the total available CPUs on that node. While it is not possible to select a particular node on CUBIC, it is possible to specify the requirement for submission so that it matches the nodes themselves. It is possible to specify the number of CPUs to be used during submission with the following code:
-
-	a. `qsub -pe threaded N -l h_vmem=XG,s_vmem=YG`
-	where `X` and `Y` represent numbers and `N` is the number of CPUs.
-	`h_vmem` is the hard limit of the memory up to which the job can consume, and `s_vmem` is the soft virtual memory that is the minimum requested to run the job.
-
-	b. 	`qsub -pe threaded N-M`
-	where `N-M` speicify a range of CPUs and `M>N`
-
-
-# Useful tips and tricks
-
-## You have SSH keys for Github set up, but want to push to a different account?
-
-Try:
-
-```
-git config --local credential.helper ""
-git push origin master
-```
-
-in that repository. This will always prompt you for your username and password now.
-
-It configures your local repo to ignore the (likely globally) configured credential.helper, e.g. the Windows credential store. This also means it asks for a username/password each time it needs it, as nothing is configured.
-
-## Editing files
-Using vim to edit text in files is typically the best way to proceed on the cluster.
-
-## Submitting array jobs
-
-Sometimes, you may have 400 jobs, but you may only want to run 4 at a time. How can we achieve this??? By using array jobs.
-
-Let's create some files:
-
-1. We already have our main code that we want to run
-2. A file of `qsub_params.txt`, or keyword arguments that we want our script to run (eg: containing subject ID and session ID)
-3.  `qsub_array.sh`
-
-
-```
+`my_script.sh` must have the following directives in its header:
+```bash
 #!/bin/bash
-#$ -cwd
-#$ -N UNZIPsub # name of job
-#$ -e ~/analysis/logs # error log location
-#$ -o ~/analysis/logs # output log location
-params_file=~/qsub_params.txt # file containing keyword arguments
-params=$(head -n $SGE_TASK_ID $params_file | tail -n 1)
+#SBATCH --nodes=1               # number of nodes should be 1 (>1 requires use of a library such as MPI (Message-Passing Interface) which CUBIC doesn't have as of now...)
+#SBATCH --ntasks=1              # number of tasks 
+#SBATCH --cpus-per-task=1                  
+#SBATCH --time=00:30:00         # Set expected wall time it takes for your job
 
-bash ${script_to_run}.sh $params
-
+# code for your job
 ```
 
-4. We can now submit jobs in this format: `qsub -t 1-400 -tc 4 qsub_array.sh`
+It can also have additional directives such as:
+```bash
+#SBATCH --job-name="job_name"
+#SBATCH --output="output.out"   
+#SBATCH --error="error.err" 
+```
 
-## Tips for debugging if your CUBIC job fails
-1. First, re-run the job with more memory. If this fails still, you can proceed to the next steps.
+Alternatively, your sbatch directives can be included in the command line instead. For example:
+```bash
+sbatch --nodes=1 --ntasks=1 --cpus-per-task=1 --time=00:30:00 --job-name="job_name" --output="output.out" --error="error.err" my_script.sh 
+```
+(In this alternative, the directives would not be in `my_script.sh`.)
 
-Here is an example of a memory allocation error message:
+You can read CBICA's documentation on basic job submission here:
+https://cbica-wiki.uphs.upenn.edu/docs/List_of_Slurm_Articles/
 
-`mmap cannot allocate memory failed (/gpfs/fs001/cbica/projects/RBC/Pipeline_Timing/cpac_1.7.1.simg), reading buffer sequentially…`
+### Checking SLURM job status
+If you need to cancel your job:
+```bash
+scancel $jobid # cancel your job! 
+```
 
-If you see this:
+Other commands for checking your job status and looking at job history:
+```bash
+# check the status of all your jobs
+squeue -u username 
 
-- Make sure in this case that everything is in the right directory.
+# another way to do it
+squeue --me 
 
-- Make sure that the allocation of memory is specified. Example: `mem_gb 20`
+# check the status of specific job
+squeue $jobid 
 
-- Make sure that the memory is being requested in the cluster itself and not just specified in the code:
-`qsub -l h_vmem=22.5 , s_vmem=22G testrun.sh`
+# this is just a nice shortcut to expand the headings of squeue :)
+squeue --o "%.18i %.9P %.60j %.8u %.8T %.10M %.9l %.6D %R" --me  
 
-Note that the use of `h_vmem` adds 2.5 GBs to the original `mem_gb` specification. This is to remain on the safe side of memory specification to the cluster as the cluster will kill any job that uses more than the requested memory space when requesting hard memory (`h_vmem`). This function is used to save space on the cluster such that several jobs can be run simultaneously but is only advised to be used when the user is sure about the memory specification needed.
+# display history of jobs starting at a specific time 
+sacct -u username --starttime=yyyy-mm-dd -o JobID,JobName,Elapsed,State,MaxRSS,ReqMem,Timelimit 
+```
 
-Note that `s_vmem` adds only 2 GBs to the original `mem_gb` specification. This is because soft memory has more flexibility than hard memory specifications. This is recommended to be used when the exact memory required by each subject is not concretely known so as to diminish the risk of the job being killed by accident.
+### Figuring out how much memory to request
 
+```bash
+# check how much time your job took, 
+# how much memory you had requested and how much was actually used. 
+# Adjust your future jobs from this information
+seff $jobid 
 
-2. Check the error logs to see if it is a software specfic error. If not, proceed to the next steps.
-3. Try running your main script (the one you submitted via `qsub`) to see if there are any errors in your code set-up before the main computation is underway.
-4. If this does not work, try searching on Slack to see if anyone has asked a similar question before.
-5. If you are still stuck, it might be worth asking on the #informatics team at this point!
+# same thing but for job arrays
+seff_array $jobid 
+```
 
+ ### Job arrays
+Job arrays in SLURM are useful for running a series of similar or repetitive tasks, like processing multiple participants. By submitting a job array, you create a single job submission with multiple sub-jobs (or array tasks). This reduces SLURM’s workload in scheduling compared to submitting each job individually. Furthermore, instead of manually creating and tracking many separate jobs, you use a single job script that SLURM handles as an array. You can access each task's unique identifier within the script (using the environment variable `$SLURM_ARRAY_TASK_ID`).
+
+ You can refer to the excellent CUBIC wiki documentation on simple job arrays:
+ https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_05_-_Array_Jobs/
+
+### Job dependencies
+Job dependencies allow you to control the order in which jobs run, setting conditions so that a job only starts once another job has completed a specific action. This is helpful if you have a series of tasks where one needs to finish before the next can start.
+
+CUBIC wiki examples for simple and intermediate job dependencies: 
+ 
+https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_06_-_Job_Dependencies_%28Simple%29/
+
+https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_07_-_Job_Dependencies_%28Intermediate%29/
+
+### Job arrays with job dependencies!
+Say you have an analysis pipeline with multiple steps that can't be consolidated into a single script. And you want to run one job array after the other. You can run job arrays with job dependencies, and dynamically update your output and error log files! Here is a [repo of a current project](https://github.com/audreycluo/cubic_luowmdev/tree/main/tract_to_cortex) with an example of job arrays with job dependencies. See scripts `c**` for a clean example. This repo will be updated once the project is completed.
 
 # Additional information about CUBIC
 [This page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Main_Page) has tons of other useful information about using CUBIC. Anyone who plans on using CUBIC regularly should probably browse it. Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others. Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page.
