@@ -35,15 +35,6 @@ There are a number of places you may have to fetch data from to get them onto a 
 
 The best option for moving a large amount of data between clusters is to use the `scp` command. Remember that this process must remain open and running in your terminal, so it might be useful to do this in a fresh terminal window or use `&` at the end of your command. You could also use [`screen`](https://www.geeksforgeeks.org/screen-command-in-linux-with-examples/) to set up a non-terminating terminal.
 
-As mentioned in our general [PMACS documentation](/docs/pmacs), you should scp *into* a node called `transfer`, for PMACS projects. That would look like this:
-
-```
-## my username is <username>
-scp -r path/to/your/data <username>@transfer:/path/on/pmacs
-```
-
-An alternative to `scp` is `rsync`, but that tends to have [more happening under the hood](https://stackoverflow.com/questions/20244585/how-does-scp-differ-from-rsync).
-
 ## Flywheel
 
 On Flywheel, your data may already be in BIDS. In this case we recommend using Flywheel's export function `fw export bids`, or the export function provided by [`fw-heudiconv`](https://fw-heudiconv.readthedocs.io/en/latest/). We built the export function into `fw-heudiconv` because we wanted to have more flexibility in what BIDS data we could grab, including data that's not yet supported in the official BIDS spec. Admittedly though, downloading all of `fw-heudiconv` a lot of overhead for just the export function.
@@ -58,48 +49,6 @@ fw-heudiconv-export --project <PROJECT_NAME> --subject <SUBJECTS_FILTER> --sessi
 
 Try `fw-heudiconv-export -h` for more info.
 
-## Globus
-
-{: .warning-title }
-> Warning
->
-> This section has not been tested in a long time.
-[Globus](https://www.globus.org/) is a research data management platform whose best feature is data transfer and sharing. It's surprisingly easy to use and gets the job done with minimal setup. The data sharing concept revolves around setting virtual *endpoints* that data can be shared to and from. Endpoints can be thought of conceptually as mounts, where you can give outbound network access to a certain directory on your machine or cluster, and by sharing the URL of your endpoint, someone can access your directory through the internet or network cluster.
-
-Currently, the best way to use Globus is either through your local disk or on PMACs (recommended). We're still awaiting CUBIC authorization. The general docs for globus are located [here](https://docs.globus.org/how-to/), but for posterity, here are the best instructions:
-
-On a local disk:
-
-1. Log in to Globus with your UPenn organization account -- [https://docs.globus.org/how-to/get-started/](https://docs.globus.org/how-to/get-started/) -- and try out the tutorial for sharing between two test endpoints on Globus' system
-2. Download and install [Globus Connect Personal](https://www.globus.org/globus-connect-personal); this service will manage the endpoint on your local machine
-3. Download and install the [CLI](https://docs.globus.org/cli/) with pip -- remember to use conda environments! This service will allow you to manage the Globus session when it's running
-4. [Login with the CLI](https://docs.globus.org/cli/quickstart/) and transfer your data either through the CLI commands or by visiting the file manager (which you saw in step 1). If someone has shared a Globus endpoint with your account, you'll have access to it in "Endpoints".
-
-On PMACs:
-
-0. Make sure you have access to the PULSE Secure VPN -- [remote.pmacs.upenn.edu](remote.pmacs.upenn.edu)
-
-1. Log in to PMACs' dedicated node for Globus functionality:
-
-```
-# first ssh into bblsub for network access
-ssh -y <username>@bblsub
-
-# then from there, log onto the globus node
-ssh -y <username>@sciglobus
-```
-
-2. Globus Connect Personal should be available. As above, use it to initialize an endpoint on a directory of your choice on PMACs. Specifically, you should run it as below so that it opens a GUI for logging in with an auto-generated token:
-
-```
-# this command will return a URL you can open in any browser and a token you can use to sign in
-globusconnect -start &
-```
-
-3. Using a new or existing conda environment (see [here](https://pennlinc.github.io/docs/pmacs#logging-in-to-pmacs-lpc) for how to activate conda on PMACs), install the [CLI](https://docs.globus.org/cli/) using `pip` and login with `globus login`.
-
-4. Visit [https://docs.globus.org/how-to/get-started/](https://docs.globus.org/how-to/get-started/) to access the File Manager, as in the Local Disk instructions, to start transferring data.
-
 ## Via datalad
 You can `datalad clone` many relevant datasets, particularly via OpenNeuro. More information on this is available [here](https://handbook.datalad.org/en/latest/usecases/openneuro.html).
 
@@ -108,38 +57,23 @@ You can `datalad clone` many relevant datasets, particularly via OpenNeuro. More
 
 
 BIDS curation can be a frustrating process. 
-This guide describes best practices for the curation process using a local filesystem. 
-We divide this process into multiple stages.
+Please refer to our [CuBIDS documentation](https://cubids.readthedocs.io/en/latest/index.html), especially the [example walkthrough](https://cubids.readthedocs.io/en/latest/example.html).
 
 
 ## Preparing your environment
 
-If you are curating data on a Penn cluster, you will need to set up a conda
-[environment](https://pennlinc.github.io/docs/cubic#installing-miniconda-in-your-project-the-hard-way) for your project. You will need to install [datalad](Datalad.md) and CuBIDS
-for the rest of the steps in this workflow. To do so, create a conda
-environment.
-
-If you've already got `conda` setup for environment management, please skip this
-step and instead directly download `CuBIDS` [here](https://bids-bond.readthedocs.io/en/latest/). After that, you can head over to _Stage 0_.
-
-Otherwise, the easiest way to get your CUBIC project user started is to download
-the project initialization script.  Immediately upon getting access to
-your project, log in as the project user and run:
-
-```shell
-$ wget https://raw.githubusercontent.com/PennLINC/TheWay/main/scripts/cubic/cubic-setup-project-user.sh
-$ bash cubic-setup-project-user.sh ${HOME}
-```
-
-[Download and install CuBIDS](https://bids-bond.readthedocs.io/en/latest/index.html). Note that this environment must be activated for the rest of the steps.
+If you are curating data on a Penn cluster, you will need to set up a
+[conda environment](https://pennlinc.github.io/docs/cubic#installing-miniforge-in-your-project) for your project.
 
 You'll also need to install BIDS Validator:
 
 ```shell
-$ conda install nodejs
-$ npm install -g bids-validator
-$ which bids-validator #to make sure it installed
+conda install nodejs
+npm install -g bids-validator
+which bids-validator #to make sure it installed
 ```
+
+After setting up your conda environment, please follow the CuBIDS installation instruction [here](https://cubids.readthedocs.io/en/latest/installation.html).
 
 ## Stage 0: Organization
 
@@ -209,39 +143,17 @@ And remember, if you explicitly want to ignore something from tracking (with eit
 
 ### Add NIfTI information to the sidecars
 
-Image files (NIfTI) are large binary files that contain information about
-the spatial coverage of MRI images. We want to be able to detect variability
-in this, but don't necessarily want to always be reading it from NIfTI files.
-For example, the nifti files may be checked in to git annex or stored on
-a remote server. These are somewhat common use cases, so we recommend
-adding the information you would normally get from NIfTI files directly
-to the JSON files. CuBIDS comes with a NIfTI metadata extractor, which
-can be run with
-
-```bash
-$ cubids-add-nifti-info ~/project/original_data
-```
-
-Once run, you will find volume, dimension, and obliquity information in the JSON sidecars.
+See [here](https://cubids.readthedocs.io/en/latest/example.html#adding-nifti-information-to-json-sidecars)
 
 ### Removing sensitive metadata
 
-> ⚠️ NOTE: This step must occur **BEFORE** any imaging data is checked in to datalad.
+{: .warning-title }
+> ⚠️ Important Note ⚠️
+>
+> This step must occur **BEFORE** any imaging data is checked in to datalad.
 
-Sometimes the DICOM-to-NIfTI conversion process results in unwanted information
-in the JSON sidecars. You can use `cubids-remove-metadata-fields` to purge these
-from all .json files in your data. All unique metadata fields can be listed
-using `cubids-print-metadata-fields`.Be sure to note the fields you removed in
-your *Data Narrative*.
+See [here](https://cubids.readthedocs.io/en/latest/example.html#identifying-and-removing-phi)
 
-```markdown
-Sensitive fields, included in: AccessionNumber, PatientBirthDate, PatientID,
-PatientName, PatientSex, AcquisitionDateTime, SeriesInstanceUID,
-DeviceSerialNumber, InstitutionAddress, AcquisitionTime, StationName,
-ReferringPhysicianName, InstitutionName, InstitutionalDepartmentName,
-AccessionNumber were removed from all metadata files using
-`cubids-remove-metadata-fields`.
-```
 ### Copying your Imaging Data
 
 Now you can begin a datalad tracked dataset for your working BIDS data.
@@ -254,8 +166,8 @@ Finally, copy your data from `original_data` to the working BIDS dataset
 **only once you are certain `original_data/` is anonymized**:
 
 ```bash
-$ cp -r original_data/* curation/BIDS
-$ datalad save -m "add initial data" curation
+cp -r original_data/* curation/BIDS
+datalad save -m "add initial data" curation
 ```
 
 This could take some time depending on how big your input data is. The result will look like this:
@@ -282,53 +194,6 @@ project
 ```
 
 Admittedly, `cp` can be a time consuming process for very large BIDS datasets — we have a solution (currently available on PMACS) for a much quicker copy using bootstrapped `datalad` [here](https://github.com/PennLINC/TheWay/blob/main/scripts/pmacs/bootstrap-bids-dataladdening.sh).
-
-### OPTIONAL: set up a remote backup
-
-At this point you may want to back up this data on a separate server for
-safe-keeping. One great option is to use the `bblsub` server
-as a RIA store. You can push a copy of your original data to this store, then
-push again when curation is complete. To create a RIA store on pmacs, be sure
-you can log in using ssh key pairs from CUBIC.
-
-```bash
-(base) [yourname@cubic-login2 testing]$ ssh bblsub
-Last login: Wed Mar 24 14:27:30 2021 from 
-[yourname@bblsub ~]$
-```
-
-If the above does not work, set up SSH keys and edit `~/.ssh/config` until it does.
-Once working, create a directory on `bblsub` that will hold your RIA store.
-
-```bash
-[yourname@bblsub ~]$ mkdir /project/myproject/datalad_ria
-[yourname@bblsub ~]$ logout
-```
-
-and back on `CUBIC` add the store to your dataset
-
-```bash
-$ cd curation/
-$ bids_remote=ria+ssh://bblsub:/project/myproject/datalad_ria
-$ ds_id=$(datalad -f '{infos[dataset][id]}' wtf -S dataset)
-$ bids_ria_url="${bids_remote}#${dsi_id}"
-$ datalad create-sibling-ria -s pmacs-ria ${bids_ria_url}
-$ datalad push --to pmacs-ria
-
-```
-
-If these succeed, you will have a completely backed-up copy of your original
-data and scripts that you can push to and pull from as you work. If you want
-to work on a temporary copy of the data, you can clone it anywhere:
-
-```bash
-$ cd /tmp
-$ datalad clone ${bids_ria_url} curation
-$ cd curation
-$ git annex dead here
-```
-
-And `/tmp/curation` will have all files on demand from the original repository.
 
 ### Documenting data provenance
 
@@ -528,7 +393,7 @@ parameters within each BIDS *key group*. In our example there might
 be two unique *parameter groups* that map to the same *key group* of
 `sub-X_task-1_bold`: one with `MultibandAccelerationFactor` 1 and
 the other 4. A complete description of key and parameter groups
-can be found on the [CuBIDS documentation](https://bids-bond.readthedocs.io/en/latest/usage.html#definitions).
+can be found on the [CuBIDS documentation](https://cubids.readthedocs.io/en/latest/usage.html#more-definitions).
 
 
 ### Find unique acquisition groups
@@ -561,22 +426,14 @@ project
         └── sub-N
 ```
 
-To detect acquisition groups in your data set, change into `working/` and run
-
-```shell
-$ cubids-group BIDS code/iterations/iter0
-```
-
-This command will write four CuBIDS files delineating key/param groups and
-acquisition groups.
+To detect acquisition groups in your data set, see [here](https://cubids.readthedocs.io/en/latest/example.html#visualizing-metadata-heterogeneity)
 
 ### Rename, merge or delete parameter groups
 
 Relevant parties will then edit the summary csv
 requesting new names for parameter groups as well as merging or deleting them
 where appropriate. A description of how this process works can be found on
-the [CuBIDS documentation](https://bids-bond.readthedocs.io/en/latest/usage.html#modifying-key-and-parameter-group-assignments)
-[//]: #
+the [CuBIDS documentation](https://cubids.readthedocs.io/en/latest/example.html#visualizing-metadata-heterogeneity)
 
 See below for examples of cross sections of a cubids-group csv:
 
@@ -584,27 +441,10 @@ See below for examples of cross sections of a cubids-group csv:
 [Post-apply](https://github.com/PennLINC/RBC/tree/master/PennLINC/HRC_BIDS_Fix/HRC_post_apply)
 
 Once the edited CSV is ready, the merges, renamings and deletions can be
-applied to your BIDS data. Again from `working/`, if you're not using
-datalad at this point, run
-
-```shell
-$ cubids-apply \
-    BIDS \
-    code/iterations/iter0_summary.csv \
-    code/iterations/iter0_files.csv \
-    code/iterations/apply1
-```
-
-If using datalad, be sure to include `--use-datalad` as the first argument to
-`cubids-apply`. If not using Datalad, be sure to add to your *Data Narrative*
-so you know that CuBIDS was used to change your data. Describe any major
-renaming, deleting or merging of parameter groups.
-
-New parameter groups will be described in `code/iterations/apply1*.csv` and you
-should make sure your data was changed as intended.
+applied to your BIDS data. See [here](https://cubids.readthedocs.io/en/latest/example.html#applying-changes).
 
 Once you are satisfied with your key/parameter groups, be sure to re-run
-`cubids-validate` to make sure you haven't introduced any BIDS-incompatible
+`cubids validate` to make sure you haven't introduced any BIDS-incompatible
 names.
 
 Congratulations! You have created a fully-curated BIDS dataset.
@@ -621,7 +461,9 @@ Data can be fetched back from PMACS, if needed, using the documentation specifie
 Occasionally, data may be zipped. More information about this can be found [here](/PennLINC.github.io/docs/DataWorkflows/FetchingYourPMACSData.md)!
 
 # Processing your data
-[BABS](https://pennlinc-babs.readthedocs.io/en/latest/) is a quick and easy tool for processing pipelines via [Datalad](./Datalad.md). The documentation is thorough, with information on setting up, installing, and running BABS on data. An example walkthrough is also available via the documentation. 
+[BABS](https://pennlinc-babs.readthedocs.io/en/latest/) is a quick and easy tool for processing pipelines via [Datalad](./Datalad.md). The documentation is thorough, with information on setting up, installing, and running BABS on data. An example walkthrough is also available via the documentation.
+
+If you run a pipeline that cannot be implemented via BABS, but still want to use `datalad` please review [this link](https://pennlinc.github.io/docs/Archive/TheWay/RunningDataLadPipelines/).
 
 # Sharing your data
 {: .no_toc}
@@ -658,23 +500,8 @@ datalad clone ria+file:///PATH_TO_DATASET/output_ria#~data outputs
 datalad get .
 
 # THEY extract the data from this output RIA as regular files
-rsync -avzhL --progress outputs FINAL_DESTINATION
+rsync -avzh --progress outputs FINAL_DESTINATION
 ```
-
----
-NOTE FOR EXPERTS: This is part of the `datalad` workflow on _aliasing_; visit [http://handbook.datalad.org/en/latest/beyond_basics/101-147-riastores.html](this resource) to learn more about how you can use aliasing to share data flexibly.
-
----
-
-
-## Permissions, VPNs, and Picking a Medium
-
-There are always barriers to sharing data. Someone needs access to something and that often entails a lot of bureaucracy; maybe there is data that can't be shared with PHI; maybe there is not enough disk space to move data. Here are some thoughts to help you guide what decisions to make:
-
-- Is this a one-time transaction, or will there be data moving back-and-forth repeatedly? VPNs + permissions are an investment that can take a week or sometimes more to be approved
-- How big is the data? Does this _have to_ be shared on a cluster? Maybe it's more appropriate to download it locally and upload it to [Box](https://www.isc.upenn.edu/pennbox) or [SecureShare](https://www.isc.upenn.edu/security/secure-share)
-- What clusters are involved? CUBIC has a complicated permissions system; PMACS is more lenient but how will you move data from CUBIC to PMACS?
-- Do you need `datalad` tracking? How much do collaborators care about that (weighed against how much _you_ care about that)? `datalad` can be fun, but it is definitely a commitment that you can't easily back out of
 
 ## Datalad to OpenNeuro
 
