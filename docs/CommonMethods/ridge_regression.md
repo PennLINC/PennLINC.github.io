@@ -1,5 +1,5 @@
 ---
 layout: default
-title: NeuroMaps
+title: Ridge Regression
 parent: Common Methods
 ---

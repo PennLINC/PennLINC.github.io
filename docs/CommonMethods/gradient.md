@@ -2,7 +2,6 @@
 layout: default
 title: Gradients
 parent: Common Methods
-nav_order: 2
 ---
 
 A popular modeling method in the lab for neuroimaging data is the gradient.

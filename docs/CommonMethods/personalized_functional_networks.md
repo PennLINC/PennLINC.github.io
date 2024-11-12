@@ -1,5 +1,5 @@
 ---
 layout: default
-title: NeuroMaps
+title: Personalized Functional Networks (PFNs)
 parent: Common Methods
 ---

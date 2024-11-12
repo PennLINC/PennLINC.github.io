@@ -1,5 +1,5 @@
 ---
 layout: default
-title: NeuroMaps
+title: Spin Tests
 parent: Common Methods
 ---

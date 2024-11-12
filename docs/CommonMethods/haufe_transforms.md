@@ -1,5 +1,5 @@
 ---
 layout: default
-title: NeuroMaps
+title: Haufe Transforms
 parent: Common Methods
 ---

@@ -1,5 +1,5 @@
 ---
 layout: default
-title: NeuroMaps
+title: Partial Least Squares (PLS)
 parent: Common Methods
 ---

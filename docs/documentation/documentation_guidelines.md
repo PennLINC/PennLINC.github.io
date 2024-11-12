@@ -55,7 +55,7 @@ In this case, you can create a new file right from the Github:
 <img src="/assets/images/adding_a_new_file.png" alt="">
 
 {: .note-title }
-> Warning
+> Tip
 >
 > You don't have to explicitly create folders in the Github web interface;
 > just type out your filename and path with backslashes and Github will automatically create the directory structure for you.
