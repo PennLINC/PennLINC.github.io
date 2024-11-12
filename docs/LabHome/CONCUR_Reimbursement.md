@@ -15,6 +15,8 @@ Please note: it is essential that reimbursements are submitted in a timely manne
 
 For more details on funding for travel, please see the [travel guidelines wiki](https://pennlinc.github.io/docs/LabHome/TravelGuidelines/).
 
+Also, note that there is a the weekly office hour on Thursdays 11:00a-12:00am with Patrick Doyle for questions on concur reimbursment. (zoom link pinned on #concur channel in slack).
+
 
 ## Adding delegates 
 Please give Concur delegate access to the finance team members below.  This only needs to be done once.
@@ -60,7 +62,9 @@ Extensive additional resources on expense reports can be found [here](https://be
 
 ## Ask the finance team to review your report 
 
-Email Patrick that you’ve created the report and ask him to review it. Once any suggested edits are incorporated, you can submit it. If a concur report is returned, you can find the business administrator's feedback by clicking into the report where you see the listed expenses --> click “details” --> “comments” – this is where approvers will comment if they need additional information or documentation.
+Email Patrick that you’ve created the report and ask him to review it. Once any suggested edits are incorporated, you can submit it. 
+
+If a concur report is returned, you can find the business administrator's feedback by clicking into the report where you see the listed expenses --> click “details” --> “comments” – this is where approvers will comment if they need additional information or documentation.
   
 
 ## Update the Travel Reimbursement Tracker
