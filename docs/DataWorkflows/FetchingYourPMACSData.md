@@ -6,6 +6,11 @@ nav_order: 2
 has_toc: true
 ---
 
+{: .warning-title }
+> Deprecation Warning
+>
+> We are currently upgrading our data sharing system so that all static data will be on CUBIC. This section will be deprecated when the new CUBIC data sharing system is in effect.
+
 # What is static data?
 {: .no_toc}
 
