@@ -16,7 +16,7 @@ has_toc: false
 1. TOC
 {:toc}
 
-The CUBIC cluster is a very powerful set of servers that we can use for computing. Although they are running Linux, familiarity with Linux does not mean that you will be able to effectively use CUBIC. This section details how to get up and running on the CUBIC cluster. In general we now recommend using [PMACS](https:https://pennlinc.github.io/docs/pmacs) for storing specific analysis projects, and reserve CUBIC for use as a high-performance compute engine for large batches of containerized jobs that are launched from Flywheel.  However, for specific projects (esp collaborations with CBICA), it may make sense to have your project live on CUBIC.
+The CUBIC cluster is a very powerful set of servers that we can use for computing. Although they are running Linux, familiarity with Linux does not mean that you will be able to effectively use CUBIC. This section details how to get up and running on the CUBIC cluster. In general we recommend using CUBIC as a high-performance computing.
 
 # Getting + setting up your CUBIC account
 
@@ -29,14 +29,16 @@ Once the account is made, you will receive an email with your login credentials 
 
 Once inside the Penn network, the login to CUBIC looks like this:
 
-```python
-$ SSH -Y username@CUBIC-sattertt
+```bash
+ssh username@cubic-sattertt
 ```
-You use your UPHS password to login.
+You use your UPHS password to login. If you don't have access to cubic-sattertt, but do have access to cubic-login then you need to open another ticket to get access.
+
+Note that `cubic-sattertt` is different from the suggested urls in the email you will get from the CUBIC admins after onboarding. This is a private login node used only by our lab.
 
 # Project Directory Access Request
 
-Once you have access to CUBIC, you may need to start a project in a new directory. You can find the CBICA Wiki, which covers project creation instructions (also described below), through the [PennMedicine Remote Access Portal](https://pennmedaccess.uphs.upenn.edu/). After logging in with your UPHS credentials, you can find the CBICA Wiki under "Corporate Resources."  The direcet link to the relevant sections on CUBIC project direction creation is [here](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Research_Projects#Project_Creation_Request).  Note again that one must be on the VPN to access this page.
+Once you have access to CUBIC, you may need to start a project in a new directory. The direcet link to the relevant sections on CUBIC project direction creation is [here](https://cbica-wiki.uphs.upenn.edu/docs/). This is best viewed in Firefox. Note again that one must be on the VPN to access this page.
 
 
 First you need to fill out the data management document available [here](https://cbica-wiki.uphs.upenn.edu/wiki/images/Project_data_use_template.doc). If this link doesn't work for you, you can find this document on the CBICA Wiki: `Main Page > Research projects > 3 Access/New Project Creation > Project Creation Request`. This document will ask you for a number of details about your project, including the data's source and estimates about how much disk space you will need over a 6 month, 12 month, and 24 month period, and the estimated lifespan of the data ( 🤷). You will also need to provide the CUBIC usernames for everyone you want to have read and/or write access to the project — getting this done ahead of time is strongly recommended because, as you can imagine, requesting changes after-the-fact can be a bother.
@@ -182,21 +184,20 @@ You will notice that your shell prompt now begins with `(base)`, indicating that
 There will be a permission issue with your conda installation. You will need to change ownership of your miniconda installation. To fix this run
 
 ```bash
-$ chown -R `whoami` ~/miniconda3
+chown -R `whoami` ~/miniconda3
 ```
 
 When you launch jobs on CUBIC, they will autmoatically use CUBIC's base conda environment instead of your project user's miniconda installation. To fix this, you will need to initialize miniconda for a bash script submitted to qsub by running
 
  ```bash
-$ source ~/miniconda3/etc/profile.d/conda.sh
+source ~/miniconda3/etc/profile.d/conda.sh
 ```
 
-Let's create an environment we will use for interacting with flywheel.
+Let's create an environment for this project.
 
 ```bash
-$ conda create -n flywheel python=3.7
-$ conda activate flywheel
-$ pip install flywheel-sdk
+conda create -n myproject python=3.11
+conda activate myproject
 ```
 
 Note: For simple use of a Python interpreter managed by `conda`, you can use the installed module(s) like `module load python/anaconda/3`. But it is highly recommended to install miniconda as described above.
@@ -254,20 +255,20 @@ your home directory, and moving a handful of files about. For more demanding fil
 
 2. Make an empty mount point folder on your local machine. Make sure that only the user (not group or others) have access to this mount directory!
 ```bash
-$ cd
-$ mkdir -p cbica/projects/<project_name>
-$ chmod 700 cbica/projects/<project_name>
+cd
+mkdir -p cbica/projects/<project_name>
+chmod 700 cbica/projects/<project_name>
 ```
 
 3. Mount the desired CUBIC directory to your newly created, local mount directory using SSHfs and CUBIC-sattertt
 ```bash
-$ SSHfs -o defer_permissions <username>@CUBIC-login.uphs.upenn.edu:/cbica/projects/<project_name>/ /cbica/projects/<project_name>/
+SSHfs -o defer_permissions <username>@CUBIC-login.uphs.upenn.edu:/cbica/projects/<project_name>/ /cbica/projects/<project_name>/
 ```
 4. Unmount when done! You should run this unmount command from outside of the mount point.
 ```bash
-$ cd   # just to make sure we are not inside the mount dir
+cd   # just to make sure we are not inside the mount dir
 
-$ umount /cbica/projects/<project_name> # note that command is not "unmount"!!
+umount /cbica/projects/<project_name> # note that command is not "unmount"!!
 ```
 
 5. Make an alias for mounting project directory:
@@ -596,12 +597,12 @@ this first.
 To install R in your desired directory, follow the following steps.
 
    ```bash
-   $ module load curl/7.56.0  # load the libcurl library
-   $ wget http://cran.rstudio.com/src/base/R-4/R-4.2.2.tar.gz #e.g R-4.2.2
-   $ tar xvf R-4.2.2.tar.gz
-   $ cd R-4.2.2
-   $ ./configure --prefix=$HOME/R  --enable-R-shlib #$HOME/R is where R will be installed
-   $ make && make install
+   module load curl/7.56.0  # load the libcurl library
+   wget http://cran.rstudio.com/src/base/R-4/R-4.2.2.tar.gz #e.g R-4.2.2
+   tar xvf R-4.2.2.tar.gz
+   cd R-4.2.2
+   ./configure --prefix=$HOME/R  --enable-R-shlib #$HOME/R is where R will be installed
+   make && make install
 
    ```
 
@@ -612,13 +613,13 @@ To install R in your desired directory, follow the following steps.
    ```
    To run R:
    ```bash
-   $ module load R
-   $ R
+   module load R
+   R
    ```
 
     >You can load higher version of `gcc` compiler if required for some R version.
    ```bash
-    $ module load gcc/version-number
+    module load gcc/version-number
    ```
 
 2. You can install R-packages of your choice. It require adding library path in `.Rprofile` . You also may need to specify the base URL(s) of the repositories to use. Furthermore, you should specific lib.loc when loading packages. Note that some packages, such as "tidyverse", have run into a lot of issues when trying to install directly onto CUBIC. See [next section](#use-a-docker-image-containing-r-packages-on-CUBIC) for a workaround.
@@ -634,8 +635,8 @@ To install R in your desired directory, follow the following steps.
 3. You can also use r-studio on CUBIC  by simply load rstudio using `module`.
 
      ```bash
-      $ module load R-studio/1.1.456
-      $ rstudio & # enjoy the R and Rstudio, it works
+      module load R-studio/1.1.456
+      rstudio & # enjoy the R and Rstudio, it works
      ```
 4. If you are working with large amounts of data, you may want to submit a job in R. Make sure the packages you need in you Rscript are installed properly and remember to specify 'lib.loc' when loading libraries in your .R file. Write your bash script:
       ```sh
