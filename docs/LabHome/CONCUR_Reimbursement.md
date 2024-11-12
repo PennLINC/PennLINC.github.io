@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Concur Reimbursement 
+title: Concur  
 parent: Lab Basics
 nav_order: 15
 ---
 
-# Reimbursemnt via Concur
+# 
 
 Reimbursement for expenses (typically: conference travel) can be administratively challenging, but are tractable if we follow some basic guidelines.   All travel reimbursements are handled via the UPenn Concur system.   If you have a PennKey then you are able to submit reimbursements; if you are an alumni or visitor it is a different workflow.  
 
