@@ -185,11 +185,7 @@ You will notice that your shell prompt now begins with `(base)`, indicating that
 There will be a permission issue with your conda installation. You will need to change ownership of your miniconda installation. To fix this run
 
 ```bash
-<<<<<<< HEAD
-chown -R `whoami` ~/miniconda3
-=======
 $ chown -R `whoami` ~/miniforge3
->>>>>>> b072a55 (Use Miniforge instead of Miniconda)
 ```
 
 When you launch jobs on CUBIC, they will autmoatically use CUBIC's base conda environment instead of your project user's miniconda installation. To fix this, you will need to initialize miniconda for a bash script submitted to qsub by running
