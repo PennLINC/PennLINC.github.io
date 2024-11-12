@@ -81,13 +81,5 @@ Booking flights via Concur is vastly preferred over booking flights on your own.
 - add business justification 
 - Add funding code under Notes to Approver
 
-
-## Purchase Orders (PO)
-- To order supplies that are within our Penn system, you need to complete a series of trainings. This will be for when Ted needs to order certain supplies that can be found in the Penn marketplace. You will be responsible for preparing the purchase order and putting into place for the next step of approvals.
-- You will need to complete the following trainings in KnowledgeLink:
-    - BEN Buys - Requisitioner - FTD
-    - Penn Marketplace Non-PO Payment Request for Preparers Curriculum
-    - Penn Marketplace Non-PO Payment Request - Application Training for Approvers
-    - Penn Marketplace Non-PO Payment Request - Application Training for Preparers
  
 
