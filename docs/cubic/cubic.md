@@ -150,22 +150,23 @@ echo PATH=/directory/where/your/installation/lives:${PATH} >> ~/.bashrc
 source ~/.bashrc
 ```
 
-# Installing miniconda in your project
+# Installing miniforge in your project
 
-You will want a python installation that you have full control over. After logging in as your project user and changing permission on your `.bashrc` file, you can install miniconda using
+You will want a python installation that you have full control over. After logging in as your project user and changing permission on your `.bashrc` file, you can install miniforge using
 
 ```bash
-$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-$ chmod +x Miniconda3-latest-Linux-x86_64.sh
-$ ./Miniconda3-latest-Linux-x86_64.sh
+$ cd ~
+$ wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+$ chmod +x Miniforge3-Linux-x86_64.sh
+$ ./Miniforge3-Linux-x86_64
 ```
 
-You will need to hit Enter to continue and type `yes` to accept the license terms. The default installation location is fine (it will be `$HOME/miniconda3`). Sometimes you will run into a memory error at this step. If this happens, just log out and log back in and the issue should be remediated. This can be avoided in the first place by, when SSHing into CUBIC, logging into `*login4`.
+You will need to hit Enter to continue and type `yes` to accept the license terms. The default installation location is fine (it will be `$HOME/miniforge3`). Sometimes you will run into a memory error at this step. If this happens, just log out and log back in and the issue should be remediated. This can be avoided in the first place by, when SSHing into CUBIC, logging into `*login4`.
 
-When prompted if you want to initialize miniconda3, respond again with `yes`
+When prompted if you want to initialize miniforge3, respond again with `yes`
 
 ```bash
-Do you wish the installer to initialize Miniconda3
+Do you wish the installer to initialize Miniforge3
 by running conda init? [yes|no]
 [no] >>> yes
 ```
@@ -174,9 +175,9 @@ For the changes to take place, log out of your sudo bash session and your second
 
 ```bash
 $ exit
-$ sudo -u xcpdev sudosh
+$ sudo -u [PROJECTNAME] sudosh
 (base) $ which conda
-~/miniconda3/bin/conda
+~/miniforge3/bin/conda
 ```
 
 You will notice that your shell prompt now begins with `(base)`, indicating that you are in conda's base environment.
@@ -184,7 +185,11 @@ You will notice that your shell prompt now begins with `(base)`, indicating that
 There will be a permission issue with your conda installation. You will need to change ownership of your miniconda installation. To fix this run
 
 ```bash
+<<<<<<< HEAD
 chown -R `whoami` ~/miniconda3
+=======
+$ chown -R `whoami` ~/miniforge3
+>>>>>>> b072a55 (Use Miniforge instead of Miniconda)
 ```
 
 When you launch jobs on CUBIC, they will autmoatically use CUBIC's base conda environment instead of your project user's miniconda installation. To fix this, you will need to initialize miniconda for a bash script submitted to qsub by running
@@ -200,7 +205,9 @@ conda create -n myproject python=3.11
 conda activate myproject
 ```
 
-Note: For simple use of a Python interpreter managed by `conda`, you can use the installed module(s) like `module load python/anaconda/3`. But it is highly recommended to install miniconda as described above.
+Note: An important benefit of using Miniforge is that it gives you access to `mamba`! This can be used in place of most `conda` commands (e.g., `mamba install ...` or `mamba update...`) and uses a C-based implementation of `conda` that tends to run noticeably faster.
+
+Note: For simple use of a Python interpreter managed by `conda`, you can use the installed module(s) like `module load python/anaconda/3`. But it is **highly recommended** to install miniconda as described above.
 
 # Interacting with CUBIC: data analysis and data transfer
 
@@ -538,7 +545,7 @@ analysis. We do this with `conda`.
 
 #### REPL (Interactive Programming)
 
-You can code in Jupyter Notebooks right in `code-server`. First, ensure that you have a [conda environment setup](http://pennlinc.github.io/docs/cubic#installing-miniconda-in-your-project-the-hard-way).
+You can code in Jupyter Notebooks right in `code-server`. First, ensure that you have a [conda environment setup](http://pennlinc.github.io/docs/cubic#installing-miniforge-in-your-project-the-hard-way).
 Once you're ready, start up your `code-server` and make sure the [Jupyter extension](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) is installed. Use the command palette (`cmd`+`shift`+`p`) to search for Jupyter interpreters.
 
 <img src="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/OpenCommandPalatte.gif" alt="cmdpalette">
