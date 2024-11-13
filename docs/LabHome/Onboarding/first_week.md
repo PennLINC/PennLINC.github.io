@@ -7,7 +7,7 @@ parent: Onboarding
 # First day/week tasks
 
 ## New Hire Checklist:
-<embed src="assets/pdfs/new_hire_checklist.pdf" width="800px" height="600px" />
+<img align="left" width="250" src="../../assets/pdfs/new_hire_checklist.pdf">
 
 
 ## First day:
