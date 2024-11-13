@@ -4,7 +4,12 @@ title: Onboarding
 parent: Lab Basics
 has_children: true
 nav_order: 1
+has_toc: true
 ---
+
+# Table of Contents
+
+
 
 # Welcome to PennLINC!
 
