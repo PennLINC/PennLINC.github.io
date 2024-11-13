@@ -11,7 +11,7 @@ parent: Onboarding
 https://www.hr.upenn.edu/
 
 ### Neurodevelopment & Psychosis Section Faculty & Staff Handbook: 
-<embed src="assets/pdfs/staff_handbook_v1.0.pdf" width="800px" height="600px" />
+<iframe src="assets/pdfs/staff_handbook_v1.0.pdf" width="800px" height="600px"></iframe>
 
 ### Penn Contact Information:
 <embed src="assets/pdfs/contact_info.pdf" width="800px" height="600px" />
