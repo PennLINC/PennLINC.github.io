@@ -34,7 +34,7 @@ Once general section-level onboarding is complete (especially  CITI/HIPPA traini
 
 [Github](https://github.com/PennLINC/): all code belongs in our github code repository; our [github pages webpage](https://pennlinc.github.io/) associated with this organization also houses growing knowledge base of tutorials.
 
-[Website](https://www.pennlinc.io/): Our front-facing website. Go to the "team form" under "more" to create your profile so you can appear on the "team" page. Ask Tinashe for this password on Slack.
+[Website](https://www.pennlinc.io/): Our front-facing website. Go to the "team form" under "more" to create your profile so you can appear on the "team" page. The password/instructions for doing so are on the #pennlinc_website slack channel.
 
 Additionally, we use two compute platforms that you will need access to.
 
