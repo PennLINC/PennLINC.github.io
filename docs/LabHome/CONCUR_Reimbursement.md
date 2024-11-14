@@ -5,7 +5,7 @@ parent: Lab Basics
 nav_order: 15
 ---
 
-# 
+## Concur for Reimbursement
 
 Reimbursement for expenses (typically: conference travel) can be administratively challenging, but are tractable if we follow some basic guidelines.   All travel reimbursements are handled via the UPenn Concur system.   If you have a PennKey then you are able to submit reimbursements; if you are an alumni or visitor it is a different workflow.  
 
@@ -16,6 +16,8 @@ Please note: it is essential that reimbursements are submitted in a timely manne
 For more details on funding for travel, please see the [travel guidelines wiki](https://pennlinc.github.io/docs/LabHome/TravelGuidelines/).
 
 Also, note that there is a the weekly office hour on Thursdays 11:00a-12:00am with Patrick Doyle for questions on concur reimbursment. (zoom link pinned on #concur channel in slack).
+
+Finally, note that this workflow does NOT apply to research track residents, who should talk directly to the residency admins.
 
 
 ## Adding delegates 
