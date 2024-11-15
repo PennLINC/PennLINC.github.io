@@ -21,7 +21,7 @@ This section gives an overview of how to get started on PMACS Limited Performanc
 Send the lab's access manager (you can ask who this is on the #informatics Slack channel) your Pennkey, full name, and Penn email, and have them fill a ticket and request access for you. When access has been granted, you will receive an email with a temporary password through SecureShare. Log in via [this link](https://reset.pmacs.upenn.edu/) with your temporary password and set a new PMACS password. Your Pennkey and new PMACS password will be used to ssh into the LPC and to access the PMACS help desk/ticketing system.
 
 ## Logging in to PMACS LPC
-Once you've set up your login credentials for the PMACS LPC, you can SSH into the LPC from anywhere (even without Penn VPN). You can SSH into PMACS using the following command: 
+Once you've set up your login credentials for the PMACS LPC, you can SSH into the LPC from anywhere on the campus network / PennMedicine WifI, however if you are off-campus you will need to use either of the VPNs (both work for PMACS systems). You can SSH into PMACS using the following command: 
 
 ```bash
 $ ssh -Y [username]@bblsub.pmacs.upenn.edu #SSH only. No sftp. No outbound access. Can submit or check jobs.
