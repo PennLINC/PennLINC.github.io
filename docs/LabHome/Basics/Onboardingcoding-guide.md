@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Best practices for coding for scientific computing
-parent: Lab Basics
-nav_order: 3
+title: Coding for scientific computing
+parent: Computation Basics
+nav_order: 5
 has_toc: true
 ---
 
-# Best practices for coding for scientific computing at PennLINC
+# Coding for scientific computing at PennLINC
 
 This is a guide for coding for scientific computing at PennLINC. People may have different styles in coding; however, there are a few guidelines we recommend here in order to enhance code's reproducibility, reusability, to make it less prone to mistakes, etc. In other words, your 
 code achieves exactly what you wanted; after several months, when looking at your code, you can still quickly get what you coded; you or other lab members can also reuse your code for other projects in the future.
