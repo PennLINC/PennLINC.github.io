@@ -134,13 +134,13 @@ https://www.myworkday.com/upenn/d/inst/15$413382/23455$851.htmld?metadataEntryPo
 ## Resources:
 
 CRC Onboarding Slide Deck:
-<img align="left" width="250" src="../../assets/pdfs/crc_onboarding_presentation_v3.pdf">
+[![CRC Onboarding](/assets/pdfs/crc_onboarding_presentation_v3.pdf)](/assets/pdfs/crc_onboarding_presentation_v3.pdf) 
 
 Clincard Training Slide Deck:
-<img align="left" width="250" src="../../assets/pdfs/clincard_penn_chop_training_powerpoint.pdf">
+[![Clincard Training](/assets/pdfs/clincard_penn_chop_training_powerpoint.pdf)](/assets/pdfs/clincard_penn_chop_training_powerpoint.pdf) 
 
 Consenting Slide Deck:
-<img align="left" width="250" src="../../assets/pdfs/consent_review_09_14_2022.pdf">
+[![Consenting](/assets/pdfs/consent_review_09_14_2022.pdf)](/assets/pdfs/consent_review_09_14_2022.pdf) 
 
 MRI Safety Slide Deck:
-<img align="left" width="250" src="../../assets/pdfs/MRsafety%20presentation%20(1).pdf">
+[![MRI Safety](/assets/pdfs/MRsafety%20presentation%20(1).pdf)](/assets/pdfs/MRsafety%20presentation%20(1).pdf) 
