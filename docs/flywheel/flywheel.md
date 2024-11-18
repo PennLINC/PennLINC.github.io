@@ -1,10 +1,12 @@
 ---
 layout: default
 title: Flywheel
-nav_order: 5
+parent: Archived Documentation
+nav_order: 9
 has_children: true
 permalink: docs/flywheel
 ---
+
 
 # Using UPenn's Flywheel Instance
 {: .no_toc }
