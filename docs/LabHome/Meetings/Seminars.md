@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Talks and Seminars
-parent: Lab Basics
-nav_order: 3
+parent: Meetings
+grand_parent: Lab Basics
 ---
 
 # Seminars and Talks at Penn
