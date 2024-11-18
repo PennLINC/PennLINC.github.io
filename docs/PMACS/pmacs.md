@@ -2,10 +2,11 @@
 layout: default
 title: PMACS
 has_children: false
-nav_order: 6
-permalink: docs/pmacs
+parent: Archived Documentation
+nav_order: 8
 has_toc: true
 ---
+
 # Using Penn Medicine Academic Computing Services (PMACS)
 {: .no_toc }
 
