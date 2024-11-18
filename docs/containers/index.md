@@ -1,11 +1,13 @@
 ---
 layout: default
 title: Using Containers
-nav_order: 12
+parent: Computation Basics
+nav_order: 6
 has_children: false
 permalink: docs/containers
 has_toc: false
 ---
+
 
 # Using Containers for Research
 {: .no_toc }
@@ -112,75 +114,4 @@ $ singularity run -B /data:/home/<username>/data $ANTSCT \
 ```
 
 
-# Singularity on PMACS
-
-PMACS requires a couple extra steps to run singularity. First, only one host
-can run `singularity` *and* connect to the internet. You have to ssh into this
-host from `sciget` like so:
-
-```
-$ ssh singularity01
-$ module load singularity
-```
-
-Now you can build a singularity image from any image on DockerHub. Be sure
-to save your `.sif` file in your project directory (ideally in a subdirectory named
-`images`), as the home directories on `singularity01` do not sync with the rest of PMACS.
-
-```console
-$ cd /project/my_project/images
-$ singularity build fmriprep-20.0.5.sif dockerhub://poldracklab/fmriprep:20.0.5
-```
-
-In the event that you do not have access to your project directory on singularity01,
-you can pull the image in your home directory. After the image is in your home directory,
-move the image over to your project directory while you are on sciget, but have
-exited from singularity01.
-
-```console
-$ ssh singularity01
-$ cd
-$ singularity pull docker://antsx/ants
-$ exit
-$ mv ~/ants_latest.sif /project/my_project/images
-```
-
-### Note for images that use `templateflow`
-
-Some of the `nipreps`-based pipelines use the `templateflow` library to
-download templates. This is a problem on PMACS because the compute hosts
-do not connect to the internet. This means you'll have to manually download
-the templateflow data and link this directory into the container at run time.
-
-Here is fmriprep's documentation on [this problem](https://fmriprep.org/en/stable/singularity.html#templateflow-and-singularity) with [more details here](https://neurostars.org/t/problems-using-pediatric-template-from-templateflow/4566/15).
-
-Ultimately, you'll need to do something like this (templates listed are the ones that are typically needed to run fMRIPrep):
-
-```console
-$ export TEMPLATEFLOW_HOME=/path/to/keep/templateflow
-$ python -m pip install -U templateflow  # Install the client
-$ python
->>> from templateflow import api as tfapi
->>> tfapi.TF_S3_ROOT = 'http://templateflow.s3.amazonaws.com'
->>> tfapi.get('MNI152NLin6Asym', atlas=None, resolution=[1, 2], desc=None, extension=['.nii', '.nii.gz'])
->>> tfapi.get('MNI152NLin6Asym', atlas=None, resolution=[1, 2], desc='brain', extension=['.nii', '.nii.gz'])
->>> tfapi.get('MNI152NLin2009cAsym', atlas=None, extension=['.nii', '.nii.gz'])
->>> tfapi.get('OASIS30ANTs', extension=['.nii', '.nii.gz'])
->>> tfapi.get('fsaverage', density='164k', desc='std', suffix='sphere')
->>> tfapi.get('fsaverage', density='164k', desc='vaavg', suffix='midthickness')
->>> tfapi.get('fsLR', density='32k')
->>> tfapi.get('MNI152NLin6Asym', resolution=2, atlas='HCP', suffix='dseg')
-```
-
-And run the singularity image binding the appropriate folder:
-
-```console
-$ singularity run -B ${TEMPLATEFLOW_HOME}:/templateflow \
-      --cleanenv fmriprep.sif <fmriprep arguments>
-```
-
-Here is an example of a call to singularity on PMACS:
-
-```console
-$ singularity run --writable-tmpfs --cleanenv -B /project/ExtraLong/data/templateflow:/templateflow -B /project/ExtraLong/data/license.txt:/opt/freesurfer/license.txt -B /project/ExtraLong/data/ /project/ExtraLong/images/fmriprep_20.0.5.sif /project/ExtraLong/data/bids_directory/sub-X/ses-PNC1 /project/ExtraLong/data/freesurferCrossSectional/fmriprep/sub-X/ses-PNC1 participant --skip_bids_validation --anat-only --fs-license-file /opt/freesurfer/license.txt --output-spaces MNI152NLin2009cAsym --skull-strip-template OASIS30ANTs --nthreads 7
 ```
