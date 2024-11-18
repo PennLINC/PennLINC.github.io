@@ -2,6 +2,8 @@
 layout: default
 title: Resources
 parent: Onboarding
+grand_parent: Lab Basics
+nav_order: 8
 ---
 
 # Resources

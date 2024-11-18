@@ -2,6 +2,8 @@
 layout: default
 title: Tasks to do before you get here
 parent: Onboarding
+grand_parent: Lab Basics
+nav_order: 2
 ---
 # Tasks to do before you get here
 

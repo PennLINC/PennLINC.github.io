@@ -1,14 +1,12 @@
 ---
 layout: default
-title: Onboarding
-parent: Lab Basics
+title: Welcome to PennLINC!
+parent: Onboarding
+grand_parent: Lab Basics
 has_children: true
-nav_order: 1
 has_toc: true
+nav_order: 1
 ---
-
-# Table of Contents
-
 
 
 # Welcome to PennLINC!

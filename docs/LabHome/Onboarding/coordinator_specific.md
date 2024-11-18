@@ -2,6 +2,8 @@
 layout: default
 title: Coordinator Specific
 parent: Onboarding
+grand_parent: Lab Basics
+nav_order: 5
 ---
 
 # Coordinator Specific

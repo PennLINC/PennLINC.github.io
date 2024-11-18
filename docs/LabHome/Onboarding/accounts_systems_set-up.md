@@ -2,6 +2,8 @@
 layout: default
 title: Accounts and systems set-up
 parent: Onboarding
+grand_parent: Lab Basics
+nav_order: 4
 ---
 
 # Accounts and systems set-up

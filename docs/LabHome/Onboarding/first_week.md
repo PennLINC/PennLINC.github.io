@@ -2,6 +2,8 @@
 layout: default
 title: First day/week tasks
 parent: Onboarding
+grand_parent: Lab Basics
+nav_order: 3
 ---
 
 # First day/week tasks

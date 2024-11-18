@@ -2,6 +2,8 @@
 layout: default
 title: Required online trainings
 parent: Onboarding
+grand_parent: Lab Basics
+nav_order: 6
 ---
 
 # Required online trainings

@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Best practices for coding for scientific computing
-parent: Lab Basics
+parent: Onboarding
+grand_parent: Lab Basics
 nav_order: 3
 has_toc: true
 ---

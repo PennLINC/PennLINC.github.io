@@ -2,6 +2,8 @@
 layout: default
 title: Penn HR Materials
 parent: Onboarding
+grand_parent: Lab Basics
+nav_order: 7
 ---
 
 # Penn HR Materials
