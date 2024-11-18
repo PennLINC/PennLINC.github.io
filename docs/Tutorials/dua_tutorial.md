@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Data Use Agreements Tutorial
-parent: Lab Basics
+parent: Tutorials
 has_toc: true
-nav_order: 11
+nav_order: 7
 ---
 
 👋 If you need to download some data from the [NIMH Data Arhive](https://nda.nih.gov/) but do not have access to it, you've come to the right place!
