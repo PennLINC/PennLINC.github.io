@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Coding for scientific computing
+title: Coding tips
 parent: Computation Basics
 nav_order: 5
 has_toc: true
