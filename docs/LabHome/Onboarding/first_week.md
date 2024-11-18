@@ -9,7 +9,8 @@ nav_order: 3
 # First day/week tasks
 
 ## New Hire Checklist:
-<img align="left" width="250" src="../../assets/pdfs/new_hire_checklist.pdf">
+[![New Hire Checklist](/assets/pdfs/new_hire_checklist.pdf)](/assets/pdfs/new_hire_checklist.pdf) 
+
 
 
 ## First day:
