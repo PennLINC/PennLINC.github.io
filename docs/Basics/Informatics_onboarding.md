@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Informatics Training
-parent: Lab Basics
-nav_order: 2
+title: Informatics Onboarding (Legacy)
+parent: Computation Basics
+nav_order: 7
 has_toc: true
 ---
 
-# Informatics Training
+# Informatics Training (Legacy)
 {: .no_toc}
 
 This page outlines the onboarding process for core informatics tasks, including data curation, analysis, and software development, and is particularly geared towards new data analysts or graduate students. 
@@ -17,17 +17,6 @@ This page outlines the onboarding process for core informatics tasks, including 
 
 1. TOC
 {:toc}
-
-# Core Competencies
-{: .no_toc}
-
-The core competencies of informatics are split into 5 major units:
-
-1. [PennLINC code style guide](#unit-1-pennlinc-code-style-guide)
-
-2. [Programming & Software Tools](#unit-2-programming--software-tools)
-
-3. [Data Management, Curation](#unit-3-data-management-curation)
 
 
 The units are designed around the day-to-day tasks of Informatics team members, with different tasks utilizing a number of competencies from each of these units. In a perfect world, Informatics team members are experts in all 3 units, but in practice, your eventual expertise will depend on your assigned projects within the lab, along with past experience, interests, and desire to learn.
@@ -40,13 +29,10 @@ In the sections below, we first list the [general code style guide](#unit-1-penn
 
 ---
 
-## Unit 1: PennLINC code style guide
-
-TODO: add a link to that page!!
 
 
 
-## Unit 2: Programming & Software Tools
+## Unit 1: Programming & Software Tools
 
 Being a competent programmer is fundamental to computational neuroscience. While we outline our most frequently used programming languages below, it's important to remember that languages come and go — understanding the principles of programming is more important than spending hours memorizing one language's idiosyncrasies.
 
@@ -148,7 +134,7 @@ We rely on several tools that are essential for reproducible science.
 
 ---
 
-## Unit 3: Data Management & Curation
+## Unit 2: Data Management & Curation
 
 This section introduces the basic data types in neuroimaging, how they are stored, and what software pipelines are frequently used for preprocessing. These competencies are particularly important for Informatics team members.
 
@@ -203,7 +189,7 @@ Curating a BIDS dataset is incredibly important and surprisingly challenging.  H
 
 
 
-## Unit 4: Processing Pipelines
+## Unit 3: Processing Pipelines
 
 Before hypotheses can be tested, neuroimaging data needs to be preprocessed. There are a number of tools for preprocessing — each is appropriate for a particular modality or scan type, and each has its own set of features and limitations. You'll get to work very closely with one (or many) of these pipelines once assigned a project, so basic familiarity with the tools suffices for now.
 
