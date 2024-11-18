@@ -13,7 +13,7 @@ nav_order: 7
 https://www.hr.upenn.edu/
 
 ### Neurodevelopment & Psychosis Section Faculty & Staff Handbook:
-[![Staff Handbook](./assets/pdfs/staff_handbook_v1.0.pdf)](./assets/pdfs/staff_handbook_v1.0.pdf) 
+[![Staff Handbook](/assets/pdfs/staff_handbook_v1.0.pdf)](/assets/pdfs/staff_handbook_v1.0.pdf) 
 
 ### Penn Contact Information:
 <img align="left" width="250" src="/assets/pdfs/contact_info.pdf">
