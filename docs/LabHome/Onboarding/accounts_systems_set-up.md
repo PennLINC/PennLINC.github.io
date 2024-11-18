@@ -18,7 +18,7 @@ UPHS System Accounts Overview:
 - UPHS = University of Pennsylvania Health Systems, i.e., hospital accounts
     - need to enroll in Duo Two-Factor Authentication as well
     - Stace should email you with your UPHS login information. This should include your Penn ID # and also a temporary password.
-    - Reset your password from the temporary password here:  Reset your password [http://uphsxnet.uphs.upenn.edu/is/security/passwords.html](https://nam11.safelinks.protection.outlook.com/?url=http%3A%2F%2Fuphsxnet.uphs.upenn.edu%2Fis%2Fsecurity%2Fpasswords.html&data=05%7C02%7Cbrooke.sevchik%40duke.edu%7Cf650f139c126486dbc4c08dcbc7f5a9d%7Ccb72c54e4a314d9eb14a1ea36dfac94c%7C0%7C0%7C638592502411360398%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=B5ceghVrLUOYjfutVAHwhiEcGt%2BUu52nmoqOEWzy30I%3D&reserved=0)
+    - Reset your password from the temporary password according to the instructions in the email from Stace.
     - Access issues and password reset: Call the IS Service Desk at 215-662-7474
     - Use this for anything Penn Medicine related
     
@@ -27,7 +27,7 @@ UPHS System Accounts Overview:
     - Stace will create your PMACS account.
     - Before attempting to log into any system you must complete the following 7 steps:
         
-        1. Go to https://reset.pmacs.upenn.edu
+        1. Go to [this link](https://reset.pmacs.upenn.edu)
         
         2. On the right side of the page where it says "Sign In" for your username type in your PennKey username
         
@@ -45,13 +45,13 @@ UPHS System Accounts Overview:
         
 - VPN: Many websites as well as CUBIC and PMACS systems can only be accessed when on the PennMedicine network. When working from home, you will need to connect to VPN to access these resources.
 When using VPN and / or when on PennMedicine network, some websites cannot be accessed. To enable access, download and install the [following certificates](https://cert-install.uphs.upenn.edu/) using your UPHS credentials (instructions provided with certificate download).
-    - Big IP VPN client (http://www.uphs.upenn.edu/network/files/BIGIPMacEdgeClient2023.zip) will allow you to connect to all PMACS and UPHS systems. Use your UPHS credentials to connect.
+    - Big IP VPN client [Big IP VPN](http://www.uphs.upenn.edu/network/files/BIGIPMacEdgeClient2023.zip) will allow you to connect to all PMACS and UPHS systems. Use your UPHS credentials to connect.
     - Ivanti VPN client will allow you to connect to all PMACS systems. Use your PMACS credentials to connect.
 
 Setting up email account:
 
 - Stace will set up your Penn Medicine email account, with a temporary password. You will need to login and change your password.
-- If you require help installing or configuring Outlook, please open a support ticket at https://helpdesk.pmacs.upenn.edu/
+- If you require help installing or configuring Outlook, please open a support ticket at [help desk](https://helpdesk.pmacs.upenn.edu/)
 
 ## Additional Systems to Set Up:
 
