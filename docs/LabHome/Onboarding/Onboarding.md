@@ -44,4 +44,4 @@ Additionally, we use two compute platforms that you will need access to.
 
 ## Birthdays at PennLINC
 
-Your birthday is important!! A lab birthday captain keeps track of birthdays. Our current birthday captain is Juliette - please add your birthday to this [spreadsheet](https://docs.google.com/spreadsheets/d/17PlorJSWi5ZeW-XXERIMC0xyFOFdOTNR_t9L1-_BwrQ/edit?usp=sharing). All PennLINC members also get their birthday off without reporting it as PTO.  Have fun & celebrate!!!  
+Your birthday is important!! A lab birthday captain keeps track of birthdays. Our current birthday captain is Juliette - please add yours to the birthday spreadsheet that she maitains.  All PennLINC members also get their birthday off without reporting it as PTO.  Have fun & celebrate!!!  
