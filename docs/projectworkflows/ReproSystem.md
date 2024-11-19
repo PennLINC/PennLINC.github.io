@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Project Reproducibility Guide 
-parent: Lab Basics
-nav_order: 6
+parent: Project Workflows
+nav_order: 3
 ---
 
 
@@ -10,14 +10,14 @@ nav_order: 6
 
 ### 1. Find Your Reproducabilibuddy. 
 
-The reproducibility system is core for ALL projects at PennLINC. Every time we haven't followed this system, we've really regreted it. Ted wrote an essay for _The Transmitter_ on this topic; check it out [here](https://www.thetransmitter.org/open-neuroscience-and-data-sharing/how-scuba-diving-helped-me-embrace-open-science/).
+The reproducibility system is core for ALL projects at PennLINC. Every time we haven't followed this system, we've really regretted it. Ted wrote an essay for _The Transmitter_ on this topic; check it out [here](https://www.thetransmitter.org/open-neuroscience-and-data-sharing/how-scuba-diving-helped-me-embrace-open-science/).
 
-Identify a reproducibility buddy at the start of the project; we call this person your `Reproducabilibuddy`.  This is usually the second (somtimes, third) author.  This is a lot of work, so replication buddy must “buy in” for real, and have approval of their direct supervisor.  
+Identify a reproducibility buddy at the start of the project; we call this person your `Reproducabilibuddy`.  This is usually the second (rarely, third) author.  This is a lot of work, so replication buddy must “buy in” for real, and have approval of their direct supervisor.  
 
 
 ### 2. Sample selection.
 
-Make sure your sample selection procedure is written as code (not done manually), ideally in readable analytic notebook. This document should track what subjects are removed, for what reason, and what the composition of the resultant sample is as a result.   Write out the methods paragraph and the resultant demographics table at this point  This is one of the most common places error occur, which is particularly unfortunate as all downstream analyses are impacted by sample selection.  All QA files should be pulled from the data freeze folder for the study.
+Make sure your sample selection procedure is written as code (not done manually), ideally in readable analytic notebook. This document should track what subjects are removed, for what reason, and what the composition of the resultant sample is as a result.   Write out the methods paragraph and the resultant demographics table at this point  This is one of the most common places errors occur, which is particularly unfortunate as all downstream analyses are impacted by sample selection.  All QA files should be pulled from the data freeze folder for the study.
 
 _True replication (first):_ buddy works from the text in the methods section and data freeze files to ensure that the subject list generated is the same.   This is usually <20 lines of code.
   
@@ -28,10 +28,9 @@ _Technical replication (second):_ buddy looks over code notebook to make sure it
 
 Subject level data should ideally come from a static dataset where data has been preprocessed using reproducible informatics workflows (e.g., containerized pipelines in DataLad). 
    
-_Project lead re-replicates a small sub-sample of data._ In general, it is good practice to know where your data comes from if your name is first on the paper.  This can be as simple as executing the container/gear and making sure you get the same results for a handful of subjects, but ideally you should udnerstand how the pipeline works and was configured prior to being run. 
+_Project lead re-replicates a small sub-sample of data._ In general, it is good practice to know where your data comes from if your name is first on the paper.  This can be as simple as executing the container/gear and making sure you get the same results for a handful of subjects, but ideally you should understand how the pipeline works and was configured prior to being run. 
 
-_Replication of additional derivatives._ Many papers require generation of additional derivatives that use data in the data freeze as input.  This step should be written in code, and replicated by buddy using well-commented code.  Data that is broadly useful across projects (e.g., networks, NMF components, etc) _should then be attached to  the flyhweel project (or data freeze) following replication_, with appropriate additional documentation as needed.
-
+_Replication of additional derivatives._ Many papers require generation of additional derivatives that use data in the data freeze as input.  This step should be written in code, and replicated by buddy using well-commented code.  
 
 ### 4. Initial Results.  
 
@@ -39,7 +38,7 @@ Once there is an initial finding that will form the basis for a paper, your budd
 
 _True replication (first):_ analysis result is replicated from methods section with new code written by replication buddy.  This may not be possible for truly complex / novel analytic tools, but that is a special case, and often reflects poor coding / documentation.
 
-_Technical replication (second):_ buddy looks over analysis code (ideally as a RMarkdown file) to make sure it makes sense, and executes it to check that the main result is fully reproducible. Feedback on code readability is key. 
+_Technical replication (second):_ buddy looks over analysis code (ideally: as a notebook) to make sure it makes sense, and executes it to check that the main result is fully reproducible. Feedback on code readability is key. 
 
 
 ### 5. Final Results.  
