@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Project Reproducibility Guide 
-parent: Project Workflows
+parent: Project Workflow
 nav_order: 3
 ---
 
