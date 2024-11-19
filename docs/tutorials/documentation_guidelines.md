@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Updating PennLINC.github.io
-parent: Documentation
+title: Updating these Docs
+parent: Tutorials
 nav_order: 1
 has_toc: true
 ---
@@ -20,10 +20,8 @@ has_toc: true
 <div style="text-align: right"> - Damian Conway </div>
 ---
 
-All Penn LINC members are encouraged to document their software and analyses,
-in the form of code, prose, tutorials, or a mix of all 3.
-In this documentation about documentation,
-we're going to outline how you can start writing documentation for your work and contribute to this site.
+All Penn LINC members are encouraged to document their software and analyses, in the form of code, prose, tutorials, or a mix of all 3.
+In this documentation about documentation, we're going to outline how you can start writing documentation for your work and contribute to this site.
 
 # Getting Started
 
