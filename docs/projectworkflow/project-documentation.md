@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Project Documentation with GitHub Pages
-parent: Documentation
+title: Project Documentation
+parent: Project Workflow
 has_children: false
 has_toc: true
-nav_order: 2
+nav_order: 4
 ---
 
 # Project Documentation with GitHub Pages
