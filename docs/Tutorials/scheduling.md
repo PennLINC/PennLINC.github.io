@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Scheduling and Booking Rooms
-parent: Lab Basics
+parent: Tutorials
 nav_order: 16
 ---
 
