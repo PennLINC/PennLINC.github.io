@@ -56,13 +56,12 @@ Finally, you will need approval from your PI. This involves sending an email to 
 
 With these two documents, you can now submit the request via the the CBICA Request Tracker. Similar to the CBICA Wiki, you need to access the Request Tracker through the [PennMedicine Remote Access Portal](https://pennmedaccess.uphs.upenn.edu/), then click CBICA Request Tracker. You'll need your CBICA/cubic login credentials for this (same as UPHS credentials)!
 
-<img src="/assets/images/request-tracker2.png" alt="">
+<img src="/assets/images/request-tracker.png" alt="">
 
 Open a new ticket and, fill out the project or user name (the name of your project dicrectory), your username, select your PI from the dropdown, and upload the plain text version of the project request form under 'Data Management', and lastly upload a pdf of your PR's email approvale of the project creation. 
 
-<img src="/assets/images/new-project-request.png" alt="">
+<img src="/assets/images/new-project-request2.png" alt="">
 
-Lastly, attach your supporting documents.
 
 The process for accessing an existing project is similar, but fortunately you will not have to fill out a new data management document; only the PI approval and filling of the online ticket is required. You should receive an email from CBICA confirming your request, and you can always return to the Request Tracker to see the status of your ticket.
 
