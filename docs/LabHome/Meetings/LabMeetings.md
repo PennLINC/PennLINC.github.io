@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Lab Meetings
-parent: Lab Basics
-nav_order: 2
+parent: Meetings
+grand_parent: Lab Basics
 ---
 
 
