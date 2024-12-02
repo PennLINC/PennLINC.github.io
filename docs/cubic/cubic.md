@@ -141,14 +141,6 @@ Additionally, you will want to add the following line to the end of `.bashrc`:
 unset PYTHONPATH
 ```
 
-We recommend that when you launch a script requiring your `conda` environment and packages, you add `source activate <env>` to the topof your script. To change the default installation for a given software
-package, prepend the path to your `$PATH` and source your `.bashrc`:
-
-```bash
-echo PATH=/directory/where/your/installation/lives:${PATH} >> ~/.bashrc
-source ~/.bashrc
-```
-
 # Installing miniforge in your project
 
 You will want a python installation that you have full control over. After logging in as your project user and changing permission on your `.bashrc` file, you can install miniforge using
@@ -184,7 +176,7 @@ You will notice that your shell prompt now begins with `(base)`, indicating that
 There will be a permission issue with your conda installation. You will need to change ownership of your miniconda installation. To fix this run
 
 ```bash
-$ chown -R `whoami` ~/miniforge3
+$ chown -R $(whoami) ~/miniforge3
 ```
 
 When you launch jobs on CUBIC, they will autmoatically use CUBIC's base conda environment instead of your project user's miniconda installation. To fix this, you will need to initialize miniconda for a bash script submitted to qsub by running
