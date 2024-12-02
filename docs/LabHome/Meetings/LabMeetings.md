@@ -10,24 +10,34 @@ grand_parent: Lab Basics
 
 Weekly lab meetings occur every Tuesday from 3:30-4:30PM, with exceptions for holiday and travel schedule.
 
-The current lab meeting schedule can be found [here](https://docs.google.com/spreadsheets/d/1BDtJWv49Z7BVIKIHcFms4NalxAnssX8Psl-PvlW6ZPM/edit#gid=1932655502).  Slides from past lab meetings can be found in [this repository](https://github.com/PennLINC/labSlides); please remember to post your slides there following a lab meeting presentation.
+The current lab meeting schedule can be found pinned to the #pennlinc_general channel on slack.  Slides from past lab meetings can be found in [this repository](https://github.com/PennLINC/labSlides); please remember to post your slides there following a lab meeting presentation.
 
-All members of the image analysis team (regardless of faculty mentor) are welcome to attend, but trainees supervised by Satterthwaite are expected to attend-- and let me know directly if you cannot attend; also please make every effort to be promptly on time.  Clinical research coordinators are encouraged to attend as well, excepting conflicts with participant visits.  The meeting rotates among the following formats.    Note that if you sign up for a slot on the schedule please **mark it in your calendar clearly**-- we definitely want to avoid last second schedule conflicts / content vacancies.
+All members of the image analysis team (regardless of faculty mentor) are welcome to attend, but trainees at PennLINC are expected to attend-- and let Ted know directly if you cannot attend; also please make every effort to be promptly on time.  Clinical research coordinators are encouraged to attend as well, excepting conflicts with participant visits.   Note that if you sign up for a slot on the schedule please **mark it in your calendar clearly**-- we definitely want to avoid last second schedule conflicts / content vacancies.
 
+Lab meeting is a flexible format; several common "flavors" are below. It is critical when leading a lab meeting to specify what the "goal" of the lab meeting is.
 
 ### Work in progress
 
-These occur typically twice a month.  In general, each lab member presents their current project in a typical scientific format, with a focus on explaining new methods, exciting results, and current obstacles.   It should be emphasized that the goal is that these presentations are both accessible and interesting to lab members of all skill levels. This is an informal format where questions, discussion, and interruptions are _highly_ encouraged. However, as scientific presentations is an important skill at all career stages, it is good to take this opportunity to prepare for this well in advance.
-
+This is the most common lab meeting format: a lab member presents their current project in a typical scientific format, with a focus on explaining new methods, exciting results, and current obstacles.  These presentations should be geared to be accessible and interesting to lab members of all skill levels.  This is not a "super-glossy" format; it is rather an informal format where questions, discussion, and interruptions are _highly_ encouraged.  As such, it is a good idea to structure the presentation in a way that encourages discussion, especially around key issues. 
 
 ### Informatics and pipeline updates
 
-These occur 1-2 times a semester, and typically are focused on new initiatives regarding neuroinformatics initiatives.
+These occur 1-2 times a semester, and typically are focused on new initiatives regarding neuroinformatics initiatives, including data resources, analysis pipelines, reproducability efforts, and open-science initiatives.
 
 
 ### Journal club
 
 This occurs on an irregular schedule, and usually focuses on an important article that may guide new projects or a change in practice. In general, each lab member should expect to lead journal club 1x/ year. A slide deck describing the article, displaying major results, and key questions is suggested.  _All_ lab members are expected to read the article prior to journal club.
+
+
+### Topic review
+
+This is like a more ambitious version of a journal club. Instead of focusing on a single paper, a lab member will present a series of studies on a topic of interest.
+
+
+### Tool review
+
+This is an interactive format where a lab member introduces -- and ideally demos!! -- a new tool that may be of broad interest to the lab.  Another version is a "Tool Blitz" where multiple tools are quickly reviewed, usually by different lab members.
 
 
 ### Quarterly update  
@@ -40,7 +50,7 @@ The quarterly update may be more likely to be accessible if the following elemen
 
 2. Dataset: including study (PNC, reward, ABCD, HBN, etc), modality (t1, DTI, etc), and data type (cortical thickness, FA, etc).
 
-2. Study stage: Be explict about where you are in a project.  Stages of a project are outlined in the [Stages of a Project Wiki](https://pennlinc.github.io/docs/LabHome/ProjectStages/).
+2. Study stage: Be explicit about where you are in a project.  Stages of a project are outlined in the [Stages of a Project Wiki](https://pennlinc.github.io/docs/LabHome/ProjectStages/).
 
 3.  Current progress:  This should be the meat of the update.  Place current work in the context of study phase and hypotheses.  Emphasize progress, but also challenges / obstacles so we can rapidly problem solve as a group. Again, focus on making the challenges and results accessible to lab members of all backgrounds.
 
@@ -49,4 +59,4 @@ The quarterly update may be more likely to be accessible if the following elemen
 
 ### Cross-group meetings
 
-On an approximately quarterly basis, we have a joint lab meeting with our friends and colleagues in our section, including the labs of Aaron Alexander-Bloch, Erica Baller, Ruben Gur, David Roalf, Sheila Shanmugan, Cobb Scott, and Dan Wolf. These are marked as "cross-group meeting" in the lab calendar and occur at irregularly scheudled intervals -- please check the spreadsheet for date and time.
+On an approximately quarterly basis, we have a joint lab meeting with our friends and colleagues in our section, including the labs of Aaron Alexander-Bloch, Erica Baller, Ruben Gur, David Roalf, Sheila Shanmugan, Cobb Scott, and Dan Wolf. These are marked as "cross-group meeting" in the lab calendar and occur approx quarterly -- please check the spreadsheet for date and time.
