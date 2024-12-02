@@ -2,7 +2,7 @@
 layout: default
 title: Travel Guidelines
 parent: Lab Basics
-nav_order: 8
+nav_order: 14
 ---
 
 # Travel Guidelines
