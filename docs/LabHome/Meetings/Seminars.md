@@ -9,7 +9,7 @@ grand_parent: Lab Basics
 
 There is a sometimes-belwidering array of relevant seminar series relevant to neuroscience, neuroimaging, psychiatry, and development.
 
-We try to integrate these in a unified PennLINC google calender.  This is currently (Fall 2020) maintained by Sydney Covitz, please contact her for access to this calendar if you a member of PennLINC.  The calendar is also mirrored for public viewing on the pennlinc.io frontpage (scroll to the bottom). Talks are announced daily on the #PennLINC_talks channel on slack. 
+We try to integrate these in a unified PennLINC google calender.  This is currently (Fall 2024) maintained by Juliette Brook, please contact her for access to this calendar if you a member of PennLINC.  The calendar is also mirrored for public viewing on the pennlinc.io frontpage (scroll to the bottom). Talks are announced daily on the #PennLINC_talks channel on slack. 
 
 Several of the main seminar series are listed below:
 
