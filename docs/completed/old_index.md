@@ -1,6 +1,12 @@
+---
+layout: default
+title: Projects
+parent: Archived Documentation
+nav_order: 8
+has_toc: true
+---
 
-
-# Current Projects in the Lab
+# Current Projects in the Lab (legacy)
 
 Below is a list of the current projects in the lab:
 
