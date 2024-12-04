@@ -27,6 +27,13 @@ Below is a list of the current projects in the lab:
 |Functional Connectivity Development along the Sensorimotor-Association Axis Enhances the Cortical Hierarchy| Audrey Luo | [https://pennlinc.github.io/network_replication/](https://pennlinc.github.io/network_replication/) |
 | BABS: BIDS App Bootstrap | Chenying Zhao | [BABS documentation website](https://pennlinc-babs.readthedocs.io); <br /> [source code for BABS](https://github.com/PennLINC/babs); <br /> [code used in the paper](https://github.com/PennLINC/babs_paper); <br /> [other supporting code for BABS](https://github.com/PennLINC/babs_tests) |
 
+| cros-map | Jacob Vogel | [https://pennlinc.github.io/cros-map/](https://pennlinc.github.io/cros-map/){:target="_blank"} |
+
+
+
+
+
+
 ---------------------------------------------------------------------------------
 
 # How to Add Your Project
