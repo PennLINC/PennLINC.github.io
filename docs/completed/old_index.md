@@ -1,10 +1,4 @@
----
-layout: default
-title: Current Projects
-has_children: false
-has_toc: false
-nav_order: 10
----
+
 
 # Current Projects in the Lab
 
