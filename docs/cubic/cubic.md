@@ -84,7 +84,8 @@ To access a project's files you have to log in as a *project user*. This is done
 $ sudo -u pncfixelcs sudosh
 ```
 
-and entering the same UPHS password you used to log in to your individual user account. You can see that the project user has their own environment:
+and entering the same UPHS password you used to log in to your individual user account.
+You can see that the project user has their own environment:
 
 ```bash
 $ echo $HOME
@@ -92,6 +93,7 @@ $ echo $HOME
 ```
 
 This means that the user will have their own startup scripts like `.bashrc` and `.bash_profile` in their `$HOME` directory.
+
 
 # Configuring a CUBIC account
 
@@ -149,6 +151,7 @@ Additionally, you will want to add the following line to the end of `.bashrc`:
 unset PYTHONPATH
 ```
 
+
 # Installing miniforge in your project
 
 You will want a python installation that you have full control over. After logging in as your project user and changing permission on your `.bashrc` file, you can install miniforge using
@@ -200,23 +203,80 @@ conda create -n myproject python=3.11
 conda activate myproject
 ```
 
-Note: An important benefit of using Miniforge is that it gives you access to `mamba`! This can be used in place of most `conda` commands (e.g., `mamba install ...` or `mamba update...`) and uses a C-based implementation of `conda` that tends to run noticeably faster.
+{: .note-title }
+> Note
+>
+> An important benefit of using Miniforge is that it gives you access to `mamba`!
+> This can be used in place of most `conda` commands
+> (e.g., `mamba install ...` or `mamba update...`)
+> and uses a C-based implementation of `conda` that tends to run noticeably faster.
 
-Note: For simple use of a Python interpreter managed by `conda`, you can use the installed module(s) like `module load python/anaconda/3`. But it is **highly recommended** to install miniforge as described above.
+{: .note-title }
+> Tip
+>
+> For simple use of a Python interpreter managed by `conda`,
+> you can use the installed module(s) like `module load python/anaconda/3`.
+> But it is **highly recommended** to install miniforge as described above.
+
+
+# Configuring git in your project
+
+Project users provide a unique situation,
+where multiple users will have access to any credentials stored for the project,
+but it's easiest to only manage a single set of credentials.
+This means that anyone who has access to the project user can also use these credentials.
+In order to ensure that other project contributors can't accidentally abuse these credentials
+(e.g., by pushing to a GitHub repository that is unrelated to the project),
+there are two configurations that we recommend.
+
+For larger projects, where many people will have access to the project user and there will be a lot of GitHub activity,
+you may wish to create a GitHub account specifically for the project (e.g., `rbcuser` for the RBC project).
+This way, any GitHub activity on the project user will be linked to this project-specific GitHub username,
+making it clear that activity is not driven by a single lab member.
+
+For smaller projects, where most GitHub activity will be by a single individual,
+we recommend using that individual's GitHub username and setting up a fine-grained personal access token (PAT) on GitHub so that the project user can only commit to repositories linked to the project.
+The steps to do this are as follows:
+
+1.  `git config --global user.name <username>`
+2.  `git config --global user.email <email>`
+3.  Create fine-grained PAT on GitHub.
+    -   Resource owner is PennLINC.
+    -   Choose the repositories that are relevant for the project.
+    -   Longest expiration time allowed (366 days).
+    -   Read access to metadata.
+    -   Read and Write access to code, commit statuses, and pull requests.
+4.  `git config --global credential.helper store`
+    -   This will store the PAT in ~/.git-credentials.
+        It's plain text, but not an issue since we only have one repo.
+5.  `git clone https://github.com/PennLINC/affective-instability.git`
+    -   Must be HTTPS
+6.  Put in the username.
+7.  Put in the PAT.
+8.  Now you can make commits without needing to enter your credentials!
+
 
 # Interacting with CUBIC: data analysis and data transfer
 
-You have two resources to interact with data. You can use CUBIC or you can use your local computer to manipulate data. Both of these have unique advantages. CUBIC is huge and largely non-interactive high performance computing cluster, and your laptop has beautiful graphics and is completely controlled by you.
+You have two resources to interact with data.
+You can use CUBIC or you can use your local computer to manipulate data.
+Both of these have unique advantages.
+CUBIC is a huge and largely non-interactive high performance computing cluster, and your laptop has beautiful graphics and is completely controlled by you.
 
-You’ll have to move data back and forth between these two resources. This section outlines 3 different approached to do this.
+You’ll have to move data back and forth between these two resources.
+This section outlines 3 different approached to do this.
+
 
 ## Method I: (non-interactive)
 
-Because of CUBIC's unique "project user" design, the protocol for moving files to CUBIC is a bit different than on a normal cluster. It is possible to move files to CUBIC by conventional means, or through your mount point, but this can cause annoying permissions issues and is not recommended.
+Because of CUBIC's unique "project user" design, the protocol for moving files to CUBIC is a bit different than on a normal cluster.
+It is possible to move files to CUBIC by conventional means, or through your mount point, but this can cause annoying permissions issues and is not recommended.
 
 Note that you will need to be within the UPenn infrastructure (i.e. on VPN or on campus) to move files to and from CUBIC.
 
+
 ### Copying files to CUBIC
+
 All project directories will include a folder called `dropbox/` in the project home directory. Depositing files into this folder will automatically make the project user the owner of the file. Please note, however, that this ownership conversion is not always instantaneous and can take a few minutes, so be patient. Note also that anyone in the project group can move files into this folder. Finally, keep in mind that the dropbox can only contain 1GB or 1000 files at any given time.
 
 `scp` is the recommended command-line transfer software for moving files onto and off of CUBIC. One need only specify the file(s) to move and the CUBIC destination. See the example below, where `<...>` indicates user input:
@@ -227,12 +287,15 @@ This command would copy all `nii.gz` files from `/path/to/` into the `dropbox/` 
 
 Moving files directly to a non `dropbox/` folder on CUBIC with scp or your mount point *is* possible for a user with project directory write permissions, though is not recommended. Such files will retain the ownership of the CUBIC user who transferred the files, and permissions can only be changed by that user or a user with sudo priveleges.
 
+
 ### Copying files from CUBIC
+
 This is much simpler. One can simply use scp (or rsync, or whatever) to copy files from a source on CUBIC to their local destination. E.g.
 
 `scp <username>@CUBIC-sattertt:/cbica/projects/<project_dir/path/files.csv> </local/path/to/put/files/>`
 
 It is also possible to copy files through the mount point, but this would be quite slow and is not really the purpose of the mount point.
+
 
 ## Method II: Mounting CUBIC in your local machine (interactive)
 
@@ -250,6 +313,7 @@ smb://cubic-share.uphs.upenn.edu/cbica/
 
 Along with your CUBIC credentials. This is the most seamless method and will likely have better long term support, but again is mostly useful for opening
 your home directory, and moving a handful of files about. For more demanding file transfers, including moving files to projects, see the next section.
+
 
 ### Mounting CUBIC on your local machine using FUSE
 
@@ -277,6 +341,7 @@ umount /cbica/projects/<project_name> # note that command is not "unmount"!!
 ```bash
 alias alias_name="SSHfs -o defer_permissions <username>@CUBIC-login.uphs.upenn.edu:/cbica/projects/<project_name> /cbica/projects/<project_name>/"
 ```
+
 
 ## Method III: Accessing CUBIC via live coding with RStudio or Python (interactive)
 
@@ -332,11 +397,13 @@ Side effects:
 - R package installations are made to the user's local R location unless explicitly changed.
 - Be aware of login nodes on CUBIC -- if you start an RStudio instance with port X on login node 1, and are unexpectedly disconnected from the cluster, that port may be blocked until you can stop the instance on login node 1
 
+
 ### Python: Working with Visual Code Studio
 
 #### Prerequisite
 
 You will need [SSH keys](https://pennlinc.github.io/docs/Basics/SSHKeys/) set up, a PMACS or CUBIC account (with VPN).
+
 
 #### General Principles & Motivation
 
@@ -347,6 +414,7 @@ You will need [SSH keys](https://pennlinc.github.io/docs/Basics/SSHKeys/) set up
 
 This means we are going to not use X11 at all. Why? Because running graphics on the cluster, and then having them sent to your local screen, is very laggy and not dependable.
 
+
 #### Code Server
 
 There are many viable IDEs for interactive coding, and a very popular/accessible one is [VSCode](https://code.visualstudio.com/). It's packed with features, plugins, and themes that make writing code fun and easy. Internally, it's a nodejs app
@@ -356,13 +424,13 @@ on their machine and send the pretty graphics to a browser themselves. That's wh
 and SSH port forwarding.
 
 {: .note-title }
-> ##### Why not just use VSCode Remote?
+> Why not just use VSCode Remote?
 >
 >[VSCode-Remote](https://code.visualstudio.com/docs/remote/remote-overview) is VSCode's built-in shipped method for
-working on remote servers. It's well documented, and works just fine as is, but our setup on CUBIC makes it challenging
-to use VSCode remote. The main issue is that the remote server it runs can only have access to the first user who logs in,
-which is not how CUBIC's project user setup works. You end up with a VSCode running from your personal user trying to modify and write files or submit jobs for a project user. We've tried setting up [jump hosts](https://www.doc.ic.ac.uk/~nuric/coding/how-to-setup-vs-code-remote-SSH-with-a-jump-host.html),
-[proxy commands](https://stackoverflow.com/questions/57289351/is-it-possible-to-create-a-proxy-in-remote-SSH-visual-studio-code), and brute forcing a user change with [RemoteCommand](https://github.com/microsoft/vscode-remote-release/issues/690) -- none of the methods worked on CUBIC. Code Server is our next best bet.
+> working on remote servers. It's well documented, and works just fine as is, but our setup on CUBIC makes it challenging
+> to use VSCode remote. The main issue is that the remote server it runs can only have access to the first user who logs in,
+> which is not how CUBIC's project user setup works. You end up with a VSCode running from your personal user trying to modify and write files or submit jobs for a project user. We've tried setting up [jump hosts](https://www.doc.ic.ac.uk/~nuric/coding/how-to-setup-vs-code-remote-SSH-with-a-jump-host.html),
+> [proxy commands](https://stackoverflow.com/questions/57289351/is-it-possible-to-create-a-proxy-in-remote-SSH-visual-studio-code), and brute forcing a user change with [RemoteCommand](https://github.com/microsoft/vscode-remote-release/issues/690) -- none of the methods worked on CUBIC. Code Server is our next best bet.
 
 #### Installation
 
@@ -838,8 +906,8 @@ sbatch my_script.sh
 ```bash
 #!/bin/bash
 #SBATCH --nodes=1               # number of nodes should be 1 (>1 requires use of a library such as MPI (Message-Passing Interface) which CUBIC doesn't have as of now...)
-#SBATCH --ntasks=1              # number of tasks 
-#SBATCH --cpus-per-task=1                  
+#SBATCH --ntasks=1              # number of tasks
+#SBATCH --cpus-per-task=1
 #SBATCH --time=00:30:00         # Set expected wall time it takes for your job
 
 # code for your job
@@ -848,13 +916,13 @@ sbatch my_script.sh
 It can also have additional directives such as:
 ```bash
 #SBATCH --job-name="job_name"
-#SBATCH --output="output.out"   
-#SBATCH --error="error.err" 
+#SBATCH --output="output.out"
+#SBATCH --error="error.err"
 ```
 
 Alternatively, your sbatch directives can be included in the command line instead. For example:
 ```bash
-sbatch --nodes=1 --ntasks=1 --cpus-per-task=1 --time=00:30:00 --job-name="job_name" --output="output.out" --error="error.err" my_script.sh 
+sbatch --nodes=1 --ntasks=1 --cpus-per-task=1 --time=00:30:00 --job-name="job_name" --output="output.out" --error="error.err" my_script.sh
 ```
 (In this alternative, the directives would not be in `my_script.sh`.)
 
@@ -864,37 +932,37 @@ https://cbica-wiki.uphs.upenn.edu/docs/List_of_Slurm_Articles/
 ### Checking SLURM job status
 If you need to cancel your job:
 ```bash
-scancel $jobid # cancel your job! 
+scancel $jobid # cancel your job!
 ```
 
 Other commands for checking your job status and looking at job history:
 ```bash
 # check the status of all your jobs
-squeue -u username 
+squeue -u username
 
 # another way to do it
-squeue --me 
+squeue --me
 
 # check the status of specific job
-squeue $jobid 
+squeue $jobid
 
 # this is just a nice shortcut to expand the headings of squeue :)
-squeue --o "%.18i %.9P %.60j %.8u %.8T %.10M %.9l %.6D %R" --me  
+squeue --o "%.18i %.9P %.60j %.8u %.8T %.10M %.9l %.6D %R" --me
 
-# display history of jobs starting at a specific time 
-sacct -u username --starttime=yyyy-mm-dd -o JobID,JobName,Elapsed,State,MaxRSS,ReqMem,Timelimit 
+# display history of jobs starting at a specific time
+sacct -u username --starttime=yyyy-mm-dd -o JobID,JobName,Elapsed,State,MaxRSS,ReqMem,Timelimit
 ```
 
 ### Figuring out how much memory to request
 
 ```bash
-# check how much time your job took, 
-# how much memory you had requested and how much was actually used. 
+# check how much time your job took,
+# how much memory you had requested and how much was actually used.
 # Adjust your future jobs from this information
-seff $jobid 
+seff $jobid
 
 # same thing but for job arrays
-seff_array $jobid 
+seff_array $jobid
 ```
 
  ### Job arrays
@@ -906,8 +974,8 @@ Job arrays in SLURM are useful for running a series of similar or repetitive tas
 ### Job dependencies
 Job dependencies allow you to control the order in which jobs run, setting conditions so that a job only starts once another job has completed a specific action. This is helpful if you have a series of tasks where one needs to finish before the next can start.
 
-CUBIC wiki examples for simple and intermediate job dependencies: 
- 
+CUBIC wiki examples for simple and intermediate job dependencies:
+
 https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_06_-_Job_Dependencies_%28Simple%29/
 
 https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_07_-_Job_Dependencies_%28Intermediate%29/
