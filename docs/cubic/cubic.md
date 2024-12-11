@@ -36,12 +36,17 @@ You use your UPHS password to login. If you don't have access to cubic-sattertt,
 
 Note that `cubic-sattertt` is different from the suggested urls in the email you will get from the CUBIC admins after onboarding. This is a private login node used only by our lab.
 
-# Project Directory Access Request
+# Project Directory Creation Request
 
-Once you have access to CUBIC, you may need to start a project in a new directory. The direcet link to the relevant sections on CUBIC project direction creation is [here](https://cbica-wiki.uphs.upenn.edu/docs/). This is best viewed in Firefox. Note again that one must be on the VPN to access this page.
+Once you have access to CUBIC, you may need to start a project in a new directory.
+The direct link to the relevant sections on CUBIC project direction creation is [here](https://cbica-wiki.uphs.upenn.edu/docs/).
+This is best viewed in Firefox.
+Note again that one must be on the VPN to access this page.
 
-
-First you need to fill out the data management document available [here](https://cbica-wiki.uphs.upenn.edu/wiki/images/Project_data_use_template.doc). If this link doesn't work for you, you can find this document on the CBICA Wiki: `Main Page > Research projects > 3 Access/New Project Creation > Project Creation Request`. This document will ask you for a number of details about your project, including the data's source and estimates about how much disk space you will need over a 6 month, 12 month, and 24 month period, and the estimated lifespan of the data ( 🤷). You will also need to provide the CUBIC usernames for everyone you want to have read and/or write access to the project — getting this done ahead of time is strongly recommended because, as you can imagine, requesting changes after-the-fact can be a bother.
+First you need to fill out the data management document available [here](https://cbica-wiki.uphs.upenn.edu/wiki/images/Project_data_use_template.doc).
+If this link doesn't work for you, you can find this document on the CBICA Wiki: `Main Page > Research projects > 3 Access/New Project Creation > Project Creation Request`.
+This document will ask you for a number of details about your project, including the data's source and estimates about how much disk space you will need over a 6 month, 12 month, and 24 month period, and the estimated lifespan of the data ( 🤷).
+You will also need to provide the CUBIC usernames for everyone you want to have read and/or write access to the project — getting this done ahead of time is strongly recommended because, as you can imagine, requesting changes after-the-fact can be a bother.
 
 Additionally, you will need to be familiar with:
 
@@ -58,12 +63,15 @@ With these two documents, you can now submit the request via the the CBICA Reque
 
 <img src="/assets/images/request-tracker.png" alt="">
 
-Open a new ticket and, fill out the project or user name (the name of your project dicrectory), your username, select your PI from the dropdown, and upload the plain text version of the project request form under 'Data Management', and lastly upload a pdf of your PR's email approvale of the project creation. 
+Open a new ticket and, fill out the project or user name (the name of your project dicrectory), your username, select your PI from the dropdown, and upload the plain text version of the project request form under 'Data Management', and lastly upload a pdf of your PR's email approvale of the project creation.
 
 <img src="/assets/images/new-project-request2.png" alt="">
 
 
-The process for accessing an existing project is similar, but fortunately you will not have to fill out a new data management document; only the PI approval and filling of the online ticket is required. You should receive an email from CBICA confirming your request, and you can always return to the Request Tracker to see the status of your ticket.
+# Project Directory Access Request
+
+The process for accessing an existing project is similar, but fortunately you will not have to fill out a new data management document; only the PI approval and filling of the online ticket is required.
+You should receive an email from CBICA confirming your request, and you can always return to the Request Tracker to see the status of your ticket.
 
 
 # File permissions on CUBIC
