@@ -244,7 +244,8 @@ The steps to do this are as follows:
 3.  `git config --global credential.helper store`
     -   This will store the PAT in ~/.git-credentials.
         It's plain text, but not an issue since we only have one repo.
-4.  `git clone https://github.com/PennLINC/affective-instability.git`
+4.  `git clone https://github.com/PennLINC/<repo>.git code`
+    - This will clone the repository into a new folder named "code".
     -   Must be HTTPS
 5.  Create fine-grained PAT on GitHub.
     -   Resource owner is PennLINC.
