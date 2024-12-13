@@ -246,7 +246,7 @@ The steps to do this are as follows:
     -   Choose the repositories that are relevant for the project.
     -   Longest expiration time allowed (366 days).
     -   Read access to metadata.
-    -   Read and Write access to code, commit statuses, and pull requests.
+    -   Read and Write access to contents, commit statuses, and pull requests.
 4.  `git config --global credential.helper store`
     -   This will store the PAT in ~/.git-credentials.
         It's plain text, but not an issue since we only have one repo.
