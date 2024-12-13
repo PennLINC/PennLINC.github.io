@@ -241,20 +241,22 @@ The steps to do this are as follows:
 
 1.  `git config --global user.name <username>`
 2.  `git config --global user.email <email>`
-3.  Create fine-grained PAT on GitHub.
+3.  `git config --global credential.helper store`
+    -   This will store the PAT in ~/.git-credentials.
+        It's plain text, but not an issue since we only have one repo.
+4.  `git clone https://github.com/PennLINC/affective-instability.git`
+    -   Must be HTTPS
+5.  Create fine-grained PAT on GitHub.
     -   Resource owner is PennLINC.
     -   Choose the repositories that are relevant for the project.
     -   Longest expiration time allowed (366 days).
     -   Read access to metadata.
     -   Read and Write access to contents, commit statuses, and pull requests.
-4.  `git config --global credential.helper store`
-    -   This will store the PAT in ~/.git-credentials.
-        It's plain text, but not an issue since we only have one repo.
-5.  `git clone https://github.com/PennLINC/affective-instability.git`
-    -   Must be HTTPS
-6.  Put in the username.
-7.  Put in the PAT.
-8.  Now you can make commits without needing to enter your credentials!
+    -   Copy the newly generated key to your clipboard.
+6.  Now if you commit a change and run `git push` you will be asked to provide credentials:
+    -   Put in the username.
+    -   Paste the PAT.
+7.  Going forward, you can push commits without needing to enter your credentials! (until that PAT expires)
 
 
 # Interacting with CUBIC: data analysis and data transfer
