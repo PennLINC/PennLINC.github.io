@@ -254,6 +254,7 @@ The steps to do this are as follows:
     -   Read access to metadata.
     -   Read and Write access to contents, commit statuses, and pull requests.
     -   Copy the newly generated key to your clipboard.
+    -   Ping someone with PennLINC admin priveledges (Matt, Taylor, or Parker) to approve your PAT request.
 6.  Now if you commit a change and run `git push` you will be asked to provide credentials:
     -   Put in the username.
     -   Paste the PAT.
