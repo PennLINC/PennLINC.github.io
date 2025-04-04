@@ -60,7 +60,7 @@ This document must be saved as a `.txt` file and before being submitted with you
 
 Finally, you will need approval from your PI. This involves sending an email to the PI with a written blurb to the effect of "Do you approve of this project folder request", to which the PI only needs to respond "Yes, approved". Once you've got this you can screenshot the conversation (include the date in frame) and save that as an image.
 
-With these two documents, you can now submit the request via the the CBICA Request Tracker. Similar to the CBICA Wiki, you need to access the Request Tracker through the [PennMedicine Remote Access Portal](https://pennmedaccess.uphs.upenn.edu/), then click CBICA Request Tracker. You'll need your CBICA/cubic login credentials for this (same as UPHS credentials)!
+With these two documents, you can now submit the request via the the CBICA Request Tracker. Similar to the CBICA Wiki, you need to access the Request Tracker through the [PennMedicine Remote Access Portal](https://cbica-portal.uphs.upenn.edu/rt/), then click CBICA Request Tracker. You'll need your CBICA/cubic login credentials for this (same as UPHS credentials)!
 
 <img src="/assets/images/request-tracker.png" alt="">
 
