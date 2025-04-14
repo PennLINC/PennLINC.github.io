@@ -191,19 +191,6 @@ There will be a permission issue with your conda installation. You will need to 
 $ chown -R $(whoami) ~/miniforge3
 ```
 
-When you launch jobs on CUBIC, they will autmoatically use CUBIC's base conda environment instead of your project user's miniconda installation. To fix this, you will need to initialize miniconda for a bash script submitted to qsub by running
-
- ```bash
-source ~/miniconda3/etc/profile.d/conda.sh
-```
-
-Let's create an environment for this project.
-
-```bash
-conda create -n myproject python=3.11
-conda activate myproject
-```
-
 {: .note-title }
 > Note
 >
@@ -211,6 +198,20 @@ conda activate myproject
 > This can be used in place of most `conda` commands
 > (e.g., `mamba install ...` or `mamba update...`)
 > and uses a C-based implementation of `conda` that tends to run noticeably faster.
+
+When you launch jobs on CUBIC, they will autmoatically use CUBIC's base conda environment instead of your project user's miniconda installation.
+To fix this, you will need to initialize miniconda for a bash script submitted to qsub by running
+
+```bash
+source ~/miniforge3/etc/profile.d/mamba.sh
+```
+
+Let's create an environment for this project.
+
+```bash
+mamba create -n myproject python=3.11
+mamba activate myproject
+```
 
 {: .note-title }
 > Tip
