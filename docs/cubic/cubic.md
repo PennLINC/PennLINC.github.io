@@ -304,6 +304,7 @@ It is also possible to copy files through the mount point, but this would be qui
 
 ## Method II: Mounting CUBIC in your local machine (interactive)
 
+
 ### Mounting CUBIC on your local machine using smb
 
 One way to interact with CUBIC files is to _mount_ the server on to your filesystem. This can be useful for quickly moving a small number of files back and forth
@@ -330,19 +331,23 @@ cd
 mkdir -p cbica/projects/<project_name>
 chmod 700 cbica/projects/<project_name>
 ```
+3. Using a text editor, create a file called `synthetic.conf` and save it in `/etc`. You will need to use `sudo` to make a file in `/etc`; e.g. `sudo vim /etc/synthetic.conf`.
+4. Put the following text in the file. You must use a `tab` rather than space: `cbica	/Users/my_home_folder/cbica`
+5. Restart the computer.
+6. You should now see a dir in the root dir, `/cbica`.
 
-3. Mount the desired CUBIC directory to your newly created, local mount directory using SSHfs and CUBIC-sattertt
+7. Mount the desired CUBIC directory to your newly created, local mount directory using SSHfs and CUBIC-sattertt
 ```bash
 SSHfs -o defer_permissions <username>@CUBIC-login.uphs.upenn.edu:/cbica/projects/<project_name>/ /cbica/projects/<project_name>/
 ```
-4. Unmount when done! You should run this unmount command from outside of the mount point.
+
+8. Unmount when done! You should run this unmount command from outside of the mount point.
 ```bash
 cd   # just to make sure we are not inside the mount dir
-
 umount /cbica/projects/<project_name> # note that command is not "unmount"!!
 ```
 
-5. Make an alias for mounting project directory:
+9. Make an alias for mounting project directory:
 ```bash
 alias alias_name="SSHfs -o defer_permissions <username>@CUBIC-login.uphs.upenn.edu:/cbica/projects/<project_name> /cbica/projects/<project_name>/"
 ```
