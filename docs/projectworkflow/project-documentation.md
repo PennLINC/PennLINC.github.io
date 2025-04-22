@@ -14,14 +14,18 @@ We recommend creating a website associated with your project's GitHub repository
 
 The [`PennLINC/paper-template`](https://github.com/PennLINC/paper-template) repository can be used as a template for your project's GitHub repository.
 
-The branch that controls the repository's documentation is `gh-pages`.
+The branch that controls the repository's documentation is `gh-pages`. 
 
 At minimum, you should update the files `index.md` and `_config.yml`,
 filling in everything with details from your project.
 You can add more pages, subfolders, etc. if you'd like to customize the documentation more.
-[Valerie Sydnor's 2020 paper](https://github.com/PennLINC/sydnor_glucest_rewardresponsiveness_2020) is a good example to follow.
+Some recent `gh-pages` you can peruse as examples:
+- [https://pennlinc.github.io/luo_wm_dev](https://pennlinc.github.io/luo_wm_dev)
+- [https://pennlinc.github.io/thalamocortical_development/](https://pennlinc.github.io/thalamocortical_development/)
+- [https://pennlinc.github.io/network_replication/](https://pennlinc.github.io/network_replication/)
+- [https://pennlinc.github.io/spatiotemp_dev_plasticity/](https://pennlinc.github.io/spatiotemp_dev_plasticity/)
 
-Once you have modified these files and pushed your repository's `gh-pages` branch,
+For the GitHub Page to build properly, you need to first make sure that your repo is public. Second, go to your project repo's "Settings" page and navigate to the "Pages" subsection (under Code and Automation). Make sure that under "Build and deployment" you have selected "Deploy from a branch". Under branch, select "gh-pages". Once you have made these changes to your repo, modified these files, and pushed your repository's `gh-pages` branch,
 your project's documentation should build on GitHub Pages and should be available at **https://pennlinc.github.io/YOUR_PROJECT_NAME**
 (replace **YOUR_PROJECT_NAME_HERE** with your GitHub repo name)!
 
