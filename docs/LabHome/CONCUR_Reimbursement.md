@@ -31,7 +31,7 @@ To do this, go to Profile Settings —> Expense Settings —> Expense Delegates
 
 ## Get approval for the expense
 
-Email Ted to ask for approval of expense and ask for the funding source; take a screenshot.  You will need to provide this in the expense report.
+Email Ted to ask for approval of expense and ask for the funding source.  Please note the cost of the specific expense; if it is related to conference travel please note the running total cost for that trip.  ALSO please specifically state that you have logged this expense on the PennLINC travel expense spreadsheet/tracker.  Take a screenshot of Ted's approval email: You will need to provide this in the expense report.
 
 ## Create your expense report
 
