@@ -29,9 +29,11 @@ Please give Concur delegate access to the finance team members below.  This only
 
 To do this, go to Profile Settings —> Expense Settings —> Expense Delegates 
 
-## Get approval for the expense
+## Update the travel tracker and email Ted for approval
 
-Email Ted to ask for approval of expense and ask for the funding source.  Please note the cost of the specific expense; if it is related to conference travel please note the running total cost for that trip.  ALSO please specifically state that you have logged this expense on the PennLINC travel expense spreadsheet/tracker.  Take a screenshot of Ted's approval email: You will need to provide this in the expense report.
+Equity and transparency in use of support of travel is important, and are openly tracked; please see the tracker pinned in the #concur channel in slack.  If you are not on this sheet already, make yourself a row. If the conference you are attending is not listed, create it as a column.  Then fill in the amount you are requesting support for in the cell that correpsonds to your row and that conf's col.  Only record the amount you are asking for support _from the lab_. Do NOT include any expenses that were covered by travel awards or other individual-specific funds.  
+
+Once the travel tracker is updated, email Ted to ask for approval of expense and ask for the funding source.  Please note the cost of the specific expense; if it is related to conference travel please note the running total cost for that trip.  Please specifically state that you have logged this expense on the PennLINC travel expense spreadsheet/tracker as above.  Take a screenshot of Ted's approval email: You will need to provide this in the expense report.
 
 ## Create your expense report
 
@@ -69,9 +71,6 @@ Email Patrick that you’ve created the report and ask him to review it. Once an
 If a concur report is returned, you can find the business administrator's feedback by clicking into the report where you see the listed expenses --> click “details” --> “comments” – this is where approvers will comment if they need additional information or documentation.
   
 
-## Update the Travel Reimbursement Tracker
-
-Equity and transparency in use of support of travel is important, and are openly tracked; please see the tracker pinned in the #concur channel in slack.  If you are not on this sheet already, make yourself a row. If the conference you are attending is not listed, create it as a column.  Then fill in the amount you are requesting support for in the cell that correpsonds to your row and that conf's col.  Only record the amount you are asking for support _from the lab_. Do NOT include any expenses that were covered by travel awards or other individual-specific funds.  
 
 
 ## Booking flights via Concur 
