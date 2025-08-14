@@ -11,7 +11,13 @@ Reimbursement for expenses (typically: conference travel) can be administrativel
 
 Transport (flights, trains, etc) should  be booked directly via Concur(see below); this obviates the need for post-hoc reimbursement.
 
-Please note: it is essential that reimbursements are submitted in a timely manner; Penn policy prohibits reimbursements after 6 months. Sometimes review can be lengthy and several revisions are needed due to the multiple layers of compliance at Penn.  As such, requests not submitted immediately after they are incurred risk being unpaid; sadly there is no remedy for this after 6 months.
+Please note: all expense reports must be submitted within 60 days.
+
+- For travel expenses: Concur requires a trip begin date and end date; the 60-day window is measured from the trip’s end date.
+- For non-travel expenses: the 60-day window begins on the date the expense is incurred. Out-of-pocket expenses related to a trip (e.g., conference registration fees or airfare) can be included on the trip’s expense report.
+- Tax implications: expenses submitted after 60 days without an approved exception will be treated as taxable income and may be subject to withholding.
+
+Given the multiple layers of compliance at Penn, please submit immediately after expenses are incurred or a trip ends to avoid delays.
 
 For more details on funding for travel, please see the [travel guidelines wiki](https://pennlinc.github.io/docs/LabHome/TravelGuidelines/).
 
