@@ -22,14 +22,13 @@ Lastly, at times, Clinical Research Coordinators (CRCs) may work evenings and we
 
 ### Graduate students and post-doctoral trainees
 
-While PennLINC does not have a formal time-off policy for non-staff research trainees (graduate students, post-docs), they are nonetheless strongly encouraged to take an equivalent amount of PTO each year.  This guidance has the potentail to be superceded by Penn-wide unionization efforts.  
-
+While PennLINC does not have a formal time-off policy for non-staff research trainees (graduate students, post-docs), they are nonetheless strongly encouraged to take an equivalent amount of PTO each year. This guidance has the potential to be superseded by Penn-wide unionization efforts.
 
 ### Conference travel
 
 Please note that attending a scientific conference is NOT PTO; even if it is really fun, it still counts as work.  If you choose to travel before or after a conference, that is considered PTO. 
 
 
-## Birthdays at PennLINC
+### Birthdays at PennLINC
 
 Your birthday is important!! A lab birthday captain keeps track of birthdays. Our current birthday captain is Juliette - please add yours to the birthday spreadsheet that she maitains.  All PennLINC members also get their birthday off without reporting it as PTO.  Have fun & celebrate!!!  
