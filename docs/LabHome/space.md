@@ -11,7 +11,7 @@ We are extremely lucky to have beautiful, light-filled space in the recently ren
 
 ### In Person, Hybrid, and Remote Work
 
-We have active collaborations with scientists all over the world; with modern technology (slack, github, zoom) this works great. Similarly, several critical members of our team work remotely, and many other team members follow a hybrid schedule.  As of the start of academic year 2025, we prioritize in-person attendance for specific days, with the following priority: Tuesday (highest priority, for lab in-person meeting attendance) >  Thursday > Wednesday.  
+We have active collaborations with scientists all over the world; with modern technology (slack, github, zoom) this works great. Similarly, several critical members of our team work remotely, and many other team members follow a hybrid schedule.  As of the start of academic year 2025, we shoot for in-person attendance for specific days of the week, with the following priority: Tuesday (highest priority, for lab in-person meeting attendance) > Thursday > Wednesday.  
 
 
 ### Shared Space / Desks / Offices
