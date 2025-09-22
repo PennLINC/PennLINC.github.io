@@ -16,16 +16,34 @@ has_toc: false
 1. TOC
 {:toc}
 
-The CUBIC cluster is a very powerful set of servers that we can use for computing. Although they are running Linux, familiarity with Linux does not mean that you will be able to effectively use CUBIC. This section details how to get up and running on the CUBIC cluster. In general we recommend using CUBIC as a high-performance computing.
+The CUBIC cluster is a very powerful set of servers that we can use for computing.
+Although they are running Linux, familiarity with Linux does not mean that you will be able to effectively use CUBIC.
+This section details how to get up and running on the CUBIC cluster.
+In general we recommend using CUBIC as a high-performance computing cluster.
+
+{: .note-title }
+> Important
+>
+> Our documentation on CUBIC reflects the PennLINC team's experience with CUBIC.
+> It is not necessarily the most up-to-date information,
+> so please refer to the [official CUBIC wiki](https://cbica-portal.uphs.upenn.edu/docs/)
+> for the most current documentation.
+
 
 # Getting + setting up your CUBIC account
 
-To get login credentials for CUBIC, you must have already a Penn Medicine account (i.e. an @pennmedicine.upenn.edu email) as well as UPHS VPN.  This is handled in onboarding; if you do not have these ask Ted + post to the #it_issues channel on slack and flag Andrew Zitelli.
+To get login credentials for CUBIC, you must have already a Penn Medicine account (i.e. an @pennmedicine.upenn.edu email) as well as UPHS VPN.
+This is handled in onboarding; if you do not have these ask Ted + post to the #it_issues channel on slack and flag Andrew Zitelli.
 
 
-Once you do, you can ask for a CUBIC account.  The current procedure is to email Jessica Incmikoski -- the AI2D/CBICA admin -- for an account and CC Ted; who will approve. She will work with the CUBIC team to initiate account creation.
+Once you do, you can ask for a CUBIC account.
+The current procedure is to email Jessica Incmikoski -- the AI2D/CBICA admin -- for an account and CC Ted; who will approve.
+She will work with the CUBIC team to initiate account creation.
 
-Once the account is made, you will receive an email with your login credentials and other instructions. Once you are granted login credentials for CUBIC, you will be able to connect from inside the Penn Medicine network using SSH. To access the network remotely, follow [instructions to install the client](http://www.uphs.upenn.edu/network/index_vpn.html). If you can successfully authenticate but are blocked from access, you may need to contact someone to put you on an exceptions list.
+Once the account is made, you will receive an email with your login credentials and other instructions.
+Once you are granted login credentials for CUBIC, you will be able to connect from inside the Penn Medicine network using SSH.
+To access the network remotely, follow [instructions to install the client](http://www.uphs.upenn.edu/network/index_vpn.html).
+If you can successfully authenticate but are blocked from access, you may need to contact someone to put you on an exceptions list.
 
 Once inside the Penn network, the login to CUBIC looks like this:
 
@@ -34,7 +52,8 @@ ssh username@cubic-sattertt
 ```
 You use your UPHS password to login. If you don't have access to cubic-sattertt, but do have access to cubic-login then you need to open another ticket to get access.
 
-Note that `cubic-sattertt` is different from the suggested urls in the email you will get from the CUBIC admins after onboarding. This is a private login node used only by our lab.
+Note that `cubic-sattertt` is different from the suggested urls in the email you will get from the CUBIC admins after onboarding.
+This is a private login node used only by our lab.
 
 # Project Directory Creation Request
 
@@ -58,9 +77,13 @@ Additionally, you will need to be familiar with:
 
 This document must be saved as a `.txt` file and before being submitted with your request.
 
-Finally, you will need approval from your PI. This involves sending an email to the PI with a written blurb to the effect of "Do you approve of this project folder request", to which the PI only needs to respond "Yes, approved". Once you've got this you can screenshot the conversation (include the date in frame) and save that as an image.
+Finally, you will need approval from your PI.
+This involves sending an email to the PI with a written blurb to the effect of "Do you approve of this project folder request", to which the PI only needs to respond "Yes, approved".
+Once you've got this you can screenshot the conversation (include the date in frame) and save that as an image.
 
-With these two documents, you can now submit the request via the the CBICA Request Tracker. Similar to the CBICA Wiki, you need to access the Request Tracker through the [PennMedicine Remote Access Portal](https://cbica-portal.uphs.upenn.edu/rt/), then click CBICA Request Tracker. You'll need your CBICA/cubic login credentials for this (same as UPHS credentials)!
+With these two documents, you can now submit the request via the the CBICA Request Tracker.
+Similar to the CBICA Wiki, you need to access the Request Tracker through the [PennMedicine Remote Access Portal](https://cbica-portal.uphs.upenn.edu/rt/), then click CBICA Request Tracker.
+You'll need your CBICA/cubic login credentials for this (same as UPHS credentials)!
 
 <img src="/assets/images/request-tracker.png" alt="">
 
@@ -77,9 +100,15 @@ You should receive an email from CBICA confirming your request, and you can alwa
 
 # File permissions on CUBIC
 
-Unlike many shared computing environments, read and write permissions are *not* configured using groups. Instead, individual users are granted access to data on a project-by-project basis. For example, if you are a member of the project `pnc_fixel_cs` you will not be able to read or write directly to that project's directory (which will be something like `/cbica/projects/pnc_fixel_cs`).
+Unlike many shared computing environments, read and write permissions are *not* configured using groups.
+Instead, individual users are granted access to data on a project-by-project basis.
+For example, if you are a member of the project `pnc_fixel_cs` you will not be able to read or write directly to that project's directory (which will be something like `/cbica/projects/pnc_fixel_cs`).
 
-To access a project's files you have to log in as a *project user*. This is done using the `sudo` command after you have logged in as your individual user. In this example you would need to use `sudo` to log in as the `pncfixelcs` user and run a shell. Note that underscores in the project directory are removed when logging in as the project user. By running
+To access a project's files you have to log in as a *project user*.
+This is done using the `sudo` command after you have logged in as your individual user.
+In this example you would need to use `sudo` to log in as the `pncfixelcs` user and run a shell.
+Note that underscores in the project directory are removed when logging in as the project user.
+By running
 
 ```bash
 $ sudo -u pncfixelcs sudosh
@@ -98,7 +127,10 @@ This means that the user will have their own startup scripts like `.bashrc` and 
 
 # Configuring a CUBIC account
 
-Note that individual user accounts typically have very little hard drive space allotted to them. You will likely be doing all your heavy computing while logged in as a project user. This means that you will want to configure your *project user* account with any software you need. This example we will use the `xcpdev` account as an example. First, log in as the project user:
+Note that individual user accounts typically have very little hard drive space allotted to them.
+You will likely be doing all your heavy computing while logged in as a project user.
+This means that you will want to configure your *project user* account with any software you need.
+This example we will use the `xcpdev` account as an example. First, log in as the project user:
 
 ```bash
 $ sudo -u xcpdev sudosh
@@ -164,7 +196,11 @@ $ chmod +x Miniforge3-Linux-x86_64.sh
 $ ./Miniforge3-Linux-x86_64
 ```
 
-You will need to hit Enter to continue and type `yes` to accept the license terms. The default installation location is fine (it will be `$HOME/miniforge3`). Sometimes you will run into a memory error at this step. If this happens, just log out and log back in and the issue should be remediated. This can be avoided in the first place by, when SSHing into CUBIC, logging into `*login4`.
+You will need to hit Enter to continue and type `yes` to accept the license terms.
+The default installation location is fine (it will be `$HOME/miniforge3`).
+Sometimes you will run into a memory error at this step.
+If this happens, just log out and log back in and the issue should be remediated.
+This can be avoided in the first place by, when SSHing into CUBIC, logging into `*login4`.
 
 When prompted if you want to initialize miniforge3, respond again with `yes`
 
@@ -282,15 +318,23 @@ Note that you will need to be within the UPenn infrastructure (i.e. on VPN or on
 
 ### Copying files to CUBIC
 
-All project directories will include a folder called `dropbox/` in the project home directory. Depositing files into this folder will automatically make the project user the owner of the file. Please note, however, that this ownership conversion is not always instantaneous and can take a few minutes, so be patient. Note also that anyone in the project group can move files into this folder. Finally, keep in mind that the dropbox can only contain 1GB or 1000 files at any given time.
+All project directories will include a folder called `dropbox/` in the project home directory.
+Depositing files into this folder will automatically make the project user the owner of the file.
+Please note, however, that this ownership conversion is not always instantaneous and can take a few minutes, so be patient.
+Note also that anyone in the project group can move files into this folder.
+Finally, keep in mind that the dropbox can only contain 1GB or 1000 files at any given time.
 
-`scp` is the recommended command-line transfer software for moving files onto and off of CUBIC. One need only specify the file(s) to move and the CUBIC destination. See the example below, where `<...>` indicates user input:
+`scp` is the recommended command-line transfer software for moving files onto and off of CUBIC.
+One need only specify the file(s) to move and the CUBIC destination.
+See the example below, where `<...>` indicates user input:
 
 `scp </path/to/files*.nii.gz> <username>@CUBIC-sattertt:/cbica/projects/<project_dir>/dropbox/`
 
-This command would copy all `nii.gz` files from `/path/to/` into the `dropbox/` folder of your project directory. Note that you are entering your CUBIC username in the destination, not your project username (confusing, I know).
+This command would copy all `nii.gz` files from `/path/to/` into the `dropbox/` folder of your project directory.
+Note that you are entering your CUBIC username in the destination, not your project username (confusing, I know).
 
-Moving files directly to a non `dropbox/` folder on CUBIC with scp or your mount point *is* possible for a user with project directory write permissions, though is not recommended. Such files will retain the ownership of the CUBIC user who transferred the files, and permissions can only be changed by that user or a user with sudo priveleges.
+Moving files directly to a non `dropbox/` folder on CUBIC with scp or your mount point *is* possible for a user with project directory write permissions, though is not recommended.
+Such files will retain the ownership of the CUBIC user who transferred the files, and permissions can only be changed by that user or a user with sudo privileges.
 
 
 ### Copying files from CUBIC
@@ -309,8 +353,9 @@ It is also possible to copy files through the mount point, but this would be qui
 One way to interact with CUBIC files is to _mount_ the server on to your filesystem. This can be useful for quickly moving a small number of files back and forth
 (for example with NIfTIs you want't to view). It's _not_ meant for large file management or version control purposes (see the next section for solutions for those).
 
-To mount a directory, (on Mac), use the `samba` server along with Mac's built in server connector. Follow this [short link](https://support.apple.com/en-gb/guide/mac-help/mchlp1140/mac#:~:text=Connect%20to%20a%20computer%20or%20server%20by%20entering%20its%20address,Click%20Connect.) to see how; when prompted to
-select a server address, use:
+To mount a directory, (on Mac), use the `samba` server along with Mac's built in server connector.
+Follow this [short link](https://support.apple.com/en-gb/guide/mac-help/mchlp1140/mac#:~:text=Connect%20to%20a%20computer%20or%20server%20by%20entering%20its%20address,Click%20Connect.) to see how;
+when prompted to select a server address, use:
 
 ```
 smb://cubic-share.uphs.upenn.edu/cbica/
@@ -571,7 +616,10 @@ Here we are, editing code on CUBIC with the beautiful VSCode IDE:
 
 <img src="/assets/images/vscode_running.png" alt="login">
 
-Let's confirm that you are a project user (instead of using your personal account): Open a terminal (click icon at the corner of top left -> Terminal --> New Terminal), type `whoami`. You should see the project user name, instead of your personal username. This is very important - otherwise, you're editing the files using your personal account, and creating potential permission issues.
+Let's confirm that you are a project user (instead of using your personal account):
+Open a terminal (click icon at the corner of top left -> Terminal --> New Terminal), type `whoami`.
+You should see the project user name, instead of your personal username.
+This is very important - otherwise, you're editing the files using your personal account, and creating potential permission issues.
 
 `code-server` is almost exactly VSCode, so if you want to make the most of this powerful IDE,
 visit [their intro guide](https://code.visualstudio.com/docs/getstarted/tips-and-tricks).
@@ -697,7 +745,12 @@ To install R in your desired directory, follow the following steps.
     module load gcc/version-number
    ```
 
-2. You can install R-packages of your choice. It require adding library path in `.Rprofile` . You also may need to specify the base URL(s) of the repositories to use. Furthermore, you should specific lib.loc when loading packages. Note that some packages, such as "tidyverse", have run into a lot of issues when trying to install directly onto CUBIC. See [next section](#use-a-docker-image-containing-r-packages-on-CUBIC) for a workaround.
+2. You can install R-packages of your choice.
+   It requires adding library path in `.Rprofile` .
+   You also may need to specify the base URL(s) of the repositories to use.
+   Furthermore, you should specific lib.loc when loading packages.
+   Note that some packages, such as "tidyverse", have run into a lot of issues when trying to install directly onto CUBIC.
+   See [next section](#use-a-docker-image-containing-r-packages-on-CUBIC) for a workaround.
 
     ```R
        .libPaths('/cbica/home/username/Rlibs`)
@@ -724,10 +777,15 @@ And submit your job, for example:
       qsub -l h_vmem=25G,s_vmem=24G bash_script.sh
       ```
 
-## Use a Docker Image containing R packages on CUBIC
-If you run into issues installing your needed R packages on CUBIC, you can use a Docker image that contains a number of R packages already. For example, if you have a huge analysis in R that requires you to submit a job on CUBIC, but you can't successfully install your R packages of interests onto CUBIC, this method is a great workaround.
 
-This [docker-R github repo](https://github.com/PennLINC/docker_R) contains documentation on how you can either 1) directly use [a publicly available Docker image](https://hub.docker.com/r/pennlinc/docker_r) that contains a bunch of R packages already, or 2) build your own Docker image with the specific packages you need. After setting up your Docker image, you can submit a job on CUBIC to run all the Rscripts you want! For details, please see instructions [here](https://github.com/PennLINC/docker_R).
+## Use a Docker Image containing R packages on CUBIC
+
+If you run into issues installing your needed R packages on CUBIC, you can use a Docker image that contains a number of R packages already.
+For example, if you have a huge analysis in R that requires you to submit a job on CUBIC, but you can't successfully install your R packages of interests onto CUBIC, this method is a great workaround.
+
+This [docker-R github repo](https://github.com/PennLINC/docker_R) contains documentation on how you can either 1) directly use [a publicly available Docker image](https://hub.docker.com/r/pennlinc/docker_r) that contains a bunch of R packages already, or 2) build your own Docker image with the specific packages you need.
+After setting up your Docker image, you can submit a job on CUBIC to run all the Rscripts you want!
+For details, please see instructions [here](https://github.com/PennLINC/docker_R).
 
 
 Alternatively, you can use other containers:
@@ -756,10 +814,15 @@ Note: `screen` sessions must be run under `CUBIC-sattertt`.
 
 ## Why "screen"
 
-Have you ever faced the scenario where you are testing a script interactively on the login node of your remote machine, and suddenly the VPN connection drops and your work is lost? Luckily, there is a Linux utility called `screen` on the `sattertt` login node that allows us to resume sessions that otherwise would be lost.
+Have you ever faced the scenario where you are testing a script interactively on the login node of your remote machine, and suddenly the VPN connection drops and your work is lost?
+Luckily, there is a Linux utility called `screen` on the `sattertt` login node that allows us to resume sessions that otherwise would be lost.
 
 
-`screen` comes in handy when you want to let stuff run in the background without having to maintain a VPN or SSH connection. For example, let's say you want to submit many jobs to CUBIC at once. Since it can take a few minutes for each job to submit, you'd need to hold your VPN connection and your terminal window open for many hours if you're submitting several hundreds or even thousands of jobs. This is unrealistic for several reasons: your VPN connection is very likely to occassionally get dropped; your wifi connection might fail; you might accidentally close a terminal window; or maybe you just don't want to be biking down the Schuylkill river trail with your laptop open. In any case, you don't want to have to start all over or figure out where it left off if something interrupts your job submissions.
+`screen` comes in handy when you want to let stuff run in the background without having to maintain a VPN or SSH connection.
+For example, let's say you want to submit many jobs to CUBIC at once.
+Since it can take a few minutes for each job to submit, you'd need to hold your VPN connection and your terminal window open for many hours if you're submitting several hundreds or even thousands of jobs.
+This is unrealistic for several reasons: your VPN connection is very likely to occassionally get dropped; your wifi connection might fail; you might accidentally close a terminal window; or maybe you just don't want to be biking down the Schuylkill river trail with your laptop open.
+In any case, you don't want to have to start all over or figure out where it left off if something interrupts your job submissions.
 
 The `screen` command will allow you to safely run whatever you need even without maintaining a connection and then return to check in on your process later.
 
@@ -770,7 +833,9 @@ The `screen` command will allow you to safely run whatever you need even without
 ## Start a session
 You can type `screen` to start a screen session.
 
-If you want to specify a meaningful name for the session in place of the default `CUBIC-sattertt` suffix, you can use the `-S` flag as in `screen -S [session_name]`. Type `man screen` for more information. If you are interested, you can also check out the [official GNU screen documentation](https://www.gnu.org/software/screen/manual/screen.html#Overview) for more customization tips.
+If you want to specify a meaningful name for the session in place of the default `CUBIC-sattertt` suffix, you can use the `-S` flag as in `screen -S [session_name]`.
+Type `man screen` for more information.
+If you are interested, you can also check out the [official GNU screen documentation](https://www.gnu.org/software/screen/manual/screen.html#Overview) for more customization tips.
 
 Here I am creating a new screen session with the name `example`.
 
@@ -970,14 +1035,22 @@ seff $jobid
 seff_array $jobid
 ```
 
- ### Job arrays
-Job arrays in SLURM are useful for running a series of similar or repetitive tasks, like processing multiple participants. By submitting a job array, you create a single job submission with multiple sub-jobs (or array tasks). This reduces SLURM’s workload in scheduling compared to submitting each job individually. Furthermore, instead of manually creating and tracking many separate jobs, you use a single job script that SLURM handles as an array. You can access each task's unique identifier within the script (using the environment variable `$SLURM_ARRAY_TASK_ID`).
+### Job arrays
 
- You can refer to the excellent CUBIC wiki documentation on simple job arrays:
- https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_05_-_Array_Jobs/
+Job arrays in SLURM are useful for running a series of similar or repetitive tasks, like processing multiple participants.
+By submitting a job array, you create a single job submission with multiple sub-jobs (or array tasks).
+This reduces SLURM’s workload in scheduling compared to submitting each job individually.
+Furthermore, instead of manually creating and tracking many separate jobs, you use a single job script that SLURM handles as an array.
+You can access each task's unique identifier within the script (using the environment variable `$SLURM_ARRAY_TASK_ID`).
+
+You can refer to the excellent CUBIC wiki documentation on simple job arrays:
+https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_05_-_Array_Jobs/
+
 
 ### Job dependencies
-Job dependencies allow you to control the order in which jobs run, setting conditions so that a job only starts once another job has completed a specific action. This is helpful if you have a series of tasks where one needs to finish before the next can start.
+
+Job dependencies allow you to control the order in which jobs run, setting conditions so that a job only starts once another job has completed a specific action.
+This is helpful if you have a series of tasks where one needs to finish before the next can start.
 
 CUBIC wiki examples for simple and intermediate job dependencies:
 
@@ -986,7 +1059,12 @@ https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_06_-_Job_Dependencies_%28Si
 https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_07_-_Job_Dependencies_%28Intermediate%29/
 
 ### Job arrays with job dependencies!
-Say you have an analysis pipeline with multiple steps that can't be consolidated into a single script. And you want to run one job array after the other. You can run job arrays with job dependencies, and dynamically update your output and error log files! Here is a [repo of a current project](https://github.com/audreycluo/cubic_luowmdev/tree/main/tract_to_cortex) with an example of job arrays with job dependencies. See scripts `c**` for a clean example. This repo will be updated once the project is completed.
+Say you have an analysis pipeline with multiple steps that can't be consolidated into a single script.
+And you want to run one job array after the other.
+You can run job arrays with job dependencies, and dynamically update your output and error log files!
+Here is a [repo of a current project](https://github.com/audreycluo/cubic_luowmdev/tree/main/tract_to_cortex) with an example of job arrays with job dependencies.
+See scripts `c**` for a clean example.
+This repo will be updated once the project is completed.
 
 # Getting data from flywheel
 The source data for some projects may exist on flywheel.
@@ -1037,7 +1115,9 @@ make install
 The configure and build should take some time.
 
 ### Calling fw
-Now you should be ready to login to flywheel. First you'll need to unset your `LD_LIBRARY_PATH` to avoid calling cubic's default glibc. Now is when you'll need your API key as well.
+Now you should be ready to login to flywheel.
+First you'll need to unset your `LD_LIBRARY_PATH` to avoid calling cubic's default glibc.
+Now is when you'll need your API key as well.
 
 ```bash
 unset LD_LIBRARY_PATH # Do not use old GLIBC
@@ -1045,9 +1125,12 @@ unset LD_LIBRARY_PATH # Do not use old GLIBC
 ~/bin/fw login YOUR-API-KEY
 ```
 
-Now you're logged in! From here you may download specific files or sync the full project. See flywheel's [documentation](https://docs.flywheel.io/CLI/) for more details.
+Now you're logged in!
+From here you may download specific files or sync the full project.
+See flywheel's [documentation](https://docs.flywheel.io/CLI/) for more details.
 
-Note: its recommended that you use `fw sync` if you want the full project (or even most of it). The `-m` flag is also advised if you want to get all of the subject/session level metadata.
+Note: it's recommended that you use `fw sync` if you want the full project (or even most of it).
+The `-m` flag is also advised if you want to get all of the subject/session level metadata.
 
 #### Setting up an alias (optional)
 It may be worth it to create an alias if you plan to use `fw` regularly. For example, in .bashrc, you can have:
@@ -1056,7 +1139,14 @@ alias fww="unset LD_LIBRARY_PATH;~/bin/glibc-2.34/lib/ld-linux-x86-64.so.2 ~/bin
 ```
 
 # Additional information about CUBIC
-[This page](https://cbica-wiki.uphs.upenn.edu/wiki/index.php/Main_Page) has tons of other useful information about using CUBIC. Anyone who plans on using CUBIC regularly should probably browse it. Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others. Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page.
+
+[The official CUBIC wiki](https://cbica-portal.uphs.upenn.edu/docs/) has tons of other useful information about using CUBIC.
+Anyone who plans on using CUBIC regularly should probably browse it.
+Also, when troubleshooting, make sure the answer to your question isn't on this page before asking others.
+Note that you will need to be within the UPenn infrastructure (i.e. on campus or using a VPN) to view this page,
+and using Firefox is recommended.
+Other browsers may warn that the page is unsafe.
+
 
 # Mapping of the commands in SGE to Slurm
 
