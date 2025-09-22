@@ -6,17 +6,23 @@ nav_order: 6
 has_toc: true
 ---
 
+# Tips and Tricks
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
 {:toc}
 
-# Using "screen" on CUBIC
+## "screen": Create detached terminal sessions
 
 Note: `screen` sessions must be run under `CUBIC-sattertt`.
 
-## Why "screen"
+### Why "screen"
 
 Have you ever faced the scenario where you are testing a script interactively on the login node of your remote machine, and suddenly the VPN connection drops and your work is lost?
 Luckily, there is a Linux utility called `screen` on the `sattertt` login node that allows us to resume sessions that otherwise would be lost.
-
 
 `screen` comes in handy when you want to let stuff run in the background without having to maintain a VPN or SSH connection.
 For example, let's say you want to submit many jobs to CUBIC at once.
@@ -26,11 +32,14 @@ In any case, you don't want to have to start all over or figure out where it lef
 
 The `screen` command will allow you to safely run whatever you need even without maintaining a connection and then return to check in on your process later.
 
-## What is "screen"
+
+### What is "screen"
 
 `screen` is a terminal window manager. When you call the screen command, it creates a separate window where you can work as you would in a normal terminal window. `screen` is already installed in the `sattertt` node.
 
-## Start a session
+
+### Start a session
+
 You can type `screen` to start a screen session.
 
 If you want to specify a meaningful name for the session in place of the default `CUBIC-sattertt` suffix, you can use the `-S` flag as in `screen -S [session_name]`.
@@ -43,9 +52,7 @@ Here I am creating a new screen session with the name `example`.
 (base) [username@CUBIC-sattertt ~]$ screen -S example
 ```
 
-
 Note that it should say something like `[screen 0: username@CUBIC-sattertt:~]` on the terminal tab bar after creating the session.
-
 
 You can use `screen -ls` to ensure that the screen session has been started.
 
@@ -57,14 +64,15 @@ There is a screen on:               # output
 1 Socket in /var/run/screen/S.
 
 ```
-## Detach a session
+
+
+### Detach a session
 
 As previously mentioned, programs launched in a screen session would continue to run when their window is closed or when the screen session is detached from the terminal.
 
 The reason is because `screen` makes it possible for you to leave a terminal window (detach) and return to it later (reattach). This can come in handy when you are `rsync`-ing files between two servers or any other commands that can take an unpredictable amount of time.
 
 `screen -d` would detach the current screen session.
-
 
 If you have several screen sessions going on, you can provide the session id of the specific screen session that you'd like to reattach:
 
@@ -98,7 +106,8 @@ _Note: You can send commands to a screen session instead of the shell by pressin
 
 Now feel free to do other stuff!
 
-## Reattach a session
+
+### Reattach a session
 
 How do we return to and check on the programs launched earlier in  a detached screen session? The magic wand we use is reattach the session.
 `screen -r` would reattach the detached screen session.
@@ -127,7 +136,8 @@ There is a screen on:               # output
 
 ```
 
-## Exit a session
+
+### Exit a session
 
 Type `exit` on the screen terminal window to exit the session completely.
 
@@ -139,15 +149,15 @@ Type `exit` on the screen terminal window to exit the session completely.
 
 You will be dropped back to your shell and see the message `[screen is terminating]`.
 
-
-
 As an alternative, you can also press `Ctrl-a` and `k`. If you do so, you will be  asked `Ready kill this window [y/n]?`.
 
-## If you forgot to detach
+
+### If you forgot to detach
 
 If you lost the VPN connection or close the session terminal window or without detaching the session, you can run `screen -d -r` or `screen -dr` to return to the previously launched screen session.
 
-## Summary of handy "screen" commands
+
+### Summary of handy "screen" commands
 
 - Start a named screen session - `screen -S [session_name]`
 - Display all available screen sessions running in your system - `screen -ls`
@@ -155,7 +165,7 @@ If you lost the VPN connection or close the session terminal window or without d
 - Reattach a screen session - `screen -r [optional: session_id]`
 
 
-## Other resources
+### Other resources
 
 I've used the resources below in this tutorial. Feel free to check them out.
 
@@ -164,3 +174,8 @@ I've used the resources below in this tutorial. Feel free to check them out.
 [Why and How to use Linux Screen Tool](https://www.youtube.com/watch?v=TEehA8Q3D18)
 
 [Using Screen - MIT SIPB](https://sipb.mit.edu/doc/screen/)
+
+
+## "groups": List project users you have access to
+
+## "getent group": List users with access to a project user
