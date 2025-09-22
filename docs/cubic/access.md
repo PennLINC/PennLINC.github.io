@@ -3,7 +3,10 @@ layout: default
 title: Access and Configuration
 parent: CUBIC
 nav_order: 1
+has_toc: true
 ---
+
+{:toc}
 
 # Getting + setting up your CUBIC account
 

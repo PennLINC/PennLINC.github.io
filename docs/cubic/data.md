@@ -3,7 +3,10 @@ layout: default
 title: Data Transfer
 parent: CUBIC
 nav_order: 3
+has_toc: true
 ---
+
+{:toc}
 
 # Interacting with CUBIC: data analysis and data transfer
 

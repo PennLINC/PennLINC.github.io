@@ -3,7 +3,10 @@ layout: default
 title: Job Submission
 parent: CUBIC
 nav_order: 5
+has_toc: true
 ---
+
+{:toc}
 
 # Job submission on CUBIC
 CUBIC now uses SLURM as its job scheduler (previously CUBIC used SGE). The basic syntax for submitting jobs on SLURM is the following:

@@ -3,7 +3,10 @@ layout: default
 title: Software on CUBIC
 parent: CUBIC
 nav_order: 4
+has_toc: true
 ---
+
+{:toc}
 
 ### Python: Working with Visual Code Studio
 
