@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Available Static Datasets
-parent: Data Workflows
+title: Available PMACS Static Datasets
+parent: Archive
 nav_order: 4
 has_toc: false
 ---
 
-# Available Static datasets
+# Available PMACS Static datasets
 {: .no_toc }
 
 ## Available studies

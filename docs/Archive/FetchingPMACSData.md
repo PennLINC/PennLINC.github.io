@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Getting Static Data
-parent: Data Workflows
+title: Getting PMACS Static Data
+parent: Archive
 nav_order: 2
 has_toc: true
 ---
