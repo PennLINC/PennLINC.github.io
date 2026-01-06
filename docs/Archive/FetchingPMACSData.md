@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Getting PMACS Static Data
-parent: Archive
+parent: Archived Documentation
 nav_order: 2
 has_toc: true
 ---

@@ -7,7 +7,7 @@ nav_order: 8
 
 # Job submission on CUBIC
 
-CUBIC now uses SLURM as its job scheduler. For tutorials on job submission, refer to the [CUBIC Documentation](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/).
+CUBIC now uses SLURM as its job scheduler. For tutorials on job submission, refer to the [CUBIC Documentation](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/) (VPN required; you might need to login first, and click the link again for access).
 
 Browse the **Slurm examples**, such as the [simple job tutorial](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/Slurm_Example_01_-_Simple_Job/) to learn more about job submission.
 
@@ -85,7 +85,7 @@ This reduces SLURM's workload in scheduling compared to submitting each job indi
 Furthermore, instead of manually creating and tracking many separate jobs, you use a single job script that SLURM handles as an array.
 You can access each task's unique identifier within the script (using the environment variable `$SLURM_ARRAY_TASK_ID`).
 
-You can refer to the excellent CUBIC wiki documentation on [simple job arrays](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/Slurm_Example_05_-_Array_Jobs/).
+You can refer to the excellent CUBIC wiki documentation on [simple job array](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/Slurm_Example_05_-_Array_Jobs/).
 
 
 ### GPU Jobs
