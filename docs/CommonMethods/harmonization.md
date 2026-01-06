@@ -50,7 +50,7 @@ To run ComBat family while taking advantage of all the advances of CovBat and Lo
 The following examples presume the following variables are available (which you can adapt for your purposes):
 `X_complete`: R dataframe, with dimensions num sessions X num features to harmonize.
 `bat_complete`: Vector, Num sessions x 1, site labels. *Ensure that the order of sites is the same as the order of rows in X_complete*.
-`cov_complete`: R dataframe, with dimensions num sessions X num covariates (age, sex, and subject ID if using longitudinal harmonization).
+`cov_complete`: R dataframe, with dimensions num sessions X num covariates (age, sex, and subject ID if using longitudinal harmonization). The column names should be consistent with what is used in the formulas below.
 
 In all of these cases, the harmonized data frame can be accessed by `fit$dat.combat`.
 
@@ -65,7 +65,7 @@ lm_formula <- as.formula(
 fit <- comfam(
   data    = X_complete, # Num sessions X num features
   bat     = bat_complete, # Num sessions x 1, site labels
-  covar   = cov_complete, # Df with covariates (age, sex)
+  covar   = cov_complete, # Num sessions x num covariates
   model   = "lm",
   formula = lm_formula
 )
@@ -81,7 +81,7 @@ lm_formula <- as.formula(
 fit <- comfam(
   data    = X_complete, # Num sessions X num features
   bat     = bat_complete, # Num sessions x 1, site labels
-  covar   = cov_complete, # Df with covariates (age, sex, subject_id)
+  covar   = cov_complete, # Num sessions x num covariates (age, sex, subject_id)
   model   = "lmer",
   formula = lm_formula
 )
@@ -98,7 +98,7 @@ gam_formula <- as.formula(
 fit <- combat_gam(
   data    = X_complete, # Num sessions X num features
   bat     = bat_complete, # Num sessions x 1, site labels
-  covar   = cov_complete, # Df with covariates (age, sex)
+  covar   = cov_complete, # Num sessions x num covariates (age, sex)
   formula = gam_formula
 )
 ```
@@ -113,7 +113,7 @@ gamm_formula <- as.formula(
 fit <- comfam(
   data    = X_complete, # Num sessions X num features
   bat     = bat_complete, # Num sessions x 1, site labels
-  covar   = cov_complete, # Df with covariates (age, sex, subject_id)
+  covar   = cov_complete, # Num sessions x num covariates (age, sex, subject_id)
   model   = "gamm4",
   formula = gamm_formula,
   random  = ~(1 + age | subject_id) # random effects for intercept and slope
@@ -131,7 +131,7 @@ gam_formula <- as.formula(
 fit <- combatls(
   data    = X_complete, # Num sessions X num features
   bat     = bat_complete, # Num sessions x 1, site labels
-  covar   = cov_complete, # Df with covariates (age, sex, subject_id)
+  covar   = cov_complete, # Num sessions x num covariates (age, sex, subject_id)
   formula = gam_formula,
   sigma.formula = ~ age + sex,
   control = gamlss.control(trace = FALSE)
@@ -148,7 +148,7 @@ lm_formula <- as.formula(
 fit <- covfam(
   data    = X_complete, # Num sessions X num features
   bat     = bat_complete, # Num sessions x 1, site labels
-  covar   = cov_complete, # Df with covariates (age, sex)
+  covar   = cov_complete, # Num sessions x num covariates (age, sex)
   model   = lm,
   formula = lm_formula
 )
@@ -164,7 +164,7 @@ gam_formula <- as.formula(
 fit <- covfam(
   data    = X_complete, # Num sessions X num features
   bat     = bat_complete, # Num sessions x 1, site labels
-  covar   = cov_complete, # Df with covariates (age, sex)
+  covar   = cov_complete, # Num sessions x num covariates(age, sex)
   model   = gam,
   formula = gam_formula
 )
@@ -176,7 +176,7 @@ If you are performing a training/testing procedure, you should learn the harmoni
 fit <- covfam(
   data    = X_in_sample, # Num sessions X num features
   bat     = bat_in_sample, # Num sessions x 1, site labels
-  covar   = cov_in_sample, # Df with covariates (age, sex)
+  covar   = cov_in_sample, # Num sessions x num covariates (age, sex)
   model   = gam,
   formula = gam_formula
 )
