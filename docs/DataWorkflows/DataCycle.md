@@ -15,7 +15,8 @@ The data cycle includes the following steps:
 4. Processing the data!
 5. Sharing the data
 
-Each of these steps is detailed here:
+Steven Meisler's [BIDS workshop](https://www.stevenmeisler.com/bids_workshop/0_intro.html) provides a great tutorial covering the steps in the data cycle from BIDS curation to data processing. 
+Each of these steps is detailed below: 
 
 # Fetching Your Data
 {: .no_toc}
@@ -65,12 +66,10 @@ Please refer to our [CuBIDS documentation](https://cubids.readthedocs.io/en/late
 If you are curating data on a Penn cluster, you will need to set up a
 [conda environment](https://pennlinc.github.io/docs/cubic#installing-miniforge-in-your-project) for your project.
 
-You'll also need to install BIDS Validator:
+You'll also need to install `deno` for the BIDS Validator:
 
 ```shell
-conda install nodejs
-npm install -g bids-validator
-which bids-validator #to make sure it installed
+conda install deno
 ```
 
 After setting up your conda environment, please follow the CuBIDS installation instruction [here](https://cubids.readthedocs.io/en/latest/installation.html).
