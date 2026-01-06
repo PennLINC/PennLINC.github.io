@@ -28,14 +28,6 @@ has_toc: false
 - Filter data by inclusion criteria
 
 
-#### For data on PMACS
-
-- Transfer ALL data to a relevant CUBIC project/ create a new project as needed via `datalad clone`, as described [here](https://pennlinc.github.io/docs/DataTasks/FetchingYourData/)
-- Make a directory formatted as follows: `LastName_ProjectName_Year` and work inside the directory if you are using an old project
-- Filter data by inclusion criteria
-- Make sure to `datalad get` all data that meet inclusion criteria/are needed for analyses before running any pipelines on the data - running numerous `datalad get` commands during a pipeline can take down PMACS
-
-
 ### External collaborations
 
 The transfer method on what softwares our collaborators have access to.
