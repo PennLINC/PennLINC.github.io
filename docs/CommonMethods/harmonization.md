@@ -172,25 +172,23 @@ fit <- covfam(
 
 ### Train Test splitting
 If you are performing a training/testing procedure, you should learn the harmonization parameters only from the training set.
-For this, use the `train` argument, where the input is a logical vector specifying which subjects are in the training set.
 ```{R}
 fit <- covfam(
-  data    = X_complete, # Num sessions X num features
-  bat     = bat_complete, # Num sessions x 1, site labels
-  covar   = cov_complete, # Df with covariates (age, sex)
+  data    = X_in_sample, # Num sessions X num features
+  bat     = bat_in_sample, # Num sessions x 1, site labels
+  covar   = cov_in_sample, # Df with covariates (age, sex)
   model   = gam,
-  formula = gam_formula,
-  train = train_set_boolean
+  formula = gam_formula
 )
 ```
 
 To apply the harmonization parameters to the test set, we can do the following:
 ```{R}
-out_of_samplepred <- predict(
-  fit,
+out_of_sample_prediction <- predict(
+  fit, # or whatever you called your ComBat family model
   newdata  = X_out_of_sample, 
   newbat   = bat_out_of_sample,
-  newcovar = cov_out_of_sample,
+  newcovar = cov_out_of_sample
 )
 ```
 
