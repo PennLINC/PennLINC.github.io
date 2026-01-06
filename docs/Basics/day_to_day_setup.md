@@ -59,6 +59,8 @@ See the pages on data transfer for more information on how to set up and use the
 
 Please be aware that many files on CUBIC will contain sensitive information,
 and you should not share these files with anyone outside of the lab.
+This is especially true for certain datasets, such as ABCD or HBCD.
+For open datasets, like those we download from OpenNeuro, it is less of a concern.
 
 
 ## Sharing Data with Collaborators
