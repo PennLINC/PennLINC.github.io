@@ -1,12 +1,13 @@
 ---
 layout: default
 title: Completed Projects
+parent: Archive
 has_children: false
 has_toc: false
 nav_order: 12
 ---
 
-# Completed Projects 
+# Completed Projects
 
 Below is a list of completed projects and studies in the lab:
 
