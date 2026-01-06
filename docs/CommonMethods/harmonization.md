@@ -55,7 +55,7 @@ The following examples presume the following variables are available (which you 
 In all of these cases, the harmonized data frame can be accessed by `fit$dat.combat`.
 
 ### Simple ComBat
-I am not sure when anyone would use this compared to CovBat, but it is included here for completeness. It does not have CovBat additional features and uses a simple linear fit for all model terms.
+This simple ComBat approach is okay when you have one/few features (cannot use CovBat), not longitudinal data (cannot use Longitudinal ComBat), and a small age range (no need for GAMs/GAMMs)
 
 ```{R}
 lm_formula <- as.formula(
@@ -194,7 +194,7 @@ out_of_sample_prediction <- predict(
 
 ### Choosing a Harmonization Method
 
-- **ComBat**: Simple univariate analyses; legacy workflows. Linear or GAM.
+- **ComBat**: Simple univariate analyses; legacy workflows; only have one (or few) feature(s). Linear or GAM.
 - **CovBat**: Multivariate analyses, preserve covariance of features, does not work with longitudinal data right now. Linear or GAM.
 - **Longitudinal ComBat**: Repeated-measures. Linear, GAM, and GAMM.
 - **ComBat-LS**: Heterogeneous datasets with covariate imbalance or interest in distributional effects. Linear and GAM.
