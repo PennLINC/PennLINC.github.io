@@ -14,7 +14,6 @@ Note: `screen` sessions must be run under `CUBIC-sattertt`.
 Have you ever faced the scenario where you are testing a script interactively on the login node of your remote machine, and suddenly the VPN connection drops and your work is lost?
 Luckily, there is a Linux utility called `screen` on the `sattertt` login node that allows us to resume sessions that otherwise would be lost.
 
-
 `screen` comes in handy when you want to let stuff run in the background without having to maintain a VPN or SSH connection.
 For example, let's say you want to submit many jobs to CUBIC at once.
 Since it can take a few minutes for each job to submit, you'd need to hold your VPN connection and your terminal window open for many hours if you're submitting several hundreds or even thousands of jobs.
@@ -40,9 +39,7 @@ Here I am creating a new screen session with the name `example`.
 (base) [username@CUBIC-sattertt ~]$ screen -S example
 ```
 
-
 Note that it should say something like `[screen 0: username@CUBIC-sattertt:~]` on the terminal tab bar after creating the session.
-
 
 You can use `screen -ls` to ensure that the screen session has been started.
 
@@ -52,8 +49,8 @@ You can use `screen -ls` to ensure that the screen session has been started.
 There is a screen on:               # output
 	155085.example	(Attached)
 1 Socket in /var/run/screen/S.
-
 ```
+
 ## Detach a session
 
 As previously mentioned, programs launched in a screen session would continue to run when their window is closed or when the screen session is detached from the terminal.
@@ -61,7 +58,6 @@ As previously mentioned, programs launched in a screen session would continue to
 The reason is because `screen` makes it possible for you to leave a terminal window (detach) and return to it later (reattach). This can come in handy when you are `rsync`-ing files between two servers or any other commands that can take an unpredictable amount of time.
 
 `screen -d` would detach the current screen session.
-
 
 If you have several screen sessions going on, you can provide the session id of the specific screen session that you'd like to reattach:
 
@@ -87,11 +83,12 @@ Again, you can use `screen -ls` to ensure that the screen session has been detac
 There is a screen on:               # output
 	155085.example	(Detached)
 1 Socket in /var/run/screen/S.
-
-
 ```
 
-_Note: You can send commands to a screen session instead of the shell by pressing `Ctrl-a` (that is pressing the control key and the letter `a` at the same time)._
+{: .note-title }
+> Tip
+>
+> You can send commands to a screen session instead of the shell by pressing `Ctrl-a` (that is pressing the control key and the letter `a` at the same time).
 
 Now feel free to do other stuff!
 
@@ -102,14 +99,14 @@ How do we return to and check on the programs launched earlier in  a detached sc
 
 If you have several screen sessions going on, you can provide the session id of the specific screen session that you'd like to reattach:
 
-`screen -r session_id`
+```
+screen -r session_id
+```
 
 Here I detach the screen session by specifying the session name (which is also okay)
 
 ```bash
-
 (base) [username@CUBIC-sattertt ~]$ screen -r example # input
-
 ```
 
 Again, you can use `screen -ls` to ensure that the screen session has been reattached.
@@ -120,8 +117,6 @@ Again, you can use `screen -ls` to ensure that the screen session has been reatt
 There is a screen on:               # output
 	155085.example	(Attached)
 1 Socket in /var/run/screen/S.
-
-
 ```
 
 ## Exit a session
@@ -129,20 +124,17 @@ There is a screen on:               # output
 Type `exit` on the screen terminal window to exit the session completely.
 
 ```bash
-
 (base) [username@CUBIC-sattertt ~]$ exit # input
-
 ```
 
 You will be dropped back to your shell and see the message `[screen is terminating]`.
-
-
 
 As an alternative, you can also press `Ctrl-a` and `k`. If you do so, you will be  asked `Ready kill this window [y/n]?`.
 
 ## If you forgot to detach
 
 If you lost the VPN connection or close the session terminal window or without detaching the session, you can run `screen -d -r` or `screen -dr` to return to the previously launched screen session.
+
 
 ## Summary of handy "screen" commands
 
@@ -161,4 +153,3 @@ I've used the resources below in this tutorial. Feel free to check them out.
 [Why and How to use Linux Screen Tool](https://www.youtube.com/watch?v=TEehA8Q3D18)
 
 [Using Screen - MIT SIPB](https://sipb.mit.edu/doc/screen/)
-
