@@ -145,13 +145,13 @@ lm_formula <- as.formula(
 "y ~ age + sex"
 )
 
-cf <- covfam(
+fit <- covfam(
   data    = X_complete, # Num sessions X num features
   bat     = bat_complete, # Num sessions x 1, site labels
   covar   = cov_complete, # Df with covariates (age, sex)
   model   = lm,
-  formula = lm_formula)
-
+  formula = lm_formula
+)
 ```
 
 ### CovBat GAM
@@ -161,13 +161,37 @@ gam_formula <- as.formula(
 "y ~ s(age, k=4) + sex"
 )
 
-cf <- covfam(
+fit <- covfam(
   data    = X_complete, # Num sessions X num features
   bat     = bat_complete, # Num sessions x 1, site labels
   covar   = cov_complete, # Df with covariates (age, sex)
   model   = gam,
-  formula = gam_formula)
+  formula = gam_formula
+)
+```
 
+### Train Test splitting
+If you are performing a training/testing procedure, you should learn the harmonization parameters only from the training set.
+For this, use the `train` argument, where the input is a logical vector specifying which subjects are in the training set.
+```{R}
+fit <- covfam(
+  data    = X_complete, # Num sessions X num features
+  bat     = bat_complete, # Num sessions x 1, site labels
+  covar   = cov_complete, # Df with covariates (age, sex)
+  model   = gam,
+  formula = gam_formula,
+  train = train_set_boolean
+)
+```
+
+To apply the harmonization parameters to the test set, we can do the following:
+```{R}
+out_of_samplepred <- predict(
+  fit,
+  newdata  = X_out_of_sample, 
+  newbat   = bat_out_of_sample,
+  newcovar = cov_out_of_sample,
+)
 ```
 
 ### Choosing a Harmonization Method
@@ -180,3 +204,5 @@ cf <- covfam(
 ## Tips
 
 - When feasible, model as many features as you can, as appropriate. For example, if you have one diffusion metric summarized in several bundles, try to harmonize all bundles at once for each feature. This allows you to take advantage of the empirical Bayes correction.
+- By default, ComBat-based methods estimate scanner effects relative to a pooled reference across all sites, which is appropriate for most analyses. However, in some situations it may be useful to specify a reference site explicitly. This is most appropriate when one site is known to be of particularly high quality, has the largest sample size, or closely matches the acquisition protocol of an external dataset to which results will be compared. In such cases, specifying a reference site anchors the harmonized data to a concrete and interpretable scale. Caution is warranted when choosing a reference site, as doing so implicitly treats that site as the standard. If the reference site is atypical or has a narrow range of covariates, this can introduce bias or distort biological effects. As a general rule, a reference site should be well-sampled, representative of the target population, and stable across time.
+- For ABCD, we have used site 16 as the reference site, as it is the largest site and uses a Siemens (high quality) scanner.
