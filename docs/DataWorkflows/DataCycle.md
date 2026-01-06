@@ -7,7 +7,7 @@ has_toc: true
 ---
 # The Data Cycle
 
-The data cycle includes the following steps: 
+The data cycle includes the following steps:
 1. Fetching raw data
 3. Dataset curation
 2. Fetching the data onto the right cluster
@@ -15,7 +15,8 @@ The data cycle includes the following steps:
 4. Processing the data!
 5. Sharing the data
 
-Steven Meisler's [BIDS workshop](https://www.stevenmeisler.com/bids_workshop/0_intro.html) provides a great tutorial covering the steps in the data cycle from BIDS curation to data processing. Each of these steps is detailed below: 
+Steven Meisler's [BIDS workshop](https://www.stevenmeisler.com/bids_workshop/0_intro.html) provides a great tutorial covering the steps in the data cycle from BIDS curation to data processing. 
+Each of these steps is detailed below: 
 
 # Fetching Your Data
 {: .no_toc}
@@ -56,7 +57,7 @@ You can `datalad clone` many relevant datasets, particularly via OpenNeuro. More
 # Curating BIDS Datasets
 
 
-BIDS curation can be a frustrating process. 
+BIDS curation can be a frustrating process.
 Please refer to our [CuBIDS documentation](https://cubids.readthedocs.io/en/latest/index.html), especially the [example walkthrough](https://cubids.readthedocs.io/en/latest/example.html).
 
 
@@ -113,7 +114,7 @@ get a template Data Narrative file with:
 $ wget https://raw.githubusercontent.com/PennLINC/RBC/master/Data_Narrative_Template.md
 ```
 
-Next, add tracking to your project for scripts to be shared and tracked. 
+Next, add tracking to your project for scripts to be shared and tracked.
 data:
 
 ```
@@ -160,7 +161,7 @@ Now you can begin a datalad tracked dataset for your working BIDS data.
 $ datalad create -c text2git BIDS
 ```
 
-Finally, copy your data from `original_data` to the working BIDS dataset 
+Finally, copy your data from `original_data` to the working BIDS dataset
 **only once you are certain `original_data/` is anonymized**:
 
 ```bash
@@ -204,23 +205,23 @@ Here's a template data narrative; you'll fill out the fields as necessary for yo
 
 ## Important Links (should all be on GitHub):
 * Data Processing Flow Diagram:
-   * Flow diagram that describes the lifecycle of this dataset 
+   * Flow diagram that describes the lifecycle of this dataset
 * DSR GitHub Project Page(Curation/Validation and Processing Queue Status):
-   * Cards for tracking the curation and validation portion of the dataset. This page should be updated every time you perform an action on the data. 
-   * Cards for tracking the progress of containerized pipeline runs on the data. 
-   
-## Plan for the Data 
+   * Cards for tracking the curation and validation portion of the dataset. This page should be updated every time you perform an action on the data.
+   * Cards for tracking the progress of containerized pipeline runs on the data.
+
+## Plan for the Data
 
 * Why does PennLINC need this data?
 * For which project(s) is it intended? Please link to project pages below:
 * What is our goal data format?
-   * i.e. in what form do we want the data by the end of the "Curation" step? BIDS? Something else? 
+   * i.e. in what form do we want the data by the end of the "Curation" step? BIDS? Something else?
 
 ## Data Acquisition
 
 * Who is responsible for acquiring this data?
 * Do you have a DUA? Who is allowed to access the data?
-* Where was the data acquired? 
+* Where was the data acquired?
 * Describe the data. What type of information do we have? Things to specify include:
    * number of subjects
    * types of images
@@ -229,26 +230,26 @@ Here's a template data narrative; you'll fill out the fields as necessary for yo
    * any canned QC data
    * any preprocessed or derived data
 
-## Download and Storage 
+## Download and Storage
 
 * Who is responsible for downloading this data?
 * From where was the data downloaded?
 * Where is it currently being stored?
 * What form is the data in upon intial download (DICOMS, NIFTIS, something else?)
-* Are you using Datalad? 
+* Are you using Datalad?
 * Is the data backed up in a second location? If so, please provide the path to the backup location:
 
 ## Curation Process
 
 * Who is responsible for curating this data?
-* GitHub Link to curation scripts/heurstics: 
-* GitHub Link to final CuBIDS csvs: 
+* GitHub Link to curation scripts/heurstics:
+* GitHub Link to final CuBIDS csvs:
 * Describe the Validation Process. Include a list of the initial and final errors and warnings.
 * Describe additions, deletions, and metadata changes (if any).
 
-## Preprocessing Pipelines 
+## Preprocessing Pipelines
 * For each pipeline (e.g. QSIPrep, fMRIPrep, XCP, C-PAC), please fill out the following information:
-   * Pipeline Name: 
+   * Pipeline Name:
    * Who is responsible for running preprocessing pipelines/audits on this data?
    * Where are you running these pipelines? CUBIC? PMACS? Somewhere else?
    * Did you implement exemplar testing? If so, please fill out the information below:
@@ -258,25 +259,25 @@ Here's a template data narrative; you'll fill out the fields as necessary for yo
     * For production testing, please fill out the information below:
       * Path to production inputs:
       * GitHub Link to production outputs:
-      * GitHub Link to production audit: 
+      * GitHub Link to production audit:
 
-## Post Processing 
+## Post Processing
 
 * Who is using the data/for which projects are people in the lab using this data?
-   * Link to project page(s) here  
+   * Link to project page(s) here
 * For each post-processing analysis that has been run on this data, fill out the following
    * Who performed the analysis?
    * Where it was performed (CUBIC, PMACS, somewhere else)?
    * GitHub Link(s) to result(s)
-   * Did you use pennlinckit?  
-      * https://github.com/PennLINC/PennLINC-Kit/tree/main/pennlinckit  
+   * Did you use pennlinckit?
+      * https://github.com/PennLINC/PennLINC-Kit/tree/main/pennlinckit
 ```
 
 ## Stage 1: BIDS Validation
 
 At the end of Step 0 you should have a BIDS-like data set containing NIfTI
 and JSON files, tracked by datalad, and a regular git repository tracking the
-scripts you create to curate it. 
+scripts you create to curate it.
 The goal of this stage is to get your data passing the
 BIDS Validator without any errors and to ensure all scans in your dataset
 appear as expected and are usable. This is an iterative process - fixing
@@ -332,7 +333,7 @@ project
     |       ├── notebooks          # e.g. ipython notebooks that investigate BIDS data
     |       ├── Fix1.sh            # e.g. a script that renamed some BIDS data
     |       └── DataNarrative.md
-    └── BIDS                      
+    └── BIDS
         ├── dataset_description.json
         ├── README.txt
         ├── sub-1
@@ -415,7 +416,7 @@ project
     |       ├── notebooks          # e.g. ipython notebooks that investigate BIDS data
     |       ├── Fix1.sh            # e.g. a script that renamed some BIDS data
     |       └── DataNarrative.md
-    └── BIDS                      
+    └── BIDS
         ├── dataset_description.json
         ├── README.txt
         ├── sub-1
@@ -447,7 +448,7 @@ names.
 
 Congratulations! You have created a fully-curated BIDS dataset.
 
-This data is typically stored on PMACS as BIDS datasets, transferred from CUBIC after curation via `rsync`. 
+This data is typically stored on PMACS as BIDS datasets, transferred from CUBIC after curation via `rsync`.
 
 
 
@@ -486,7 +487,7 @@ For most of our use, you want to clone the _output_ of a specific pipeline -- th
 datalad clone ria+file:///PATH_TO_DATASET/output_ria#~data outputs
 ```
 
-If the person is happy with this format and working with `datalad`, they can use this command to get the cloned data. 
+If the person is happy with this format and working with `datalad`, they can use this command to get the cloned data.
 
 ## Datalad to Non-Datalad
 
@@ -503,4 +504,13 @@ rsync -avzh --progress outputs FINAL_DESTINATION
 
 ## Datalad to OpenNeuro
 
-Data can be transferred via Datalad to OpenNeuro, following [these](https://docs.openneuro.org/packages/openneuro-cli.html) steps. 
+Data can be transferred via Datalad to OpenNeuro, following [these](https://docs.openneuro.org/packages/openneuro-cli.html) steps.
+
+There are a number of extra steps we take to ensure that the data is shared correctly.
+
+- Store large derivatives in different OpenNeuro datasets so we don't overwhelm the OpenNeuro servers (each dataset must fit onto one of the machines, so smaller datasets are easier for them to allocate to the right machines).
+- Check that data are uploaded correctly.
+   - We have had issues with files being corrupted as part of the upload process, and fixing this is a major PITA for both us and the OpenNeuro maintainers.
+   - Once you've made a release, datalad install the dataset in your project's comp_space folder, then datalad get every file in the dataset to make sure they all download.
+- Use a non-datalad version of the dataset to upload? Not sure if this is still necessary.
+- Add coauthors as contributors to the dataset so they can make changes as needed.

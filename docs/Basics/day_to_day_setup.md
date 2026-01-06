@@ -124,3 +124,5 @@ We often share data with collaborators who do not have access to CUBIC.
 Always check with Ted before sharing any data with collaborators.
 
 A member of the informatics team will be able to help you figure out the best way to share data with collaborators.
+
+See [Data Sharing](https://pennlinc.github.io/docs/DataWorkflows/DataSharing/) for more information on how to share data with collaborators.
