@@ -71,13 +71,13 @@ to get rid of the locale warnings coming from git/git annex.
 
 # Installing miniforge in your project
 
-You will want a python installation that you have full control over. After logging in as your project user and changing permission on your `.bashrc` file, you can install miniforge using
+You will want a python installation that you have full control over. Our lab prefers to use miniforge to manage environments. This is not supported by CUBIC admins, so you will need to install and manage it yourself. After logging in as your project user and changing permission on your `.bashrc` file, you can install miniforge using
 
 ```bash
 $ cd ~
 $ wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
 $ chmod +x Miniforge3-Linux-x86_64.sh
-$ ./Miniforge3-Linux-x86_64
+$ ./Miniforge3-Linux-x86_64.sh
 ```
 
 You will need to hit Enter to continue and type `yes` to accept the license terms.
@@ -114,7 +114,7 @@ $ chown -R $(whoami) ~/miniforge3
 When you launch jobs on CUBIC, they will autmoatically use CUBIC's base conda environment instead of your project user's miniconda installation. To fix this, you will need to initialize miniconda for a bash script submitted to qsub by running
 
  ```bash
-source ~/miniconda3/etc/profile.d/conda.sh
+source ~/miniforge3/etc/profile.d/conda.sh
 ```
 
 Let's create an environment for this project.
