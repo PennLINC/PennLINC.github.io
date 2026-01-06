@@ -1,6 +1,6 @@
 ---
 layout: default
-title: BigBrain
+title: Harmonization
 parent: Common Methods
 ---
 
