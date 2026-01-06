@@ -5,98 +5,66 @@ parent: CUBIC
 nav_order: 6
 ---
 
-# Using R/R-studio and Installation of R packages on CUBIC
+# Using R on CUBIC
 
-## Use R and RStudio on CUBIC directly
-1. Currently  R-4.2.2 is installed on CUBIC. If you are satisfied with R-4.2.2, simply load it with `module load R/4.2.2`, and directly go to step 2 below. However, you can install another R version in any directory of your choice, usually home directory `/cbica/home/username`.
-To install R in your desired directory, follow the following steps.
+R is most comfortably used from VSCode/Cursor/RStudio on your local device.
+However, processing of big data will have to take place on cubic without a gui.
+Getting a recent R and the dependencies you need is most easily and reproducibly accomplished by creating an apptainer image with the libraries you need.
 
-   ```bash
-   module load curl/7.56.0  # load the libcurl library
-   wget http://cran.rstudio.com/src/base/R-4/R-4.2.2.tar.gz #e.g R-4.2.2
-   tar xvf R-4.2.2.tar.gz
-   cd R-4.2.2
-   ./configure --prefix=$HOME/R  --enable-R-shlib #$HOME/R is where R will be installed
-   make && make install
+## Creating an R apptainer image
 
-   ```
+This workflow uses the `Apptainer.def` file format and the [r2u](https://eddelbuettel.github.io/r2u/) base image to easily install CRAN packages.
+You create a file called `my-R-apptainer.def` that will look minimally like:
 
-     Then, installation of R is complete.
-    To run R, add `$HOME/R/bin` to your PATH. Then, shell commands like R and Rscript will work.
-   ```bash
-    echo export PATH="$HOME/R/bin:$PATH" >> .bash_profile or .bashrc # add R to bash
-   ```
-   To run R:
-   ```bash
-   module load R
-   R
-   ```
+```
+Bootstrap: docker
+From: rocker/r2u:jammy
 
-    >You can load higher version of `gcc` compiler if required for some R version.
-   ```bash
-    module load gcc/version-number
-   ```
+%help
+    My custom R environment
 
-2. You can install R-packages of your choice.
-   It requires adding library path in `.Rprofile` .
-   You also may need to specify the base URL(s) of the repositories to use.
-   Furthermore, you should specific lib.loc when loading packages.
-   Note that some packages, such as "tidyverse", have run into a lot of issues when trying to install directly onto CUBIC.
-   See [next section](#use-a-docker-image-containing-r-packages-on-CUBIC) for a workaround.
+%labels
+    org.label-schema.name "My R Image"
 
-    ```R
-       .libPaths('/cbica/home/username/Rlibs`)
-       install.packages("package_name", repos='http://cran.us.r-project.org', lib='/cbica/home/username/Rlibs')
-       library(package_name, lib.loc="/cbica/home/username/Rlibs")
+%environment
+    export DEBIAN_FRONTEND=noninteractive
 
-    ```
-    You can have more than one R-packages directory.
+%post
+    set -e
+    apt-get update \
+        && apt-get install -y --no-install-recommends \
+            r-cran-tidyverse \
+        && apt-get clean \
+        && echo 'options(bspm.sudo = TRUE)' >> /etc/R/Rprofile.site \
+        && rm -rf /var/lib/apt/lists/*
 
-3. You can also use r-studio on CUBIC  by simply load rstudio using `module`.
-
-     ```bash
-      module load R-studio/1.1.456
-      rstudio & # enjoy the R and Rstudio, it works
-     ```
-4. If you are working with large amounts of data, you may want to submit a job in R. Make sure the packages you need in you Rscript are installed properly and remember to specify 'lib.loc' when loading libraries in your .R file. Write your bash script:
-      ```sh
-      #!/bin/bash
-      Rscript --save /cbica/projects/project_name/script_name.R
-      ```
-
-And submit your job, for example:
-      ```sh
-      qsub -l h_vmem=25G,s_vmem=24G bash_script.sh
-      ```
-
-
-## Use a Docker Image containing R packages on CUBIC
-
-If you run into issues installing your needed R packages on CUBIC, you can use a Docker image that contains a number of R packages already.
-For example, if you have a huge analysis in R that requires you to submit a job on CUBIC, but you can't successfully install your R packages of interests onto CUBIC, this method is a great workaround.
-
-This [docker-R github repo](https://github.com/PennLINC/docker_R) contains documentation on how you can either 1) directly use [a publicly available Docker image](https://hub.docker.com/r/pennlinc/docker_r) that contains a bunch of R packages already, or 2) build your own Docker image with the specific packages you need.
-After setting up your Docker image, you can submit a job on CUBIC to run all the Rscripts you want!
-For details, please see instructions [here](https://github.com/PennLINC/docker_R).
-
-
-Alternatively, you can use other containers:
-
-the neuroR container on [docker hub](https://hub.docker.com/r/pennsive/neuror) has R and many neuroimaging packages installed, which is also available as an environment module on CUBIC:
-```sh
-module load neuroR/0.2.0 # will load R 4.1
+%runscript
+    echo "Custom R Container"
+    echo "R version: $(R --version | head -n 1)"
+    if [ $# -gt 0 ]; then
+        exec "$@"
+    else
+        exec R
+    fi
 ```
 
-# Using Python on CUBIC
+This creates a very simple R environment with tidyverse installed. 
+You can install any package from CRAN or BioConductor by adding it to the section where `r-cran-tidyverse` is listed. 
+BioConductor package names will look like `r-bioc-hdf5array`.
+To get a usable apptainer sif file you will run
 
- Sure, you could install your own python (and you can!), but if you want to just use one that works well with PennLincKit, all you have to do is the following
-
-If you want it to be your default:
 ```bash
-echo 'export PATH="/cbica/home/<username>/anaconda3/bin:$PATH"' >> ~/.bashrc
-```
-If you want it for a session:
-```bash
-export PATH="/cbica/home/<username>/anaconda3/bin:$PATH"
+apptainer build my-r-image.sif my-R-apptainer.def
 ```
 
+to enter an R session you can run
+
+```bash
+apptainer run my-r-image.sif
+```
+
+Or to execute an R script, as you would for running R in a SLURM job, you run
+
+```bash
+apptainer run my-r-image.sif Rscript path/to/your/script.R arg1 arg2
+```
