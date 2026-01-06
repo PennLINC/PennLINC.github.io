@@ -6,7 +6,12 @@ nav_order: 8
 ---
 
 # Job submission on CUBIC
-CUBIC now uses SLURM as its job scheduler (previously CUBIC used SGE). The basic syntax for submitting jobs on SLURM is the following:
+
+CUBIC now uses SLURM as its job scheduler. For tutorials on job submission, refer to the [CUBIC Documentation](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/).
+
+Browse the **Slurm examples**, such as the [simple job tutorial](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/Slurm_Example_01_-_Simple_Job/) to learn more about job submission.
+
+Below are some sbatch directives we usually use:
 
 ```bash
 sbatch my_script.sh
@@ -35,9 +40,6 @@ Alternatively, your sbatch directives can be included in the command line instea
 sbatch --nodes=1 --ntasks=1 --cpus-per-task=1 --time=00:30:00 --job-name="job_name" --output="output.out" --error="error.err" my_script.sh
 ```
 (In this alternative, the directives would not be in `my_script.sh`.)
-
-You can read CBICA's documentation on basic job submission here:
-https://cbica-wiki.uphs.upenn.edu/docs/List_of_Slurm_Articles/
 
 ### Checking SLURM job status
 If you need to cancel your job:
@@ -83,9 +85,12 @@ This reduces SLURM's workload in scheduling compared to submitting each job indi
 Furthermore, instead of manually creating and tracking many separate jobs, you use a single job script that SLURM handles as an array.
 You can access each task's unique identifier within the script (using the environment variable `$SLURM_ARRAY_TASK_ID`).
 
-You can refer to the excellent CUBIC wiki documentation on simple job arrays:
-https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_05_-_Array_Jobs/
+You can refer to the excellent CUBIC wiki documentation on [simple job arrays](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/Slurm_Example_05_-_Array_Jobs/).
 
+
+### GPU Jobs
+
+[Simple GPU job example](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/Slurm_Example_03_-_Simple_GPU_Jobs)
 
 ### Job dependencies
 
@@ -94,9 +99,9 @@ This is helpful if you have a series of tasks where one needs to finish before t
 
 CUBIC wiki examples for simple and intermediate job dependencies:
 
-https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_06_-_Job_Dependencies_%28Simple%29/
+[Simple job dependencies](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/Slurm_Example_06_-_Job_Dependencies_%28Simple%29/)
 
-https://cbica-wiki.uphs.upenn.edu/docs/Slurm_Example_07_-_Job_Dependencies_%28Intermediate%29/
+[Intermediate job dependencies](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/Slurm_Example_07_-_Job_Dependencies_%28Intermediate%29/)
 
 ### Job arrays with job dependencies!
 Say you have an analysis pipeline with multiple steps that can't be consolidated into a single script.
@@ -105,4 +110,3 @@ You can run job arrays with job dependencies, and dynamically update your output
 Here is a [repo of a current project](https://github.com/audreycluo/cubic_luowmdev/tree/main/tract_to_cortex) with an example of job arrays with job dependencies.
 See scripts `c**` for a clean example.
 This repo will be updated once the project is completed.
-
