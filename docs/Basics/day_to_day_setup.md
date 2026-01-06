@@ -38,6 +38,20 @@ Common tasks that we do entirely on our laptops (rather than using the laptop to
 
 ## Project Code Development
 
+{: .note-title }
+> Tip
+>
+> Remember to create the GitHub repository for your project under the
+> [PennLINC organization](https://github.com/PennLINC) as a **private** repository.
+>
+> The repository will eventually be made public, but you should keep it private until you are ready to share it with the world.
+
+{: .note-title }
+> Tip
+>
+> If you are just starting out on a project, we recommend using one of the lab's provided repository templates
+> for the GitHub repository (e.g., [paper-template](https://github.com/PennLINC/paper-template)).
+
 Most lab members will need to write code that gets run both on their local machine and on CUBIC.
 
 We recommend using a code editor like VSCode or Cursor to develop your code locally,
