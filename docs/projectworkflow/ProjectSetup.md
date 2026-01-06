@@ -8,10 +8,11 @@ nav_order: 1
 # PennLINC Project Setup Guide
 
 Each project at PennLINC has several key elements to facilitate collaboration and ensure reproducbility.
-For clarity in naming, all elements (github, slack, cubic, etc) should be named similarly-- often ```Lastname_ProjectName``` with CamelCasing, where "Lastname" is the last name of the first author / trainee leading the project.
+For clarity in naming, all elements (GitHub, Slack, CUBIC, etc) should be named similarly-- often `Lastname_ProjectName` with CamelCasing,
+where "Lastname" is the last name of the first author / trainee leading the project.
 
 
-## GitHub repository
+## GitHub Repository
 
 All code, from the beginning of the project, should be in a GitHub repository.
 This is a prerequisite for reproducible neuroscience -- please start your project out on the right foot!
@@ -24,7 +25,7 @@ These repos should reside in the [PennLINC org](www.github.com/PennLINC), not yo
 > <https://github.com/PennLINC/paper-template>.
 
 
-## Project documentation on GitHub Pages
+### Project documentation on GitHub Pages
 
 Careful tracking of your project is essential.
 While well-commented code, reproducible analytic notebooks, and an archived Slack channel are very helpful,
@@ -40,22 +41,43 @@ See the [project docs page](/docs/documentation/project-documentation) for how t
 > see the [project reproducibility guide](/docs/LabHome/ReproSystem) for more info.
 
 
-## Slack channel
+## Slack Channel
 
-All projects in the lab are collaborative, and furthermore form a knowledge and code base for other subsequent projects. A lot of valuable knowledge (esp re: troubleshooting) tends to be captured in correspondence. As such, it is critical for the lab that this knowledge is not "locked away" in inaccessible repositories like private email inboxes or direct message channels on slack.
-As such _nearly all_ project discussion should occur in a project specific slack channel; this will be created (by Ted) when the project is initiated. Please try to avoid using direct message channels on slack for project communication.  The main exception to this are documents (e.g., manuscripts) that need review; please send these directly to Ted via email. See also our notes on [Slack, Communication, & Collaboration](https://pennlinc.github.io/docs/LabHome/CommunicationAndCollaboration/).
-
-
-### CUBIC Project
-
-Nearly all projects in the lab will require the HPC resources provided by CUBIC.  Please see the [CUBIC](https://pennlinc.github.io/docs/cubic) documentation for details on project setup. 
-
-
-### Notion Project
-
-We reccomend that notes on your project -- including meeting notes, interim results, and links to code -- be stored in a [Notion](https://www.notion.so/) project.  When you joined the lab you should have been added to the PennLINC Notion Org. We are actively developing a project template for notion and suggest you use this + provide feedback. 
+All projects in the lab are collaborative, and furthermore form a knowledge and code base for other subsequent projects.
+A lot of valuable knowledge (esp re: troubleshooting) tends to be captured in correspondence.
+As such, it is critical for the lab that this knowledge is not "locked away" in inaccessible repositories like private email inboxes or direct message channels on Slack.
+As such _nearly all_ project discussion should occur in a project specific Slack channel; this will be created (by Ted) when the project is initiated.
+Please try to avoid using direct message channels on Slack for project communication.
+The main exception to this are documents (e.g., manuscripts) that need review; please send these directly to Ted via email.
+See also our notes on [Slack, Communication, & Collaboration](https://pennlinc.github.io/docs/LabHome/CommunicationAndCollaboration/).
 
 
-### Zotero library
+## CUBIC Project
 
-Zotero is the most popular reference management tool in the lab. It integrates with Notion via [Notero](https://github.com/dvanoni/notero). 
+Nearly all projects in the lab will require the HPC resources provided by CUBIC.
+Please see the [CUBIC](https://pennlinc.github.io/docs/cubic) documentation for details on project setup.
+
+For small projects, you may be able to use your personal user on CUBIC.
+However, for any project that will require more than minimal storage or that will involve collaboration or a reproducibilibuddy,
+you will want to either gain access to an existing project user or request a new one.
+
+For each project, you will need a separate folder in the relevant user's home directory on CUBIC,
+as well as a customized mamba environment for the project.
+For example, if you are working with the PAFIN dataset, you may want to use the `pafin` project user.
+However, since this is a shared project user, you will need to create a new project directory in the `pafin` user's home directory,
+such as `/cbica/projects/pafin/projects/Lastname_ProjectName`.
+Inside that folder you will have a clone of your project's GitHub repository and any data generated by the project.
+
+
+## Notion Project
+
+We reccomend that notes on your project -- including meeting notes, interim results, and links to code -- be stored in a [Notion](https://www.notion.so/) project.
+When you joined the lab you should have been added to the PennLINC Notion Org.
+We are actively developing a project template for Notion and suggest you use this + provide feedback.
+
+
+## Zotero Library
+
+Zotero is the most popular reference management tool in the lab.
+It may be integrated with Notion via [Notero](https://github.com/dvanoni/notero),
+and many lab members use it to manage the bibliographies for their manuscripts (often initially drafted in Google Docs).

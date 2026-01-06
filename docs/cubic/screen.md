@@ -61,7 +61,9 @@ The reason is because `screen` makes it possible for you to leave a terminal win
 
 If you have several screen sessions going on, you can provide the session id of the specific screen session that you'd like to reattach:
 
-`screen -d session_id`
+```bash
+screen -d session_id
+```
 
 Here I detach the screen session by specifying the session id
 
