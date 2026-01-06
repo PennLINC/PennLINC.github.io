@@ -52,6 +52,27 @@ We do not recommend directly copying code from your local machine to CUBIC.
 While this may be easier in the short term, it will make it much more difficult to track changes to the code,
 and to reproduce the analysis.
 
+Our standard workflow for developing code and running analyses involves the following steps (not including setup/config steps):
+
+1. Sign onto the VPN.
+2. SSH onto CUBIC.
+3. SSH into the appropriate project user on CUBIC.
+4. Activate the appropriate mamba environment for your project.
+   There may be multiple projects and environments for a single project user,
+   so be sure to activate the correct one.
+5. Develop code on your laptop using your preferred code editor.
+6. Push changes to GitHub from your local machine.
+7. Pull changes from GitHub onto CUBIC using `git`.
+8. Run the code on CUBIC.
+9. If changes need to be made, either (1) make those changes on CUBIC
+   (you'll need to use a terminal-based editor like nano or vim)
+   and push changes from CUBIC back to GitHub and pull those changes onto your local machine,
+   or (2) make those changes on your local machine and repeat steps 5-7.
+   We have found that (2) is less error-prone,
+   as if you commit changes to GitHub in one location (e.g., CUBIC),
+   but fail to pull them to the other location (e.g., your local machine) before making changes in that second location,
+   you risk introducing merge conflicts.
+
 
 ## Interacting with Data
 
@@ -62,9 +83,18 @@ For small data transfers, smb is a good option (see the [data transfer page](htt
 smb (pronounced "samba") allows you to mount a directory on CUBIC as a local drive on your machine,
 so you can access the data as if it were local.
 
-For larger data transfers, we recommend using `scp` or `rsync`.
-These commands allow you to transfer files between your local machine and CUBIC.
-However, there should almost never be a case where you need to transfer a lot of data from your laptop to cubic.
+For larger data transfers, we recommend using `scp`.
+`scp` allows you to transfer files between your local machine and CUBIC.
+However, there should almost never be a case where you need to transfer a lot of data from your laptop to CUBIC.
+
+{: .note-title }
+> Note
+>
+> We do not recommend transferring large amounts of data between your local machine and CUBIC.
+> If you have a case where you need to transfer a large amount of data,
+> please reach out to the informatics team.
+> Quite often, there is a more efficient or appropriate way to work with the data on CUBIC
+> that does not involve storing it on your local machine.
 
 See the pages on data transfer for more information on how to set up and use these tools.
 
@@ -79,5 +109,4 @@ For open datasets, like those we download from OpenNeuro, it is less of a concer
 We often share data with collaborators who do not have access to CUBIC.
 Always check with Ted before sharing any data with collaborators.
 
-We recommend using Box to share data with collaborators,
-as UPenn gives us a lot of free storage and it is safe to use.
+A member of the informatics team will be able to help you figure out the best way to share data with collaborators.
