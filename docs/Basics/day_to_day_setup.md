@@ -55,7 +55,7 @@ and to reproduce the analysis.
 
 ## Interacting with Data
 
-We store most of our data on CUBIC, and we recommend doing most of your data analysis there as well.
+We store most of our data on CUBIC, and we recommend doing all non-trivial data analysis there as well.
 
 However, some tasks are easier to do on your local machine, such as visualizing imaging data or creating figures.
 For small data transfers, smb is a good option (see the [data transfer page](https://pennlinc.github.io/docs/cubic/data-transfer/) for more information).
@@ -64,6 +64,7 @@ so you can access the data as if it were local.
 
 For larger data transfers, we recommend using `scp` or `rsync`.
 These commands allow you to transfer files between your local machine and CUBIC.
+However, there should almost never be a case where you need to transfer a lot of data from your laptop to cubic.
 
 See the pages on data transfer for more information on how to set up and use these tools.
 
