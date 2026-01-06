@@ -8,7 +8,7 @@ nav_order: 2
 # Project Directory Creation Request
 
 Once you have access to CUBIC, you may need to start a project in a new directory.
-Review the [CUBIC Documentation on Project Research](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/Research_Projects/#research_projects) (requires VPN access) for detailed information.
+Review the [CUBIC Documentation on Project Research](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/Research_Projects/#research_projects) (VPN required; you might need to login first, and click the link again for access) for detailed information.
 
 For instructions on creating a new project, read [here](https://pennmedaccess.uphs.upenn.edu/f5-w-68747470733a2f2f63626963612d706f7274616c2e757068732e7570656e6e2e656475$$/docs/Research_Projects/#accessnew_project_creation).
 

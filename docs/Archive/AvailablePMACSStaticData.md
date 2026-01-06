@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Available PMACS Static Datasets
-parent: Archive
+parent: Archived Documentation
 nav_order: 4
 has_toc: false
 ---
