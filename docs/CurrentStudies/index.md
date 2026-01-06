@@ -8,7 +8,7 @@ nav_order: 11
 
 # Datasets Collected in the Lab
 
-Below is a list of the studies condcuted in the lab:
+Below is a list of the studies conducted in the lab:
 
 | Study Title |    Lead Name(s)    |               Link                |
 | ------------- | --------------- | --------------------------------- |
