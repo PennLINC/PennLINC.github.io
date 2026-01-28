@@ -52,3 +52,6 @@ Common tasks that we do entirely on our laptops (rather than using the laptop to
 Once all of these applications have been installed, you should be able to open them and use them.
 Your Mac will almost certainly tell you that the applications cannot be opened, so we suggest opening your
 Settings->Privacy & Security and explicitly allowing the applications to be opened.
+
+When you open RStudio, you will likely see a popup about RStudio requiring Rosetta.
+Click the button to install Rosetta.
