@@ -25,7 +25,7 @@ This should include, at a minimum, the VPN client needed to access CUBIC.
 Most lab members will also install additional software on this machine,
 so that they can use it for their own projects.
 
-Common tasks that we do entirely on our laptops (rather than using the laptop to interace with CUBIC) include:
+Common tasks that we do entirely on our laptops (rather than using the laptop to interface with CUBIC) include:
 
 - Creating figures for papers, presentations, etc.
 - Interacting with imaging data, such as by loading it into a viewer like FSLEyes or ITKSnap.
