@@ -27,7 +27,7 @@ Below is a list of the studies conducted in the lab:
 ## Datasets Available Through AI2D
 
 The AI2D shared brain imaging data resource is available on CUBIC.
-For more information, visit the [AI2D dataset dashboard](https://pennlinc.github.io/AI2D/docs).
+For more information, visit the [AI2D website](https://pennlinc.github.io/AI2D).
 You can view each dataset-specific page for the available processing pipelines.
 
-[Click here for instructions to get access to the data](https://pennlinc.github.io/AI2D/docs/get_data).
+For instructions to get access to the data, click [here](https://pennlinc.github.io/AI2D/docs/get_data).
